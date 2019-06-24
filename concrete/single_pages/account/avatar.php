@@ -1,4 +1,4 @@
-<?php defined('C5_EXECUTE') or die("Access Denied.");
+<?php defined('C5_EXECUTE') or die('Access Denied.');
 
 $save_url = \Concrete\Core\Url\Url::createFromUrl($view->action('save_avatar'));
 $save_url = $save_url->setQuery(array(

@@ -1,6 +1,6 @@
 <?php
 
-defined('C5_EXECUTE') or die("Access Denied.");
+defined('C5_EXECUTE') or die('Access Denied.');
 use \Concrete\Core\Conversation\Message\Message as ConversationMessage;
 use \Concrete\Core\Conversation\FlagType\FlagType as ConversationFlagType;
 

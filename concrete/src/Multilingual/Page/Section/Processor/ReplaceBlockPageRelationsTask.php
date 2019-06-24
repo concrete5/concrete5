@@ -5,7 +5,7 @@ use Concrete\Core\Foundation\Processor\ActionInterface;
 use Concrete\Core\Foundation\Processor\TaskInterface;
 use Concrete\Core\Page\Page;
 
-defined('C5_EXECUTE') or die("Access Denied.");
+defined('C5_EXECUTE') or die('Access Denied.');
 
 class ReplaceBlockPageRelationsTask implements TaskInterface
 {

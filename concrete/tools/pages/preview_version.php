@@ -1,6 +1,6 @@
 <?php
 
-defined('C5_EXECUTE') or die("Access Denied.");
+defined('C5_EXECUTE') or die('Access Denied.');
 $c = Page::getByID($_REQUEST['cID']);
 $cp = new Permissions($c);
 if ($cp->canViewPageVersions()) {

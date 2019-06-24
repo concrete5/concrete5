@@ -1,6 +1,6 @@
 <?php
 
-defined('C5_EXECUTE') or die("Access Denied.");
+defined('C5_EXECUTE') or die('Access Denied.');
 $p = Page::getByPath('/dashboard/system/permissions/workflows');
 $cp = new Permissions($p);
 if ($cp->canViewPage()) {

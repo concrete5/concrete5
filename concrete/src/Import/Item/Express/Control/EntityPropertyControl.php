@@ -4,7 +4,7 @@ namespace Concrete\Core\Import\Item\Express\Control;
 use Concrete\Core\Entity\Express\Entity;
 use Concrete\Core\Import\Item\Express\ItemInterface;
 
-defined('C5_EXECUTE') or die("Access Denied.");
+defined('C5_EXECUTE') or die('Access Denied.');
 
 class EntityPropertyControl implements ItemInterface
 {

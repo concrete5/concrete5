@@ -1,4 +1,4 @@
-<?php defined('C5_EXECUTE') or die("Access Denied.");
+<?php defined('C5_EXECUTE') or die('Access Denied.');
 $chooseNodeInForm = 'multiple';
 $selectMode = 2;
 if (isset($allowMultipleValues) && $allowMultipleValues === false) {

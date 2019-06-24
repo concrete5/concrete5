@@ -1,4 +1,4 @@
-<?php defined('C5_EXECUTE') or die("Access Denied."); ?>
+<?php defined('C5_EXECUTE') or die('Access Denied.'); ?>
 
 <form method="post" id="proxy-form" action="<?php echo $view->action('update_proxy'); ?>">
     <?php echo $this->controller->token->output('update_proxy'); ?>

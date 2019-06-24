@@ -1,6 +1,6 @@
 <?php
 
-defined('C5_EXECUTE') or die("Access Denied.");
+defined('C5_EXECUTE') or die('Access Denied.');
 use \Concrete\Core\Permission\Set as PermissionSet;
 
 if ($_REQUEST['task'] == 'copy_permission_set' && Loader::helper("validation/token")->validate('copy_permission_set')) {

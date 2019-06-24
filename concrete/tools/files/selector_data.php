@@ -1,5 +1,5 @@
 <?php
-defined('C5_EXECUTE') or die("Access Denied.");
+defined('C5_EXECUTE') or die('Access Denied.');
 
 if (!Loader::helper('validation/numbers')->integer($_REQUEST['fID'])) {
     die(t('Access Denied'));

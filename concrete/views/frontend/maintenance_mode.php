@@ -1,4 +1,4 @@
-<?php defined('C5_EXECUTE') or die("Access Denied."); ?>
+<?php defined('C5_EXECUTE') or die('Access Denied.'); ?>
 
 <h1><?=t('Coming Back Soon')?></h1>
 

@@ -1,4 +1,4 @@
-<?php  defined('C5_EXECUTE') or die("Access Denied.");
+<?php  defined('C5_EXECUTE') or die('Access Denied.');
 $f = $controller->getFileObject();
 $fp = new Permissions($f);
 if ($f && $fp->canViewFile()) {

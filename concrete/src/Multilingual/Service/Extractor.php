@@ -17,7 +17,7 @@ use C5TL\Parser\ThemePresets as C5TLParserThemePresets;
 use C5TL\Parser\ConfigFiles as C5TLParserConfigFiles;
 use C5TL\Parser\Dynamic as C5TLParserDynamic;
 
-defined('C5_EXECUTE') or die("Access Denied.");
+defined('C5_EXECUTE') or die('Access Denied.');
 
 class Extractor
 {

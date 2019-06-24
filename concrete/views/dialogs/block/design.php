@@ -1,4 +1,4 @@
-<?php defined('C5_EXECUTE') or die("Access Denied.");
+<?php defined('C5_EXECUTE') or die('Access Denied.');
 
 $set = $b->getCustomStyle();
 $btHandle = $b->getBlockTypeHandle();

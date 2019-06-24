@@ -2,7 +2,7 @@
 
 namespace Concrete\Package\TestMetadatadriverAnnotationDefaultCoreExtension;
 
-defined('C5_EXECUTE') or die(_('Access Denied.'));
+defined('C5_EXECUTE') or die('Access Denied.');
 /**
  * Controller test addon - testing metadatadriver with legacy annotation driver.
  *

@@ -1,7 +1,7 @@
 <?php
 namespace Concrete\Block\DesktopSiteActivity;
 
-defined('C5_EXECUTE') or die("Access Denied.");
+defined('C5_EXECUTE') or die('Access Denied.');
 use Concrete\Core\Block\BlockController;
 use Concrete\Core\Workflow\Progress\Category;
 use Core;

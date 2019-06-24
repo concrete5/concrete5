@@ -5,7 +5,7 @@ use Concrete\Core\Entity\Package;
 use Concrete\Controller\Element\Package\ThemeItemList;
 use Concrete\Core\Page\Template;
 
-defined('C5_EXECUTE') or die("Access Denied.");
+defined('C5_EXECUTE') or die('Access Denied.');
 
 class PageTemplate extends AbstractCategory
 {

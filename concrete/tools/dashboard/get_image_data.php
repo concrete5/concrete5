@@ -1,6 +1,6 @@
 <?php
 
-defined('C5_EXECUTE') or die("Access Denied.");
+defined('C5_EXECUTE') or die('Access Denied.');
 session_write_close();
 
 // first, we check to see if the dashboard image data has been set in the cache

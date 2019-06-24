@@ -5,7 +5,7 @@ use Concrete\Core\Foundation\Processor\ProcessorQueue as ProcessorQueue;
 use Concrete\Core\Foundation\Processor\TargetInterface;
 use Concrete\Core\Foundation\Queue\Queue;
 
-defined('C5_EXECUTE') or die("Access Denied.");
+defined('C5_EXECUTE') or die('Access Denied.');
 
 class Processor extends ProcessorQueue
 {

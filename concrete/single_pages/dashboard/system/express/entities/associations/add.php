@@ -1,4 +1,4 @@
-<?php defined('C5_EXECUTE') or die("Access Denied.");?>
+<?php defined('C5_EXECUTE') or die('Access Denied.');?>
 <form method="post" class="ccm-dashboard-content-form" action="<?=$view->action('add', $entity->getID())?>">
     <?=$token->output('add_association')?>
 

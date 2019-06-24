@@ -1,4 +1,4 @@
-<?php defined('C5_EXECUTE') or die("Access Denied.");
+<?php defined('C5_EXECUTE') or die('Access Denied.');
 use \Concrete\Core\Conversation\Message\Message as ConversationMessage;
 
 $ax = Loader::helper('ajax');

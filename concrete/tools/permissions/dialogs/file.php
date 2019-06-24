@@ -1,6 +1,6 @@
 <?php
 
-defined('C5_EXECUTE') or die("Access Denied.");
+defined('C5_EXECUTE') or die('Access Denied.');
 
 if ($_REQUEST['fID'] > 0) {
     $f = File::getByID($_REQUEST['fID']);

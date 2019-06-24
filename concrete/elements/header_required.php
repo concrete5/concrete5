@@ -5,7 +5,7 @@ use Concrete\Core\Multilingual\Page\Section\Section;
 use Concrete\Core\Support\Facade\Application;
 use Symfony\Component\EventDispatcher\GenericEvent;
 
-defined('C5_EXECUTE') or die("Access Denied.");
+defined('C5_EXECUTE') or die('Access Denied.');
 
 $c = Page::getCurrentPage();
 $cp = false;

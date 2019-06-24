@@ -1,4 +1,4 @@
-<?php defined('C5_EXECUTE') or die("Access Denied."); ?>
+<?php defined('C5_EXECUTE') or die('Access Denied.'); ?>
 <?php $rowCount = 0;
 for ($i = 0; $i < count($categories); ++$i) {
     $cat = $categories[$i];

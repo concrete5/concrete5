@@ -1,4 +1,4 @@
-<?php defined('C5_EXECUTE') or die("Access Denied.");
+<?php defined('C5_EXECUTE') or die('Access Denied.');
 $ownerID = $this->page->vObj->cvAuthorUID;
 $u = User::getByUserID($ownerID);
 $ownerName = $u->getUserName();

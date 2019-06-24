@@ -1,6 +1,6 @@
 <?php
 
-defined('C5_EXECUTE') or die("Access Denied.");
+defined('C5_EXECUTE') or die('Access Denied.');
 
 $content = $controller->getContent();
 $forbiddenTags = array('iframe', 'script', 'object', 'embed');

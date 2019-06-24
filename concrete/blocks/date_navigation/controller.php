@@ -1,7 +1,7 @@
 <?php
 namespace Concrete\Block\DateNavigation;
 
-defined('C5_EXECUTE') or die("Access Denied.");
+defined('C5_EXECUTE') or die('Access Denied.');
 use Concrete\Core\Block\BlockController;
 use Concrete\Core\Page\PageList;
 use Concrete\Core\Page\Type\Type;

@@ -1,4 +1,4 @@
-<?php defined('C5_EXECUTE') or die("Access Denied.");
+<?php defined('C5_EXECUTE') or die('Access Denied.');
 $path = $fv->getURL();
 ?>
 <video src="<?=$path?>" width="70%" height="70%" preload="auto" controls="controls">

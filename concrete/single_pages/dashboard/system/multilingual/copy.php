@@ -1,4 +1,4 @@
-<?php defined('C5_EXECUTE') or die("Access Denied."); ?>
+<?php defined('C5_EXECUTE') or die('Access Denied.'); ?>
 <?php
 use Concrete\Core\Multilingual\Page\Section\Section as MultilingualSection;
 

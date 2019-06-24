@@ -1,5 +1,5 @@
 <?php
-defined('C5_EXECUTE') or die("Access Denied.");
+defined('C5_EXECUTE') or die('Access Denied.');
 ?>
 <div id="ccm-panel-add-clipboard-block-list">
     <ul class="item-select-list">

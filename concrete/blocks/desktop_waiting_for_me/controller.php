@@ -1,7 +1,7 @@
 <?php
 namespace Concrete\Block\DesktopWaitingForMe;
 
-defined('C5_EXECUTE') or die("Access Denied.");
+defined('C5_EXECUTE') or die('Access Denied.');
 use Concrete\Core\Block\BlockController;
 use Concrete\Core\Block\View\BlockView;
 use Concrete\Core\Notification\Alert\Filter\FilterListFactory;

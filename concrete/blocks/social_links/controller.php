@@ -6,7 +6,7 @@ use Concrete\Core\Sharing\SocialNetwork\Link;
 use Database;
 use Core;
 
-defined('C5_EXECUTE') or die("Access Denied.");
+defined('C5_EXECUTE') or die('Access Denied.');
 
 class Controller extends BlockController
 {

@@ -11,7 +11,7 @@ use Concrete\Core\Calendar\CalendarServiceProvider;
 use Concrete\Core\Calendar\Event\EventOccurrenceList;
 use Core;
 
-defined('C5_EXECUTE') or die("Access Denied.");
+defined('C5_EXECUTE') or die('Access Denied.');
 
 class Controller extends BlockController
 {

@@ -5,7 +5,7 @@ use Concrete\Core\Entity\Express\Entity;
 use Concrete\Core\Entity\Package;
 use Doctrine\ORM\EntityManagerInterface;
 
-defined('C5_EXECUTE') or die("Access Denied.");
+defined('C5_EXECUTE') or die('Access Denied.');
 
 class ExpressEntity extends AbstractCategory
 {

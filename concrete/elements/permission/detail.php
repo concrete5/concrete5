@@ -1,4 +1,4 @@
-<?php defined('C5_EXECUTE') or die("Access Denied."); ?>
+<?php defined('C5_EXECUTE') or die('Access Denied.'); ?>
 
 <?php
 if ($_REQUEST['paID'] && $_REQUEST['paID'] > 0) {

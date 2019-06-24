@@ -1,5 +1,5 @@
 <?php 
-defined('C5_EXECUTE') or die("Access Denied.");
+defined('C5_EXECUTE') or die('Access Denied.');
 $wp = \Concrete\Core\Workflow\Progress\Progress::getByID($_REQUEST['wpID']);
 $ih = Loader::helper('concrete/ui');
 $wf = $wp->getWorkflowObject();

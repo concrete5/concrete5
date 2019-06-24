@@ -8,7 +8,7 @@ use Less_Parser;
 use Less_Tree_Rule;
 use Core;
 
-defined('C5_EXECUTE') or die("Access Denied.");
+defined('C5_EXECUTE') or die('Access Denied.');
 
 class Controller extends BlockController
 {

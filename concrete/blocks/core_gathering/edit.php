@@ -1,5 +1,5 @@
 <?php
-defined('C5_EXECUTE') or die("Access Denied.");
+defined('C5_EXECUTE') or die('Access Denied.');
 ?>
 
 <ul class="ccm-inline-toolbar ccm-ui">

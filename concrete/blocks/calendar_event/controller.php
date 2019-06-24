@@ -9,7 +9,7 @@ use Concrete\Core\Calendar\Event\Event;
 use Concrete\Core\Calendar\Event\EventOccurrence;
 use Concrete\Core\Calendar\CalendarServiceProvider;
 
-defined('C5_EXECUTE') or die("Access Denied.");
+defined('C5_EXECUTE') or die('Access Denied.');
 
 class Controller extends BlockController
 {

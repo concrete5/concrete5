@@ -7,7 +7,7 @@ use Concrete\Core\User\Group\Group;
 use Concrete\Core\User\Group\GroupList;
 use Concrete\Core\User\UserInfo;
 
-defined('C5_EXECUTE') or die("Access Denied.");
+defined('C5_EXECUTE') or die('Access Denied.');
 
 class User implements ItemInterface
 {

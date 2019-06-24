@@ -1,4 +1,4 @@
-<?php defined('C5_EXECUTE') or die("Access Denied."); ?>
+<?php defined('C5_EXECUTE') or die('Access Denied.'); ?>
 
 <div class="ccm-block-rss-displayer-wrapper">
     <div class="ccm-block-rss-displayer">

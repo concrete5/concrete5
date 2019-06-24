@@ -1,4 +1,4 @@
-<?php defined('C5_EXECUTE') or die("Access Denied."); ?>
+<?php defined('C5_EXECUTE') or die('Access Denied.'); ?>
 <div class="form-group">
     <?php echo $form->label('types', t('Types to Display'));?>
     <div class="checkbox"><label><?=$form->checkbox('types[]', 'form_submissions', in_array('form_submissions', $types))?> <?=t('Form Submissions')?></label></div>

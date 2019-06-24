@@ -1,5 +1,5 @@
 <?php 
-defined('C5_EXECUTE') or die("Access Denied.");
+defined('C5_EXECUTE') or die('Access Denied.');
 $u = new User();
 $ui = UserInfo::getByID($u->uID);
 ?>

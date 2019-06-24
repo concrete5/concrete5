@@ -4,7 +4,7 @@ namespace Concrete\Core\Package\ItemCategory;
 use Concrete\Core\Entity\Package;
 use Concrete\Core\Permission\Access\Entity\Type;
 
-defined('C5_EXECUTE') or die("Access Denied.");
+defined('C5_EXECUTE') or die('Access Denied.');
 
 class PermissionAccessEntityType extends AbstractCategory
 {

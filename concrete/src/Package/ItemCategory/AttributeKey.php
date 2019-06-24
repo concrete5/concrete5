@@ -5,7 +5,7 @@ use Concrete\Core\Entity\Package;
 use Concrete\Controller\Element\Package\ThemeItemList;
 use Doctrine\ORM\EntityManagerInterface;
 
-defined('C5_EXECUTE') or die("Access Denied.");
+defined('C5_EXECUTE') or die('Access Denied.');
 
 class AttributeKey extends AbstractCategory
 {

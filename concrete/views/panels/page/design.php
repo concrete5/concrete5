@@ -1,5 +1,5 @@
 <?php
-defined('C5_EXECUTE') or die("Access Denied.");
+defined('C5_EXECUTE') or die('Access Denied.');
 ?>
 <section id="ccm-panel-page-design">
 <form method="post" action="<?=$controller->action('submit')?>" data-panel-detail-form="design">

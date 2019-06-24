@@ -1,4 +1,4 @@
-<?php defined('C5_EXECUTE') or die("Access Denied.");
+<?php defined('C5_EXECUTE') or die('Access Denied.');
 
 if ($mode == \Concrete\Core\Entity\Attribute\Key\Settings\ImageFileSettings::TYPE_FILE_MANAGER) {
 

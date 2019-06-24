@@ -2,7 +2,7 @@
 
 namespace Concrete\Package\TestNotInstalledPackage;
 
-defined('C5_EXECUTE') or die(_('Access Denied.'));
+defined('C5_EXECUTE') or die('Access Denied.');
 /**
  * Controller test addon - this package shouldn't be installed by any test case.
  *

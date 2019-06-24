@@ -1,5 +1,5 @@
 <?php
-defined('C5_EXECUTE') or die("Access Denied.");
+defined('C5_EXECUTE') or die('Access Denied.');
 $cmpp = new Permissions($pagetype);
 $cp = new Permissions($page);
 $v = $page->getVersionObject();

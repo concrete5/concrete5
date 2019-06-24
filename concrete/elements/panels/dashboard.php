@@ -1,4 +1,4 @@
-<?php defined('C5_EXECUTE') or die("Access Denied.");
+<?php defined('C5_EXECUTE') or die('Access Denied.');
 $parents = Loader::helper('navigation')->getTrailToCollection($c);
 $pageIDs = array();
 foreach ($parents as $pc) {

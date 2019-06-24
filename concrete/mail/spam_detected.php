@@ -1,6 +1,6 @@
 <?php
 
-defined('C5_EXECUTE') or die("Access Denied.");
+defined('C5_EXECUTE') or die('Access Denied.');
 
 $subject = $siteName . " " . t("Notification - Spam Detected");
 $body = t("

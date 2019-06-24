@@ -11,7 +11,7 @@ use Concrete\Core\Multilingual\Page\Event;
 use Gettext\Translations;
 use Punic\Language;
 
-defined('C5_EXECUTE') or die("Access Denied.");
+defined('C5_EXECUTE') or die('Access Denied.');
 
 class Section extends Page
 {

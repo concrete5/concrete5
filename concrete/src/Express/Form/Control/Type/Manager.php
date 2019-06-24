@@ -4,7 +4,7 @@ namespace Concrete\Core\Express\Form\Control\Type;
 use Concrete\Core\Support\Manager as CoreManager;
 use Doctrine\ORM\EntityManager;
 
-defined('C5_EXECUTE') or die("Access Denied.");
+defined('C5_EXECUTE') or die('Access Denied.');
 
 class Manager extends CoreManager
 {

@@ -1,5 +1,5 @@
 <?php
-defined('C5_EXECUTE') or die("Access Denied.");
+defined('C5_EXECUTE') or die('Access Denied.');
 $cID = intval($_REQUEST['cID']);
 $bID = intval($_REQUEST['bID']);
 $arHandle = Loader::helper('security')->sanitizeString($_REQUEST['arHandle']);

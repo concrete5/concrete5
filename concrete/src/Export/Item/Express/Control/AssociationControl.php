@@ -4,7 +4,7 @@ namespace Concrete\Core\Export\Item\Express\Control;
 use Concrete\Core\Export\Item\Express\Control;
 use Concrete\Core\Export\ExportableInterface;
 
-defined('C5_EXECUTE') or die("Access Denied.");
+defined('C5_EXECUTE') or die('Access Denied.');
 
 class AssociationControl extends Control
 {

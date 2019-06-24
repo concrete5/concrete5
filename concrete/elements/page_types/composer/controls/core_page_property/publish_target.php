@@ -1,5 +1,5 @@
 <?php
-defined('C5_EXECUTE') or die("Access Denied.");
+defined('C5_EXECUTE') or die('Access Denied.');
 $pagetype = $set->getPageTypeObject();
 $target = $pagetype->getPageTypePublishTargetObject();
 $c = $control->getPageObject();

@@ -1,5 +1,5 @@
 <?php
-defined('C5_EXECUTE') or die("Access Denied.");
+defined('C5_EXECUTE') or die('Access Denied.');
 /* @var $control Concrete\Core\Page\Type\Composer\FormLayoutSetControl */
 
 $der = Concrete\Core\Page\Type\Composer\Control\Type\Type::getByID($control->getPageTypeComposerControlTypeID());

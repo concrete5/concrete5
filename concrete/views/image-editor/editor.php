@@ -1,5 +1,5 @@
 <?php
-defined('C5_EXECUTE') or die("Access Denied.");
+defined('C5_EXECUTE') or die('Access Denied.');
 use Concrete\Core\Http\ResponseAssetGroup;
 use Concrete\Core\ImageEditor\ImageEditor;
 use Concrete\Core\File\Image\BitmapFormat;

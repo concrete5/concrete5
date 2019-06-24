@@ -6,7 +6,7 @@ use Concrete\Core\Support\Facade\Application;
 use Concrete\Core\Permission\Duration;
 use Punic\Calendar;
 
-defined('C5_EXECUTE') or die("Access Denied.");
+defined('C5_EXECUTE') or die('Access Denied.');
 
 $app = Application::getFacadeApplication();
 

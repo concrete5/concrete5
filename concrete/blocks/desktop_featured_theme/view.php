@@ -1,4 +1,4 @@
-<?php defined('C5_EXECUTE') or die("Access Denied."); ?>
+<?php defined('C5_EXECUTE') or die('Access Denied.'); ?>
 <?php if (isset($remoteItem) && is_object($remoteItem)) { ?>
 
 	<div class="ccm-block-desktop-featured-theme">

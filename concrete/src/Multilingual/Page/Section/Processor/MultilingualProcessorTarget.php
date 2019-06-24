@@ -5,7 +5,7 @@ use Concrete\Core\Foundation\Processor\TargetInterface;
 use Concrete\Core\Multilingual\Page\Section\Section;
 use Concrete\Core\Page\Stack\StackList;
 
-defined('C5_EXECUTE') or die("Access Denied.");
+defined('C5_EXECUTE') or die('Access Denied.');
 
 class MultilingualProcessorTarget implements TargetInterface
 {

@@ -1,5 +1,5 @@
 <?php 
-defined('C5_EXECUTE') or die("Access Denied.");
+defined('C5_EXECUTE') or die('Access Denied.');
 use \Concrete\Block\Form\MiniSurvey;
 
 //$miniSurveyInfo['surveyName']= $bs->surveyName;

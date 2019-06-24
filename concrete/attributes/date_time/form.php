@@ -1,6 +1,6 @@
 <?php
 use Concrete\Core\Support\Facade\Facade;
-defined('C5_EXECUTE') or die("Access Denied.");
+defined('C5_EXECUTE') or die('Access Denied.');
 $app = Facade::getFacadeApplication();
 switch ($displayMode) {
     case 'text':

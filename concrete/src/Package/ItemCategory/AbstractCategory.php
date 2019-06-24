@@ -4,7 +4,7 @@ namespace Concrete\Core\Package\ItemCategory;
 use Concrete\Controller\Element\Package\ItemList;
 use Concrete\Core\Entity\Package;
 
-defined('C5_EXECUTE') or die("Access Denied.");
+defined('C5_EXECUTE') or die('Access Denied.');
 
 abstract class AbstractCategory implements ItemInterface
 {

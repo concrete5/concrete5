@@ -4,7 +4,7 @@ namespace Concrete\Core\Notification\Type;
 use Concrete\Core\Application\Application;
 use Concrete\Core\Support\Manager as CoreManager;
 
-defined('C5_EXECUTE') or die("Access Denied.");
+defined('C5_EXECUTE') or die('Access Denied.');
 
 class Manager extends CoreManager
 {

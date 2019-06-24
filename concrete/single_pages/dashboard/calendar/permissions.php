@@ -1,4 +1,4 @@
-<?php defined('C5_EXECUTE') or die("Access Denied.");
+<?php defined('C5_EXECUTE') or die('Access Denied.');
 $preferences = Core::make('Concrete\Core\Calendar\Utility\Preferences');
 
 ?>

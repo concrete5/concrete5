@@ -4,7 +4,7 @@ namespace Concrete\Core\Package\ItemCategory;
 use Concrete\Core\Entity\Package;
 use Concrete\Core\Permission\Category;
 
-defined('C5_EXECUTE') or die("Access Denied.");
+defined('C5_EXECUTE') or die('Access Denied.');
 
 class PermissionKeyCategory extends AbstractCategory
 {

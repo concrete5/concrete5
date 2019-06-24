@@ -3,7 +3,7 @@
 use Concrete\Core\File\Image\Thumbnail\Thumbnail;
 use Concrete\Core\File\Entity\Version;
 
-defined("C5_EXECUTE") or die("Access Denied.");
+defined('C5_EXECUTE') or die('Access Denied.');
 $fID = isset($_REQUEST['fID']) ? intval($_REQUEST['fID']) : 0;
 if ($fID < 1) {
     die('{"error":1,"code":401,"message":"Invalid File"}');

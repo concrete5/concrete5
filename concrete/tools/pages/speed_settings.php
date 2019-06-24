@@ -1,5 +1,5 @@
 <?php
-defined('C5_EXECUTE') or die("Access Denied.");
+defined('C5_EXECUTE') or die('Access Denied.');
 $u = new User();
 $form = Loader::helper('form');
 $sh = Loader::helper('concrete/dashboard/sitemap');

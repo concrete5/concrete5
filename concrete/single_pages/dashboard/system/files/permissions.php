@@ -1,4 +1,4 @@
-<?php defined('C5_EXECUTE') or die("Access Denied."); ?>
+<?php defined('C5_EXECUTE') or die('Access Denied.'); ?>
 
 	<?php $root = (new \Concrete\Core\File\Filesystem())->getRootFolder(); ?>
 

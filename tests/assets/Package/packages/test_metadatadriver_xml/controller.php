@@ -6,7 +6,7 @@ use Concrete\Core\Database\EntityManager\Provider\ProviderInterface;
 use Concrete\Core\Database\EntityManager\Provider\XmlProvider;
 use Concrete\Core\Package\Package;
 
-defined('C5_EXECUTE') or die(_('Access Denied.'));
+defined('C5_EXECUTE') or die('Access Denied.');
 
 /**
  * Controller test addon - testing metadatadriver with legacy annotation driver.

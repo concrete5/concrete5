@@ -1,4 +1,4 @@
-<?php defined('C5_EXECUTE') or die("Access Denied."); ?>
+<?php defined('C5_EXECUTE') or die('Access Denied.'); ?>
 
 <form method="post" data-dialog-form="move-to-folder" action="<?=$controller->action('submit')?>">
 

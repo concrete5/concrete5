@@ -13,7 +13,7 @@ use Concrete\Core\Workflow\Description as WorkflowDescription;
 use Concrete\Core\Workflow\Progress\Progress as WorkflowProgress;
 use Concrete\Core\Workflow\Progress\Action\Action as WorkflowProgressAction;
 
-defined('C5_EXECUTE') or die("Access Denied.");
+defined('C5_EXECUTE') or die('Access Denied.');
 
 class ActivateUserRequest extends UserRequest
 {

@@ -1,5 +1,5 @@
 <?php
-defined('C5_EXECUTE') or die("Access Denied.");
+defined('C5_EXECUTE') or die('Access Denied.');
 $valt = Loader::helper('validation/token');
 $token = '&' . $valt->getParameter();
 $dh = Loader::helper('concrete/dashboard');

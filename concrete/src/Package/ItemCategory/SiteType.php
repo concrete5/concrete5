@@ -6,7 +6,7 @@ use Concrete\Controller\Element\Package\ThemeItemList;
 use Concrete\Core\Page\Type\Type;
 use Concrete\Core\Site\Type\Service;
 
-defined('C5_EXECUTE') or die("Access Denied.");
+defined('C5_EXECUTE') or die('Access Denied.');
 
 class SiteType extends AbstractCategory
 {

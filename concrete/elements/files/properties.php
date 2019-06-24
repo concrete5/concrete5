@@ -1,5 +1,5 @@
 <?php
-defined('C5_EXECUTE') or die("Access Denied.");
+defined('C5_EXECUTE') or die('Access Denied.');
 $f = $fv->getFile();
 $fp = new Permissions($f);
 $dh = Core::make('date');

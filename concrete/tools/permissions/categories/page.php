@@ -1,6 +1,6 @@
 <?php
 
-defined('C5_EXECUTE') or die("Access Denied.");
+defined('C5_EXECUTE') or die('Access Denied.');
 use \Concrete\Core\Permission\Access\Entity\Entity as PermissionAccessEntity;
 use \Concrete\Core\Permission\Duration as PermissionDuration;
 use \Concrete\Core\Permission\Key\PageKey as PagePermissionKey;

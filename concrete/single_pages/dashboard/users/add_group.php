@@ -1,5 +1,5 @@
 <?php
-defined('C5_EXECUTE') or die("Access Denied.");
+defined('C5_EXECUTE') or die('Access Denied.');
 $section = 'groups';
 
 $app = Concrete\Core\Support\Facade\Application::getFacadeApplication();

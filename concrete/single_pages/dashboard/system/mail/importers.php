@@ -1,4 +1,4 @@
-<?php defined('C5_EXECUTE') or die("Access Denied.");
+<?php defined('C5_EXECUTE') or die('Access Denied.');
 
 $ih = Loader::helper('concrete/ui');
 $enabledVals = array('0' => t('No'), '1' => t('Yes'));

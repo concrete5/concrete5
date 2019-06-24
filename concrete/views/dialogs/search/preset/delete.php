@@ -1,4 +1,4 @@
-<?php defined('C5_EXECUTE') or die("Access Denied."); ?>
+<?php defined('C5_EXECUTE') or die('Access Denied.'); ?>
 
 <div class="ccm-ui">
     <form method="post" data-dialog-form="remove-search-preset" class="form-horizontal" action="<?= $controller->action('remove_search_preset'); ?>">

@@ -7,7 +7,7 @@ use Concrete\Core\Sharing\ShareThisPage\Service;
 use Database;
 use Core;
 
-defined('C5_EXECUTE') or die("Access Denied.");
+defined('C5_EXECUTE') or die('Access Denied.');
 
 class Controller extends BlockController
 {

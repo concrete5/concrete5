@@ -1,5 +1,5 @@
 <?php
-defined('C5_EXECUTE') or die("Access Denied.");
+defined('C5_EXECUTE') or die('Access Denied.');
 
 if (isset($currentTopic) && is_object($currentTopic)) {
     $title = t('Topic Archives: %s', $currentTopic->getTreeNodeDisplayName());

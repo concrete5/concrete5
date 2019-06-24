@@ -5,7 +5,7 @@ use Concrete\Core\Captcha\Library;
 use Concrete\Core\Entity\Package;
 use Concrete\Controller\Element\Package\ThemeItemList;
 
-defined('C5_EXECUTE') or die("Access Denied.");
+defined('C5_EXECUTE') or die('Access Denied.');
 
 class CaptchaLibrary extends AbstractCategory
 {

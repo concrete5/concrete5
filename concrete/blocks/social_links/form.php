@@ -1,4 +1,4 @@
-<?php defined('C5_EXECUTE') or die("Access Denied."); ?>
+<?php defined('C5_EXECUTE') or die('Access Denied.'); ?>
 
 <div class="form-group">
     <label class="control-label"><?=t('Choose Social Links to Show'); ?></label>

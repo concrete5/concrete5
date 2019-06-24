@@ -1,4 +1,4 @@
-<?php defined('C5_EXECUTE') or die("Access Denied."); ?>
+<?php defined('C5_EXECUTE') or die('Access Denied.'); ?>
 
 <form method="post" id="clear-cache-form" action="<?php echo $view->url('/dashboard/system/optimization/clearcache', 'do_clear')?>">
 	<?php echo $this->controller->token->output('clear_cache')?>

@@ -3,7 +3,7 @@ namespace Concrete\Core\Package\ItemCategory;
 
 use Concrete\Core\Entity\Package;
 
-defined('C5_EXECUTE') or die("Access Denied.");
+defined('C5_EXECUTE') or die('Access Denied.');
 
 interface ItemInterface
 {

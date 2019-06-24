@@ -3,7 +3,7 @@
 use Concrete\Core\Page\Stack\Pile\Pile;
 use Concrete\Core\Page\Stack\Pile\PileContent;
 
-defined('C5_EXECUTE') or die("Access Denied.");
+defined('C5_EXECUTE') or die('Access Denied.');
 
 if (!$u->isRegistered()
     || (!Core::make('token')->validate('tools/clipboard/from') && !Core::make('token')->validate('tools/clipboard/to'))

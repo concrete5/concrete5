@@ -9,7 +9,7 @@ use Concrete\Core\Export\Item\ItemInterface;
 use Concrete\Core\Export\ExportableInterface;
 use Concrete\Core\Localization\Locale\LocaleInterface;
 
-defined('C5_EXECUTE') or die("Access Denied.");
+defined('C5_EXECUTE') or die('Access Denied.');
 
 class Locale implements ItemInterface
 {

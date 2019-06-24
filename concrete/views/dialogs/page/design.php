@@ -1,5 +1,5 @@
 <?php
-defined('C5_EXECUTE') or die("Access Denied.");
+defined('C5_EXECUTE') or die('Access Denied.');
 $form = Loader::Helper('form');
 $selectedThemeID = 0;
 $selectedTemplateID = 0;

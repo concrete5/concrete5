@@ -8,7 +8,7 @@ use Concrete\Core\Tree\Type\Topic as TopicTree;
 use Concrete\Core\Tree\Type\Topic;
 use Core;
 
-defined('C5_EXECUTE') or die("Access Denied.");
+defined('C5_EXECUTE') or die('Access Denied.');
 
 class Controller extends BlockController
 {

@@ -7,7 +7,7 @@ use Concrete\Core\Export\ExportableInterface;
 use Concrete\Core\Tree\Node\Node;
 use Concrete\Core\Utility\Service\Identifier;
 
-defined('C5_EXECUTE') or die("Access Denied.");
+defined('C5_EXECUTE') or die('Access Denied.');
 
 class Entry implements ItemInterface
 {

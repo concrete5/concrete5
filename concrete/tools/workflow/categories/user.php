@@ -1,5 +1,5 @@
 <?php
-defined('C5_EXECUTE') or die("Access Denied.");
+defined('C5_EXECUTE') or die('Access Denied.');
 $u = User::getByUserID($_REQUEST['uID']);
 $obj = new stdClass;
 $obj->tableData=t('None');

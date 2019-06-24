@@ -1,5 +1,5 @@
 <?php
-defined('C5_EXECUTE') or die("Access Denied."); ?>
+defined('C5_EXECUTE') or die('Access Denied.'); ?>
 <?php
 use Concrete\Core\Attribute\Set as AttributeSet;
 

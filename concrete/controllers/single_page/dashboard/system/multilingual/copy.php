@@ -9,7 +9,7 @@ use Concrete\Core\Multilingual\Page\Section\Section;
 use Concrete\Core\Page\Controller\DashboardPageController;
 use Concrete\Core\Page\Controller\DashboardSitePageController;
 
-defined('C5_EXECUTE') or die("Access Denied.");
+defined('C5_EXECUTE') or die('Access Denied.');
 
 class Copy extends DashboardSitePageController
 {

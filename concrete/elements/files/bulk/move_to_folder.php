@@ -1,4 +1,4 @@
-<?php defined('C5_EXECUTE') or die("Access Denied."); ?>
+<?php defined('C5_EXECUTE') or die('Access Denied.'); ?>
 <?php Loader::element('files/move_to_folder', array(
     'isCurrentFolder' => function ($folder) use ($files) {
         if (isset($files[0])) {

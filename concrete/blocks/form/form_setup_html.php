@@ -1,5 +1,5 @@
 <?php 
-defined('C5_EXECUTE') or die("Access Denied.");
+defined('C5_EXECUTE') or die('Access Denied.');
 $uh = Loader::helper('concrete/urls');
 $form = Loader::helper('form');
 $datetime = loader::helper('form/date_time');

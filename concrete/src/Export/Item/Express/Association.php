@@ -5,7 +5,7 @@ use Concrete\Core\Database\Connection\Connection;
 use Concrete\Core\Export\Item\ItemInterface;
 use Concrete\Core\Export\ExportableInterface;
 
-defined('C5_EXECUTE') or die("Access Denied.");
+defined('C5_EXECUTE') or die('Access Denied.');
 
 class Association implements ItemInterface
 {

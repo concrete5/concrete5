@@ -7,7 +7,7 @@ use Concrete\Core\Multilingual\Page\Section\Section;
 use Database;
 use HtmlObject\Image;
 
-defined('C5_EXECUTE') or die("Access Denied.");
+defined('C5_EXECUTE') or die('Access Denied.');
 
 class Flag
 {

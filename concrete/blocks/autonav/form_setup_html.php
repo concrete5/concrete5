@@ -1,5 +1,5 @@
 <?php
-defined('C5_EXECUTE') or die("Access Denied.");
+defined('C5_EXECUTE') or die('Access Denied.');
 
 /* @var Concrete\Block\Autonav\Controller $controller */
 /* @var Concrete\Core\Block\View\BlockView $view */

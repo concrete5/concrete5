@@ -4,7 +4,7 @@ namespace Concrete\Core\Package\ItemCategory;
 use Concrete\Core\Entity\Package;
 use Concrete\Core\Support\Manager as CoreManager;
 
-defined('C5_EXECUTE') or die("Access Denied.");
+defined('C5_EXECUTE') or die('Access Denied.');
 
 class Manager extends CoreManager
 {

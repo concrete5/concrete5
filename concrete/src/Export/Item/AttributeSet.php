@@ -4,7 +4,7 @@ namespace Concrete\Core\Export\Item;
 use Concrete\Core\Entity\Attribute\Set;
 use Concrete\Core\Export\Item\ItemInterface;
 
-defined('C5_EXECUTE') or die("Access Denied.");
+defined('C5_EXECUTE') or die('Access Denied.');
 
 class AttributeSet implements ItemInterface
 {

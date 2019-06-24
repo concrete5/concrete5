@@ -1,5 +1,5 @@
 <?php
-defined('C5_EXECUTE') or die("Access Denied.");
+defined('C5_EXECUTE') or die('Access Denied.');
 ?>
 
 <?php if (isset($template) && is_object($template) && ($this->controller->getTask() == 'edit' || $this->controller->getTask() == 'update')) {

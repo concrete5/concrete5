@@ -1,4 +1,4 @@
-<?php defined('C5_EXECUTE') or die("Access Denied."); ?>
+<?php defined('C5_EXECUTE') or die('Access Denied.'); ?>
 
 <?php
 $class = 'ccm-conversation-message ccm-conversation-message-level' . $message->getConversationMessageLevel();

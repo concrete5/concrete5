@@ -1,4 +1,4 @@
-<?php defined('C5_EXECUTE') or die("Access Denied.");
+<?php defined('C5_EXECUTE') or die('Access Denied.');
 // used when confirming bulk user operations.. would you like to do xyz to the following users??
 if (is_array($users)) {
     ?>

@@ -1,5 +1,5 @@
 <?php
-    defined('C5_EXECUTE') or die("Access Denied.");
+    defined('C5_EXECUTE') or die('Access Denied.');
     $this->inc('form.php', array('b' => $b, 'a' => $a));
 
 ?>

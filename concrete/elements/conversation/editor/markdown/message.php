@@ -1,4 +1,4 @@
-<?php defined('C5_EXECUTE') or die("Access Denied.");
+<?php defined('C5_EXECUTE') or die('Access Denied.');
 $form = Loader::helper('form');
 echo $form->textarea($editor->getConversationEditorInputName(), $editor->getConversationEditorMessageBody(), array('class' => 'unbound markdown_conversation_editor_'.$editor->getConversationObject()->getConversationID()));
 ?>

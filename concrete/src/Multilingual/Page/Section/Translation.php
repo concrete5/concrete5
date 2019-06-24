@@ -1,7 +1,7 @@
 <?php
 namespace Concrete\Core\Multilingual\Page\Section;
 
-defined('C5_EXECUTE') or die("Access Denied.");
+defined('C5_EXECUTE') or die('Access Denied.');
 
 class Translation extends \Gettext\Translation
 {

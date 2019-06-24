@@ -1,5 +1,5 @@
 <?php
-defined('C5_EXECUTE') or die("Access Denied.");
+defined('C5_EXECUTE') or die('Access Denied.');
 $class = 'ccm-conversation-message ccm-conversation-message-topic';
 if ($message->isConversationMessageDeleted()) {
     $class .= ' ccm-conversation-message-deleted';

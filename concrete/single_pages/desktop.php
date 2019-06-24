@@ -1,4 +1,4 @@
-<?php defined('C5_EXECUTE') or die("Access Denied."); ?>
+<?php defined('C5_EXECUTE') or die('Access Denied.'); ?>
 
 <p><?=t('You are currently logged in as <strong>%s</strong>', $profile->getUserDisplayName())?>. <a href="<?=URL::to('/')?>"><?=t('Return to Previous Page.')?></a></p>
 

@@ -1,6 +1,6 @@
 <?php
 namespace Concrete\Controller\Dialog\User\Bulk;
-defined('C5_EXECUTE') or die("Access Denied.");
+defined('C5_EXECUTE') or die('Access Denied.');
 
 use Concrete\Controller\Backend\UserInterface as BackendInterfaceController;
 use Concrete\Core\Application\EditResponse as UserEditResponse;

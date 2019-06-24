@@ -1,4 +1,4 @@
-<?php defined('C5_EXECUTE') or die("Access Denied."); ?>
+<?php defined('C5_EXECUTE') or die('Access Denied.'); ?>
 <?php $ih = Loader::helper('concrete/ui'); ?>
 
     <form method="post" id="file-sets-add" action="<?=$view->url('/dashboard/files/add_set', 'do_add')?>">

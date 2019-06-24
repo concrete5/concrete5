@@ -1,7 +1,7 @@
 <?php
 use Concrete\Core\Block\View\BlockView;
 
-defined('C5_EXECUTE') or die("Access Denied.");
+defined('C5_EXECUTE') or die('Access Denied.');
 
 $bo = Block::getByID($bOriginalID);
 $bp = new Permissions($bo);

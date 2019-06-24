@@ -1,5 +1,5 @@
 <?php 
-defined('C5_EXECUTE') or die("Access Denied.");
+defined('C5_EXECUTE') or die('Access Denied.');
 ?> 
 
 <fieldset id="ccm_edit_pane_nextPreviousWrap">

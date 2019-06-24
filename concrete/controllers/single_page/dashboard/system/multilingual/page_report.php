@@ -6,7 +6,7 @@ use Concrete\Core\Multilingual\Page\Section\Section as MultilingualSection;
 use Concrete\Core\Multilingual\Page\PageList as MultilingualPageList;
 use Concrete\Core\Page\Controller\DashboardSitePageController;
 
-defined('C5_EXECUTE') or die("Access Denied.");
+defined('C5_EXECUTE') or die('Access Denied.');
 
 class PageReport extends DashboardSitePageController
 {

@@ -1,4 +1,4 @@
-<?php defined('C5_EXECUTE') or die("Access Denied."); ?>
+<?php defined('C5_EXECUTE') or die('Access Denied.'); ?>
 <?php
 $ap = new Permissions($item->getGatheringObject());
 $type = GatheringItemTemplateType::getByHandle('tile');

@@ -5,7 +5,7 @@ use Concrete\Core\Export\Item\Express\Control;
 use Concrete\Core\Export\ExportableInterface;
 use Concrete\Core\Utility\Service\Xml;
 
-defined('C5_EXECUTE') or die("Access Denied.");
+defined('C5_EXECUTE') or die('Access Denied.');
 
 class TextControl extends Control
 {

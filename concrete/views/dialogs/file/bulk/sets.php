@@ -1,4 +1,4 @@
-<?php defined('C5_EXECUTE') or die("Access Denied."); ?>
+<?php defined('C5_EXECUTE') or die('Access Denied.'); ?>
 
 <form method="post" data-dialog-form="save-file-set" action="<?=$controller->action('submit')?>">
     <?php foreach ($files as $f) {

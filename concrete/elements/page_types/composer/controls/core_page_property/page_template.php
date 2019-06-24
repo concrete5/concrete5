@@ -1,5 +1,5 @@
 <?php
-defined('C5_EXECUTE') or die("Access Denied.");
+defined('C5_EXECUTE') or die('Access Denied.');
 $templates = array();
 $pagetype = $set->getPagetypeObject();
 foreach ($pagetype->getPageTypePageTemplateObjects() as $template) {

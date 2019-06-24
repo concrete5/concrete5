@@ -6,7 +6,7 @@ use Concrete\Core\Export\Item\ItemInterface;
 use Concrete\Core\Export\ExportableInterface;
 use Concrete\Core\Tree\Node\Node;
 
-defined('C5_EXECUTE') or die("Access Denied.");
+defined('C5_EXECUTE') or die('Access Denied.');
 
 class Entity implements ItemInterface
 {

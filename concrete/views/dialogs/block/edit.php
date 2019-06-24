@@ -1,6 +1,6 @@
 <?php
 
-defined('C5_EXECUTE') or die("Access Denied.");
+defined('C5_EXECUTE') or die('Access Denied.');
 
 if (!is_object($b)) {
     echo '<div class="ccm-ui"><div class="alert alert-danger">';

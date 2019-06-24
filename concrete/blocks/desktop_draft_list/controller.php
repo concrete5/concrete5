@@ -8,7 +8,7 @@ use Concrete\Core\User\UserInfo;
 use Permissions;
 use URL;
 
-defined('C5_EXECUTE') or die("Access Denied.");
+defined('C5_EXECUTE') or die('Access Denied.');
 
 class Controller extends BlockController
 {

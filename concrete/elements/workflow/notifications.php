@@ -1,4 +1,4 @@
-<?php defined('C5_EXECUTE') or die("Access Denied.");
+<?php defined('C5_EXECUTE') or die('Access Denied.');
 
 if (is_array($workflowList) && !empty($workflowList)) {
     $app = Concrete\Core\Support\Facade\Facade::getFacadeApplication();

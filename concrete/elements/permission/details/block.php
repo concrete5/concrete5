@@ -1,5 +1,5 @@
 <?php
-defined('C5_EXECUTE') or die("Access Denied.");
+defined('C5_EXECUTE') or die('Access Denied.');
 $c = $b->getBlockCollectionObject();
 $arHandle = $b->getAreaHandle();
 $pk = PermissionKey::getByID($_REQUEST['pkID']);

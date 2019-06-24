@@ -1,4 +1,4 @@
-<?php defined('C5_EXECUTE') or die("Access Denied.");
+<?php defined('C5_EXECUTE') or die('Access Denied.');
 $v = $c->getVersionObject();
 $require_version_comments = (bool) Config::get('concrete.misc.require_version_comments');
 ?>

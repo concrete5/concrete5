@@ -1,5 +1,5 @@
 <?php
-defined('C5_EXECUTE') or die("Access Denied.");
+defined('C5_EXECUTE') or die('Access Denied.');
 $wp = PageWorkflowProgress::getByID($_REQUEST['wpID']);
 if (is_object($wp)) {
     $w = $wp->getWorkflowObject();

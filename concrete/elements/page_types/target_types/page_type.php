@@ -1,5 +1,5 @@
 <?php
-defined('C5_EXECUTE') or die("Access Denied.");
+defined('C5_EXECUTE') or die('Access Denied.');
 $form = Loader::helper('form');
 $ctArray = PageType::getList(false, $sitetype);
 $pageSelector = Core::make('helper/form/page_selector');

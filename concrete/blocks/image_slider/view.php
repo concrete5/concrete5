@@ -1,4 +1,4 @@
-<?php defined('C5_EXECUTE') or die("Access Denied.");
+<?php defined('C5_EXECUTE') or die('Access Denied.');
 $navigationTypeText = (0 == $navigationType) ? 'arrows' : 'pages';
 $c = Page::getCurrentPage();
 if ($c->isEditMode()) {

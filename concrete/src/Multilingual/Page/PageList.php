@@ -6,7 +6,7 @@ use Concrete\Core\Multilingual\Page\Section\Section;
 use Database;
 use Doctrine\DBAL\Query\QueryBuilder;
 
-defined('C5_EXECUTE') or die("Access Denied.");
+defined('C5_EXECUTE') or die('Access Denied.');
 
 class PageList extends CorePageList
 {

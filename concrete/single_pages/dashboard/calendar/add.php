@@ -1,7 +1,7 @@
 <?php
 use Concrete\Core\Page\Type\Type;
 
-defined('C5_EXECUTE') or die("Access Denied.");
+defined('C5_EXECUTE') or die('Access Denied.');
 $form = Core::make('helper/form');
 $color = Core::make('helper/form/color');
 $preferences = Core::make('Concrete\Core\Calendar\Utility\Preferences');

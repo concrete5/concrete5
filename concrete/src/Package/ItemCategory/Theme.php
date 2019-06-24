@@ -4,7 +4,7 @@ namespace Concrete\Core\Package\ItemCategory;
 use Concrete\Core\Entity\Package;
 use Concrete\Controller\Element\Package\ThemeItemList;
 
-defined('C5_EXECUTE') or die("Access Denied.");
+defined('C5_EXECUTE') or die('Access Denied.');
 
 class Theme extends AbstractCategory
 {

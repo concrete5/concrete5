@@ -1,5 +1,5 @@
 <?php
-defined('C5_EXECUTE') or die("Access Denied.");
+defined('C5_EXECUTE') or die('Access Denied.');
 ?>
 <div class="ccm-page-type-composer-output-control" data-page-type-composer-output-control-id="<?=$control->getPageTypeComposerOutputControlID()?>">
 <div class="ccm-page-type-composer-item-control-bar">

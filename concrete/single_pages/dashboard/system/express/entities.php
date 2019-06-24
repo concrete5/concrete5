@@ -1,4 +1,4 @@
-<?php defined('C5_EXECUTE') or die("Access Denied."); ?>
+<?php defined('C5_EXECUTE') or die('Access Denied.'); ?>
 
 <div class="ccm-dashboard-header-buttons">
     <a href="<?=URL::to('/dashboard/system/express/entities', 'add')?>" class="btn btn-primary"><?=t("Add Object")?></a>

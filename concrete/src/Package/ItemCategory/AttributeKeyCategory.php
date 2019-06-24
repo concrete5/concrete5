@@ -4,7 +4,7 @@ namespace Concrete\Core\Package\ItemCategory;
 use Concrete\Core\Attribute\Key\Category;
 use Concrete\Core\Entity\Package;
 
-defined('C5_EXECUTE') or die("Access Denied.");
+defined('C5_EXECUTE') or die('Access Denied.');
 
 class AttributeKeyCategory extends AbstractCategory
 {

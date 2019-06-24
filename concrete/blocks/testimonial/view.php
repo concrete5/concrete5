@@ -1,4 +1,4 @@
-<?php defined('C5_EXECUTE') or die("Access Denied."); ?>
+<?php defined('C5_EXECUTE') or die('Access Denied.'); ?>
 <div class="ccm-block-testimonial-wrapper">
     <div class="ccm-block-testimonial">
         <?php if ($image): ?>

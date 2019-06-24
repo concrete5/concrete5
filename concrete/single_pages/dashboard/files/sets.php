@@ -1,4 +1,4 @@
-<?php defined('C5_EXECUTE') or die("Access Denied.");
+<?php defined('C5_EXECUTE') or die('Access Denied.');
 
 $ih = Core::make('helper/concrete/ui');
 $dh = Core::make('helper/date');

@@ -1,5 +1,5 @@
 <?php
-    defined('C5_EXECUTE') or die("Access Denied.");
+    defined('C5_EXECUTE') or die('Access Denied.');
 
     $file_set = FileSet::createAndGetSet('Starred Files', FileSet::TYPE_STARRED);
     $f = File::getByID($_POST['file-id']);

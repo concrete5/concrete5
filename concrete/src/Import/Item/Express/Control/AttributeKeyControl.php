@@ -8,7 +8,7 @@ use Concrete\Core\Entity\Express\Entity;
 use Concrete\Core\Import\Item\Express\ItemInterface;
 use Doctrine\ORM\EntityManager;
 
-defined('C5_EXECUTE') or die("Access Denied.");
+defined('C5_EXECUTE') or die('Access Denied.');
 
 class AttributeKeyControl implements ItemInterface
 {

@@ -1,4 +1,4 @@
-<?php defined('C5_EXECUTE') or die("Access Denied.");
+<?php defined('C5_EXECUTE') or die('Access Denied.');
 ?>
 <div class="ccm-gathering-twitter">
 	<img class="twitter-logo" src="https://abs.twimg.com/a/1373252541/images/resources/twitter-bird-light-bgs.png" />

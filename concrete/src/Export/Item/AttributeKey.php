@@ -7,7 +7,7 @@ use Concrete\Core\Entity\Attribute\Key\Key;
 use Concrete\Core\Export\Item\ItemInterface;
 use Concrete\Core\Export\ExportableInterface;
 
-defined('C5_EXECUTE') or die("Access Denied.");
+defined('C5_EXECUTE') or die('Access Denied.');
 
 class AttributeKey implements ItemInterface
 {

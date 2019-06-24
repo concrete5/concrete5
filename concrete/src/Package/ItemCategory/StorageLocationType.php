@@ -7,7 +7,7 @@ use Concrete\Core\Entity\Package;
 use Concrete\Controller\Element\Package\ThemeItemList;
 use Concrete\Core\File\StorageLocation\Type\Type;
 
-defined('C5_EXECUTE') or die("Access Denied.");
+defined('C5_EXECUTE') or die('Access Denied.');
 
 class StorageLocationType extends AbstractCategory
 {

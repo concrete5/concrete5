@@ -1,5 +1,5 @@
 <?php
-defined('C5_EXECUTE') or die("Access Denied.");
+defined('C5_EXECUTE') or die('Access Denied.');
 use \Concrete\Core\File\EditResponse as FileEditResponse;
 
 $u = new User();

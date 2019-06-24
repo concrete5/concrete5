@@ -1,5 +1,5 @@
 <?php
-defined('C5_EXECUTE') or die("Access Denied.");
+defined('C5_EXECUTE') or die('Access Denied.');
 
 $group = \Concrete\Core\Http\ResponseAssetGroup::get();
 $formatter = new \Concrete\Core\Asset\Output\JavascriptFormatter();

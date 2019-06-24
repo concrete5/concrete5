@@ -1,5 +1,5 @@
 <?php
-defined('C5_EXECUTE') or die("Access Denied.");
+defined('C5_EXECUTE') or die('Access Denied.');
 
 /* @var Concrete\Controller\Element\Search\Files\Header $controller */
 /* @var Concrete\Core\Form\Service\Form $form */

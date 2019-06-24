@@ -1,4 +1,4 @@
-<?php defined('C5_EXECUTE') or die("Access Denied."); ?>
+<?php defined('C5_EXECUTE') or die('Access Denied.'); ?>
 <?php $entrySelector = \Concrete\Core\Support\Facade\Application::getFacadeApplication()->make('form/express/entry_selector'); ?>
 <div class="form-group">
     <?php if ($view->supportsLabel()) {

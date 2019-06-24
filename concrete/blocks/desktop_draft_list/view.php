@@ -1,4 +1,4 @@
-<?php defined('C5_EXECUTE') or die("Access Denied."); ?>
+<?php defined('C5_EXECUTE') or die('Access Denied.'); ?>
 <div class="ccm-block-desktop-draft-list">
     <h3><?= t('Page Drafts'); ?></h3>
     <?php if (!empty($drafts)) { ?>

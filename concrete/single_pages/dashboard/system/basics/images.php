@@ -1,4 +1,4 @@
-<?php defined('C5_EXECUTE') or die("Access Denied.");?>
+<?php defined('C5_EXECUTE') or die('Access Denied.');?>
 <form method="post" class="form-stacked" action="<?=$view->action('save_interface_settings')?>" enctype="multipart/form-data" >
 
 <?=Loader::helper('validation/token')->output('save_interface_settings')?>
