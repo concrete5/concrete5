@@ -4,17 +4,17 @@ The concrete5 version currently available on GitHub already contains the require
 If you want to modify these assets you'll need to rebuild them. 
 
 ## Requirements
-
 In order to build assets for concrete5 you need:
+- [Node.js](http://nodejs.org/)
+- [npm](http://npmjs.org/) (may be bundled with Node.js)
 
-- [Node.js](https://nodejs.org/)
-- [npm](https://www.npmjs.com/) (may be bundled with Node.js)
-- [Grunt](https://gruntjs.com/) (install it globally with `npm --global install gulp`)
+Once you have node.js and npm, you have to install the [grunt](http://gruntjs.com/) client.
+You can install it globally with `npm install -g grunt-cli`. This requires that you may need to use sudo (for OS X, \*nix, BSD, …) or run your command shell as Administrator (for Windows).
+If you don't have administrator rights, you may need to install the grunt client locally to your project using `npm install grunt-cli`.
+Unfortunately, this will not put the grunt executable in your PATH, so you'll need to specify its explicit location when executing it (for OS X, \*nix, BSD `node_modules/.bin/grunt`, for Windows `node_modules\.bin\grunt`).
 
-Once you have installed the grunt client, you need to install the project dependencies. From inside the `build` directory launch the following command:
-```
-npm install
-```
+Once you have installed the grunt client, you need to install the project dependencies: simply launch the following command: `npm install` from inside the `build` directory.
+Note that you will need to install third party PHP dependencies via Composer if you have not done so already.
 
 ### Task parameters
 

@@ -3,7 +3,7 @@ dist: trusty
 language: php
 sudo: false
 cache:
-  npm: true
+  yarn: true
   directories:
     - $HOME/.composer/cache
     - build/node_modules
