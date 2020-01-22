@@ -9,7 +9,15 @@
             <unsigned/>
             <default value="0" />
         </field>
+        <field name="fFallbackID" type="integer">
+            <unsigned/>
+            <default value="0" />
+        </field>
         <field name="fOnstateID" type="integer">
+            <unsigned/>
+            <default value="0" />
+        </field>
+        <field name="fFallbackOnstateID" type="integer">
             <unsigned/>
             <default value="0" />
         </field>

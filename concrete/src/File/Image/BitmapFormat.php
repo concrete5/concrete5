@@ -39,6 +39,13 @@ class BitmapFormat
     const FORMAT_WBMP = 'wbmp';
 
     /**
+     * Bitmap image format: WEBP.
+     *
+     * @var string
+     */
+    const FORMAT_WEBP = 'webp';
+
+    /**
      * Bitmap image format: XBM.
      *
      * @var string
@@ -101,6 +108,7 @@ class BitmapFormat
                 static::FORMAT_JPEG,
                 static::FORMAT_GIF,
                 static::FORMAT_WBMP,
+                static::FORMAT_WEBP,
                 static::FORMAT_XBM,
             ];
         }
@@ -136,6 +144,7 @@ class BitmapFormat
             case static::FORMAT_JPEG:
             case static::FORMAT_GIF:
             case static::FORMAT_XBM:
+            case static::FORMAT_WEBP:
                 $result = 'image/' . $format;
                 break;
             case static::FORMAT_WBMP:
@@ -166,6 +175,9 @@ class BitmapFormat
                 break;
             case 'image/gif':
                 $result = static::FORMAT_GIF;
+                break;
+            case 'image/webp':
+                $result = static::FORMAT_WEBP;
                 break;
             case 'image/vnd.wap.wbmp':
                 $result = static::FORMAT_WBMP;
@@ -229,6 +241,9 @@ class BitmapFormat
                 break;
             case static::FORMAT_GIF:
                 $result = 'gif';
+                break;
+            case static::FORMAT_WEBP:
+                $result = 'webp';
                 break;
             case static::FORMAT_WBMP:
                 $result = 'wbmp';

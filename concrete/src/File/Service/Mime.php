@@ -49,6 +49,7 @@ class Mime
         'jpeg' => 'image/jpeg',
         'pict' => 'image/pict',
         'png' => 'image/png',
+        'webp' => 'image/webp',
         'svg' => 'image/svg+xml',
         'tiff' => 'image/tiff',
         'djvu' => 'image/vnd.djvu',

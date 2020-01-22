@@ -428,7 +428,7 @@ class Type
     public function supportsThumbnails()
     {
         $typeName = strtoupper($this->getName());
-        if ($typeName == 'PNG' || $typeName == 'JPEG'|| $typeName == 'GIF') {
+        if ($typeName == 'PNG' || $typeName == 'JPEG'|| $typeName == 'GIF'|| $typeName == 'WEBP') {
             return true;
         }
     }
@@ -442,6 +442,19 @@ class Type
     {
         $typeName = strtoupper($this->getName());
         if ($typeName == 'SVG') {
+            return true;
+        }
+    }
+
+    /**
+     * Is the file type an SVG.
+     *
+     * @return bool|null Return true if the type is an SVG, null otherwise
+     */
+    public function isWEBP()
+    {
+        $typeName = strtoupper($this->getName());
+        if ($typeName == 'WEBP') {
             return true;
         }
     }

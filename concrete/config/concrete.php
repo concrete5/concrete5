@@ -9,7 +9,7 @@ return [
     'version' => '8.6.0a3',
     'version_installed' => '8.6.0a3',
     'version_db' => '20191002000000', // the key of the latest database migration
- 
+
     /*
      * Installation status
      *
@@ -88,7 +88,7 @@ return [
          *
          * @var string semi-colon separated.
          */
-        'extensions' => '*.flv;*.jpg;*.gif;*.jpeg;*.ico;*.docx;*.xla;*.png;*.psd;*.swf;*.doc;*.txt;*.xls;*.xlsx;' .
+        'extensions' => '*.flv;*.jpg;*.gif;*.jpeg;*.ico;*.docx;*.xla;*.png;*.webp;*.psd;*.swf;*.doc;*.txt;*.xls;*.xlsx;' .
             '*.csv;*.pdf;*.tiff;*.rtf;*.m4a;*.mov;*.wmv;*.mpeg;*.mpg;*.wav;*.3gp;*.avi;*.m4v;*.mp4;*.mp3;*.qt;*.ppt;' .
             '*.pptx;*.kml;*.xml;*.svg;*.webm;*.ogg;*.ogv',
         /*

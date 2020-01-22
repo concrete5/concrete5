@@ -20,7 +20,7 @@ class Controller extends BlockController implements FileTrackableInterface
     protected $btCacheBlockOutputOnPost = true;
     protected $btCacheBlockOutputForRegisteredUsers = false;
     protected $btWrapperClass = 'ccm-ui';
-    protected $btExportFileColumns = ['fID', 'fOnstateID', 'fileLinkID'];
+    protected $btExportFileColumns = ['fID', 'fFallbackID', 'fOnstateID', 'fFallbackOnstateID', 'fileLinkID'];
     protected $btExportPageColumns = ['internalLinkCID'];
     protected $btFeatures = [
         'image',
@@ -75,19 +75,36 @@ class Controller extends BlockController implements FileTrackableInterface
 
         if (is_object($f) && is_object($foS)) {
             if (!$f->getTypeObject()->isSVG() && !$foS->getTypeObject()->isSVG()) {
-                if ($this->cropImage && ($this->maxWidth > 0 && $this->maxHeight > 0)) {
-                    $im = $this->app->make('helper/image');
+                $im = $this->app->make('helper/image');
 
-                    $fIDThumb = $im->getThumbnail($f, $this->maxWidth, $this->maxHeight, true);
+                if ($this->maxWidth > 0 || $this->maxHeight > 0) {
+                    $fIDThumb = $im->getThumbnail($f, $this->maxWidth, $this->maxHeight, $this->cropImage);
                     $imgPaths['default'] = $fIDThumb->src;
 
-                    $fOnstateThumb = $im->getThumbnail($foS, $this->maxWidth, $this->maxHeight, true);
+                    $fOnstateThumb = $im->getThumbnail($foS, $this->maxWidth, $this->maxHeight, $this->cropImage);
                     $imgPaths['hover'] = $fOnstateThumb->src;
                 } else {
                     $imgPaths['default'] = File::getRelativePathFromID($this->getFileID());
                     $imgPaths['hover'] = File::getRelativePathFromID($this->fOnstateID);
+
+                    // This is a bit of a hack. We need a non WEBP fallback for non-supporting browsers
+                    // Because of the way C5 works, when trying to resize a WEBP image, even to its normal size,
+                    // it is automatically converted to a PNG file so we can use that as a fallback.
+                    if ($f->getTypeObject()->isWEBP()) {
+                        $fIDThumb = $im->getThumbnail($f, $f->getAttribute('width'), $f->getAttribute('height'), false);
+                        $imgPaths['defaultFallback'] = $fIDThumb->src;
+                    }
+
+                    if ($foS->getTypeObject()->isWEBP()) {
+                        $fOnstateThumb = $im->getThumbnail($foS, $foS->getAttribute('width'), $foS->getAttribute('height'), false);
+                        $imgPaths['hoverFallback'] = $fOnstateThumb->src;
+                    }
                 }
             }
+        } elseif (is_object($f) && $f->getTypeObject()->isWEBP() && empty($this->maxWidth) && empty($this->maxHeight)) {
+            $im = $this->app->make('helper/image');
+            $fIDThumb = $im->getThumbnail($f, $f->getAttribute('width'), $f->getAttribute('height'), false);
+            $imgPaths['defaultFallback'] = $fIDThumb->src;
         }
 
         $this->set('imgPaths', $imgPaths);
@@ -357,7 +374,7 @@ class Controller extends BlockController implements FileTrackableInterface
         if ($svg && isset($args['cropImage'])) {
             $e->add(t('SVG images cannot be cropped.'));
         }
-        
+
         $this->app->make(DestinationPicker::class)->decode('imageLink', $this->getImageLinkPickers(), $e, t('Image Link'), $args);
 
         return $e;

@@ -8,6 +8,7 @@ use Concrete\Core\Html\Object\Picture;
 use Concrete\Core\Page\Page;
 use Concrete\Core\Page\Theme\Theme;
 use HtmlObject\Image as HtmlObjectImage;
+use Concrete\Core\Support\Facade\Application;
 
 class Image
 {
@@ -41,6 +42,8 @@ class Image
             return false;
         }
 
+        $isWebp = $f->getTypeObject()->isWEBP();
+
         if ($options === null) {
             $options = [];
         } elseif (!is_array($options)) {
@@ -54,6 +57,10 @@ class Image
             'lazyLoadJavaScript' => null
         ];
 
+        if ($isWebp) {
+            $options['usePictureTag'] = true;
+        }
+
         if ($options['usePictureTag'] !== null) {
             $this->usePictureTag = $options['usePictureTag'];
         } else {
@@ -66,10 +73,18 @@ class Image
                 $this->theme = $c->getCollectionThemeObject();
             }
             $sources = [];
-            $fallbackSrc = $f->getRelativePath();
-            if (!$fallbackSrc) {
-                $fallbackSrc = $f->getURL();
+            if ($isWebp) {
+                $app = Application::getFacadeApplication();
+                $im = $app->make('helper/image');
+                $fallback = $im->getThumbnail($f, $f->getAttribute('width'), $f->getAttribute('height'), false);
+                $fallbackSrc = $fallback->src;
+            } else {
+                $fallbackSrc = $f->getRelativePath();
+                if (!$fallbackSrc) {
+                    $fallbackSrc = $f->getURL();
+                }
             }
+
             foreach ($this->theme->getThemeResponsiveImageMap() as $thumbnail => $width) {
                 $type = Type::getByHandle($thumbnail);
                 if ($type != null) {

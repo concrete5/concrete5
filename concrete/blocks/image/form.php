@@ -119,6 +119,7 @@ $al = $app->make('helper/concrete/asset_library');
 </fieldset>
 
 <script>
+    console.log('i am here');
 $(document).ready(function() {
     $('#imageLink__which')
         .change(function() {

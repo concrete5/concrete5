@@ -45,7 +45,7 @@
     "illuminate/filesystem": "5.2.*",
     "patchwork/utf8": "~1.2.3|~1.3",
     "wikimedia/less.php": "^1.8.0",
-    "imagine/imagine": "^1.1.0",
+    "imagine/imagine": "^1.2.3",
     "natxet/cssmin": "3.*",
     "tedivm/jshrink": "1.*",
     "michelf/php-markdown": "1.*",

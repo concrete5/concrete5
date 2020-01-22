@@ -310,6 +310,7 @@ return [
         'JPEG' => ['jpg,jpeg,jpe', FileType::T_IMAGE, 'image', 'image', 'image'],
         'GIF' => ['gif', FileType::T_IMAGE, 'image', 'image', 'image'],
         'PNG' => ['png', FileType::T_IMAGE, 'image', 'image', 'image'],
+        'WebP' => ['webp', FileType::T_IMAGE, 'image', 'image', 'image'],
         'Windows Bitmap' => ['bmp', FileType::T_IMAGE, 'image'],
         'TIFF' => ['tif,tiff', FileType::T_IMAGE, 'image'],
         'HTML' => ['htm,html', FileType::T_IMAGE],
