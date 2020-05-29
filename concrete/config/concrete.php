@@ -408,6 +408,19 @@ return [
                 'configuration' => [],
             ],
         ],
+
+        'http' => [
+            /*
+             * Whitelist of loggable http content types
+             * Array keys are the internal type identifier (so that it can be disabled)
+             * Array values are regular expressions that Content-Type headers must satisfy.
+             */
+            'content_types' => [
+                'text' => '#^text/#i',
+                'json' => '#^application/json$#i',
+                'xml' => '#^application/(.*\+)?xml$#i',
+            ],
+        ],
     ],
     'jobs' => [
         'enable_scheduling' => true,

@@ -3,8 +3,10 @@ namespace Concrete\Core\Http\Client;
 
 use Concrete\Core\Logging\Channels;
 use Concrete\Core\Logging\LoggerAwareTrait;
+use Concrete\Core\Logging\HttpLoggableAwareTrait;
 use Zend\Http\Client as ZendClient;
 use Zend\Http\Request as ZendRequest;
+use Zend\Http\Response as ZendResponse;
 use Zend\Uri\Http as ZendUriHttp;
 use Concrete\Core\Logging\LoggerAwareInterface;
 use Psr\Log\LoggerInterface;
@@ -15,6 +17,7 @@ class Client extends ZendClient implements LoggerAwareInterface
 {
 
     use LoggerAwareTrait;
+    use HttpLoggableAwareTrait;
 
     /**
      * Get the currently configured logger.
@@ -52,6 +55,7 @@ class Client extends ZendClient implements LoggerAwareInterface
      */
     public function send(ZendRequest $request = null)
     {
+        /** @var ZendResponse $response */
         $response = parent::send($request);
         $logger = $this->getLogger();
         if ($logger !== null) {
@@ -68,6 +72,12 @@ class Client extends ZendClient implements LoggerAwareInterface
             } else {
                 $shortBody = mb_substr($body, 0, 197) . '...';
             }
+
+            // If the content-type is not whitelisted, don't log the body.
+            if (!$this->isResponseBodyLoggable($response)) {
+                $shortBody = ' of the content-type: ' . $this->getResponseContentType($response);
+            }
+
             $logger->debug(
                 'The response code was {statusCode} and the body was {shortBody}',
                 [
