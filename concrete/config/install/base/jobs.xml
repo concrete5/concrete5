@@ -11,6 +11,7 @@
         <job handle="update_statistics" package=""/>
         <job handle="fill_thumbnails_table" package=""/>
         <job handle="deactivate_users" package=""/>
+        <job handle="delete_invalidated_users" package=""/>
     </jobs>
     <jobsets>
         <jobset name="Default" package="">

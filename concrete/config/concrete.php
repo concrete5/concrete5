@@ -979,6 +979,14 @@ return [
             'validate_email' => false,
 
             /*
+             * Threshold in seconds to delete unvalidated user entries
+             *
+             * @see \Concrete\Job\DeleteInvalidatedUsers
+             * @var int
+             */
+            'validate_email_threshold' => 5184000, // 60 days
+
+            /*
              * Admins approve each registration
              *
              * @var bool
