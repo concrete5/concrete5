@@ -39,107 +39,115 @@ class Router implements RouterInterface
     /**
      * @param string $path
      * @param string $action
+     * @param string $name
      *
      * @since 8.5.0a2
      *
      * @return \Concrete\Core\Routing\RouteBuilder
      */
-    public function get($path, $action)
+    public function get($path, $action, $name = '')
     {
-        return $this->createRouteBuilder($path, $action, ['GET']);
+        return $this->createRouteBuilder($path, $action, ['GET'], $name);
     }
 
     /**
      * @param string $path
      * @param string $action
+     * @param string $name
      *
      * @since 8.5.0a2
      *
      * @return \Concrete\Core\Routing\RouteBuilder
      */
-    public function head($path, $action)
+    public function head($path, $action, $name = '')
     {
-        return $this->createRouteBuilder($path, $action, ['HEAD']);
+        return $this->createRouteBuilder($path, $action, ['HEAD'], $name);
     }
 
     /**
      * @param string $path
      * @param string $action
+     * @param string $name
      *
      * @since 8.5.0a2
      *
      * @return \Concrete\Core\Routing\RouteBuilder
      */
-    public function post($path, $action)
+    public function post($path, $action, $name = '')
     {
-        return $this->createRouteBuilder($path, $action, ['POST']);
+        return $this->createRouteBuilder($path, $action, ['POST'], $name);
     }
 
     /**
      * @param string $path
      * @param string $action
+     * @param string $name
      *
      * @since 8.5.0a2
      *
      * @return \Concrete\Core\Routing\RouteBuilder
      */
-    public function put($path, $action)
+    public function put($path, $action, $name = '')
     {
-        return $this->createRouteBuilder($path, $action, ['PUT']);
+        return $this->createRouteBuilder($path, $action, ['PUT'], $name);
     }
 
     /**
      * @param string $path
      * @param string $action
+     * @param string $name
      *
      * @since 8.5.0a2
      *
      * @return \Concrete\Core\Routing\RouteBuilder
      */
-    public function patch($path, $action)
+    public function patch($path, $action, $name = '')
     {
-        return $this->createRouteBuilder($path, $action, ['PATCH']);
+        return $this->createRouteBuilder($path, $action, ['PATCH'], $name);
     }
 
     /**
      * @param string $path
      * @param string $action
+     * @param string $name
      *
      * @since 8.5.0a2
      *
      * @return \Concrete\Core\Routing\RouteBuilder
      */
-    public function delete($path, $action)
+    public function delete($path, $action, $name = '')
     {
-        return $this->createRouteBuilder($path, $action, ['DELETE']);
+        return $this->createRouteBuilder($path, $action, ['DELETE'], $name);
     }
 
     /**
      * @param string $path
      * @param string $action
+     * @param string $name
      *
      * @since 8.5.0a2
      *
      * @return \Concrete\Core\Routing\RouteBuilder
      */
-    public function options($path, $action)
+    public function options($path, $action, $name = '')
     {
-        return $this->createRouteBuilder($path, $action, ['OPTIONS']);
+        return $this->createRouteBuilder($path, $action, ['OPTIONS'], $name);
     }
 
     /**
      * @param string $path
      * @param string $action
+     * @param string $name
      *
      * @since 8.5.0a2
      *
      * @return \Concrete\Core\Routing\RouteBuilder
      */
-    public function all($path, $action)
+    public function all($path, $action, $name = '')
     {
         return $this->createRouteBuilder($path, $action, [
             'GET', 'POST', 'PUT', 'PATCH', 'HEAD', 'DELETE', 'OPTIONS',
-        ]);
+        ], $name);
     }
 
     /**
@@ -318,11 +326,14 @@ class Router implements RouterInterface
         return $path === '' ? '/' : "/{$path}/";
     }
 
-    private function createRouteBuilder($path, $action, $methods)
+    private function createRouteBuilder($path, $action, $methods, $name = '')
     {
         $route = new Route($this->normalizePath($path));
         $route->setMethods($methods);
         $route->setAction($action);
+        if ($name !== '') {
+            $route->setCustomName($name);
+        }
 
         return new RouteBuilder($this, $route);
     }
