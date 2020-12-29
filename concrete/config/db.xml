@@ -3396,6 +3396,19 @@
     </index>
   </table>
 
+  <table name="UserPrivateMessagesAttachments">
+    <field name="msgID" type="integer" size="10">
+      <unsigned/>
+      <key/>
+      <default value="0"/>
+    </field>
+    <field name="fID" type="integer" size="10">
+      <unsigned/>
+      <key/>
+      <default value="0"/>
+    </field>
+  </table>
+
   <table name="UserPrivateMessagesTo">
     <field name="msgID" type="integer" size="10">
       <unsigned/>

@@ -7,6 +7,7 @@
         <job handle="generate_sitemap" package=""/>
         <job handle="process_email" package=""/>
         <job handle="remove_old_page_versions" package=""/>
+        <job handle="remove_old_file_attachments" package=""/>
         <job handle="update_gatherings" package=""/>
         <job handle="update_statistics" package=""/>
         <job handle="fill_thumbnails_table" package=""/>

@@ -1,31 +1,33 @@
-<?php defined('C5_EXECUTE') or die('Access Denied.');
+<?php
+
+defined('C5_EXECUTE') or die('Access Denied.');
+
 use Concrete\Core\Form\Service\Form;
 use Concrete\Core\Support\Facade\Application;
+use Concrete\Core\Utility\Service\Identifier;
 use HtmlObject\Element;
 
 $app = Application::getFacadeApplication();
 /** @var Form $form */
 $form = $app->make(Form::class);
+/** @var Identifier $idHelper */
+$idHelper = $app->make(Identifier::class);
+?>
 
-// Checkbox list.
-if ($akSelectAllowMultipleValues && !$akSelectAllowOtherValues) {
-    $options = $controller->getOptions();
-    foreach ($options as $opt) {
-        ?>
+<?php if ($akSelectAllowMultipleValues && !$akSelectAllowOtherValues) { ?>
+    <?php $options = $controller->getOptions(); ?>
+    <?php foreach ($options as $opt) { ?>
 
         <div class="form-check">
-            <?=$form->checkbox($view->field('atSelectOptionValue') . '[]', $opt->getSelectAttributeOptionID(), in_array($opt->getSelectAttributeOptionID(), $selectedOptionIDs));
-        ?>
-            <label class="form-check-label">
-                <?=$opt->getSelectAttributeOptionDisplayValue()?>
-            </label>
+            <?php $id = "ccm-chechkbox-" . $idHelper->getString(12); ?>
+            <?php echo $form->checkbox($view->field('atSelectOptionValue') . '[]', $opt->getSelectAttributeOptionID(), in_array($opt->getSelectAttributeOptionID(), $selectedOptionIDs), ["class" => "form-check-input", "id" => $id]); ?>
+            <?php echo $form->label($id, $opt->getSelectAttributeOptionDisplayValue(), ["class" => "form-check-label"]) ?>
         </div>
 
+    <?php } ?>
+<?php } ?>
 
-    <?php
-    }
-}
-
+<?php
 // Select Menu.
 if (!$akSelectAllowMultipleValues && !$akSelectAllowOtherValues && !$akDisplayMultipleValuesOnSelect) {
     if (!$akHideNoneOption) {
@@ -34,39 +36,29 @@ if (!$akSelectAllowMultipleValues && !$akSelectAllowOtherValues && !$akDisplayMu
     foreach ($controller->getOptions() as $option) {
         $options[$option->getSelectAttributeOptionID()] = $option->getSelectAttributeOptionDisplayValue();
     }
-    ?>
-    <?=$form->select($view->field('atSelectOptionValue'), $options, empty($selectedOptionIDs) ? '' : $selectedOptionIDs[0]);
-    ?>
 
+    echo $form->select($view->field('atSelectOptionValue'), $options, empty($selectedOptionIDs) ? '' : $selectedOptionIDs[0]);
+}
+?>
+<?php if (!$akSelectAllowMultipleValues && !$akSelectAllowOtherValues && $akDisplayMultipleValuesOnSelect) { ?>
+    <?php if (!$akHideNoneOption) { ?>
+        <div class="form-check">
+            <?php $id = "ccm-chechkbox-" . $idHelper->getString(12); ?>
+            <?php echo $form->radio($view->field('atSelectOptionValue'), '', empty($selectedOptionIDs) ? '' : $selectedOptionIDs[0], ["class" => "form-check-input", "id" => $id]) ?>
+            <?php echo $form->label($id, t('None'), ["class" => "form-check-label"]) ?>
+        </div>
+    <?php } ?>
+
+    <?php foreach ($controller->getOptions() as $opt) { ?>
+        <div class="form-check">
+            <?php $id = "ccm-chechkbox-" . $idHelper->getString(12); ?>
+            <?php echo $form->radio($view->field('atSelectOptionValue'), $opt->getSelectAttributeOptionID(), in_array($opt->getSelectAttributeOptionID(), $selectedOptionIDs), ["class" => "form-check-input", "id" => $id]); ?>
+            <?php echo $form->label($id, $opt->getSelectAttributeOptionDisplayValue(), ["class" => "form-check-label"]) ?>
+        </div>
+    <?php } ?>
+<?php } ?>
 
 <?php
-}
-
-// Radio list.
-if (!$akSelectAllowMultipleValues && !$akSelectAllowOtherValues && $akDisplayMultipleValuesOnSelect) {
-    if (!$akHideNoneOption) {
-        ?>
-        <div class="radio"><label>
-                <?= $form->radio($view->field('atSelectOptionValue'), '', empty($selectedOptionIDs) ? '' : $selectedOptionIDs[0]) ?>
-                <?= t('None') ?>
-            </label>
-        </div>
-
-        <?php
-    }
-
-    foreach ($controller->getOptions() as $opt) { ?>
-
-        <div class="radio"><label>
-                <?=$form->radio($view->field('atSelectOptionValue'), $opt->getSelectAttributeOptionID(), in_array($opt->getSelectAttributeOptionID(), $selectedOptionIDs));
-                ?>
-                <?=$opt->getSelectAttributeOptionDisplayValue()?>
-            </label>
-        </div>
-
-    <?php }
-}
-
 // Select2
 if ($akSelectAllowOtherValues) {
     $options = [];
@@ -80,7 +72,7 @@ if ($akSelectAllowOtherValues) {
         }
     }
 
-    echo (string) new Element(
+    echo (string)new Element(
         'span',
         $form->selectMultiple($view->field('atSelectOptionValue'), $options, count($selectedOptionIDs) ? $selectedOptionIDs : '', ['data-select-and-add' => $akID]),
         [
@@ -89,9 +81,10 @@ if ($akSelectAllowOtherValues) {
         ]
     );
     ?>
+
     <script type="text/javascript">
-        $(function() {
-            $('select[data-select-and-add="<?=$akID?>"]').selectpicker(
+        $(function () {
+            $('select[data-select-and-add="<?php echo $akID?>"]').selectpicker(
                 {
                     liveSearch: true,
                     allowAdd: true,
@@ -99,20 +92,20 @@ if ($akSelectAllowOtherValues) {
             ).ajaxSelectPicker(
                 {
                     ajax: {
-                        url: "<?=$view->action('load_autocomplete_values'); ?>",
+                        url: "<?php echo $view->action('load_autocomplete_values'); ?>",
                         data: {
                             term: "{{{q}}}"
                         },
                     },
                     locale: {
-                        currentlySelected: "<?=t('Currently Selected'); ?>",
-                        emptyTitle: "<?=t('Select and begin typing'); ?>",
-                        errorText: "<?=t('Unable to retrieve results'); ?>",
-                        searchPlaceholder: "<?=t('Search...'); ?>",
-                        statusInitialized: "<?=t('Start typing a search query'); ?>",
-                        statusNoResults: "<?=t('No Results'); ?>",
-                        statusSearching: "<?=t('Searching...'); ?>",
-                        statusTooShort: "<?=t('Please enter more characters'); ?>",
+                        currentlySelected: "<?php echo t('Currently Selected'); ?>",
+                        emptyTitle: "<?php echo t('Select and begin typing'); ?>",
+                        errorText: "<?php echo t('Unable to retrieve results'); ?>",
+                        searchPlaceholder: "<?php echo t('Search...'); ?>",
+                        statusInitialized: "<?php echo t('Start typing a search query'); ?>",
+                        statusNoResults: "<?php echo t('No Results'); ?>",
+                        statusSearching: "<?php echo t('Searching...'); ?>",
+                        statusTooShort: "<?php echo t('Please enter more characters'); ?>",
                     },
                     preserveSelected: true,
                     clearOnEmpty: false,
@@ -121,6 +114,4 @@ if ($akSelectAllowOtherValues) {
             );
         });
     </script>
-
-<?php
-}
+<?php }

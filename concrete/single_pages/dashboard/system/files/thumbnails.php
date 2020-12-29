@@ -82,6 +82,12 @@ if (isset($type)) {
                 </label>
             </div>
             <div class="form-check">
+                <?= $form->checkbox('ftAvailableInBlocks', '1', $type->isAvailableInBlocks()) ?>
+                <label for="ftAvailableInBlocks" class="form-check-label">
+                    <?= t('Available in Blocks') ?>
+                </label>
+            </div>
+            <div class="form-check">
                 <?= $form->checkbox('ftKeepAnimations', '1', $type->isKeepAnimations()) ?>
                 <label for="ftKeepAnimations" class="form-check-label">
                     <?= t('Create animated thumbnails for animated images') ?>

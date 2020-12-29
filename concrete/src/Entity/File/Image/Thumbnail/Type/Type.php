@@ -155,6 +155,15 @@ class Type
     protected $ftSaveAreaBackgroundColor = '';
 
     /**
+     * Should we display the thumbnail type on blocks?
+     *
+     * @ORM\Column(type="boolean")
+     *
+     * @var bool
+     */
+    protected $ftAvailableInBlocks = true;
+
+    /**
      * Initialize the instance.
      */
     public function __construct()
@@ -341,6 +350,28 @@ class Type
     public function setIsUpscalingEnabled($value)
     {
         $this->ftUpscalingEnabled = (bool) $value;
+    }
+
+    /**
+     * Use in blocks?
+     *
+     * @return bool
+     */
+    public function isAvailableInBlocks(): bool
+    {
+        return $this->ftAvailableInBlocks;
+    }
+
+    /**
+     * Use in blocks?
+     *
+     * @param bool $ftAvailableInBlocks
+     * @return Type
+     */
+    public function setAvailableInBlocks(bool $ftAvailableInBlocks): Type
+    {
+        $this->ftAvailableInBlocks = $ftAvailableInBlocks;
+        return $this;
     }
 
     /**
