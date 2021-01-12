@@ -388,17 +388,6 @@
     </index>
   </table>
 
-  <table name="BannedWords">
-    <field name="bwID" type="integer" size="10">
-      <unsigned/>
-      <autoincrement/>
-      <key/>
-    </field>
-    <field name="bannedWord" type="text">
-      <notnull/>
-    </field>
-  </table>
-
   <table name="Gatherings">
     <field name="gaID" type="integer" size="10">
       <unsigned/>

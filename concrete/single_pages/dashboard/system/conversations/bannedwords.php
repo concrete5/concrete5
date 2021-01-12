@@ -1,6 +1,10 @@
 <?php
-$form = Core::make('helper/form');
-$token = Core::make('token');
+defined('C5_EXECUTE') or die("Access Denied.");
+
+/** @var \Concrete\Core\Form\Service\Form $form */
+/** @var \Concrete\Core\Validation\CSRF\Token $token */
+/** @var \Concrete\Core\View\View $view */
+$bannedListEnabled = $bannedListEnabled ?? false;
 ?>
 <form action="<?=$view->action('save')?>" method='POST'>
 	<?php

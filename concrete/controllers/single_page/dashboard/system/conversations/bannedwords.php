@@ -1,61 +1,61 @@
 <?php
 namespace Concrete\Controller\SinglePage\Dashboard\System\Conversations;
 
+use Concrete\Core\Entity\Validation\BannedWord;
 use Concrete\Core\Page\Controller\DashboardPageController;
-use Config;
-use Loader;
-use Concrete\Core\Validation\BannedWord\BannedWordList;
-use Concrete\Core\Validation\BannedWord\BannedWord;
 
 class BannedWords extends DashboardPageController
 {
-    public $bannedWords;
-
     public function view()
     {
+        $config = $this->app->make('config');
         $this->set('bannedWords', $this->getBannedWords());
-        $this->set('bannedListEnabled', Config::get('conversations.banned_words'));
+        $this->set('bannedListEnabled', $config->get('conversations.banned_words'));
     }
 
-    public function getBannedWords()
+    public function getBannedWords(): array
     {
-        if ($this->bannedWords) {
-            return $this->bannedWords;
-        }
-        $bw = new BannedWordList();
-        $this->bannedWords = $bw->get();
-
-        return $this->bannedWords;
-    }
-
-    public function success()
-    {
-        $this->view();
-        $this->set('message', t('Updated Banned Words.'));
+        $repository = $this->entityManager->getRepository(BannedWord::class);
+        return $repository->findAll();
     }
 
     public function save()
     {
-        $this->view();
-
-        /** @var Token $token */
-        $token = \Core::make('token');
-
-        if (!$token->validate("update_banned_words")) {
+        if (!$this->token->validate("update_banned_words")) {
             $this->error->add('Invalid Token.');
 
-            return;
+            return false;
         }
 
-        $db = Loader::db();
-        $db->execute("TRUNCATE TABLE BannedWords");
-        $db->execute("ALTER TABLE BannedWords AUTO_INCREMENT=0");
-        if (count($this->post('banned_word'))) {
-            foreach ($this->post('banned_word') as $bw) {
-                BannedWord::add($bw);
+        $words = (array) $this->post('banned_word');
+        $words = array_map('strtolower', $words);
+        $repository = $this->entityManager->getRepository(BannedWord::class);
+        $objects = $repository->findAll();
+
+        /** @var BannedWord $object */
+        foreach ($objects as $object) {
+            $word = $object->getWord();
+            if (!in_array($word, $words, true)) {
+                $this->entityManager->remove($object);
             }
         }
-        Config::save('conversations.banned_words', (bool) $this->post('banned_list_enabled'));
-        $this->redirect('dashboard/system/conversations/bannedwords/success');
+
+        foreach ($words as $word) {
+            $object = $repository->findOneBy(['bannedWord' => $word]);
+            if (!is_object($object)) {
+                $instance = new BannedWord();
+                $instance->setWord($word);
+                $this->entityManager->persist($instance);
+            }
+        }
+
+        $this->entityManager->flush();
+
+        $config = $this->app->make('config');
+        $config->save('conversations.banned_words', (bool) $this->post('banned_list_enabled'));
+
+        $this->flash('success', t('Updated Banned Words.'));
+
+        return $this->buildRedirect([$this->getPageObject(), 'view']);
     }
 }

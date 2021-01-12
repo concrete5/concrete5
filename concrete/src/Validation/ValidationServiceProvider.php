@@ -2,11 +2,15 @@
 
 namespace Concrete\Core\Validation;
 
+use Concrete\Core\Application\Application;
 use Concrete\Core\Captcha\CaptchaInterface;
 use Concrete\Core\Captcha\CaptchaWithPictureInterface;
 use Concrete\Core\Captcha\Library as CaptchaLibrary;
 use Concrete\Core\Captcha\NoCaptchaController;
+use Concrete\Core\Entity\Validation\BannedWord;
 use Concrete\Core\Foundation\Service\Provider as ServiceProvider;
+use Concrete\Core\Validation\BannedWord\Service;
+use Doctrine\ORM\EntityManagerInterface;
 
 class ValidationServiceProvider extends ServiceProvider
 {
@@ -21,7 +25,6 @@ class ValidationServiceProvider extends ServiceProvider
             'helper/validation/ip' => '\Concrete\Core\Permission\IPService',
             'helper/validation/numbers' => '\Concrete\Core\Utility\Service\Validation\Numbers',
             'helper/validation/strings' => '\Concrete\Core\Utility\Service\Validation\Strings',
-            'helper/validation/banned_words' => '\Concrete\Core\Validation\BannedWord\Service',
             'helper/security' => '\Concrete\Core\Validation\SanitizeService',
             'ip' => '\Concrete\Core\Permission\IPService',
         ];
@@ -59,5 +62,20 @@ class ValidationServiceProvider extends ServiceProvider
 
             return $controller;
         });
+
+        $app->singleton(Service::class, function ($app) {
+            $service = new Service();
+            $words = [];
+            $em = $app->make(EntityManagerInterface::class);
+            $repository = $em->getRepository(BannedWord::class);
+            $wordEntities = $repository->findAll();
+            foreach ($wordEntities as $entity) {
+                $words[] = $entity->getWord();
+            }
+            $service->setBannedWords($words);
+
+            return $service;
+        });
+        $app->alias(Service::class, 'helper/validation/banned_words');
     }
 }
