@@ -151,6 +151,7 @@ class Thumbnails extends DashboardPageController
                 $type->setSizingMode($sizingMode);
             }
             $type->setIsUpscalingEnabled($post->get('ftUpscalingEnabled') ? true : false);
+            $type->setAvailableInBlocks($post->get('ftAvailableInBlocks') ? true : false);
             $type->setKeepAnimations($post->get('ftKeepAnimations'));
             $type->setSaveAreaBackgroundColor($post->get('ftSaveAreaBackgroundColor'));
             if ($ftTypeID === 'new' || !$type->isRequired()) {

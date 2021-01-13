@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<schema xmlns="http://www.concrete5.org/doctrine-xml/0.5" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.concrete5.org/doctrine-xml/0.5 http://concrete5.github.io/doctrine-xml/doctrine-xml-0.5.xsd">
+<schema xmlns="http://www.concrete5.org/doctrine-xml/0.5" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.concrete5.org/doctrine-xml/0.5 http://concrete5.github.io/doctrine-xml/doctrine-xml-0.5.xsd">
     <table name="btContentImage">
         <field name="bID" type="integer">
             <unsigned/>
@@ -7,41 +8,59 @@
         </field>
         <field name="fID" type="integer">
             <unsigned/>
-            <default value="0" />
+            <default value="0"/>
         </field>
         <field name="fOnstateID" type="integer">
             <unsigned/>
-            <default value="0" />
+            <default value="0"/>
         </field>
         <field name="cropImage" type="integer">
             <unsigned/>
-            <default value="0" />
+            <default value="0"/>
         </field>
         <field name="maxWidth" type="integer">
             <unsigned/>
-            <default value="0" />
+            <default value="0"/>
         </field>
         <field name="maxHeight" type="integer">
             <unsigned/>
-            <default value="0" />
+            <default value="0"/>
         </field>
-        <field name="externalLink" type="string" size="255" />
+        <field name="externalLink" type="string" size="255"/>
         <field name="internalLinkCID" type="integer">
             <unsigned/>
-            <default value="0" />
+            <default value="0"/>
         </field>
         <field name="fileLinkID" type="integer">
             <unsigned/>
-            <default value="0" />
+            <default value="0"/>
         </field>
         <field name="openLinkInNewWindow" type="boolean">
             <default value="0"/>
             <notnull/>
         </field>
-        <field name="altText" type="string" size="255" />
-        <field name="title" type="string" size="255" />
+        <field name="openLinkInLightbox" type="boolean">
+            <default value="0"/>
+            <notnull/>
+        </field>
+        <field name="altText" type="string" size="255"/>
+        <field name="title" type="string" size="255"/>
         <index name="fID">
             <col>fID</col>
         </index>
+    </table>
+    <table name="btContentImageThumbnails">
+        <field name="id" type="integer">
+            <unsigned/>
+            <autoincrement/>
+            <key/>
+        </field>
+        <field name="bID" type="integer">
+            <unsigned/>
+        </field>
+        <field name="breakpointHandle" type="string" size="255"/>
+        <field name="thumbnailTypeId" type="integer">
+            <unsigned/>
+        </field>
     </table>
 </schema>
