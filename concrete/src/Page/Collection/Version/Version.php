@@ -940,6 +940,10 @@ class Version extends ConcreteObject implements PermissionObjectInterface, Attri
         $q = "delete from CollectionVersions where cID = '{$cID}' and cvID='{$cvID}'";
         $db->executeQuery($q);
         $this->refreshCache();
+        
+        $ev = new Event($c);
+        $ev->setCollectionVersionObject($this);
+        $app->make('director')->dispatch('on_page_version_delete', $ev);
     }
 
     /**
