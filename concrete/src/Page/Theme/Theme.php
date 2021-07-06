@@ -1,6 +1,7 @@
 <?php
 namespace Concrete\Core\Page\Theme;
 
+use Concrete\Core\Support\Facade\Application;
 use Concrete\Core\Cache\Level\RequestCache;
 use Concrete\Core\Entity\Site\Site;
 use Concrete\Core\Http\ResponseAssetGroup;
@@ -564,36 +565,59 @@ class Theme extends ConcreteObject
      */
     protected static function populateThemeQuery($where, $args)
     {
-        $db = Loader::db();
-        $row = $db->GetRow(
-            "select pThemeID, pThemeHandle, pThemeDescription, pkgID, pThemeName, pThemeHasCustomClass from PageThemes where {$where}",
-            $args
-        );
-        $env = Environment::get();
+        $app = Application::getFacadeApplication();
+        $cache = $app->make(RequestCache::class);
         $pl = null;
-        if (!empty($row)) {
-            $standardClass = '\\Concrete\Core\\Page\\Theme\\Theme';
-            if ($row['pThemeHasCustomClass']) {
-                $pkgHandle = PackageList::getHandle($row['pkgID']);
-                $r = $env->getRecord(DIRNAME_THEMES.'/'.$row['pThemeHandle'].'/'.FILENAME_THEMES_CLASS, $pkgHandle);
-                $prefix = $r->override ? true : $pkgHandle;
-                $customClass = core_class(
-                    'Theme\\'.
-                    Loader::helper('text')->camelcase($row['pThemeHandle']).
-                    '\\PageTheme',
-                $prefix);
-                try {
-                    $pl = Core::make($customClass);
-                } catch (\ReflectionException $e) {
+
+        $cacheSuffix =  $where;
+        if (\is_array($args) === true) {
+            $cacheSuffix .= json_encode($args);
+        } else {
+            $cacheSuffix .= $args;
+        }
+
+        $key = 'theme_populate_query/' . md5($cacheSuffix);
+
+        $item = $cache->getItem($key);
+
+        if ($item->isMiss() === true) {
+            $db = Loader::db();
+            $row = $db->GetRow(
+                "select pThemeID, pThemeHandle, pThemeDescription, pkgID, pThemeName, pThemeHasCustomClass from PageThemes where {$where}",
+                $args
+            );
+            $env = Environment::get();
+
+            if (!empty($row)) {
+                $item->lock();
+                $standardClass = '\\Concrete\Core\\Page\\Theme\\Theme';
+                if ($row['pThemeHasCustomClass']) {
+                    $pkgHandle = PackageList::getHandle($row['pkgID']);
+                    $r = $env->getRecord(DIRNAME_THEMES.'/'.$row['pThemeHandle'].'/'.FILENAME_THEMES_CLASS, $pkgHandle);
+                    $prefix = $r->override ? true : $pkgHandle;
+                    $customClass = core_class(
+                        'Theme\\'.
+                        Loader::helper('text')->camelcase($row['pThemeHandle']).
+                        '\\PageTheme',
+                    $prefix);
+                    try {
+                        $pl = Core::make($customClass);
+                    } catch (\ReflectionException $e) {
+                        $pl = Core::make($standardClass);
+                    }
+                } else {
                     $pl = Core::make($standardClass);
                 }
-            } else {
-                $pl = Core::make($standardClass);
+                $pl->setPropertiesFromArray($row);
+                $pkgHandle = $pl->getPackageHandle();
+                $pl->pThemeDirectory = $env->getPath(DIRNAME_THEMES.'/'.$row['pThemeHandle'], $pkgHandle);
+                $pl->pThemeURL = $env->getURL(DIRNAME_THEMES.'/'.$row['pThemeHandle'], $pkgHandle);
+                
+                $item->set($pl);
+                $cache->save($item);
             }
-            $pl->setPropertiesFromArray($row);
-            $pkgHandle = $pl->getPackageHandle();
-            $pl->pThemeDirectory = $env->getPath(DIRNAME_THEMES.'/'.$row['pThemeHandle'], $pkgHandle);
-            $pl->pThemeURL = $env->getURL(DIRNAME_THEMES.'/'.$row['pThemeHandle'], $pkgHandle);
+        } else {
+            $pl = $item->get();
         }
 
         return $pl;
