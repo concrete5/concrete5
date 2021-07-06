@@ -46,10 +46,13 @@ if (
 ) {
     $gf = $pt->getThemeGridFrameworkObject();
     echo $gf->getPageThemeGridFrameworkContainerStartHTML();
-    echo $gf->getPageThemeGridFrameworkRowStartHTML();
-    printf('<div class="%s">', $gf->getPageThemeGridFrameworkColumnClassesForSpan(
-        min($a->getAreaGridMaximumColumns(), $gf->getPageThemeGridFrameworkNumColumns())
-    ));
+    /* No need to add a row if the block is of the 'core_area_layout' type as the area block will add its own row */
+    if ($b->getBlockTypeHandle() != BLOCK_HANDLE_LAYOUT_PROXY) {
+        echo $gf->getPageThemeGridFrameworkRowStartHTML();
+        printf('<div class="%s">', $gf->getPageThemeGridFrameworkColumnClassesForSpan(
+            min($a->getAreaGridMaximumColumns(), $gf->getPageThemeGridFrameworkNumColumns())
+        ));
+    }
 }
 
 if ($showMenu) {
