@@ -54,6 +54,7 @@ if (is_object($c) && $c->isEditMode() && $controller->isBlockEmpty()) {
                 $buttonClasses = 'ccm-block-page-list-read-more';
                 $entryClasses = 'ccm-block-page-list-page-entry';
                 $title = $page->getCollectionName();
+                $target = '_self';
                 if ($page->getCollectionPointerExternalLink() != '') {
                     $url = $page->getCollectionPointerExternalLink();
                     if ($page->openCollectionPointerExternalLinkInNewWindow()) {
@@ -63,7 +64,6 @@ if (is_object($c) && $c->isEditMode() && $controller->isBlockEmpty()) {
                     $url = $page->getCollectionLink();
                     $target = $page->getAttribute('nav_target');
                 }
-                $target = empty($target) ? '_self' : $target;
                 $description = $page->getCollectionDescription();
                 $description = $controller->truncateSummaries ? $th->wordSafeShortText($description, $controller->truncateChars) : $description;
                 $thumbnail = false;
