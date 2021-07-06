@@ -4,6 +4,8 @@ namespace Concrete\Controller\Panel\Detail\Page;
 
 use Concrete\Controller\Backend\UserInterface\Page as BackendInterfacePageController;
 use Concrete\Core\Form\Service\Widget\DateTime;
+use Concrete\Core\Page\Collection\Version\Event;
+use Concrete\Core\Page\Collection\Version\Version;
 use Concrete\Core\Page\EditResponse as PageEditResponse;
 use Concrete\Core\Page\Template as PageTemplate;
 use Concrete\Core\Page\Type\Type as PageType;
@@ -91,6 +93,15 @@ class Composer extends BackendInterfacePageController
                     $dateTime = new DateTime();
                     $publishDateTime = $dateTime->translate('cvPublishDate');
                     $publishEndDateTime = $dateTime->translate('cvPublishEndDate');
+
+                    if ($this->request->request->get('unapproveOtherVersions')) {
+                        $v = Version::get($c, 'RECENT');
+                        $v->deny();
+
+                        $ev = new Event($c);
+                        $ev->setCollectionVersionObject($v);
+                        $this->app->make('director')->dispatch('on_page_version_submit_deny', $ev);
+                    }
                 }
 
                 $pagetype->publish($c, $publishDateTime, $publishEndDateTime);

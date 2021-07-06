@@ -4,6 +4,7 @@ $datetime = Loader::helper('form/date_time');
 
 $publishDate = '';
 $publishEndDate = '';
+$isDraft = null;
 if (isset($page) && is_object($page)) {
     $v = CollectionVersion::get($page, "RECENT");
     $publishDate = $v->getPublishDate();
@@ -18,6 +19,8 @@ if (isset($page) && is_object($page)) {
         </div>
         <?php
     }
+
+    $isDraft = $page->isPageDraft();
 }
 
 $dateService = Core::make('date');
@@ -39,6 +42,13 @@ $timezone = $dateService->getTimezoneDisplayName($timezone);
 <div style="text-align: right">
     <span class="form-text help-block"><?=t('Time Zone: %s', $timezone)?></span>
 </div>
+
+<?php if (!$isDraft) { ?>
+<div class="form-group form-group-last form-check" style="padding-left: 1.25rem">
+    <input type="checkbox" class="form-check-input" name="unapproveOtherVersions" id="unapproveOtherVersions" value="1">
+    <label class="form-check-label" for="unapproveOtherVersions"><?= t('Unapprove other versions') ?></label>
+</div>
+<?php } ?>
 
 <div class="dialog-buttons">
     <button type="submit" name="action" value="schedule"

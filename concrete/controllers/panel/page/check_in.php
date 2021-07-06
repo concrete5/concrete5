@@ -3,6 +3,7 @@ namespace Concrete\Controller\Panel\Page;
 
 use Concrete\Controller\Backend\UserInterface\Page as BackendInterfacePageController;
 use Concrete\Core\Form\Service\Widget\DateTime;
+use Concrete\Core\Page\Collection\Version\Event;
 use Concrete\Core\Support\Facade\Config;
 use Concrete\Core\User\User;
 use Permissions;
@@ -106,6 +107,14 @@ class CheckIn extends BackendInterfacePageController
                         $publishDateTime = $dateTime->translate('cvPublishDate');
                         $publishEndDateTime = $dateTime->translate('cvPublishEndDate');
                         $pkr->scheduleVersion($publishDateTime, $publishEndDateTime);
+
+                        if ($this->request->request->get('unapproveOtherVersions')) {
+                            $v->deny();
+
+                            $ev = new Event($c);
+                            $ev->setCollectionVersionObject($v);
+                            $this->app->make('director')->dispatch('on_page_version_submit_deny', $ev);
+                        }
                     }
 
                     if ($c->isPageDraft()) {
