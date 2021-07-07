@@ -1169,12 +1169,48 @@ return [
             ],
         ],
         'misc' => [
-            /*
-             * Defence Click Jacking.
+            /**
+             * Content Security Policy (CSP) HTTP response header
+             * A modern way to protect from cross-site scripting attacks.
+             * Highly recommended to set a rule for your website.
+             *
+             * @see https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy
+             *
+             * @var bool|string|string[] CSP policies. Allowed to set multiple policies by an array.
+             */
+            'content_security_policy' => false,
+
+            /**
+             * Strict-Transport-Security (HSTS) HTTP response header
+             * This header informs the browser to load always https:// pages.
+             * You can set a policy if your site always accessible on SSL.
+             *
+             * @see https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security
+             *
+             * @var bool|string
+             */
+            'strict_transport_security' => false,
+
+            /**
+             * X-Frame-Options HTTP response header
+             * Protect from click-jacking attacks by blocking your site embedded into other sites.
+             *
+             * @see https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options
              *
              * @var bool|string DENY, SAMEORIGIN, ALLOW-FROM uri
              */
             'x_frame_options' => 'SAMEORIGIN',
+
+            /**
+             * X-XSS-Protection HTTP response header
+             * An old way to protect from cross-site scripting attacks.
+             * Please use CSP instead if you don't want to support legacy browsers.
+             *
+             * @see https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection
+             *
+             * @var bool|string XSS filtering policy
+             */
+            'x_xss_protection' => false,
         ],
     ],
 

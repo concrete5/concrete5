@@ -8,6 +8,8 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
 /**
+ * @deprecated Use SecurityHeaderMiddleware instead
+ *
  * Middleware for applying frame options
  * @package Concrete\Core\Http\Middleware
  */
