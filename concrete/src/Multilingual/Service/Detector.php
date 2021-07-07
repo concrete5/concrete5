@@ -180,6 +180,12 @@ class Detector implements ApplicationAwareInterface, SiteAggregateInterface
             }
         }
         if (!$locale) {
+            $localeEntity = $this->getSite()->getDefaultLocale();
+            if ($localeEntity) {
+                $locale = $localeEntity->getLocale();
+            }
+        }
+        if (!$locale) {
             $locale = $this->app->make('config')->get('concrete.locale');
         }
         $loc->setContextLocale(Localization::CONTEXT_SITE, $locale);
