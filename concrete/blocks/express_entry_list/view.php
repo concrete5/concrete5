@@ -14,16 +14,20 @@ if ($entity) { ?>
     <?php if ($enableSearch) { ?>
         <form method="get" action="<?=$c->getCollectionLink()?>">
             <?php if ($enableKeywordSearch) { ?>
-                <div class="form-inline">
-                    <div class="form-group">
+                <div class="row row-cols-auto align-items-center">
+                    <div class="form-group col-auto">
                         <?=$form->label('keywords', t('Keyword Search'))?>
                         <?=$form->text('keywords')?>
                     </div>
-                    <button type="submit" class="btn btn-primary" name="search" value="search"><?=t('Search')?></button>
-                    <?php if (count($tableSearchProperties)) { ?>
-                        <a href="#" data-express-entry-list-advanced-search="<?=$bID?>"
-                        class="ccm-block-express-entry-list-advanced-search"><?=t('Advanced Search')?></a>
-                    <?php } ?>
+                    <div class="col-auto">
+                        <button type="submit" class="btn btn-primary" name="search" value="search"><?=t('Search')?></button>
+                    </div>
+                    <div class="col-auto">
+                        <?php if (count($tableSearchProperties)) { ?>
+                            <a href="#" data-express-entry-list-advanced-search="<?=$bID?>"
+                               class="ccm-block-express-entry-list-advanced-search"><?=t('Advanced Search')?></a>
+                        <?php } ?>
+                    </div>
                 </div>
                 <br>
             <?php } ?>
@@ -64,19 +68,23 @@ if ($entity) { ?>
 
         <?php if ($enableItemsPerPageSelection) { ?>
             <div class="mt-3 mb-3">
-                <div class="form-inline">
-                <b><?=t('Items Per Page')?></b>
-                <select class="ml-3 form-control" data-express-entry-list-select-items-per-page="<?=$bID?>">
-                    <?php foreach($itemsPerPageOptions as $itemsPerPage) {
-                        $url = \League\Url\Url::createFromServer($_SERVER);
-                        $query = $url->getQuery();
-                        $query->modify(['itemsPerPage' => $itemsPerPage]);
-                        $url->setQuery($query);
-                        $itemsPerPageOptionUrl = (string) $url;
-                        ?>
-                        <option data-location="<?=$itemsPerPageOptionUrl?>" <?php if ($itemsPerPage == $itemsPerPageSelected) { ?>selected<?php } ?>><?=$itemsPerPage?></option>
-                    <?php } ?>
-                </select>
+                <div class="row row-cols-auto align-items-center">
+                    <div class="col-auto">
+                        <b><?=t('Items Per Page')?></b>
+                    </div>
+                    <div class="col-auto">
+                        <select class="ms-3 form-select" data-express-entry-list-select-items-per-page="<?=$bID?>">
+                            <?php foreach($itemsPerPageOptions as $itemsPerPage) {
+                                $url = \League\Url\Url::createFromServer($_SERVER);
+                                $query = $url->getQuery();
+                                $query->modify(['itemsPerPage' => $itemsPerPage]);
+                                $url->setQuery($query);
+                                $itemsPerPageOptionUrl = (string) $url;
+                                ?>
+                                <option data-location="<?=$itemsPerPageOptionUrl?>" <?php if ($itemsPerPage == $itemsPerPageSelected) { ?>selected<?php } ?>><?=$itemsPerPage?></option>
+                            <?php } ?>
+                        </select>
+                    </div>
                 </div>
             </div>
         <?php } ?>

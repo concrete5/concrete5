@@ -20,7 +20,7 @@ use Concrete\Core\Area\Layout\Preset\UserPreset;
                     <span>
                         <?php echo $preset->getAreaLayoutPresetName() ?>
 
-                        <a href="javascript:void(0)" class="float-right icon-link delete-area-layout-preset"
+                        <a href="javascript:void(0)" class="float-end icon-link delete-area-layout-preset"
                            data-action="delete-area-layout-preset">
                             <i class="fa fa-trash-alt"></i>
                         </a>

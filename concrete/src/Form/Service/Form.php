@@ -159,7 +159,7 @@ class Form
             $result .= ' for="' . $forFieldID . '"';
         }
 
-        return $result . $this->serializeMiscFields('', $miscFields, []) . '>' . $innerHTML . '</label>';
+        return $result . $this->serializeMiscFields('form-label', $miscFields, []) . '>' . $innerHTML . '</label>';
     }
 
     /**
@@ -478,7 +478,7 @@ class Form
             $this->selectIndex++;
         }
         $nameAndID = $this->buildNameAndID($key, $miscFields);
-        $str = '<select' . $nameAndID . $this->serializeMiscFields('form-control', $miscFields) . '>';
+        $str = '<select' . $nameAndID . $this->serializeMiscFields('form-select', $miscFields) . '>';
         foreach ($optionValues as $k => $text) {
             if (is_array($text)) {
                 $str .= '<optgroup label="' . h($k) . '">';

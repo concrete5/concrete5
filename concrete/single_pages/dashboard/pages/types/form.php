@@ -20,8 +20,8 @@ $resolverManager = app(ResolverManagerInterface::class);
 			</div>
 		</form>
 		<div class="dialog-buttons">
-			<button class="btn btn-secondary float-left" onclick="jQuery.fn.dialog.closeTop()"><?= t('Cancel') ?></button>
-			<button class="btn btn-primary float-right" onclick="$('#ccm-page-type-composer-add-set form').submit()"><?= t('Add Set') ?></button>
+			<button class="btn btn-secondary float-start" onclick="jQuery.fn.dialog.closeTop()"><?= t('Cancel') ?></button>
+			<button class="btn btn-primary float-end" onclick="$('#ccm-page-type-composer-add-set form').submit()"><?= t('Add Set') ?></button>
 		</div>
 	</div>
 </div>
@@ -61,8 +61,8 @@ $resolverManager = app(ResolverManagerInterface::class);
 						<?php $token->output('delete_set') ?>
 					</form>
 					<div class="dialog-buttons">
-						<button class="btn btn-secondary float-left" onclick="jQuery.fn.dialog.closeTop()"><?= t('Cancel') ?></button>
-						<button class="btn btn-danger float-right" onclick="$('form[data-delete-set-form=<?= $set->getPageTypeComposerFormLayoutSetID() ?>]').submit()"><?=t('Delete Set') ?></button>
+						<button class="btn btn-secondary float-start" onclick="jQuery.fn.dialog.closeTop()"><?= t('Cancel') ?></button>
+						<button class="btn btn-danger float-end" onclick="$('form[data-delete-set-form=<?= $set->getPageTypeComposerFormLayoutSetID() ?>]').submit()"><?=t('Delete Set') ?></button>
 					</div>
 				</div>
 			</div>
@@ -79,8 +79,8 @@ $resolverManager = app(ResolverManagerInterface::class);
                             <?= $form->textarea('ptComposerFormLayoutSetDescription', $set->getPageTypeComposerFormLayoutSetDescription()) ?>
                         </div>
                         <div class="dialog-buttons">
-                            <button class="btn btn-secondary float-left" onclick="jQuery.fn.dialog.closeTop();"><?= t('Cancel') ?></button>
-                            <button class="btn btn-primary float-right" onclick="$('form[data-edit-set-form=<?= $set->getPageTypeComposerFormLayoutSetID() ?>]').submit();"><?=t('Update Set') ?></button>
+                            <button class="btn btn-secondary float-start" onclick="jQuery.fn.dialog.closeTop();"><?= t('Cancel') ?></button>
+                            <button class="btn btn-primary float-end" onclick="$('form[data-edit-set-form=<?= $set->getPageTypeComposerFormLayoutSetID() ?>]').submit();"><?=t('Update Set') ?></button>
                         </div>
                         <?php $token->output('update_set') ?>
 					</form>

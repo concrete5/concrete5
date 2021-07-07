@@ -40,7 +40,7 @@ $readonlyAttr = $disableForm ? ['readonly' => 'readonly'] : [];
 
     <div class="ccm-dashboard-form-actions-wrapper">
         <div class="ccm-dashboard-form-actions">
-            <button type="submit" class="btn btn-danger float-right"><?= t('Reset all passwords') ?></button>
+            <button type="submit" class="btn btn-danger float-end"><?= t('Reset all passwords') ?></button>
         </div>
     </div>
 

@@ -68,11 +68,11 @@ $token = $app->make(Token::class);
     <div class="ccm-dashboard-form-actions-wrapper">
         <div class="ccm-dashboard-form-actions">
             <a href="<?php echo (string)Url::to('/dashboard/system/express/entities/associations', 'view_association_details', $association->getID()) ?>"
-               class="float-left btn btn-secondary" type="button">
+               class="float-start btn btn-secondary" type="button">
                 <?php echo t('Back to Association') ?>
             </a>
 
-            <button class="float-right btn btn-primary" type="submit">
+            <button class="float-end btn btn-primary" type="submit">
                 <?php echo t('Save') ?>
             </button>
         </div>

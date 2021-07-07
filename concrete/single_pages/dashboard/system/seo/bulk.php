@@ -33,9 +33,7 @@ if (!empty($pages)) {
     <div class="form-group">
         <?= $form->label('keywords', t('Search')) ?>
         <div class="input-group">
-            <div class="input-group-prepend">
-                <span class="input-group-text"><i class="fa fa-search"></i></span>
-            </div>
+            <span class="input-group-text"><i class="fa fa-search"></i></span>
             <?= $form->search('keywords', $searchRequest['keywords'], ['placeholder' => t('Keywords')]) ?>
         </div>
     </div>
@@ -71,7 +69,7 @@ if (!empty($pages)) {
     </div>
     <div class="ccm-dashboard-form-actions-wrapper">
         <div class="ccm-dashboard-form-actions">
-            <button type="submit" class="btn btn-primary float-right"><?= t('Search') ?></button>
+            <button type="submit" class="btn btn-primary float-end"><?= t('Search') ?></button>
         </div>
     </div>
 </form>
@@ -108,13 +106,13 @@ if(empty($pages)) {
                             </div>
                             <div class="col-md-8">
                                 <div class="form-group">
-                                    <span class="float-right"><?= t('Characters: %s', '{{ page.input.metaTitle.length }}') ?></span>
+                                    <span class="float-end"><?= t('Characters: %s', '{{ page.input.metaTitle.length }}') ?></span>
                                     <?= $form->label('', t('Meta Title'), ['v-bind:for' => "'meta_title' + pageIndex"]) ?>
                                     <?= $form->text('', '', ['v-model.trim' => 'page.input.metaTitle', 'v-bind:placeholder' => 'page.autoTitle', 'v-bind:id' => "'meta_title' + pageIndex"]) ?>
                                     <span v-bind:class="{invisible: page.input.metaTitle !== ''}" class="help-inline"><?= t('Default value. Click to edit.') ?></span>
                                 </div>
                                 <div class="form-group">
-                                    <span class="float-right"><?= t('Characters: %s', '{{ page.input.metaDescription.length }}') ?></span>
+                                    <span class="float-end"><?= t('Characters: %s', '{{ page.input.metaDescription.length }}') ?></span>
                                     <?= $form->label('', t('Meta Description'), ['v-bind:for' => "'meta_description' + pageIndex"]) ?>
                                     <?= $form->textarea('meta_description', '', ['v-model.trim' => 'page.input.metaDescription', 'v-bind:placeholder' => 'page.autoDescription', 'v-bind:id' => "'meta_description' + pageIndex"]) ?>
                                     <span v-bind:class="{invisible: page.input.metaDescription !== ''}" class="help-inline"><?= t('Default value. Click to edit.') ?></span>
@@ -125,7 +123,7 @@ if(empty($pages)) {
                                     <a class="help-inline url-path" v-bind:href="page.url" target="_blank" v-html="page.htmlPath"></a>
                                 </div>
                                 <div class="form-group form-group-last submit-changes">
-                                    <a class="btn float-right" v-on:click.prevent="savePage(page)" v-bind:class="getSavePageClass(page)"><?= t('Save') ?></a>
+                                    <a class="btn float-end" v-on:click.prevent="savePage(page)" v-bind:class="getSavePageClass(page)"><?= t('Save') ?></a>
                                 </div>
                             </div>
                         </div>
@@ -145,7 +143,7 @@ if(empty($pages)) {
     ?>
     <div class="ccm-dashboard-form-actions-wrapper">
         <div class="ccm-dashboard-form-actions">
-            <button class="btn float-right" v-on:click.prevent="saveAll" v-bind:class="saveAllClass"><?= t('Save All') ?></button>
+            <button class="btn float-end" v-on:click.prevent="saveAll" v-bind:class="saveAllClass"><?= t('Save All') ?></button>
         </div>
     </div>
 </div>

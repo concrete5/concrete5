@@ -8,7 +8,7 @@
     </div>
 
     <div class="form-group" v-show="boardID > 0">
-        <label class="control-label"><?=t('Board Instance')?></label>
+        <label class="control-label form-label"><?=t('Board Instance')?></label>
         <div class="form-check">
             <input class="form-check-input" v-model="createNewInstance" type="radio"
                    name="newInstance" id="createNewInstance" value="1">
@@ -26,8 +26,8 @@
     </div>
 
     <div class="form-group" v-show="createNewInstance == 0 && instances.length > 0">
-        <label class="control-label"><?=t('Select Instance')?></label>
-        <select class="form-control" name="boardInstanceID">
+        <label class="control-label form-label"><?=t('Select Instance')?></label>
+        <select class="form-select" name="boardInstanceID">
             <option value=""><?=t('(Choose Instance)')?></option>
             <option v-for="instance in instances" :selected="boardInstanceID == instance.boardInstanceID"
                     :key="instance.boardInstanceID" :value="instance.boardInstanceID">

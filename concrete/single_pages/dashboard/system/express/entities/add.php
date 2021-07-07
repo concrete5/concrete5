@@ -25,7 +25,7 @@ $form = $app->make(Form::class);
     <div class="form-group <?php if ($error->containsField('name')) { ?>has-error<?php } ?>">
         <?php echo $form->label('name', t('Name')); ?>
 
-        <div class="float-right">
+        <div class="float-end">
             <span class="text-muted small">
                 <?php echo t('Required') ?>
             </span>
@@ -41,7 +41,7 @@ $form = $app->make(Form::class);
     <div class="form-group <?php if ($error->containsField('handle')) { ?>has-error<?php } ?>">
         <?php echo $form->label('handle', t('Handle')); ?>
 
-        <div class="float-right">
+        <div class="float-end">
             <span class="text-muted small">
                 <?php echo t('Required') ?>
             </span>
@@ -75,7 +75,7 @@ $form = $app->make(Form::class);
     <div class="panel panel-default">
         <div class="panel-heading" role="tab" id="headingThree">
             <h4 class="panel-title">
-                <a class="collapsed" role="button" data-toggle="collapse" href="#advanced">
+                <a class="collapsed" role="button" data-bs-toggle="collapse" href="#advanced">
                     <?php echo t('Advanced Options') ?>
                 </a>
             </h4>
@@ -121,11 +121,11 @@ $form = $app->make(Form::class);
     <div class="ccm-dashboard-form-actions-wrapper">
         <div class="ccm-dashboard-form-actions">
             <a href="<?php echo (string)Url::to('/dashboard/system/express/entities') ?>"
-               class="float-left btn btn-secondary" type="button">
+               class="float-start btn btn-secondary" type="button">
                 <?php echo t('Back to List') ?>
             </a>
 
-            <button class="float-right btn btn-primary" type="submit">
+            <button class="float-end btn btn-primary" type="submit">
                 <?php echo t('Save') ?>
             </button>
         </div>

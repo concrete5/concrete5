@@ -302,7 +302,7 @@ var ccmi18n_tourist = ' . json_encode([
                 '<div class="ccm-help-tour-position">',
                 t(/*i18n: %1$s and %2$s are two numbers*/'%1$s of %2$s', '<span class="ccm-help-tour-position-index"></span>', '<span class="ccm-help-tour-position-count"></span>'),
                 '</div>',
-                '<div class="popover-navigation text-right">',
+                '<div class="popover-navigation text-end">',
                 '<div class="btn-group">',
                 '<a href="#" data-role="prev">&lt; ' . t('Prev') . '</a>',
                 '<a href="#" data-role="next">' . t('Next') . ' &gt;</a>',

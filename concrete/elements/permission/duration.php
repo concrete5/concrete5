@@ -186,11 +186,9 @@ for ($i = 0; $i < 7; ++$i) {
                     ['style' => 'width: 60px']
                 ); ?>
 
-                <div class="input-group-append">
-                    <span class="input-group-text">
+                <span class="input-group-text">
                     <?php echo t('days') ?>
-                        </span>
-                </div>
+                </span>
             </div>
         </div>
     </div>
@@ -232,11 +230,9 @@ for ($i = 0; $i < 7; ++$i) {
                 );
                 ?>
 
-                <div class="input-group-append">
-                    <span class="input-group-text">
-                        <?php echo t('months') ?>
-                    </span>
-                </div>
+                <span class="input-group-text">
+                    <?php echo t('months') ?>
+                </span>
             </div>
         </div>
     </div>
@@ -271,11 +267,9 @@ for ($i = 0; $i < 7; ++$i) {
                     ['style' => 'width: 60px']
                 ) ?>
 
-                <div class="input-group-append">
-                    <span class="input-group-text">
-                        <?php echo t('weeks') ?>
-                    </span>
-                </div>
+                <span class="input-group-text">
+                    <?php echo t('weeks') ?>
+                </span>
             </div>
         </div>
     </div>
@@ -298,10 +292,8 @@ for ($i = 0; $i < 7; ++$i) {
             </div>
 
             <div class="input-group">
-                <div class="input-group-prepend">
-                    <div class="form-check">
-                        <?php echo $form->radio('pdEndRepeatDate', 'date', $pdEndRepeatDate) ?>
-                    </div>
+                <div class="form-check">
+                    <?php echo $form->radio('pdEndRepeatDate', 'date', $pdEndRepeatDate) ?>
                 </div>
 
                 <?php echo $dt->date('pdEndRepeatDateSpecific', $pdEndRepeatDateSpecific) ?>

@@ -37,11 +37,9 @@ $form = $app->make(Form::class);
             <div class="input-group">
                 <?php echo $form->select("ccm-permission-key-selector", $permissionKeyList); ?>
 
-                <div class="input-group-append">
-                    <a href="javascript:void(0);" class="btn btn-secondary" id="ccm-add-access-entity">
-                        <?php echo t('Add Access Entity') ?>
-                    </a>
-                </div>
+                <a href="javascript:void(0);" class="btn btn-secondary" id="ccm-add-access-entity">
+                    <?php echo t('Add Access Entity') ?>
+                </a>
             </div>
         </div>
 
@@ -93,14 +91,14 @@ $form = $app->make(Form::class);
                 <tr>
                     <td class="ccm-permission-grid-name">
                         <div class="ccm-permission-access-line">
-                            <span class="badge badge-secondary">
+                            <span class="badge bg-secondary">
                                 <%=accessEntityItem.label%>
                             </span>
                         </div>
                     </td>
 
                     <td>
-                        <a class="btn btn-danger btn-sm float-right ccm-remove-access-entity" href="javascript:void(0);"
+                        <a class="btn btn-danger btn-sm float-end ccm-remove-access-entity" href="javascript:void(0);"
                            data-access-entity-id="<%=accessEntityItem.accessEntityId%>"
                            data-access-id="<%=accessEntityItem.accessId%>">
                             <i class="fa fa-trash"></i> <?php echo t("Remove Access Entity"); ?>

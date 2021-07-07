@@ -9,7 +9,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
             <?php if ($allowEditName) {
             ?>
             <div class="form-group">
-                <label class="control-label" for="cName"><?=t('Name')?></label>
+                <label class="form-label" for="cName"><?=t('Name')?></label>
                 <div>
                     <input type="text" class="form-control" name="cName" id="cName" value="<?php echo h($c->getCollectionName())?>">
                 </div>
@@ -20,7 +20,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
             <?php if ($allowEditPaths && !$c->isGeneratedCollection()) {
             ?>
             <div class="form-group">
-                <label class="control-label launch-tooltip" data-placement="bottom" title="<?=t('This page must always be available from at least one URL. This is that URL.')?>" class="launch-tooltip"><?=t('URL Slug')?></label>
+                <label class="form-label launch-tooltip" data-bs-placement="bottom" title="<?=t('This page must always be available from at least one URL. This is that URL.')?>" class="launch-tooltip"><?=t('URL Slug')?></label>
                 <div>
                     <input type="text" class="form-control" name="cHandle" value="<?php echo $c->getCollectionHandle()?>" id="cHandle"><input type="hidden" name="oldCHandle" id="oldCHandle" value="<?php echo $c->getCollectionHandle()?>">
                 </div>
@@ -46,7 +46,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
         } ?>
         </form>
         <div class="ccm-panel-detail-form-actions dialog-buttons d-flex justify-content-end">
-            <button class="btn btn-secondary mr-2" type="button" data-dialog-action="cancel" data-panel-detail-action="cancel"><?=t('Cancel')?></button>
+            <button class="btn btn-secondary me-2" type="button" data-dialog-action="cancel" data-panel-detail-action="cancel"><?=t('Cancel')?></button>
             <button class="btn btn-success" type="button" data-dialog-action="submit" data-panel-detail-action="submit"><?=t('Save Changes')?></button>
         </div>
     </section>

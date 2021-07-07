@@ -14,8 +14,8 @@ defined('C5_EXECUTE') or die('Access Denied.');
  */
 if (isset($set_connection_collation_warnings)) {
     ?>
-    <div class="alert alert-warning alert-dismissable">
-        <button type="button" class="close" data-dismiss="alert">&times;</button>
+    <div class="alert alert-warning alert-dismissible">
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
         <?= t('The character set and the collation of the connection and have been updated, but the following warnings occurred while updating the database tables'); ?>
         <ul>
         <?php
@@ -58,7 +58,7 @@ if (isset($set_connection_collation_warnings)) {
 
     <div class="ccm-dashboard-form-actions-wrapper">
         <div class="ccm-dashboard-form-actions">
-            <button class="float-right btn btn-primary" type="submit" ><?= t('Save'); ?></button>
+            <button class="float-end btn btn-primary" type="submit" ><?= t('Save'); ?></button>
         </div>
     </div>
 

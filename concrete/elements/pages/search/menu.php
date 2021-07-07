@@ -7,13 +7,13 @@ defined('C5_EXECUTE') or die("Access Denied.");
 /** @var $urlHelper Url */
 ?>
 
-<div class="form-inline">
+<div class="row row-cols-auto g-0 align-items-center">
     <?php if (!empty($itemsPerPageOptions)): ?>
         <div class="btn-group">
             <button
                     type="button"
                     class="btn btn-secondary p-2 dropdown-toggle"
-                    data-toggle="dropdown"
+                    data-bs-toggle="dropdown"
                     aria-haspopup="true"
                     aria-expanded="false">
 

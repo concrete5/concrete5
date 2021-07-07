@@ -25,18 +25,18 @@ $packageUrl = rtrim(Config::get('concrete.i18n.community_translation.package_url
         <div class="panel panel-default">
             <div class="panel-heading" role="tab" id="ccm-package-<?= $handle ?>-header">
                 <h4 class="panel-title">
-                    <a role="button" data-toggle="collapse" data-parent="#ccm-packages" href="#ccm-package-<?= $handle ?>-body" aria-expanded="true" aria-controls="ccm-package-<?= $handle ?>-body">
+                    <a role="button" data-bs-toggle="collapse" data-parent="#ccm-packages" href="#ccm-package-<?= $handle ?>-body" aria-expanded="true" aria-controls="ccm-package-<?= $handle ?>-body">
                         <?= $name ?>
                         <?php
                         if (!empty($details->getInstalledOutdated())) {
-                            ?><span class="badge badge-light badge-pill border"><?= count($details->getInstalledOutdated()) ?></span><?php
+                            ?><span class="badge bg-light rounded-pill border"><?= count($details->getInstalledOutdated()) ?></span><?php
                         }
                         ?>
                     </a>
                     <?php
                     if ($packageUrl) {
                         ?>
-                        <a target="_blank" class="float-right" href="<?= h("{$packageUrl}/{$handle}") ?>"><span class="label label-default" style="font-weight: normal"><?= t('more details') ?></span></a>
+                        <a target="_blank" class="float-end" href="<?= h("{$packageUrl}/{$handle}") ?>"><span class="label label-default" style="font-weight: normal"><?= t('more details') ?></span></a>
                         <?php
                     }
                     ?>
@@ -105,7 +105,7 @@ if ($someUpdateAvailable) {
         <?php $token->output('update-all-outdated') ?>
         <div class="ccm-dashboard-form-actions-wrapper">
             <div class="ccm-dashboard-form-actions">
-                <input type="submit" class="btn btn-primary float-right" value="<?= h(t('Update all outdated languages')) ?>" />
+                <input type="submit" class="btn btn-primary float-end" value="<?= h(t('Update all outdated languages')) ?>" />
             </div>
         </div>
     </form>

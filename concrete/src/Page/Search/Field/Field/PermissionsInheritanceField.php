@@ -35,7 +35,7 @@ class PermissionsInheritanceField extends AbstractField
 
     public function renderSearchField()
     {
-        $html = '<select name="cInheritPermissionsFrom" class="form-control">';
+        $html = '<select name="cInheritPermissionsFrom" class="form-select">';
         $html .= '<option value="PARENT"' . ($this->data['cInheritPermissionsFrom'] == 'PARENT' ? ' selected' : '') . '>' . t('Parent Page') . '</option>';
         $html .= '<option value="TEMPLATE"' . ($this->data['cInheritPermissionsFrom'] == 'TEMPLATE' ? ' selected' : '') . '>' . t('Page Type') . '</option>';
         $html .= '<option value="OVERRIDE"' . ($this->data['cInheritPermissionsFrom'] == 'OVERRIDE' ? ' selected' : '') . '>' . t('Itself (Override)') . '</option>';

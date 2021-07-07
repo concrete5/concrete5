@@ -13,9 +13,7 @@
             <label for="name" ><?php echo t('Name'); ?></label>
             <div class="input-group">
                 <?php echo $form->text('name', array('autofocus' => 'autofocus', 'autocomplete' => 'off', 'required' => 'required')); ?>
-                <div class="input-group-prepend">
-                    <span class="input-group-text"><i class="fa fa-asterisk"></i></span>
-                </div>
+                <span class="input-group-text"><i class="fa fa-asterisk"></i></span>
             </div>
         </div>
 
@@ -23,9 +21,7 @@
             <label for="redirect"><?php echo t('Redirect'); ?></label>
             <div class="input-group">
                 <?php echo $form->url('redirect', array('autocomplete' => 'off')); ?>
-                <div class="input-group-prepend">
-                    <span class="input-group-text"><i class="fa fa-asterisk"></i></span>
-                </div>
+                <span class="input-group-text"><i class="fa fa-asterisk"></i></span>
             </div>
         </div>
 
@@ -34,8 +30,8 @@
 
     <div class="ccm-dashboard-form-actions-wrapper">
         <div class="ccm-dashboard-form-actions">
-            <a href="<?=URL::to('/dashboard/system/api/settings')?>" class="float-left btn btn-secondary"><?=t('Cancel')?></a>
-            <button class="float-right btn btn-primary" type="submit" ><?=t('Add Integration')?></button>
+            <a href="<?=URL::to('/dashboard/system/api/settings')?>" class="float-start btn btn-secondary"><?=t('Cancel')?></a>
+            <button class="float-end btn btn-primary" type="submit" ><?=t('Add Integration')?></button>
         </div>
     </div>
 

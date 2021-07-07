@@ -16,7 +16,7 @@ if ($total > 1) {
         <li class="breadcrumb-item <?=$isActive ? 'active' : ''?>">
             <?php if (count($item->getChildren())) { ?>
                 <span class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown">
                     <?= $item->getName() ?>
                     <span class="caret"></span>
                 </a>

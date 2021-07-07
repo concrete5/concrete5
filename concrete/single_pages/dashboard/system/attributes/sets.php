@@ -180,7 +180,7 @@ $txt = Loader::helper('text'); ?>
 
             <div class="ccm-dashboard-form-actions-wrapper">
                 <div class="ccm-dashboard-form-actions">
-                    <?php echo $form->submit('submit', t('Add Set'), ['class' => 'btn btn-primary float-right'])?>
+                    <?php echo $form->submit('submit', t('Add Set'), ['class' => 'btn btn-primary float-end'])?>
                 </div>
             </div>
         </fieldset>

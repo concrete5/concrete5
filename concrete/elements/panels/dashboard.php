@@ -35,11 +35,9 @@ if ($section) {
     <div class="ccm-dashboard-panel-top" v-show="currentMode !== 'section'">
         <menu class="ccm-panel-dashboard-favorites-menu" v-show="currentMode != 'section'">
             <li :class="{active: currentMode === 'dashboard'}"><a @click="currentMode = 'dashboard'" href="#"
-                                                                id="panel-dashboard-dashboard"
-                                                                data-toggle="pill"><?= t('Dashboard') ?></a></li>
+                                                                id="panel-dashboard-dashboard"><?= t('Dashboard') ?></a></li>
             <li :class="{active: currentMode === 'favorites'}"><a @click="currentMode = 'favorites'" href="#"
-                                                                id="panel-dashboard-favorites"
-                                                                data-toggle="pill"><?= t('Favorites') ?></a></li>
+                                                                id="panel-dashboard-favorites"><?= t('Favorites') ?></a></li>
         </menu>
 
         <div v-show="currentMode === 'dashboard'">

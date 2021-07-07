@@ -20,7 +20,7 @@ $resolverManager = app(ResolverManagerInterface::class);
     <legend>
         <?= t('Users/Groups Receiving Notifications') ?>
         <a
-            class="dialog-launch btn btn-sm btn-secondary float-right"
+            class="dialog-launch btn btn-sm btn-secondary float-end"
             href="<?= h($resolverManager->resolve(['/ccm/system/permissions/access/entity']) . '?disableDuration=1&accessType=' . Key::ACCESS_TYPE_INCLUDE . '&pkCategoryHandle=notification') ?>"
             dialog-width="500"
             dialog-height="350"
@@ -41,11 +41,9 @@ $resolverManager = app(ResolverManagerInterface::class);
                 <?= $form->label('', $entity->getAccessEntityLabel()) ?>
                 <div class="input-group">
                     <?= $form->select('subscriptionsIncluded[' . $entity->getAccessEntityID() . ']', ['A' => t('All Subscriptions'), 'C' => t('Custom')], $assignment->getSubscriptionsAllowedPermission()) ?>
-                    <div class="input-group-append">
-                        <a class="btn btn-outline-danger" href="javascript:void(0)" onclick="ccm_deleteAccessEntityAssignment(<?= $entity->getAccessEntityID() ?>)">
-                            <i class="fas fa-trash"></i>
-                        </a>
-                    </div>
+                    <a class="btn btn-outline-danger" href="javascript:void(0)" onclick="ccm_deleteAccessEntityAssignment(<?= $entity->getAccessEntityID() ?>)">
+                        <i class="fas fa-trash"></i>
+                    </a>
                 </div>
                 <div class="subscription-list<?= $assignment->getSubscriptionsAllowedPermission() != 'C' ? ' d-none"' : '' ?>">
                     <?php
@@ -80,7 +78,7 @@ $resolverManager = app(ResolverManagerInterface::class);
             dialog-width="500"
             dialog-height="350"
             dialog-title="<?= t('Add Access Entity') ?>"
-            class="dialog-launch btn btn-sm btn-secondary float-right"
+            class="dialog-launch btn btn-sm btn-secondary float-end"
         ><?= t('Add') ?></a>
     </legend>
     <?php
@@ -97,11 +95,9 @@ $resolverManager = app(ResolverManagerInterface::class);
                 <?= $form->label('', $entity->getAccessEntityLabel()) ?>
                 <div class="input-group">
                     <?= $form->select('subscriptionsExcluded[' . $entity->getAccessEntityID() . ']', ['N' => t('No Subscriptions'), 'C' => t('Custom')], $assignment->getSubscriptionsAllowedPermission()) ?>
-                    <div class="input-group-append">
-                        <a class="btn btn-outline-danger" href="javascript:void(0)" onclick="ccm_deleteAccessEntityAssignment(<?= $entity->getAccessEntityID() ?>)">
-                            <i class="fas fa-trash"></i>
-                        </a>
-                    </div>
+                    <a class="btn btn-outline-danger" href="javascript:void(0)" onclick="ccm_deleteAccessEntityAssignment(<?= $entity->getAccessEntityID() ?>)">
+                        <i class="fas fa-trash"></i>
+                    </a>
                     
                 </div>
                 <div class="subscription-list<?= $assignment->getSubscriptionsAllowedPermission() != 'C' ? ' d-none"' : '' ?>">

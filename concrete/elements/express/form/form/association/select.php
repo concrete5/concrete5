@@ -2,7 +2,7 @@
 
 <div class="form-group">
     <?php if ($view->supportsLabel()) { ?>
-        <label class="control-label" for="<?=$view->getControlID()?>"><?=$label?></label>
+        <label class="control-label form-label" for="<?=$view->getControlID()?>"><?=$label?></label>
     <?php } ?>
     <?php if ($view->isRequired()) { ?>
         <span class="text-muted small"><?=t('Required')?></span>
@@ -12,7 +12,7 @@
     if (!empty($allEntries)) {
         $selectedEntry = $selectedEntries[0];
         ?>
-        <select class="form-control" id="<?=$view->getControlID()?>" name="express_association_<?=$control->getId()?>">
+        <select class="form-select" id="<?=$view->getControlID()?>" name="express_association_<?=$control->getId()?>">
             <option value=""><?=t('** Choose %s', $control->getControlLabel())?></option>
             <?php
             foreach ($allEntries as $entry) {

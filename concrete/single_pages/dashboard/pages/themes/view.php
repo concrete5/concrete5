@@ -49,7 +49,7 @@ if (isset($activate_confirm)) {
                         </div>
                     </td>
                     <td width="100%" style="vertical-align:middle;">
-                        <div class="btn-group float-right"><?php
+                        <div class="btn-group float-end"><?php
                             if ($siteThemeID == $t->getThemeID()) {
                                 echo $ih->buttonJs(t('Activate'), "alert('" . $alreadyActiveMessage . "')", 'left', 'btn-secondary ccm-button-inactive', ['disabled' => 'disabled']);
                             } else {
@@ -72,16 +72,24 @@ if (isset($activate_confirm)) {
         <?php $token->output('save_mobile_theme'); ?>
         <h3><?=t('Mobile Theme'); ?></h3>
         <p><?=t('To use a separate theme for mobile browsers, specify it below.'); ?></p>
-        <div class="form-group form-inline">
-            <?=$form->label('MOBILE_THEME_ID', t('Mobile Theme'), ['class' => 'mr-3']); ?>
+        <div class="form-group row row-cols-auto g-0 align-items-center">
+            <div class="col-auto">
+                <?=$form->label('MOBILE_THEME_ID', t('Mobile Theme'), ['class' => 'me-3']); ?>
+            </div>
+
             <?php
                 $themes[0] = t('** Same as website (default)');
                 foreach ($tArray as $pt) {
                     $themes[$pt->getThemeID()] = $pt->getThemeDisplayName();
                 }
             ?>
-            <?=$form->select('MOBILE_THEME_ID', $themes, Config::get('concrete.misc.mobile_theme_id'), ['class' => 'mr-1']); ?>
-            <button class="btn btn-secondary" type="submit"><?=t('Save'); ?></button>
+            <div class="col-auto">
+                <?=$form->select('MOBILE_THEME_ID', $themes, Config::get('concrete.misc.mobile_theme_id'), ['class' => 'me-1']); ?>
+            </div>
+
+            <div class="col-auto">
+                <button class="btn btn-secondary" type="submit"><?=t('Save'); ?></button>
+            </div>
         </div>
     </form>
     <br/><br/>

@@ -25,15 +25,13 @@ defined('C5_EXECUTE') or die('Access denied.');
 
 <div class="form-group">
     <?= $form->label('apikey', t('App ID')) ?>
-    <?= $form->text('apikey', $apikey, ['autocomplete' => 'off', 'class' => 'text-monospace', 'spellcheck' => 'false']) ?>
+    <?= $form->text('apikey', $apikey, ['autocomplete' => 'off', 'class' => 'font-monospace', 'spellcheck' => 'false']) ?>
 </div>
 <div class="form-group">
     <?= $form->label('apisecret', t('App Secret')) ?>
     <div class="input-group">
-        <?= $form->password('apisecret', $apisecret, ['autocomplete' => 'off', 'class' => 'text-monospace', 'spellcheck' => 'false']) ?>
-        <div class="input-group-append">
-            <button id="showsecret" class="btn btn-outline-secondary" title="<?= t('Show secret key') ?>"><i class="far fa-eye"></i></button>
-        </div>
+        <?= $form->password('apisecret', $apisecret, ['autocomplete' => 'off', 'class' => 'font-monospace', 'spellcheck' => 'false']) ?>
+        <button id="showsecret" class="btn btn-outline-secondary" title="<?= t('Show secret key') ?>"><i class="far fa-eye"></i></button>
     </div>
 </div>
 

@@ -8,7 +8,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
     <?php if (Config::get('concrete.user.registration.validate_email') == true && $canActivateUser) : ?>
         <?php if ($user->isValidated() < 1) : ?>
             <div class="btn-group">
-                <button type="button" class="btn dropdown-toggle btn-secondary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="bstb-undefined">
+                <button type="button" class="btn dropdown-toggle btn-secondary" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="bstb-undefined">
                     <span><?php echo t('Validate') ?></span> <span class="caret"></span>
                 </button>
                 <div class="dropdown-menu">
@@ -30,12 +30,12 @@ defined('C5_EXECUTE') or die("Access Denied.");
     <?php if ($canActivateUser) { ?>
         <?php if ($user->isActive()) { ?>
             <?php if (!in_array("deactivate", $workflowRequestActions)) { ?>
-                <button type="button" name="task" data-toggle="modal" data-target="#deactivate-user-modal"
+                <button type="button" name="task" data-bs-toggle="modal" data-bs-target="#deactivate-user-modal"
                         class="btn btn-secondary"><?= t('Deactivate User') ?></button>
             <?php } ?>
         <?php } else { ?>
             <?php if ((!in_array("activate", $workflowRequestActions) && !in_array("register_activate", $workflowRequestActions))) { ?>
-                <button type="button" name="task" data-toggle="modal" data-target="#activate-user-modal"
+                <button type="button" name="task" data-bs-toggle="modal" data-bs-target="#activate-user-modal"
                         class="btn btn-secondary"><?= t('Activate User') ?></button>
             <?php } ?>
         <?php } ?>
@@ -43,15 +43,15 @@ defined('C5_EXECUTE') or die("Access Denied.");
 
     <?php if ($canSignInAsUser) {
         ?>
-        <button type="button" data-toggle="modal" data-target="#sudo-user-modal"
+        <button type="button" data-bs-toggle="modal" data-bs-target="#sudo-user-modal"
                 class="btn btn-secondary"><?= t('Sign in As User') ?></button>
         <?php
     }
     ?>
     <?php if ($canDeleteUser) {
         ?>
-        <button type="button" data-toggle="modal"
-                data-target="#delete-user-modal" class="btn btn-danger"><?= t('Delete') ?></button>
+        <button type="button" data-bs-toggle="modal"
+                data-bs-target="#delete-user-modal" class="btn btn-danger"><?= t('Delete') ?></button>
         <?php
     }
     ?>
@@ -63,16 +63,14 @@ defined('C5_EXECUTE') or die("Access Denied.");
             <form method="post" action="<?=$view->action('update_status', 'deactivate', $user->getUserID())?>">
             <div class="modal-header">
                 <h5 class="modal-title"><?=t('Deactivate User')?></h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <svg><use xlink:href="#icon-dialog-close" /></svg>
-                </button>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="<?= t('Close') ?>"></button>
             </div>
             <div class="modal-body">
                 <?=$token_validator->output()?>
                 <?=('Are you sure you want to deactivate this user?')?>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal"><?=t('Close')?></button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><?=t('Close')?></button>
                 <button type="submit" class="btn btn-danger"><?=t('Deactivate User')?></button>
             </div>
             </form>
@@ -86,16 +84,14 @@ defined('C5_EXECUTE') or die("Access Denied.");
             <form method="post" action="<?=$view->action('update_status', 'activate', $user->getUserID())?>">
                 <div class="modal-header">
                     <h5 class="modal-title"><?=t('Deactivate User')?></h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <svg><use xlink:href="#icon-dialog-close" /></svg>
-                    </button>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="<?= t('Close') ?>"></button>
                 </div>
                 <div class="modal-body">
                     <?=$token_validator->output()?>
                     <?=('Click below to activate this user.')?>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal"><?=t('Close')?></button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><?=t('Close')?></button>
                     <button type="submit" class="btn btn-primary"><?=t('Activate User')?></button>
                 </div>
             </form>
@@ -111,16 +107,14 @@ defined('C5_EXECUTE') or die("Access Denied.");
             <form method="post" action="<?=$view->action('update_status', 'sudo', $user->getUserID())?>">
                 <div class="modal-header">
                     <h5 class="modal-title"><?=t('Sign In As User')?></h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <svg><use xlink:href="#icon-dialog-close" /></svg>
-                    </button>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="<?= t('Close') ?>"></button>
                 </div>
                 <div class="modal-body">
                     <?=$token_validator->output()?>
                     <?=t("This will end your current session and sign you in as %s", $user->getUserName())?>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal"><?=t('Close')?></button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><?=t('Close')?></button>
                     <button type="submit" class="btn btn-primary"><?=t('Sign In')?></button>
                 </div>
             </form>
@@ -135,16 +129,14 @@ defined('C5_EXECUTE') or die("Access Denied.");
             <form method="post" action="<?=$view->action('update_status', 'delete', $user->getUserID())?>">
                 <div class="modal-header">
                     <h5 class="modal-title"><?=t('Delete User')?></h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <svg><use xlink:href="#icon-dialog-close" /></svg>
-                    </button>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="<?= t('Close') ?>"></button>
                 </div>
                 <div class="modal-body">
                     <?=$token_validator->output()?>
                     <?=t("Are you sure you want to permanently remove this user?")?>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal"><?=t('Close')?></button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><?=t('Close')?></button>
                     <button type="submit" class="btn btn-danger"><?=t('Delete')?></button>
                 </div>
             </form>

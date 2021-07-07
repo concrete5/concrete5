@@ -17,34 +17,32 @@ $view->element('dashboard/system/permissions/blacklist/menu', ['category' => $se
 
 if (($type & IpAccessControlService::IPRANGEFLAG_MANUAL) === IpAccessControlService::IPRANGEFLAG_MANUAL) {
     ?>
-    <form class="form-inline" id="ccm-form-new-range">
-        <fieldset>
-            <legend><?= t('Add IP Range') ?></legend>
-            <div class="form-group">
-              <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                  <label for="new-range" class="input-group-text launch-tooltip col-form-label" data-html="true" title="<?= h(t(
-                    'Enter a single address<br />(example: %s) or a range<br />(example: %s or %s).<br />Accept both IPv4 and IPv6 ranges.',
-                    '<code>1.2.3.4</code>',
-                    '<code>1.2.3.*</code>',
-                    '<code>1.2.3.0/8</code>'
-                )) ?>"><?= t('IP Range') ?></label>
-                </div>
-                <input type="text" class="form-control" id="ccm-new-range" required="required" aria-describedby="button-addon2" />
-                <div class="input-group-append">
+    <form class="row row-cols-auto g-0 align-items-center" id="ccm-form-new-range">
+        <div class="col-auto">
+            <fieldset>
+                <legend><?= t('Add IP Range') ?></legend>
+                <div class="form-group">
+                  <div class="input-group mb-3">
+                      <label for="new-range" class="input-group-text launch-tooltip col-form-label" data-html="true" title="<?= h(t(
+                        'Enter a single address<br />(example: %s) or a range<br />(example: %s or %s).<br />Accept both IPv4 and IPv6 ranges.',
+                        '<code>1.2.3.4</code>',
+                        '<code>1.2.3.*</code>',
+                        '<code>1.2.3.0/8</code>'
+                    )) ?>"><?= t('IP Range') ?></label>
+                    <input type="text" class="form-control" id="ccm-new-range" required="required" aria-describedby="button-addon2" />
                     <button type="submit" id="button-addon2" class="btn btn-outline-secondary"><?= t('Add') ?></button>
+                  </div>
                 </div>
-              </div>
-            </div>
-            <br />
-            <?php
-            if (($type & IpAccessControlService::IPRANGEFLAG_WHITELIST) === IpAccessControlService::IPRANGEFLAG_WHITELIST) {
-                ?>
-                <p class="text-muted"><?= t('Your IP address:') ?> <a href="#" onclick="$('#ccm-new-range').val($(this).text());return false"><?= h((string) $myIPAddress) ?></a></p>
+                <br />
                 <?php
-            }
-            ?>
-        </fieldset>
+                if (($type & IpAccessControlService::IPRANGEFLAG_WHITELIST) === IpAccessControlService::IPRANGEFLAG_WHITELIST) {
+                    ?>
+                    <p class="text-muted"><?= t('Your IP address:') ?> <a href="#" onclick="$('#ccm-new-range').val($(this).text());return false"><?= h((string) $myIPAddress) ?></a></p>
+                    <?php
+                }
+                ?>
+            </fieldset>
+        </div>
     </form>
     <script>
     $(document).ready(function() {
@@ -139,13 +137,13 @@ if ($type === IpAccessControlService::IPRANGETYPE_BLACKLIST_AUTOMATIC) {
             </div>
         </form>
         <div class="dialog-buttons">
-            <button class="btn btn-secondary float-left" data-dialog-action="cancel"><?= t('Cancel') ?></button>
-            <button class="btn btn-danger float-right" data-dialog-action="submit"><?= t('Delete') ?></button>
+            <button class="btn btn-secondary float-start" data-dialog-action="cancel"><?= t('Cancel') ?></button>
+            <button class="btn btn-danger float-end" data-dialog-action="submit"><?= t('Delete') ?></button>
         </div>
     </div>
     <div class="ccm-dashboard-form-actions-wrapper">
         <div class="ccm-dashboard-form-actions">
-            <a class="btn btn-danger float-right" data-launch-dialog="ccm-blacklist-clear-data-dialog"><?= t('Delete') ?></a>
+            <a class="btn btn-danger float-end" data-launch-dialog="ccm-blacklist-clear-data-dialog"><?= t('Delete') ?></a>
         </div>
     </div>
     <?php

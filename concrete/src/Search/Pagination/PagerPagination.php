@@ -31,7 +31,7 @@ class PagerPagination extends Pagination
             $manager->displaySegmentAtCursor($start, $itemList);
         }
 
-        return Pagerfanta::__construct($adapter);
+        Pagerfanta::__construct($adapter);
     }
 
     public function getLastResult()

@@ -31,7 +31,7 @@ defined('C5_EXECUTE') or die('Access Denied.');
     </form>
     <input
         type="button"
-        class="btn btn-secondary float-right dialog-launch"
+        class="btn btn-secondary float-end dialog-launch"
         dialog-width="640" dialog-height="480"
         dialog-modal="false"
         dialog-title="<?= t('Add Group') ?>"

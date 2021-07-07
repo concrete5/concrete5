@@ -68,7 +68,10 @@ $(function() {
                 $tabsContainer.find('li').eq(0).remove();
                 break;
         }
-        $tabsContainer.find('li').eq(0).find('a').trigger('click');
+
+        const firstTab = new bootstrap.Tab($tabsContainer.find('li').eq(0).find('a'))
+        firstTab.show()
+
         $tabsContainer.show();
         $chooseContainer.hide();
     }

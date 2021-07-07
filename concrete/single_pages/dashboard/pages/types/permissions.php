@@ -30,7 +30,7 @@
     <div class="ccm-dashboard-form-actions-wrapper">
         <div class="ccm-dashboard-form-actions">
             <a href="<?= URL::to('/dashboard/pages/types'); ?>" class="btn btn-secondary"><?= t('Back'); ?></a>
-            <button type="submit" value="<?= t('Save'); ?>" class="btn btn-primary float-right"><?= t('Save'); ?></button>
+            <button type="submit" value="<?= t('Save'); ?>" class="btn btn-primary float-end"><?= t('Save'); ?></button>
         </div>
     </div>
 </form>

@@ -117,7 +117,7 @@ EOT
                 <tr>
                     <td><?php echo $text->entities($survey['surveyName']) ?></td>
                     <td><?php echo $text->entities($survey['answerSetCount']) ?></td>
-                    <td style="min-width: 380px" class="text-right">
+                    <td style="min-width: 380px" class="text-end">
                         <form method="post" action="" style="display: inline">
                             <input type="hidden" name="qsID" value="<?php echo intval($qsid) ?>"/>
                             <input type="hidden" name="action" value="deleteFormAnswers"/>

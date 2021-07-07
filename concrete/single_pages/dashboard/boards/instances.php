@@ -54,7 +54,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
 
         <p class="help-block"><?=t("Create a completely new instance of this board, based on the current data sources, templates and rules. ")?></p>
 
-        <button type="button" data-toggle="modal" data-target="#generate-instance" class="btn btn-lg btn-primary"><?=t("Generate")?></button>
+        <button type="button" data-bs-toggle="modal" data-bs-target="#generate-instance" class="btn btn-lg btn-primary"><?=t("Generate")?></button>
 
         <div class="modal fade" id="generate-instance" tabindex="-1">
             <form method="post" action="<?=$view->action('generate_instance', $board->getBoardID())?>">
@@ -63,9 +63,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
                     <div class="modal-content">
                         <div class="modal-header">
                             <h5 class="modal-title"><?=t('Generate Instance')?></h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <svg><use xlink:href="#icon-dialog-close" /></svg>
-                            </button>
+                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="<?= t('Close') ?>"></button>
                         </div>
                         <div class="modal-body">
                             <div class="form-group">
@@ -92,8 +90,8 @@ defined('C5_EXECUTE') or die("Access Denied.");
                             <?php } ?>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal"><?=t('Cancel')?></button>
-                            <button type="submit" class="btn btn-primary float-right"><?=t('Create Instance')?></button>
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><?=t('Cancel')?></button>
+                            <button type="submit" class="btn btn-primary float-end"><?=t('Create Instance')?></button>
                         </div>
                     </div>
                 </div>

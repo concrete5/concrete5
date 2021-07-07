@@ -111,8 +111,8 @@ if ($paID > 0) {
         </div>
 
         <div class="dialog-buttons">
-            <button href="javascript:void(0)" class="btn btn-secondary float-left" onclick="jQuery.fn.dialog.closeTop()"><?= t('Cancel') ?></button>
-            <button type="submit" class="btn btn-primary float-right" onclick="$('#ccm-permissions-detail-form').submit()"><?= t('Save') ?></button>
+            <button href="javascript:void(0)" class="btn btn-secondary float-start" onclick="jQuery.fn.dialog.closeTop()"><?= t('Cancel') ?></button>
+            <button type="submit" class="btn btn-primary float-end" onclick="$('#ccm-permissions-detail-form').submit()"><?= t('Save') ?></button>
         </div>
     </form>
 </div>

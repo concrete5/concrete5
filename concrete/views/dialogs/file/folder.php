@@ -41,11 +41,11 @@ $form = $app->make(Form::class);
     </div>
 
     <div class="dialog-buttons">
-        <button class="btn btn-secondary float-left" data-dialog-action="cancel">
+        <button class="btn btn-secondary float-start" data-dialog-action="cancel">
             <?php echo t('Cancel') ?>
         </button>
 
-        <button type="button" data-dialog-action="submit" class="btn btn-primary float-right">
+        <button type="button" data-dialog-action="submit" class="btn btn-primary float-end">
             <?php echo t('Save') ?>
         </button>
     </div>

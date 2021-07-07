@@ -22,7 +22,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
         </div>
         <div class="form-check">
             <input class="form-check-input" disabled type="radio" name="creationMethod" id="creationMethod2" value="C">
-            <span class="badge badge-secondary float-right"><?=t('Coming Soon.')?></span>
+            <span class="badge bg-secondary float-end"><?=t('Coming Soon.')?></span>
             <label class="form-check-label" for="creationMethod2">
                 <?=t('Create a completely custom slot element.')?>
             </label>
@@ -32,13 +32,13 @@ defined('C5_EXECUTE') or die("Access Denied.");
         <hr>
 
         <div class="form-group">
-            <label class="control-label" for="elementName"><?=t('Name')?></label>
+            <label class="control-label form-label" for="elementName"><?=t('Name')?></label>
             <input class="form-control" name="elementName" />
         </div>
 
         <div class="ccm-dashboard-form-actions-wrapper">
             <div class="ccm-dashboard-form-actions">
-                <button type="submit" class="btn float-right btn-secondary"><?=t('Next')?></button>
+                <button type="submit" class="btn float-end btn-secondary"><?=t('Next')?></button>
             </div>
         </div>
 

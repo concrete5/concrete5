@@ -7,10 +7,8 @@ $config = $app->make('config');
 <form method="post" id="site-form" action="<?=$view->action('update_library')?>">
     <div class="form-group">
       <div class="input-group">
-        <div class="input-group-prepend">
-          <?=$form->label('group_id', t('Spam Whitelist Group'),['class'=>'input-group-text'])?>
-        </div>
-        <?=$form->select('group_id', (array) $groups, $whitelistGroup, ['class'=>'custom-select']);?>
+        <?=$form->label('group_id', t('Spam Whitelist Group'),['class'=>'input-group-text'])?>
+        <?=$form->select('group_id', (array) $groups, $whitelistGroup, ['class'=>'form-select']);?>
       </div>
     </div>
 
@@ -18,9 +16,7 @@ $config = $app->make('config');
 	<?php if (count($libraries) > 0) { ?>
 		<div class="form-group">
       <div class="input-group">
-        <div class="input-group-prepend">
-    		<?=$form->label('activeLibrary', t('Active Library'),['class'=>'input-group-text'])?>
-        </div>
+        <?=$form->label('activeLibrary', t('Active Library'),['class'=>'input-group-text'])?>
     		<?php
             $activeHandle = '';
             if (is_object($activeLibrary)) {
@@ -28,7 +24,7 @@ $config = $app->make('config');
             }
             ?>
 
-    		<?=$form->select('activeLibrary', $libraries, $activeHandle, array('class' => 'custom-select'))?>
+    		<?=$form->select('activeLibrary', $libraries, $activeHandle, array('class' => 'form-select'))?>
       </div>
 		</div>
 

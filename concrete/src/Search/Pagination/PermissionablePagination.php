@@ -22,7 +22,7 @@ class PermissionablePagination extends Pagination
         $adapter = new ArrayAdapter($results);
         $this->list = $itemList;
 
-        return Pagerfanta::__construct($adapter);
+        Pagerfanta::__construct($adapter);
     }
 
     public function getCurrentPageResults()

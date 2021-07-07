@@ -97,12 +97,12 @@ if (isset($neutralStack)) {
         ?>
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <div class="collapse navbar-collapse">
-                    <ul class="navbar-nav mr-auto">
+                    <ul class="navbar-nav me-auto">
                         <?php
                         if ($areaPermissions->canAddBlocks()) {
                             ?>
                             <li class="nav-item dropdown">
-                                <a class="dropdown-toggle nav-link" data-toggle="dropdown" href="#">
+                                <a class="dropdown-toggle nav-link" data-bs-toggle="dropdown" href="#">
                                     <?= t('Add') ?> <span class="caret"></span>
                                 </a>
 
@@ -282,7 +282,7 @@ if (isset($neutralStack)) {
 
                     <div class="dialog-buttons">
                         <button class="btn btn-secondary" onclick="jQuery.fn.dialog.closeTop()"><?= t('Cancel') ?></button>
-                        <button class="btn btn-danger ml-auto" onclick="$('#ccm-dialog-delete-stack form').submit()"><?= $deleteLabels['button'] ?></button>
+                        <button class="btn btn-danger ms-auto" onclick="$('#ccm-dialog-delete-stack form').submit()"><?= $deleteLabels['button'] ?></button>
                     </div>
                 </div>
             </div>
@@ -385,7 +385,7 @@ if (isset($neutralStack)) {
                 <div class="ccm-dashboard-form-actions">
                     <a href="<?= $view->action('view_details', $duplicateStack->getCollectionID()) ?>"
                        class="btn btn-secondary"><?= t('Cancel') ?></a>
-                    <button type="submit" class="btn float-right btn-primary"><?= t('Duplicate') ?></button>
+                    <button type="submit" class="btn float-end btn-primary"><?= t('Duplicate') ?></button>
                 </div>
             </div>
         </form>
@@ -415,7 +415,7 @@ if (isset($neutralStack)) {
                 <div class="ccm-dashboard-form-actions">
                     <a href="<?= $view->action('view_details', $renamePage->getCollectionID()) ?>"
                        class="btn btn-secondary"><?= t('Cancel') ?></a>
-                    <button type="submit" class="btn float-right btn-primary"><?= t('Rename') ?></button>
+                    <button type="submit" class="btn float-end btn-primary"><?= t('Rename') ?></button>
                 </div>
             </div>
         </form>
@@ -473,7 +473,7 @@ if ($showGlobalAreasFolder || !empty($stacks)) {
                     <td class="ccm-search-results-menu-launcher">
                         <?php if ($st->getPageTypeHandle() === STACK_CATEGORY_PAGE_TYPE) { ?>
                             <div class="dropdown">
-                                <button class="btn btn-icon" data-boundary="viewport" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <button class="btn btn-icon" data-boundary="viewport" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <svg width="16" height="4"><use xlink:href="#icon-menu-launcher"/></svg>
                                 </button>
                                 <div class="dropdown-menu">
@@ -597,7 +597,7 @@ if ($showGlobalAreasFolder || !empty($stacks)) {
             </form>
             <div class="dialog-buttons">
                 <button class="btn btn-secondary" onclick="jQuery.fn.dialog.closeTop()"><?= t('Cancel') ?></button>
-                <button class="btn btn-danger ml-auto" onclick="$('#ccm-dialog-delete-stackfolder form').submit()">
+                <button class="btn btn-danger ms-auto" onclick="$('#ccm-dialog-delete-stackfolder form').submit()">
                     <?= t('Delete Folder') ?>
                 </button>
             </div>
@@ -643,9 +643,9 @@ if ($showGlobalAreasFolder || !empty($stacks)) {
                 </div>
             </form>
             <div class="dialog-buttons">
-                <button class="btn btn-secondary mr-auto"
+                <button class="btn btn-secondary me-auto"
                         onclick="jQuery.fn.dialog.closeTop()"><?= t('Cancel') ?></button>
-                <button class="btn btn-primary float-right"
+                <button class="btn btn-primary float-end"
                         onclick="$('#ccm-dialog-add-stack form').submit()"><?= t('Add Stack') ?></button>
             </div>
         </div>
@@ -660,8 +660,8 @@ if ($showGlobalAreasFolder || !empty($stacks)) {
                 </div>
             </form>
             <div class="dialog-buttons">
-                <button class="btn btn-secondary mr-auto" onclick="jQuery.fn.dialog.closeTop()"><?= t('Cancel') ?></button>
-                <button class="btn btn-primary float-right" onclick="$('#ccm-dialog-add-folder form').submit()"><?= t('Add Folder') ?></button>
+                <button class="btn btn-secondary me-auto" onclick="jQuery.fn.dialog.closeTop()"><?= t('Cancel') ?></button>
+                <button class="btn btn-primary float-end" onclick="$('#ccm-dialog-add-folder form').submit()"><?= t('Add Folder') ?></button>
             </div>
         </div>
     </div>

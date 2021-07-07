@@ -45,7 +45,7 @@ $token = $app->make(Token::class);
 
     <div class="ccm-dashboard-form-actions-wrapper">
         <div class="ccm-dashboard-form-actions">
-            <button type="submit" class="btn btn-primary float-right">
+            <button type="submit" class="btn btn-primary float-end">
                 <?php echo t('Assign Users'); ?>
             </button>
         </div>

@@ -175,8 +175,8 @@ if ($this->controller->getTask() == 'translate_po') {
                             <p><?php echo t('Are you sure? This will remove all translations from all languages, in the database and in your site PO files. This cannot be undone.'); ?></p>
                         </form>
                         <div class="dialog-buttons">
-                            <button class="btn btn-secondary float-left" onclick="jQuery.fn.dialog.closeTop()"><?php echo t('Cancel'); ?></button>
-                            <button class="btn btn-danger float-right" onclick="$('#ccm-dialog-reset-languages form').submit()"><?php echo t('Confirm Reset'); ?></button>
+                            <button class="btn btn-secondary float-start" onclick="jQuery.fn.dialog.closeTop()"><?php echo t('Cancel'); ?></button>
+                            <button class="btn btn-danger float-end" onclick="$('#ccm-dialog-reset-languages form').submit()"><?php echo t('Confirm Reset'); ?></button>
                         </div>
                         <?php
                     } else {

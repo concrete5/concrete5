@@ -63,7 +63,7 @@ if (count($languages) > 0) {
 <section data-section="account">
     <?php if ($canViewAccountModal) { ?>
         <button
-                data-toggle="modal" data-target="#edit-account-modal"
+                data-bs-toggle="modal" data-bs-target="#edit-account-modal"
                 class="btn-section btn btn-secondary"><?= t('Edit') ?></button>
     <?php } ?>
     <h3><?= t('Account') ?></h3>
@@ -155,11 +155,7 @@ if (count($languages) > 0) {
                     <div class="modal-content">
                         <div class="modal-header">
                             <h5 class="modal-title"><?= t('Edit Account') ?></h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <svg>
-                                    <use xlink:href="#icon-dialog-close"/>
-                                </svg>
-                            </button>
+                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="<?= t('Close') ?>"></button>
                         </div>
                         <div class="modal-body">
                             <fieldset>
@@ -219,7 +215,7 @@ if (count($languages) > 0) {
                             <?php } ?>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal"><?= t('Close') ?></button>
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><?= t('Close') ?></button>
                             <button type="submit" class="btn btn-primary"><?= t('Save') ?></button>
                         </div>
                     </div>
@@ -237,7 +233,7 @@ if (count($languages) > 0) {
     if ($canAddGroup) {
     ?>
     <button class="btn-section btn btn-secondary"
-            data-toggle="modal" data-target="#edit-groups-modal"
+            data-bs-toggle="modal" data-bs-target="#edit-groups-modal"
     ><?= t('Edit') ?></button>
     <?php } ?>
 
@@ -256,17 +252,13 @@ if (count($languages) > 0) {
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title"><?= t('Edit Groups') ?></h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <svg>
-                            <use xlink:href="#icon-dialog-close"/>
-                        </svg>
-                    </button>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="<?= t('Close') ?>"></button>
                 </div>
                 <div class="modal-body">
                     <h4><?= t('Selected Groups') ?></h4>
                     <div class="mb-3" v-if="groups.length > 0">
                         <div class="d-flex" v-for="group in groups">
-                            <div class="mr-auto"><span v-html="group.gDisplayName"></span></div>
+                            <div class="me-auto"><span v-html="group.gDisplayName"></span></div>
                             <div><a class="ccm-hover-icon" href="#" @click.prevent="removeGroup(group.gID)"><i
                                             class="fa fa-minus-circle"></i></a></div>
                         </div>
@@ -278,7 +270,7 @@ if (count($languages) > 0) {
 
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal"><?= t('Close') ?></button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><?= t('Close') ?></button>
                 </div>
             </div>
         </div>

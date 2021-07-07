@@ -13,7 +13,7 @@ if (is_object($category) && $category->allowAttributeSets()) {
 <div class="ccm-dashboard-header-buttons">
 	<?php if (count($sets) > 0) {
     ?>
-		<button type="button" class="btn btn-secondary" data-toggle="dropdown">
+		<button type="button" class="btn btn-secondary" data-bs-toggle="dropdown">
 		<?=t('View')?> <span class="caret"></span>
 		</button>
 		<ul class="dropdown-menu" role="menu">
@@ -171,12 +171,16 @@ $(function() {
 <?php if (isset($types) && is_array($types) && count($types) > 0) {
     ?>
 <form method="get" action="<?=$view->action('select_type')?>" id="ccm-attribute-type-form">
-	<label for="atID"><?=t('Add Attribute')?></label>
-	<div class="form-inline">
-	<div class="form-group">
-		<?=$form->select('atID', $types)?>
-	</div>
-	<button type="submit" class="btn btn-secondary"><?=t('Go')?></button>
+	<label class="form-label" for="atID"><?=t('Add Attribute')?></label>
+	<div class="row row-cols-auto g-0 align-items-center">
+        <div class="col-auto">
+            <div class="form-group">
+                <?=$form->select('atID', $types)?>
+            </div>
+        </div>
+        <div class="col-auto">
+            <button type="submit" class="btn btn-secondary"><?=t('Go')?></button>
+        </div>
 	</div>
 </form>
 <?php 

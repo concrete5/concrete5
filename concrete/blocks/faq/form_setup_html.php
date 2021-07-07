@@ -74,15 +74,15 @@
                 <p class="entry-collapse-text"><?php echo $row['linkTitle'] ? $row['linkTitle'] : ''; ?></p>
 
                 <div class="form-group">
-                    <label class="control-label"><?php echo t('Navigation Link Text'); ?></label>
+                    <label class="control-label form-label"><?php echo t('Navigation Link Text'); ?></label>
                     <input class="form-control ccm-input-text" type="text" name="linkTitle[]" value="<?php echo h($row['linkTitle']); ?>">
                 </div>
                 <div class="form-group">
-                    <label class="control-label"><?php echo t('Title Text'); ?></label>
+                    <label class="control-label form-label"><?php echo t('Title Text'); ?></label>
                     <input class="form-control ccm-input-text" type="text" name="title[]" value="<?php echo h($row['title']); ?>">
                 </div>
                 <div class="form-group">
-                    <label class="control-label"><?php echo t('Description'); ?></label>
+                    <label class="control-label form-label"><?php echo t('Description'); ?></label>
                     <textarea class='editor-content' name="description[]"><?php echo $row['description']; ?></textarea>
                 </div>
                 <button type="button" class="btn btn-sm btn-secondary ccm-edit-entry" data-entry-close-text="<?php echo t('Collapse Entry'); ?>" data-entry-edit-text="<?php echo t('Edit Entry'); ?>"><?php echo t('Edit Entry'); ?></button>
@@ -100,15 +100,15 @@
         <p class="entry-collapse-text"></p>
 
         <div class="form-group">
-            <label class="control-label"><?php echo t('Navigation Link Text'); ?></label>
+            <label class="control-label form-label"><?php echo t('Navigation Link Text'); ?></label>
             <input class="form-control ccm-input-text" type="text" name="linkTitle[]" value="">
         </div>
         <div class="form-group">
-            <label class="control-label"><?php echo t('Title Text'); ?></label>
+            <label class="control-label form-label"><?php echo t('Title Text'); ?></label>
             <input class="form-control ccm-input-text" type="text" name="title[]" value="">
         </div>
         <div class="form-group">
-            <label class="control-label"><?php echo t('Description'); ?></label>
+            <label class="control-label form-label"><?php echo t('Description'); ?></label>
             <textarea class='editor-content' name="description[]"></textarea>
         </div>
         <button type="button" class="btn btn-sm btn-secondary ccm-edit-entry" data-entry-close-text="<?php echo t('Collapse Entry'); ?>" data-entry-edit-text="<?php echo t('Edit Entry'); ?>"><?php echo t('Edit Entry'); ?></button>

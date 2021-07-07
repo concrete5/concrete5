@@ -13,7 +13,7 @@ defined('C5_EXECUTE') or die('Access Denied.');
     <div class="row">
         <div class="col-sm-12 col-md-6">
             <div class="form-group">
-                <label for="startDate" class="control-label">
+                <label for="startDate" class="control-label form-label">
                     <?php echo tc('Start date', 'From'); ?>
                 </label>
                 <div>
@@ -25,7 +25,7 @@ defined('C5_EXECUTE') or die('Access Denied.');
         </div>
         <div class="col-sm-12 col-md-6">
             <div class="form-group">
-                <label for="endDate" class="control-label">
+                <label for="endDate" class="control-label form-label">
                     <?php echo tc('End date', 'To'); ?>
                 </label>
                 <div>

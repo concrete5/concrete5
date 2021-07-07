@@ -19,17 +19,17 @@ defined('C5_EXECUTE') or die('Access Denied.');
 
     <div class="form-group">
         <?= $form->label('tracking_code_header', t('Header Tracking Codes')) ?>
-        <?= $form->textarea('tracking_code_header', $tracking_code_header, ['style' => 'height: 250px;', 'class' => 'text-monospace', 'spellcheck' => 'false']) ?>
+        <?= $form->textarea('tracking_code_header', $tracking_code_header, ['style' => 'height: 250px;', 'class' => 'font-monospace', 'spellcheck' => 'false']) ?>
     </div>
 
     <div class="form-group">
         <?= $form->label('tracking_code_footer', t('Footer Tracking Codes')) ?>
-        <?= $form->textarea('tracking_code_footer', $tracking_code_footer, ['style' => 'height: 250px;', 'class' => 'text-monospace', 'spellcheck' => 'false']) ?>
+        <?= $form->textarea('tracking_code_footer', $tracking_code_footer, ['style' => 'height: 250px;', 'class' => 'font-monospace', 'spellcheck' => 'false']) ?>
     </div>
 
     <div class="ccm-dashboard-form-actions-wrapper">
         <div class="ccm-dashboard-form-actions">
-            <button type="submit" class="btn btn-primary float-right"><?= t('Save') ?></button>
+            <button type="submit" class="btn btn-primary float-end"><?= t('Save') ?></button>
         </div>
     </div>
 </form>

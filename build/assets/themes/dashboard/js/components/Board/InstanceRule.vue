@@ -15,7 +15,7 @@
         </div>
         <div class="col-7">
             <div>{{rule.name}} (<a data-dialog="preview" href="javascript:void(0)" @click="showPreview">preview</a>)</div>
-            <div class="font-weight-light font-italic">{{rule.actionDescription}}</div>
+            <div class="fw-light font-italic">{{rule.actionDescription}}</div>
         </div>
         <div class="col-1">
             <a href="javascript:void(0)" @click="$emit('delete', rule)" class="ccm-hover-icon" v-if="showDeleteControls && rule.canDeleteRule">

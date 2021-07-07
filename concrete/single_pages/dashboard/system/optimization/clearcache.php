@@ -24,7 +24,7 @@ defined('C5_EXECUTE') or die('Access Denied.');
 
     <div class="ccm-dashboard-form-actions-wrapper">
         <div class="ccm-dashboard-form-actions">
-            <button class="float-right btn btn-primary" type="submit" ><?= t('Clear Cache') ?></button>
+            <button class="float-end btn btn-primary" type="submit" ><?= t('Clear Cache') ?></button>
         </div>
     </div>
 

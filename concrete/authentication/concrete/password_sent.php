@@ -6,7 +6,9 @@
 	<div class="help-block">
 		<?= t('If there is an account associated with this email, instructions for resetting your password have been sent.') ?>
 	</div>
-	<a href="<?= URL::to('/login') ?>" class="btn btn-block btn-primary">
-		<?= t('Go Back') ?>
-	</a>
+    <div class="d-grid">
+        <a href="<?= URL::to('/login') ?>" class="btn btn-primary">
+            <?= t('Go Back') ?>
+        </a>
+    </div>
 </div>

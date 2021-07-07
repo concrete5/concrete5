@@ -43,7 +43,7 @@ $tabs[] = ['ccm-file-storage', t('Storage Location')];
                 <?= $form->text('fPassword', $file->getPassword()) ?>
                 <div id="ccm-file-password-buttons" style="display: none">
                     <button type="button" onclick="jQuery.fn.dialog.closeTop()" class="btn btn-default pull-left"><?= t('Cancel') ?></button>
-                    <button type="button" onclick="$('form[data-dialog-form=file-password]').submit()" class="btn btn-primary pull-right"><?= t('Save Password') ?></button>
+                    <button type="button" onclick="$('form[data-dialog-form=file-password]').submit()" class="btn btn-primary float-end"><?= t('Save Password') ?></button>
                 </div>
             </form>
             <div class="help-block">
@@ -78,7 +78,7 @@ $tabs[] = ['ccm-file-storage', t('Storage Location')];
             </form>
             <div id="ccm-file-storage-buttons" style="display: none">
                 <button type="button" onclick="jQuery.fn.dialog.closeTop()" class="btn btn-default pull-left"><?= t('Cancel') ?></button>
-                <button type="button" onclick="$('form[data-dialog-form=file-storage]').submit()" class="btn btn-primary pull-right"><?= t('Save Location') ?></button>
+                <button type="button" onclick="$('form[data-dialog-form=file-storage]').submit()" class="btn btn-primary float-end"><?= t('Save Location') ?></button>
             </div>
         </div>
     </div>
@@ -100,7 +100,7 @@ $(document).ready (function() {
         }
     }
     setupButtons();
-    $wrapper.find('a[data-toggle="tab"]').on('shown.bs.tab', function() {
+    $wrapper.find('a[data-bs-toggle="tab"]').on('shown.bs.tab', function() {
         setupButtons();
     });
 });

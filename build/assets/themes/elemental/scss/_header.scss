@@ -9,10 +9,10 @@ header {
 
     transition: color 0.2s linear;
     font: $font-header-site-title;
-    color: theme-color('primary');
+    color: $primary;
 
     &:hover {
-      color: darken(theme-color('primary'), 10%);
+      color: darken($primary, 10%);
       text-decoration: none !important;
     }
   }
@@ -57,12 +57,12 @@ header {
 
     ul {
       a {
-        color: theme-color('secondary');
+        color: $secondary;
         padding-right: 40px;
         font-family: $font-family-header-navigation;
         font-weight: bold;
         &:hover {
-          color: lighten(theme-color('secondary'), 40%);
+          color: lighten($secondary, 40%);
           text-decoration: none;
         }
       }
@@ -89,7 +89,7 @@ header {
           li {
             &:hover {
               a {
-                color: theme-color('secondary');
+                color: $secondary;
               }
             }
             a {

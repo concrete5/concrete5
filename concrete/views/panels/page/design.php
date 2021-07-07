@@ -113,8 +113,8 @@ defined('C5_EXECUTE') or die("Access Denied.");
             <?php
             if (Config::get('concrete.marketplace.enabled')) {
                 ?>
-                <div class="ccm-marketplace-btn-wrapper">
-                <button type="button" onclick="window.location.href='<?= URL::to('/dashboard/extend/themes') ?>'" class="btn-info btn-block btn btn-large"><?= t("Get More Themes") ?></button>
+                <div class="ccm-marketplace-btn-wrapper d-grid">
+                <button type="button" onclick="window.location.href='<?= URL::to('/dashboard/extend/themes') ?>'" class="btn-info btn btn-large"><?= t("Get More Themes") ?></button>
                 </div>
                 <?php
             }

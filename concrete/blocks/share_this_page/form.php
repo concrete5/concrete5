@@ -10,7 +10,7 @@ use Concrete\Core\Sharing\ShareThisPage\Service;
 
 <fieldset>
     <legend>
-        <button class="btn btn-xs float-right btn-secondary" type="button"
+        <button class="btn btn-xs float-end btn-secondary" type="button"
                 id="ccm-block-share-this-page-add-service">
 
             <?php echo t('Add Service') ?>
@@ -26,15 +26,15 @@ use Concrete\Core\Sharing\ShareThisPage\Service;
 
 <script type="text/template" class="service-template">
     <div class="form-group">
-        <a href="#" data-remove="service" class="float-right">
+        <a href="#" data-remove="service" class="float-end">
             <i class="fa fa-minus-circle"></i>
         </a>
 
-        <label for="serviceList" class="control-label">
+        <label for="serviceList" class="control-label form-label">
             <?php echo t('Choose Sharing Service'); ?>
         </label>
 
-        <select id="serviceList" name="service[]" class="form-control">
+        <select id="serviceList" name="service[]" class="form-select">
             <% _.each(availableServices, function(currentService) { %>
                 <% if (selectedService.handle == currentService.handle) { %>
                 <option value="<%=currentService.handle%>" selected>

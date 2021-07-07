@@ -3,7 +3,7 @@
 <form method="post" action="<?=$saveAction?>" id="ccm-inline-design-form">
     <ul class="ccm-inline-toolbar ccm-ui">
         <li class="ccm-inline-toolbar-select">
-            <select id="bFilename" name="bFilename" class="form-control">
+            <select id="bFilename" name="bFilename" class="form-select">
                 <option value="">(<?=t('None selected')?>)</option>
                 <?php
                 foreach ($templates as $tpl) { ?>

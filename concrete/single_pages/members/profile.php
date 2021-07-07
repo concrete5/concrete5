@@ -89,8 +89,11 @@ $packageService = $app->make(\Concrete\Core\Package\PackageService::class);
 
 <script type="text/javascript">
 $(function() {
-	$(".launch-tooltip").tooltip({
-		placement: 'bottom'
-	});
+    const tooltipTriggerList = [].slice.call(document.querySelectorAll('.launch-tooltip'))
+    const tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl, {
+            placement: 'bottom'
+        })
+    })
 });
 </script>

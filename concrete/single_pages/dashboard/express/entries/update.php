@@ -16,7 +16,7 @@ if (is_object($renderer)) {
                 <?php if ($backURL) { ?>
                     <a class="btn btn-secondary" href="<?=$backURL?>"><?=t('Back')?></a>
                 <?php } ?>
-                <button class="float-right btn btn-primary" type="submit"><?=t('Save %s', $entity->getEntityDisplayName())?></button>
+                <button class="float-end btn btn-primary" type="submit"><?=t('Save %s', $entity->getEntityDisplayName())?></button>
             </div>
         </div>
 

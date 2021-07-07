@@ -17,7 +17,7 @@ if (!$canRead) {
 }
 ?>
 <div class="ccm-dashboard-header-buttons">
-    <button type="button" class="btn btn-secondary dropdown-toggle" data-button="attribute-type" data-toggle="dropdown">
+    <button type="button" class="btn btn-secondary dropdown-toggle" data-button="attribute-type" data-bs-toggle="dropdown">
         <?= t('Options') ?> <span class="caret"></span>
     </button>
     <div class="dropdown-menu">

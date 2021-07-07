@@ -242,7 +242,7 @@ $text = $app->make(Text::class);
                 <?php echo t('Cancel') ?>
             </a>
 
-            <button class="btn float-right btn-primary" style="margin-left: 10px" type="submit">
+            <button class="btn float-end btn-primary" style="margin-left: 10px" type="submit">
                 <?php echo t('Update Group') ?>
             </button>
 

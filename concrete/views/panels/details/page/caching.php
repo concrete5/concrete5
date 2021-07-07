@@ -90,7 +90,14 @@ switch (Config::get('concrete.cache.full_page_lifetime')) {
                     </label>
                 </div>
 
-                <div class="form-inline"><?= $form->number('cCacheFullPageContentLifetimeCustom', $val, array('style' => 'width: 110px', 'min' => 1)) ?> <span class="ml-1"><?= t('minutes') ?></span></div>
+                <div class="row row-cols-auto g-0 align-items-center">
+                    <div class="col-auto">
+                        <?= $form->number('cCacheFullPageContentLifetimeCustom', $val, array('style' => 'width: 110px', 'min' => 1)) ?>
+                    </div>
+                    <div class="col-auto">
+                        <span class="ms-1"><?= t('minutes') ?></span>
+                    </div>
+                </div>
 
             </div>
         </div>
@@ -107,7 +114,7 @@ switch (Config::get('concrete.cache.full_page_lifetime')) {
                 ?>
                 <div class="alert alert-success d-md-flex justify-content-between align-items-center">
                     <?= t('This page currently exists in the full page cache. It expires %s.', Core::make('date')->formatDateTime($rec->getCacheRecordExpiration())) ?>
-                    <button type="button" class="btn btn-sm btn-secondary ml-2"
+                    <button type="button" class="btn btn-sm btn-secondary ms-2"
                                         id="ccm-button-remove-page-from-cache"><?= t('Purge') ?></button>
                 </div>
                 <?php
@@ -115,7 +122,7 @@ switch (Config::get('concrete.cache.full_page_lifetime')) {
                 ?>
                 <div class="alert alert-info d-md-flex justify-content-between align-items-center">
                     <?= t('This page <strong>may</strong> exist in the page cache.') ?>
-                    <button type="button" class="btn btn-sm btn-secondary ml-2"
+                    <button type="button" class="btn btn-sm btn-secondary ms-2"
                                         id="ccm-button-remove-page-from-cache"><?= t('Purge') ?></button>
                 </div>
                 <?php
@@ -130,7 +137,7 @@ switch (Config::get('concrete.cache.full_page_lifetime')) {
 
     </form>
     <div class="ccm-panel-detail-form-actions dialog-buttons d-flex justify-content-end">
-        <button class="btn btn-secondary mr-2" type="button" data-dialog-action="cancel"
+        <button class="btn btn-secondary me-2" type="button" data-dialog-action="cancel"
                 data-panel-detail-action="cancel"><?= t('Cancel') ?></button>
         <button class="btn btn-success" type="button" data-dialog-action="submit"
                 data-panel-detail-action="submit"><?= t('Save Changes') ?></button>

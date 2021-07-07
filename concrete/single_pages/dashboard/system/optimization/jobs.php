@@ -30,8 +30,8 @@ if ($editingJobSet !== null) {
                     <?php $token->output("delete_set{$editingJobSet->getJobSetID()}") ?>
                     <p><?= t('Warning, this cannot be undone. No jobs will be deleted but they will no longer be grouped together.') ?></p>
                     <div class="dialog-buttons">
-                        <button class="btn btn-secondary float-left" onclick="jQuery.fn.dialog.closeTop()"><?=t('Cancel')?></button>
-                        <button class="btn btn-danger float-right" onclick="$('div[data-dialog-wrapper=delete-job-set] form').submit()"><?=t('Delete Job Set')?></button>
+                        <button class="btn btn-secondary float-start" onclick="jQuery.fn.dialog.closeTop()"><?=t('Cancel')?></button>
+                        <button class="btn btn-danger float-end" onclick="$('div[data-dialog-wrapper=delete-job-set] form').submit()"><?=t('Delete Job Set')?></button>
                     </div>
                 </form>
             </div>
@@ -143,10 +143,10 @@ if ($editingJobSet !== null) {
 
         <div class="ccm-dashboard-form-actions-wrapper">
             <div class="ccm-dashboard-form-actions">
-                <div class="float-left">
+                <div class="float-start">
                     <a class="btn btn-secondary" href="<?= $controller->action('view_sets') ?>" ><?= t('Cancel') ?></a>
                 </div>
-                <div class="float-right">
+                <div class="float-end">
                     <?php
                     if ($editingJobSet !== true && $editingJobSet->canDelete()) {
                         ?>
@@ -181,7 +181,7 @@ if ($editingJobSet !== null) {
                             <th><?= t('Name') ?></th>
                             <th><?= t('Last Run') ?></th>
                             <th><?= t('Results of Last Run') ?></th>
-                            <th colspan="3"><a href="<?= $controller->action('reset', $token->generate('reset_jobs')) ?>" class="btn btn-secondary float-right btn-sm"><?= t('Reset All Jobs') ?></a></th>
+                            <th colspan="3"><a href="<?= $controller->action('reset', $token->generate('reset_jobs')) ?>" class="btn btn-secondary float-end btn-sm"><?= t('Reset All Jobs') ?></a></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -205,7 +205,7 @@ if ($editingJobSet !== null) {
                                 </td>
                                 <td class="jLastStatusText"><?= $j->getJobLastStatusText() ?></td>
                                 <td class="ccm-jobs-button">
-                                    <button data-jID="<?= $j->getJobID() ?>" data-jSupportsQueue="<?= $j->supportsQueue() ?>" data-jName="<?= h($j->getJobName()) ?>" class="btn-run-job btn btn-secondary btn-sm float-right"><i class="fas fa-play"></i> <?= t('Run') ?></button>
+                                    <button data-jID="<?= $j->getJobID() ?>" data-jSupportsQueue="<?= $j->supportsQueue() ?>" data-jName="<?= h($j->getJobName()) ?>" class="btn-run-job btn btn-secondary btn-sm float-end"><i class="fas fa-play"></i> <?= t('Run') ?></button>
                                 </td>
                                 <td style="width: 25px">
                                     <a href="javascript:void(0)" class="ccm-automate-job-instructions btn btn-secondary btn-sm icon-link launch-tooltip" data-jSupportsQueue="<?= $j->supportsQueue() ?>" data-jID="<?= $j->getJobID() ?>" title="<?= t('Automate this Job') ?>"><i class="far fa-clock"></i></a>
@@ -320,8 +320,8 @@ if ($editingJobSet !== null) {
                                     ?>
                                 </div>
                                 <div class="dialog-buttons">
-                                    <button class="btn btn-secondary float-left" onclick="jQuery.fn.dialog.closeTop()"><?= t('Cancel') ?></button>
-                                    <button onclick="$('form[data-schedule-form=<?= $j->getJobID() ?>]').submit()" class="btn btn-primary float-right"><?= t('Save') ?></button>
+                                    <button class="btn btn-secondary float-start" onclick="jQuery.fn.dialog.closeTop()"><?= t('Cancel') ?></button>
+                                    <button onclick="$('form[data-schedule-form=<?= $j->getJobID() ?>]').submit()" class="btn btn-primary float-end"><?= t('Save') ?></button>
                                 </div>
                             </form>
                         </div>
@@ -359,7 +359,7 @@ if ($editingJobSet !== null) {
                                     <?php
                                     if (!$job->invalid) {
                                         ?>
-                                        <a href="<?= $controller->action('install', $job->jHandle, $installToken) ?>" class="btn btn-sm btn-secondary float-right"><?= t('Install') ?></a>
+                                        <a href="<?= $controller->action('install', $job->jHandle, $installToken) ?>" class="btn btn-sm btn-secondary float-end"><?= t('Install') ?></a>
                                         <?php
                                     }
                                     ?>
@@ -423,7 +423,7 @@ if ($editingJobSet !== null) {
 
             <div class="ccm-dashboard-form-actions-wrapper">
                 <div class="ccm-dashboard-form-actions">
-                    <div class="float-right">
+                    <div class="float-end">
                         <a class="btn btn-primary" href="<?= $controller->action('edit_set', 'new') ?>" ><?= t('Add Job Set') ?></a>
                     </div>
                 </div>

@@ -39,7 +39,7 @@ $token = $app->make(Token::class);
             <?php echo $form->label('target_entity', t('Target Object')) ?>
 
             <!--suppress HtmlFormInputWithoutLabel -->
-            <select name="target_entity" class="form-control">
+            <select name="target_entity" class="form-select">
                 <?php foreach ($entities as $targetEntity) { ?>
                     <option value="<?php echo h($targetEntity->getID()) ?>"
                             data-plural="<?php echo h($targetEntity->getPluralHandle()) ?>"
@@ -54,13 +54,11 @@ $token = $app->make(Token::class);
             <?php echo $form->label('overrideTarget', t('Target Property Name')) ?>
 
             <div class="input-group">
-                <div class="input-group-prepend">
-                    <div class="input-group-text">
-                        <input type="checkbox" name="overrideTarget" value="1" data-toggle="association-property">
-                    </div>
+                
+                <div class="input-group-text">
+                    <input type="checkbox" name="overrideTarget" value="1" data-toggle="association-property">
                 </div>
-
-
+                
                 <?php echo $form->hidden('target_property_name', '') ?>
                 <?php echo $form->text('target_property_name', '', ['disabled' => 'disabled']) ?>
             </div>
@@ -70,10 +68,8 @@ $token = $app->make(Token::class);
             <?php echo $form->label('overrideInverse', t('Inversed Property Name')) ?>
 
             <div class="input-group">
-                <div class="input-group-prepend">
-                    <div class="input-group-text">
-                        <input type="checkbox" name="overrideInverse" value="1" data-toggle="association-property">
-                    </div>
+                <div class="input-group-text">
+                    <input type="checkbox" name="overrideInverse" value="1" data-toggle="association-property">
                 </div>
 
                 <?php echo $form->hidden('inversed_property_name', $entity->getHandle()) ?>
@@ -85,11 +81,11 @@ $token = $app->make(Token::class);
     <div class="ccm-dashboard-form-actions-wrapper">
         <div class="ccm-dashboard-form-actions">
             <a href="<?php echo (string)Url::to('/dashboard/system/express/entities/associations', $entity->getId()) ?>"
-               class="float-left btn btn-secondary" type="button">
+               class="float-start btn btn-secondary" type="button">
                 <?php echo t('Back to Associations') ?>
             </a>
 
-            <button class="float-right btn btn-primary" type="submit">
+            <button class="float-end btn btn-primary" type="submit">
                 <?php echo t('Save') ?>
             </button>
         </div>

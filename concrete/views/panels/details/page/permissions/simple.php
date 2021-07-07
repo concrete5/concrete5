@@ -49,7 +49,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
 
     </form>
     <div class="dialog-buttons ccm-panel-detail-form-actions d-flex justify-content-end">
-        <button class="btn btn-secondary mr-2" type="button" data-dialog-action="cancel"
+        <button class="btn btn-secondary me-2" type="button" data-dialog-action="cancel"
                 data-panel-detail-action="cancel"><?= t('Cancel') ?></button>
         <button class="btn btn-success" type="button" data-dialog-action="submit"
                 data-panel-detail-action="submit"><?= t('Save Changes') ?></button>

@@ -409,7 +409,7 @@ return [
                 'js/bootstrap.js',
                 [
                     'position' => Asset::ASSET_POSITION_FOOTER,
-                    'version' => '4.0.0'
+                    'version' => '5.0.0'
                 ]
             ]
         ],

@@ -44,7 +44,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
                     <button :disabled="selectedInstances.length === 0"
         type="button"
         class="btn btn-secondary"
-        data-toggle="modal" data-target="#schedule-modal"><?=t('Add Scheduled Stripe')?></button>
+        data-bs-toggle="modal" data-bs-target="#schedule-modal"><?=t('Add Scheduled Stripe')?></button>
             </div>
 
         </div>
@@ -55,13 +55,11 @@ defined('C5_EXECUTE') or die("Access Denied.");
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title"><?=t('Publish')?></h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <svg><use xlink:href="#icon-dialog-close" /></svg>
-                    </button>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="<?= t('Close') ?>"></button>
                 </div>
                 <div class="modal-body">
                     <div class="form-group">
-                        <label class="control-label" for="element"><?=t('Element')?></label>
+                        <label class="control-label form-label" for="element"><?=t('Element')?></label>
                         <select :class='{"form-control": true, "is-invalid": invalidSelectedElement}' id="element" v-model="selectedElement">
                             <option value="0">** Choose Element</option>
                             <option v-for="element in elements" :value="element.id">{{element.name}}</option>
@@ -98,8 +96,8 @@ defined('C5_EXECUTE') or die("Access Denied.");
                         <?= $form->select('timezone', $date->getTimezones(), ['v-model' => 'timezone'])?>
                     </div>
                     <div class="form-group">
-                        <label class="control-label" for="chooseSlot"><?=t('Slot')?></label>
-                        <select class="form-control" id="chooseSlot" v-model="slot">
+                        <label class="control-label form-label" for="chooseSlot"><?=t('Slot')?></label>
+                        <select class="form-select" id="chooseSlot" v-model="slot">
                             <option v-for="currentSlot in totalSlots" :value="currentSlot">{{currentSlot}}</option>
                         </select>
                     </div>
@@ -120,7 +118,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
 
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                     <button type="button" class="btn btn-primary" @click="save">Save changes</button>
                 </div>
             </div>

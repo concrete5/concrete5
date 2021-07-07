@@ -29,7 +29,7 @@ foreach ($output as $position => $assets) {
 </style>
 
 <div class="dialog-buttons">
-    <button class="tui-image-editor-close-btn btn btn-default float-left">
+    <button class="tui-image-editor-close-btn btn btn-default float-start">
         <?php echo t('Cancel') ?>
     </button>
 

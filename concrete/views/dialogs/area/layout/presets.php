@@ -44,11 +44,11 @@ $request = $app->make(Request::class);
         </div>
 
         <div class="dialog-buttons">
-            <button class="btn btn-secondary float-left" data-dialog-action="cancel">
+            <button class="btn btn-secondary float-start" data-dialog-action="cancel">
                 <?php echo t('Cancel') ?>
             </button>
 
-            <button type="button" data-dialog-action="submit" class="btn btn-success float-right">
+            <button type="button" data-dialog-action="submit" class="btn btn-success float-end">
                 <?php echo t('Save Preset') ?>
             </button>
         </div>

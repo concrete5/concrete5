@@ -209,7 +209,7 @@ var TranslationView = (function() {
     if (this.translation.translator.approvalSupport) {
       if (this.translation.translator.canModifyApproved) {
         this.UI.$container
-            .append($('<label class="control-label inline" />')
+            .append($('<label class="control-label inline form-label" />')
               .text(i18n.Approved)
               .prepend(this.UI.$approved = $('<input type="checkbox" ' + (this.translation.isApproved ? ' checked="checked"' : '') + ' />'))
             )
@@ -341,7 +341,7 @@ var TranslationView = (function() {
     _buildOriginalUI: function() {
       this.UI.$container
         .append($('<div class="form-group" />')
-          .append($('<label class="control-label" />').text(i18n.Original_String))
+          .append($('<label class="control-label form-label" />').text(i18n.Original_String))
           .append($('<div class="form-control ccm-translator-original" />')
             .html(originalToHtml(this.translation.original))
           )
@@ -351,7 +351,7 @@ var TranslationView = (function() {
     buildTranslationUI: function() {
       this.UI.$container
         .append($('<div class="form-group" />')
-          .append($('<label class="control-label" />').text(i18n.Translation))
+          .append($('<label class="control-label form-label" />').text(i18n.Translation))
           .append(this.UI.$translated = buildTranslatedTextarea(this, this.translation.isTranslated ? this.translation.translations[0] : ''))
         )
       ;
@@ -389,13 +389,13 @@ var TranslationView = (function() {
     _buildOriginalUI: function() {
       this.UI.$container
         .append($('<div class="form-group" />')
-          .append($('<label class="control-label" />').text(i18n.Singular_Original_String))
+          .append($('<label class="control-label form-label" />').text(i18n.Singular_Original_String))
           .append($('<div class="form-control ccm-translator-original" />')
             .html(originalToHtml(this.translation.original))
           )
         )
         .append($('<div class="form-group" />')
-          .append($('<label class="control-label" />').text(i18n.Plural_Original_String))
+          .append($('<label class="control-label form-label" />').text(i18n.Plural_Original_String))
           .append($('<div class="form-control ccm-translator-original" />')
             .html(originalToHtml(this.translation.originalPlural))
           )
@@ -415,7 +415,7 @@ var TranslationView = (function() {
       var my = this;
       this.UI.$container
         .append($('<div class="form-group" />')
-          .append($('<label class="control-label" />').text(i18n.Translation))
+          .append($('<label class="control-label form-label" />').text(i18n.Translation))
           .append(this.UI.$tabHeaders = $('<ul class="nav nav-tabs" />'))
           .append(this.UI.$tabBodies = $('<div class="tab-content" />'))
         )
@@ -551,7 +551,7 @@ Translator.prototype = {
                 )
                 .append($('<div class="input-group-btn" />')
                   .append(this.UI.$searchButton = $('<button type="button" class="btn btn-primary"><span class="fa fa-search"></span></button>'))
-                  .append($('<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false" />')
+                  .append($('<button type="button" class="btn btn-default dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" />')
                     .append($('<span class="caret" />'))
                   )
                   .append($('<ul class="dropdown-menu dropdown-menu-right" role="menu" />')
@@ -610,7 +610,7 @@ Translator.prototype = {
             .append($('<div class="panel-heading" />').text(i18n.Translate))
             .append(this.UI.$translation = $('<div class="panel-body" />'))
             .append($('<div class="panel-footer text-center" />')
-              .append($('<button class="btn btn-primary ccm-translator-savecontinue" data-toggle="tooltip" style="margin: 0 5px" />')
+              .append($('<button class="btn btn-primary ccm-translator-savecontinue" data-bs-toggle="tooltip" style="margin: 0 5px" />')
                 .attr('title', i18n.Keystroke_ctrl_return)
                 .data('text', i18n.Save_and_Continue)
                 .text(i18n.Save_and_Continue)
@@ -618,7 +618,7 @@ Translator.prototype = {
                   my.saveAndContinue();
                 })
               )
-              .append($('<button class="btn btn-success ccm-translator-savecontinue ccm-translator-approvecontinue" data-toggle="tooltip" style="margin: 0 5px" />')
+              .append($('<button class="btn btn-success ccm-translator-savecontinue ccm-translator-approvecontinue" data-bs-toggle="tooltip" style="margin: 0 5px" />')
                 .attr('title', i18n.Keystroke_ctrl_shift_return)
                 .data('text', i18n.Approve_and_Continue)
                 .text(i18n.Approve_and_Continue)
@@ -631,7 +631,12 @@ Translator.prototype = {
         )
       )
     ;
-    this.UI.$container.find('[data-toggle="tooltip"]').tooltip();
+
+    const tooltipTriggerList = [].slice.call(this.UI.$container.find('[data-bs-toggle="tooltip"]'));
+    const tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+      return new bootstrap.Tooltip(tooltipTriggerEl)
+    });
+
     if (this.on.uiLaunched) {
       this.on.uiLaunched(this);
     }

@@ -17,9 +17,7 @@ $consentType = $client->getConsentType();
             <label for="name" ><?php echo t('Name'); ?></label>
             <div class="input-group">
                 <?php echo $form->text('name', $client->getName(), array('autofocus' => 'autofocus', 'autocomplete' => 'off', 'required' => 'required')); ?>
-                <div class="input-group-prepend">
-                    <span class="input-group-text"><i class="fa fa-asterisk"></i></span>
-                </div>
+                <span class="input-group-text"><i class="fa fa-asterisk"></i></span>
             </div>
         </div>
 
@@ -27,15 +25,13 @@ $consentType = $client->getConsentType();
             <label for="redirect"><?php echo t('Redirect'); ?></label>
             <div class="input-group">
                 <?php echo $form->url('redirect', implode('|', (array) $client->getRedirectUri()), array('autocomplete' => 'off')); ?>
-                <div class="input-group-prepend">
-                    <span class="input-group-text"><i class="fa fa-asterisk"></i></span>
-                </div>
+                <span class="input-group-text"><i class="fa fa-asterisk"></i></span>
             </div>
             <span class="help-block"><?= t('Separate multiple redirect urls using %s (pipe) characters', '<code>|</code>') ?></span>
         </div>
 
         <div class="form-group">
-            <label class="control-label"><?=t('User Consent Level')?></label>
+            <label class="control-label form-label"><?=t('User Consent Level')?></label>
             <div class="form-check">
                 <input id="consent-type-standard" class="form-check-input" type="radio" name="consentType" value="<?= Client::CONSENT_SIMPLE ?>" <?= $consentType === Client::CONSENT_SIMPLE ? 'checked' : '' ?> />
                 <label for="consent-type-standard" class="form-check-label"><?= t('Standard') ?></label>
@@ -53,8 +49,8 @@ $consentType = $client->getConsentType();
 
     <div class="ccm-dashboard-form-actions-wrapper">
         <div class="ccm-dashboard-form-actions">
-            <a href="<?=URL::to('/dashboard/users/oauth2/view_client', $client->getIdentifier())?>" class="float-left btn btn-secondary"><?=t('Cancel')?></a>
-            <button class="float-right btn btn-primary" type="submit" ><?=t('Update')?></button>
+            <a href="<?=URL::to('/dashboard/users/oauth2/view_client', $client->getIdentifier())?>" class="float-start btn btn-secondary"><?=t('Cancel')?></a>
+            <button class="float-end btn btn-primary" type="submit" ><?=t('Update')?></button>
         </div>
     </div>
 

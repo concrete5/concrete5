@@ -74,7 +74,7 @@ if (isset($types) && is_array($types) && count($types) > 0) {
     ?>
     <h3><?=t('Add Attribute')?></h3>
     <div class="btn-group">
-        <button type="button" class="btn btn-secondary dropdown-toggle" data-button="attribute-type" data-toggle="dropdown">
+        <button type="button" class="btn btn-secondary dropdown-toggle" data-button="attribute-type" data-bs-toggle="dropdown">
             <?=t('Choose Type')?> <span class="caret"></span>
         </button>
         <div class="dropdown-menu">

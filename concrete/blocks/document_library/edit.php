@@ -194,12 +194,15 @@ $hideFolders = isset($hideFolders) ? $hideFolders : false;
         <div class="form-group">
             <?php echo $form->label('orderBy', t('Sort By')) ?>
 
-            <div class="form-inline">
-                <?php echo $form->select('orderBy', $orderByOptions, isset($orderBy) ? $orderBy : null); ?>
-
-                <div class="form-check form-check-inline">
-                    <?php echo $form->checkbox('displayOrderDesc', 1, !empty($displayOrderDesc)) ?>
-                    <?php echo $form->label("displayOrderDesc", t('Descending'), ["class" => "form-check-label"]); ?>
+            <div class="row row-cols-lg-auto align-items-center">
+                <div class="col-auto">
+                    <?php echo $form->select('orderBy', $orderByOptions, isset($orderBy) ? $orderBy : null); ?>
+                </div>
+                <div class="col-auto">
+                    <div class="form-check form-check-inline">
+                        <?php echo $form->checkbox('displayOrderDesc', 1, !empty($displayOrderDesc)) ?>
+                        <?php echo $form->label("displayOrderDesc", t('Descending'), ["class" => "form-check-label"]); ?>
+                    </div>
                 </div>
             </div>
         </div>

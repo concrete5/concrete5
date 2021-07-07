@@ -3,7 +3,7 @@
 
 <div class="form-group">
     <div>
-        <label class="control-label"><?=$label?></label>
+        <label class="control-label form-label"><?=$label?></label>
     </div>
     <div>
         <?php

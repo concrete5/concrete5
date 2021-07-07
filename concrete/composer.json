@@ -58,7 +58,7 @@
     "imagine/imagine": "^1.1.0",
     "michelf/php-markdown": "1.*",
     "filp/whoops": "2.*",
-    "pagerfanta/pagerfanta": "~1.0.1 ~1.0",
+    "pagerfanta/pagerfanta": "2.7.*",
     "htmlawed/htmlawed": "1.*",
     "mobiledetect/mobiledetectlib": "2.*",
     "monolog/monolog": "^1.5.0",

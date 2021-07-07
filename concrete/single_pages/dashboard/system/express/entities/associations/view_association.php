@@ -51,11 +51,11 @@ $token = $app->make(Token::class);
             </p>
 
             <div class="dialog-buttons">
-                <button class="btn btn-secondary float-left" onclick="jQuery.fn.dialog.closeTop()">
+                <button class="btn btn-secondary float-start" onclick="jQuery.fn.dialog.closeTop()">
                     <?php echo t('Cancel') ?>
                 </button>
 
-                <button class="btn btn-danger float-right" onclick="$('#ccm-dialog-delete-association form').submit()">
+                <button class="btn btn-danger float-end" onclick="$('#ccm-dialog-delete-association form').submit()">
                     <?php echo t('Delete Association') ?>
                 </button>
             </div>

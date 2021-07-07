@@ -9,9 +9,9 @@ $ownerName = $u->getUserName();
 ?>
 <div class="ccm-gathering-masthead-image-left ccm-gathering-masthead-image ccm-gathering-scaled-image">
 	<a href="#" data-overlay="gathering-item">
-		<img class="float-left" src="<?=$image->getSrc()?>" alt="<?php echo t('Preview Image') ?>" />
+		<img class="float-start" src="<?=$image->getSrc()?>" alt="<?php echo t('Preview Image') ?>" />
 	</a>
-	<div class="ccm-gathering-tile-title-description float-left">
+	<div class="ccm-gathering-tile-title-description float-start">
 		<div class="ccm-gathering-tile-headline"><a href="<?=$link?>"><?=$title?></a></div>
 		<div class="ccm-gathering-tile-byline"><?php echo tc(/*i18n: %s is the name of the author */ 'Authored', 'By %s', '<span class="author-name">' . $ownerName . '</span>'); ?></div>
 		<div class="ccm-gathering-tile-description">

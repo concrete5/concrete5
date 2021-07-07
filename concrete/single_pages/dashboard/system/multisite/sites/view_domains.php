@@ -33,7 +33,7 @@ $siteMenu->render();
 </div>
 
 <div class="form-group">
-    <?= $form->label('', t('Canonical Domain'), ['class' => 'launch-tooltip', 'title' => t('This domain is automatically constructred from the site\'s canonical URL.')]) ?>
+    <?= $form->label('', t('Canonical Domain'), ['class' => 'launch-tooltip form-label', 'title' => t('This domain is automatically constructred from the site\'s canonical URL.')]) ?>
     <div><?= h($canonicalDomain) ?></div>
 </div>
 
@@ -53,7 +53,7 @@ $siteMenu->render();
                 <li>
                     <span>
                         <?= h($domain->getDomain()) ?>
-                        <a href="<?= $controller->action('delete_domain', $domain->getDomainID(), $token->generate('delete_domain')) ?>" class="float-right icon-link"><i class="fas fa-trash-alt"></i></a>
+                        <a href="<?= $controller->action('delete_domain', $domain->getDomainID(), $token->generate('delete_domain')) ?>" class="float-end icon-link"><i class="fas fa-trash-alt"></i></a>
                     </span>
                 </li>
                 <?php
@@ -67,7 +67,7 @@ $siteMenu->render();
 
 <div class="ccm-dashboard-form-actions-wrapper">
     <div class="ccm-dashboard-form-actions">
-        <div class="float-right">
+        <div class="float-end">
             <button class="btn btn-primary" data-dialog="add-domain" data-dialog-title="<?= t('Add Domain') ?>"><?= t('Add Domain') ?></button>
         </div>
     </div>

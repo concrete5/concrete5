@@ -5,7 +5,7 @@ if (is_object($configuration)) {
 }
 ?>
 <div class="control-group">
-	<label class="control-label"><?=t('Tags')?></label>
+	<label class="control-label form-label"><?=t('Tags')?></label>
 	<div class="controls">
 		<?=$form->text($source->optionFormKey('flickrFeedTags'), $flickrFeedTags)?>
 	</div>

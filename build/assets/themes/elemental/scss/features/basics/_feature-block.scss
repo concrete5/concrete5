@@ -3,7 +3,7 @@ div.ccm-block-feature-item {
   position: relative;
 
   h4, i {
-    color: theme-color('primary');
+    color: $primary;
   }
 
   i {
@@ -19,7 +19,7 @@ div.ccm-block-feature-item {
 // Custom home page class for feature
 div.feature-home-page {
   div.ccm-block-feature-item h4, div.ccm-block-feature-item i {
-    color: theme-color("primary");
+    color: $primary;
   }
 
   div.ccm-block-feature-item h4 {
@@ -27,7 +27,7 @@ div.feature-home-page {
   }
 
   div.ccm-block-feature-item i {
-    color: theme-color("primary");
+    color: $primary;
     font-size: 1.3em;
     top: 1px;
   }

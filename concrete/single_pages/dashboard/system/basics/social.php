@@ -35,8 +35,8 @@
                 <p><?=t('Are you sure? This action cannot be undone.'); ?></p>
             </form>
             <div class="dialog-buttons">
-                <button class="btn btn-secondary float-left" onclick="jQuery.fn.dialog.closeTop()"><?=t('Cancel'); ?></button>
-                <button class="btn btn-danger float-right" onclick="$('#ccm-dialog-delete-social-link form').submit()"><?=t('Delete Link'); ?></button>
+                <button class="btn btn-secondary float-start" onclick="jQuery.fn.dialog.closeTop()"><?=t('Cancel'); ?></button>
+                <button class="btn btn-danger float-end" onclick="$('#ccm-dialog-delete-social-link form').submit()"><?=t('Delete Link'); ?></button>
             </div>
         </div>
     </div>
@@ -62,14 +62,14 @@
         <?=$this->controller->token->output($tokenString); ?>
 
         <div class="form-group">
-            <?=$form->label('ssHandle', t('Service'), ['class' => 'col-md-2']); ?>
+            <?=$form->label('ssHandle', t('Service'), ['class' => 'col-md-2 form-label']); ?>
             <div class="col-md-5">
             <?=$form->select('ssHandle', $services, $ssHandle); ?>
             </div>
         </div>
 
         <div class="form-group">
-            <?=$form->label('url', t('URL'), ['class' => 'col-md-2']); ?>
+            <?=$form->label('url', t('URL'), ['class' => 'col-md-2 form-label']); ?>
             <div class="col-md-5">
                 <?=$form->text('url', $url); ?>
             </div>
@@ -77,8 +77,8 @@
 
         <div class="ccm-dashboard-form-actions-wrapper">
             <div class="ccm-dashboard-form-actions">
-                <a href="<?=URL::to('/dashboard/system/basics/social'); ?>" class="btn btn-secondary float-left"><?=t("Cancel"); ?></a>
-                <button class="float-right btn btn-primary" type="submit" ><?=$buttonText; ?></button>
+                <a href="<?=URL::to('/dashboard/system/basics/social'); ?>" class="btn btn-secondary float-start"><?=t("Cancel"); ?></a>
+                <button class="float-end btn btn-primary" type="submit" ><?=$buttonText; ?></button>
             </div>
         </div>
 

@@ -23,7 +23,7 @@ $help = ob_get_clean();
     ?>
     <div class="ccm-dashboard-form-actions-wrapper">
         <div class="ccm-dashboard-form-actions">
-            <button type="submit" value="<?= t('Save') ?>" class="btn btn-primary float-right"><?= t('Save') ?></button>
+            <button type="submit" value="<?= t('Save') ?>" class="btn btn-primary float-end"><?= t('Save') ?></button>
         </div>
     </div>
 </form>

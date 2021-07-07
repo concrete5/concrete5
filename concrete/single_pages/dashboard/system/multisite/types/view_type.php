@@ -62,7 +62,7 @@ if (!$type->isDefault()) {
     ?>
     <div class="ccm-dashboard-form-actions-wrapper">
         <div class="ccm-dashboard-form-actions">
-            <div class="float-right">
+            <div class="float-end">
                 <a href="javascript:void(0)" class="btn btn-danger" data-dialog="delete-type" data-dialog-title="<?= t('Delete Site Type') ?>" data-dialog-width="400"><?= t('Delete Site Type') ?></a>            
             </div>
         </div>

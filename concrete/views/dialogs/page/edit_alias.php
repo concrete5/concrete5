@@ -17,7 +17,7 @@ defined('C5_EXECUTE') or die('Access Denied.');
             <?= $form->text('customAliasName', $customAliasName, ['autofocus' => 'autofocus', 'placeholder' => t('Empty: use name of aliased page')]) ?>
         </div>
         <div class="form-group">
-            <?= $form->label('aliasHandle', t('URL Slug'), ['class' => 'launch-tooltip', 'title' => t('This page must always be available from at least one URL. This is that URL.')]) ?>
+            <?= $form->label('aliasHandle', t('URL Slug'), ['class' => 'launch-tooltip form-label', 'title' => t('This page must always be available from at least one URL. This is that URL.')]) ?>
             <?= $form->text('aliasHandle', $aliasHandle, ['required' => 'required', 'maxlength' => 255]) ?>
         </div>
         <div class="dialog-buttons">

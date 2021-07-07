@@ -19,12 +19,12 @@
 </style>
 <div class="ccm-ui survey-block-edit">
     <div class="form-group">
-        <label for="questionEntry" class="control-label"><?= t('Question') ?></label>
+        <label for="questionEntry" class="control-label form-label"><?= t('Question') ?></label>
         <input type="text" name="question" value="<?= $controller->getQuestion() ?>"
                class="form-control"/>
     </div>
     <div class="form-group">
-        <label for="requiresRegistration" class="control-label"><?= t('Target Audience') ?></label>
+        <label for="requiresRegistration" class="control-label form-label"><?= t('Target Audience') ?></label>
         <div class="form-check">
             <?=$form->radio('requiresRegistration', '0', $controller->requiresRegistration())?>
             <?=$form->label('requiresRegistration1',t('Public'), ['class'=>'form-check-label'])?>
@@ -36,20 +36,20 @@
     </div>
 
     <div class="form-group">
-        <label for="showResults" class="control-label"><?= t('Survey Results') ?></label>
+        <label for="showResults" class="control-label form-label"><?= t('Survey Results') ?></label>
         <div class="form-check">
             <?=$form->checkbox('showResults', 1, ($controller->getShowResults() ? '1':'0'), ['class'=>'show-custom-message form-check-input'])?>
             <?=$form->label('showResults', t('Hide Survey Results and Show Custom Message'), ['class'=>'form-check-label']) ?>
         </div>
     </div>
     <div class="form-group custom-message-container" style="display: none;">
-        <label for="customMessage" class="control-label"><?= t('Custom Message') ?></label>
+        <label for="customMessage" class="control-label form-label"><?= t('Custom Message') ?></label>
         <input type="text" name="customMessage" value="<?= $controller->getCustomMessage() ?>"
                class="form-control" placeholder="Thank you for filling out this form!"/>
     </div>
 
     <div class="form-group">
-        <label class="control-label"><?= t('Survey Options') ?></label>
+        <label class="control-label form-label"><?= t('Survey Options') ?></label>
 
         <div class="poll-options">
             <?php
@@ -65,7 +65,7 @@
                 foreach ($options as $opt) {
                     ?>
                     <div class="survey-block-option">
-                        <a href="javascript:void(0);" class="float-right ccm-icon-wrapper text-danger delete">
+                        <a href="javascript:void(0);" class="float-end ccm-icon-wrapper link-danger delete">
                             <i class="fas fa-trash-alt"></i>
                         </a>
                         <?= h($opt->getOptionName()) ?>
@@ -80,7 +80,7 @@
     </div>
 
     <div class="form-group">
-        <label for="optionEntry" class="control-label"><?= t('Add Option') ?></label>
+        <label for="optionEntry" class="control-label form-label"><?= t('Add Option') ?></label>
 
         <div class="input-group">
             <input type="text" name="optionValue" class="option-value form-control"/>
@@ -93,7 +93,7 @@
     </div>
     <script type="text/template" role="option">
         <div class="survey-block-option">
-            <a href="javascript:void(0);" class="float-right ccm-icon-wrapper text-danger delete">
+            <a href="javascript:void(0);" class="float-end ccm-icon-wrapper link-danger delete">
                 <i class="fas fa-trash-alt"></i>
             </a>
             <%- value %>

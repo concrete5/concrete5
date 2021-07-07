@@ -7,8 +7,8 @@
     <?php View::element('page_types/form/base', ['pagetype' => $pagetype]); ?>
     <div class="ccm-dashboard-form-actions-wrapper">
         <div class="ccm-dashboard-form-actions">
-            <a href="<?= URL::to('/dashboard/pages/types'); ?>" class="btn btn-secondary float-left"><?= t('Cancel'); ?></a>
-            <button class="float-right btn btn-primary" type="submit"><?= t('Save'); ?></button>
+            <a href="<?= URL::to('/dashboard/pages/types'); ?>" class="btn btn-secondary float-start"><?= t('Cancel'); ?></a>
+            <button class="float-end btn btn-primary" type="submit"><?= t('Save'); ?></button>
         </div>
     </div>
 </form>
@@ -69,8 +69,8 @@
                             <?php $token->output('duplicate_page_type'); ?>
                         </form>
                         <div class="dialog-buttons">
-                            <button onclick="jQuery.fn.dialog.closeTop()" class="btn btn-secondary float-left"><?=t('Cancel'); ?></button>
-                            <button onclick="$('form[data-duplicate-form=<?=$cm->getPageTypeID(); ?>]').submit()" class="btn btn-primary float-right"><?=t('Copy'); ?></button>
+                            <button onclick="jQuery.fn.dialog.closeTop()" class="btn btn-secondary float-start"><?=t('Cancel'); ?></button>
+                            <button onclick="$('form[data-duplicate-form=<?=$cm->getPageTypeID(); ?>]').submit()" class="btn btn-primary float-end"><?=t('Copy'); ?></button>
                         </div>
                     </div>
                 </div>
@@ -87,8 +87,8 @@
 						<?php $token->output('delete_page_type'); ?>
 						</form>
                         <div class="dialog-buttons">
-                            <button onclick="jQuery.fn.dialog.closeTop()" class="btn btn-secondary float-left"><?= t('Cancel'); ?></button>
-                            <button onclick="$('form[data-delete-form=<?= $cm->getPageTypeID(); ?>]').submit()" class="btn btn-danger float-right"><?= t('Delete'); ?></button>
+                            <button onclick="jQuery.fn.dialog.closeTop()" class="btn btn-secondary float-start"><?= t('Cancel'); ?></button>
+                            <button onclick="$('form[data-delete-form=<?= $cm->getPageTypeID(); ?>]').submit()" class="btn btn-danger float-end"><?= t('Delete'); ?></button>
                         </div>
 					</div>
 				</div>

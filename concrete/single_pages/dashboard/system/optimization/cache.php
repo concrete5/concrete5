@@ -25,7 +25,7 @@ defined('C5_EXECUTE') or die('Access Denied.');
     <fieldset>
         <legend>
             <?= t('Block Cache') ?>
-            <span class="launch-tooltip" data-placement="right" title="<?= t('Stores the output of blocks which support block caching') ?>"><i class="fas fa-question-circle"></i></span>
+            <span class="launch-tooltip" data-bs-placement="right" title="<?= t('Stores the output of blocks which support block caching') ?>"><i class="fas fa-question-circle"></i></span>
         </legend>
         <div class="form-group">
             <div class="form-check">
@@ -42,7 +42,7 @@ defined('C5_EXECUTE') or die('Access Denied.');
     <fieldset>
         <legend>
             <?= t('Theme CSS Cache') ?>
-            <span class="launch-tooltip" data-placement="right" title="<?= t('Caches the output of customized theme stylesheets for faster loading. Turn off if you are editing LESS files in your theme directly.') ?>"><i class="fas fa-question-circle"></i></span>
+            <span class="launch-tooltip" data-bs-placement="right" title="<?= t('Caches the output of customized theme stylesheets for faster loading. Turn off if you are editing LESS files in your theme directly.') ?>"><i class="fas fa-question-circle"></i></span>
         </legend>
         <div class="form-group">
             <div class="form-check">
@@ -59,14 +59,14 @@ defined('C5_EXECUTE') or die('Access Denied.');
     <fieldset>
         <legend>
             <?= t('Compress LESS Output') ?>
-            <span class="launch-tooltip" data-placement="right" title="<?= t('Determines whether compiled LESS stylesheets should output as compressed CSS. Uncompressed stylesheets are slightly larger but easier to read.') ?>"><i class="fas fa-question-circle"></i></span>
+            <span class="launch-tooltip" data-bs-placement="right" title="<?= t('Determines whether compiled LESS stylesheets should output as compressed CSS. Uncompressed stylesheets are slightly larger but easier to read.') ?>"><i class="fas fa-question-circle"></i></span>
         </legend>
         <div class="form-group">
             <div class="form-check">
                 <?= $form->radio('COMPRESS_THEME_PREPROCESSOR_OUTPUT', '0', $compressThemePreprocessorOutput ? '1' : '0', ['id' => 'COMPRESS_THEME_PREPROCESSOR_OUTPUT-0']) ?>
                 <label class="form-check-label" for="COMPRESS_THEME_PREPROCESSOR_OUTPUT-0"><?= t('Off - Good for debugging generated CSS output.') ?></label>
             </div>
-            <div class="form-check ml-4">
+            <div class="form-check ms-4">
                 <?= $form->checkbox('GENERATE_LESS_SOURCEMAP', '1', $generateLessSourcemap) ?>
                 <label class="form-check-label" for="GENERATE_LESS_SOURCEMAP"><?= t('enable source maps in generated CSS files') ?></label>
             </div>
@@ -79,7 +79,7 @@ defined('C5_EXECUTE') or die('Access Denied.');
 
     <fieldset>
         <legend><?= t('Overrides Cache') ?>
-            <span class="launch-tooltip" data-placement="right" title="<?= t('Stores the location and existence of source code files.') ?>"><i class="fas fa-question-circle"></i></span>
+            <span class="launch-tooltip" data-bs-placement="right" title="<?= t('Stores the location and existence of source code files.') ?>"><i class="fas fa-question-circle"></i></span>
         </legend>
         <div class="form-group">
             <div class="form-check">
@@ -96,7 +96,7 @@ defined('C5_EXECUTE') or die('Access Denied.');
     <fieldset>
         <legend>
             <?= t('Full Page Caching') ?>
-            <span class="launch-tooltip" data-placement="right" title="<?= t('Stores the output of an entire page.') ?>"><i class="fas fa-question-circle"></i></span>
+            <span class="launch-tooltip" data-bs-placement="right" title="<?= t('Stores the output of an entire page.') ?>"><i class="fas fa-question-circle"></i></span>
         </legend>
         <div class="form-group">
             <div class="form-check">
@@ -113,7 +113,7 @@ defined('C5_EXECUTE') or die('Access Denied.');
             </div>
         </div>
         <div class="form-group">
-            <label class="control-label"><?= t('Expire Pages from the Cache') ?></label>
+            <label class="control-label form-label"><?= t('Expire Pages from the Cache') ?></label>
             <div class="form-check">
                 <?= $form->radio('FULL_PAGE_CACHE_LIFETIME', 'default', $fullPageCacheLifetime, ['id' => 'FULL_PAGE_CACHE_LIFETIME-default']) ?>
                 <label class="form-check-label" for="FULL_PAGE_CACHE_LIFETIME-default"><?= t('Every %s (default setting).', $dateService->describeInterval($defaultCacheLifetime)) ?></label>
@@ -131,7 +131,7 @@ defined('C5_EXECUTE') or die('Access Denied.');
 
     <div class="ccm-dashboard-form-actions-wrapper">
         <div class="ccm-dashboard-form-actions">
-            <button class="float-right btn btn-primary" type="submit" ><?= t('Save') ?></button>
+            <button class="float-end btn btn-primary" type="submit" ><?= t('Save') ?></button>
         </div>
     </div>
 

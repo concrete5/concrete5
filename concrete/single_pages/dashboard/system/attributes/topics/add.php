@@ -15,8 +15,8 @@ $form = Core::make('helper/form');
 
     <div class="ccm-dashboard-form-actions-wrapper">
         <div class="ccm-dashboard-form-actions ">
-            <a href="<?php echo $view->url('/dashboard/system/attributes/topics'); ?>" class="btn btn-secondary float-left"><?php echo t("Cancel"); ?></a>
-            <button type="submit" class="btn btn-primary float-right"><?php echo t('Add Topic Tree'); ?></button>
+            <a href="<?php echo $view->url('/dashboard/system/attributes/topics'); ?>" class="btn btn-secondary float-start"><?php echo t("Cancel"); ?></a>
+            <button type="submit" class="btn btn-primary float-end"><?php echo t('Add Topic Tree'); ?></button>
         </div>
     </div>
 </form>

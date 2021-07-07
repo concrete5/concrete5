@@ -130,7 +130,7 @@ use Concrete\Core\View\View;
                 <?php echo $form->hidden('entity_id', $entity->getId()) ?>
                 <?php echo $token->output('rescan_entries') ?>
 
-                <button type="submit" name="rescan" class="btn btn-secondary btn-sm float-right">
+                <button type="submit" name="rescan" class="btn btn-secondary btn-sm float-end">
                     <?php echo t('Rescan Entries') ?>
                 </button>
             </form>

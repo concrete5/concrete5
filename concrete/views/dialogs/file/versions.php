@@ -72,11 +72,11 @@ use Concrete\Core\Support\Facade\Url;
                     <td>
                         <?php if ($fp->canEditFileProperties()) { ?>
                             <?php if ($fvv->getFileVersionID() != $fv->getFileVersionID()) { ?>
-                                <a class="mr-2 ccm-hover-icon" href="<?= URL::to(
+                                <a class="me-2 ccm-hover-icon" href="<?= URL::to(
                                     '/dashboard/files/details', 'preview_version', $f->getFileID(), $fvv->getFileVersionID()) ?>">
                                     <i class="fa fa-search"></i></a>
                                 <?php } else { ?>
-                                    <i class="mr-2 fa fa-search" style="opacity: 0.2"></i>
+                                    <i class="me-2 fa fa-search" style="opacity: 0.2"></i>
                                 <?php } ?>
                         <?php } ?>
 

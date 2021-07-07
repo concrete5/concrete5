@@ -42,14 +42,14 @@ if (!empty($_error)) {
 if (isset($message)) {
     ?>
 	<div class="ccm-ui" id="ccm-dashboard-result-message">
-		<div class="alert alert-info"><button type="button" class="close" data-dismiss="alert">×</button><?=nl2br(h($message))?></div>
+		<div class="alert alert-info alert-dismissible"><button type="button" class="btn-close" data-bs-dismiss="alert"></button><?=nl2br(h($message))?></div>
 	</div>
 	<?php
 
 } elseif (isset($success)) {
     ?>
 	<div class="ccm-ui" id="ccm-dashboard-result-message">
-		<div class="alert alert-success"><button type="button" class="close" data-dismiss="alert">×</button><?=nl2br(h($success))?></div>
+		<div class="alert alert-success alert-dismissible"><button type="button" class="btn-close" data-bs-dismiss="alert"></button><?=nl2br(h($success))?></div>
 	</div>
 	<?php 
 }
@@ -69,7 +69,7 @@ if (isset($breadcrumb) && (!empty($breadcrumb))) {
                 ?><li class="<?=$value['active'] ? 'ccm-undroppable-search-item active' : 'ccm-droppable-search-item'?>" data-collection-id="<?=$value['id']?>"><?php
                 if (isset($value['children'])) {
                     ?><span class="dropdown">
-                    <button type="button" class="btn btn-default btn-xs" data-toggle="dropdown">
+                    <button type="button" class="btn btn-default btn-xs" data-bs-toggle="dropdown">
                         <?=$value['name']?>
                         <span class="caret"></span>
                     </button>

@@ -70,7 +70,7 @@ class LinkFormatter implements LinkFormatterInterface
         if (!$occurrence->getVersion()->isApproved()) {
             // Output a tooltip with text that makes it clear that there are unpublished changes
             $value .= sprintf(
-                '<i class="launch-tooltip fa fa-exclamation-circle z-indexable z-1000" data-toggle="tooltip" data-placement="bottom" title="%s"></i>',
+                '<i class="launch-tooltip fa fa-exclamation-circle z-indexable z-1000" data-bs-toggle="tooltip" data-bs-placement="bottom" title="%s"></i>',
                 t('This event has unpublished versions.')
             );
         }

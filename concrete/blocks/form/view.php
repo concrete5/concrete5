@@ -87,7 +87,7 @@ $captcha = $surveyBlockInfo['displayCaptcha'] ? $app->make('helper/validation/ca
 
             <?php foreach ($questions as $question) { ?>
                 <div class="form-group field field-<?php echo $question['type']; ?> <?php echo isset($errorDetails[$question['msqID']]) ? 'has-error' : '' ?>">
-                    <label class="control-label" <?php echo $question['labelFor']; ?>>
+                    <label class="control-label form-label" <?php echo $question['labelFor']; ?>>
                         <?php echo $question['question']; ?>
                         <?php if ($question['required']) { ?>
                             <span class="text-muted small" style="font-weight: normal"><?= t('Required') ?></span>
@@ -105,7 +105,7 @@ $captcha = $surveyBlockInfo['displayCaptcha'] ? $app->make('helper/validation/ca
                 $captchaLabel = $captcha->label();
                 if (!empty($captchaLabel)) {
                     ?>
-                    <label class="control-label"><?php echo $captchaLabel; ?></label>
+                    <label class="control-label form-label"><?php echo $captchaLabel; ?></label>
                     <?php
 
                 }

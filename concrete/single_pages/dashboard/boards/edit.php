@@ -29,7 +29,7 @@ $buttonText = t("Add");
                 </div>
 
                 <div class="form-group">
-                    <label class="control-label"><?=t('Sort By')?></label>
+                    <label class="control-label form-label"><?=t('Sort By')?></label>
 
                     <div class="form-check">
                         <?=$form->radio('sortBy', 'relevant_date_asc', $sortBy)?>
@@ -49,7 +49,7 @@ $buttonText = t("Add");
 
                 <?php if ($multisite) { ?>
                     <div class="form-group">
-                        <label class="control-label"><?=t('Site')?></label>
+                        <label class="control-label form-label"><?=t('Site')?></label>
 
                         <div class="form-check">
                             <?=$form->radio('sharedBoard', 0, $isSharedBoard)?>
@@ -69,8 +69,8 @@ $buttonText = t("Add");
 
                 <div class="ccm-dashboard-form-actions-wrapper">
                     <div class="ccm-dashboard-form-actions ">
-                        <button type="button" class="btn btn-danger float-left" data-toggle="modal" data-target="#delete-board"><?=t("Delete")?></button>
-                        <button type="submit" class="btn btn-primary float-right"><?=t('Save')?></button>
+                        <button type="button" class="btn btn-danger float-start" data-bs-toggle="modal" data-bs-target="#delete-board"><?=t("Delete")?></button>
+                        <button type="submit" class="btn btn-primary float-end"><?=t('Save')?></button>
                     </div>
                 </div>
             </fieldset>
@@ -86,16 +86,14 @@ $buttonText = t("Add");
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title"><?=t('Delete Board')?></h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <svg><use xlink:href="#icon-dialog-close" /></svg>
-                    </button>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="<?= t('Close') ?>"></button>
                 </div>
                 <div class="modal-body">
                     <?=t('Are you sure you want to remove this board?')?>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary mr-auto" data-dismiss="modal"><?=t('Cancel')?></button>
-                    <button type="submit" class="btn btn-danger float-right"><?=t('Delete Board')?></button>
+                    <button type="button" class="btn btn-secondary me-auto" data-bs-dismiss="modal"><?=t('Cancel')?></button>
+                    <button type="submit" class="btn btn-danger float-end"><?=t('Delete Board')?></button>
                 </div>
             </div>
         </div>

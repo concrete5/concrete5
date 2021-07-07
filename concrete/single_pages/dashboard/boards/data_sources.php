@@ -44,9 +44,9 @@ defined('C5_EXECUTE') or die("Access Denied.");
 
         } ?>
 
-        <h3 class="font-weight-light"><?=t('Add Data Source')?></h3>
+        <h3 class="fw-light"><?=t('Add Data Source')?></h3>
         <div class="btn-group">
-            <button type="button" class="btn btn-outline-secondary dropdown-toggle" data-button="attribute-type" data-toggle="dropdown">
+            <button type="button" class="btn btn-outline-secondary dropdown-toggle" data-button="attribute-type" data-bs-toggle="dropdown">
                 <?=t('Choose Type')?> <span class="caret"></span>
             </button>
             <ul class="dropdown-menu">

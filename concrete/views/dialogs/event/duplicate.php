@@ -10,7 +10,7 @@
         <hr/>
 
         <div class="form-group">
-            <label class="control-label"><?=t('Duplicate to Calendar')?></label>
+            <label class="control-label form-label"><?=t('Duplicate to Calendar')?></label>
             <?=$form->select('caID', $calendars, $caID)?>
         </div>
 
@@ -23,9 +23,9 @@
         <?php } ?>
 
         <div class="dialog-buttons">
-            <button class="btn btn-secondary float-left" data-dialog-action="cancel"><?= t('Cancel') ?></button>
+            <button class="btn btn-secondary float-start" data-dialog-action="cancel"><?= t('Cancel') ?></button>
             <button type="button" data-dialog-action="submit"
-                    class="btn btn-primary float-right"><?= t('Duplicate Event') ?></button>
+                    class="btn btn-primary float-end"><?= t('Duplicate Event') ?></button>
         </div>
 
 

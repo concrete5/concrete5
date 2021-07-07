@@ -89,11 +89,9 @@ if (!isset($width)) {
         <div class="input-group">
             <?php echo $form->number('width', $width ?: '', ['min' => 1]); ?>
 
-            <div class="input-group-append">
-                <span class="input-group-text">
-                    <?php echo t('px'); ?>
-                </span>
-            </div>
+            <span class="input-group-text">
+                <?php echo t('px'); ?>
+            </span>
         </div>
     </div>
 </fieldset>

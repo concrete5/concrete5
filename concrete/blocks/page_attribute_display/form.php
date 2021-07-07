@@ -100,11 +100,9 @@ echo $ui->tabs([
                 <div class="input-group">
                     <?php echo $form->number('thumbnailWidth', $thumbnailWidth, ["min" => 0, "step" => 1]); ?>
 
-                    <div class="input-group-append">
-                        <span class="input-group-text">
-                            <?php echo t('px'); ?>
-                        </span>
-                    </div>
+                    <span class="input-group-text">
+                        <?php echo t('px'); ?>
+                    </span>
                 </div>
             </div>
 
@@ -114,11 +112,9 @@ echo $ui->tabs([
                 <div class="input-group">
                     <?php echo $form->number('thumbnailHeight', $thumbnailHeight, ["min" => 0, "step" => 1]); ?>
 
-                    <div class="input-group-append">
-                        <span class="input-group-text">
-                            <?php echo t('px'); ?>
-                        </span>
-                    </div>
+                    <span class="input-group-text">
+                        <?php echo t('px'); ?>
+                    </span>
                 </div>
             </div>
         </fieldset>

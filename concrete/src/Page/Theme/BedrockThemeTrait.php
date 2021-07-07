@@ -20,7 +20,7 @@ trait BedrockThemeTrait
 
     public function getThemeGridFrameworkHandle(): string
     {
-        return 'bootstrap4';
+        return 'bootstrap5';
     }
 
 }

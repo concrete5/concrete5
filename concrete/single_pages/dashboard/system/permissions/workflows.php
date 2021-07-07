@@ -18,8 +18,8 @@ $app = \Concrete\Core\Support\Facade\Application::getFacadeApplication();
 
 <div class="ccm-dashboard-form-actions-wrapper">
 <div class="ccm-dashboard-form-actions">
-	<a href="<?=URL::page($c, 'view_detail', $wf->getWorkflowID())?>" class="btn btn-secondary float-left"><?=t("Cancel")?></a>
-	<input type="submit" name="submit" value="<?=t('Save')?>" class="btn btn-primary float-right" />
+	<a href="<?=URL::page($c, 'view_detail', $wf->getWorkflowID())?>" class="btn btn-secondary float-start"><?=t("Cancel")?></a>
+	<input type="submit" name="submit" value="<?=t('Save')?>" class="btn btn-primary float-end" />
 </div>
 </div>
 </form>
@@ -49,17 +49,16 @@ $app = \Concrete\Core\Support\Facade\Application::getFacadeApplication();
 			
 			<div class="form-group">
 				<div class="input-group">
-				  <div class="input-group-prepend"><?=$form->label('wfName', t('Name'), ['class'=>'input-group-text'])?></div>
+                    <?=$form->label('wfName', t('Name'), ['class'=>'input-group-text'])?>
 					<?=$form->text('wfName', $wfName)?>
-					<span class="input-group-append"><div class="input-group-text"><i class="fa fa-asterisk"></i></div></span>
+                    <div class="input-group-text"><i class="fa fa-asterisk"></i></div>
 				</div>
 			</div>
 			
 			<div class="form-group">
 				<div class="input-group">
-          <div class="input-group-prepend"><?=$form->label('wftID', t('Type'), ['class'=>'input-group-text'])?></div>
-					<?=$form->select('wftID', $types, ['class'=>'custom-select'])?>
-				</div>
+                <?=$form->label('wftID', t('Type'), ['class'=>'input-group-text'])?></div>
+                <?=$form->select('wftID', $types, ['class'=>'form-select'])?>
 			</div>
 
 			<?php foreach ($typeObjects as $type) {
@@ -81,8 +80,8 @@ $app = \Concrete\Core\Support\Facade\Application::getFacadeApplication();
 		
 		<div class="ccm-dashboard-form-actions-wrapper">
 		<div class="ccm-dashboard-form-actions">
-			<a href="<?=URL::page($c)?>" class="btn btn-secondary float-left"><?=t('Cancel')?></a>
-			<button type="submit" class="btn btn-primary float-right"><?=t('Add')?></button>
+			<a href="<?=URL::page($c)?>" class="btn btn-secondary float-start"><?=t('Cancel')?></a>
+			<button type="submit" class="btn btn-primary float-end"><?=t('Add')?></button>
 		</div>
 		</div>
 			

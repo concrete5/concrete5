@@ -8,9 +8,9 @@
             ?>
             <a href="<?= URL::to('/ccm/system/dialogs/express/association/reorder')?>?entryID=<?=$entry->getId()?>&amp;controlID=<?=$control->getId()?>"
                dialog-title="<?= t('Reorder Entries') ?>" dialog-width="400" dialog-height="350"
-               class="dialog-launch btn btn-secondary btn-xs float-right"><?= t('Reorder Entries') ?></a>
+               class="dialog-launch btn btn-secondary btn-xs float-end"><?= t('Reorder Entries') ?></a>
             <?php } ?>
-            <label class="control-label">
+            <label class="control-label form-label">
                 <?= $label ?></label>
         </div>
         <?php

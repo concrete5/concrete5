@@ -36,15 +36,15 @@ defined('C5_EXECUTE') or die('Access Denied.');
                 );
             }
             ?>
-            <button type="button" data-post-message-id="<?= $message->getConversationMessageID() ?>" data-submit="update-conversation-message" class="float-right btn btn-primary btn-sm"><?= t('Save') ?></button>
+            <button type="button" data-post-message-id="<?= $message->getConversationMessageID() ?>" data-submit="update-conversation-message" class="float-end btn btn-primary btn-sm"><?= t('Save') ?></button>
             <?php
             if ($attachmentsEnabled) {
                 ?>
-                <button type="button" class="float-right btn btn-info btn-sm ccm-conversation-attachment-toggle" title="<?= t('Attach Files') ?>"><i class="far fa-image"></i></button>
+                <button type="button" class="float-end btn btn-info btn-sm ccm-conversation-attachment-toggle" title="<?= t('Attach Files') ?>"><i class="far fa-image"></i></button>
                 <?php
             }
             ?>
-            <button type="button" data-post-message-id="<?= $message->getConversationMessageID() ?>" data-submit="cancel-update" class="cancel-update float-right btn btn-secondary btn-sm"><?= t('Cancel') ?></button>
+            <button type="button" data-post-message-id="<?= $message->getConversationMessageID() ?>" data-submit="cancel-update" class="cancel-update float-end btn btn-secondary btn-sm"><?= t('Cancel') ?></button>
             <?= $form->hidden('cID', $cID) ?>
             <?= $form->hidden('blockAreaHandle', $blockAreaHandle) ?>
             <?= $form->hidden('bID', $bID) ?>

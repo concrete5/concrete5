@@ -19,7 +19,7 @@ if ($akSelectAllowMultipleValues) {
 <?php 
 } else {
     ?>
-	<select class="form-control" name="<?=$this->field('atSelectOptionID')?>[]">
+	<select class="form-select" name="<?=$this->field('atSelectOptionID')?>[]">
 		<option value=""><?=t('** All')?></option>
 	<?php foreach ($options as $opt) {
     ?>

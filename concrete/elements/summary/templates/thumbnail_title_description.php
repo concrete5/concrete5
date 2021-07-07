@@ -2,7 +2,7 @@
 
 <div class="row mb-3">
     <div class="col-sm-4 d-flex">
-        <img class="img-fluid ml-auto mr-auto" src="<?=$thumbnail?>">
+        <img class="img-fluid ms-auto me-auto" src="<?=$thumbnail?>">
     </div>
     <div class="col-sm-8">
         <a href="<?=$link?>"><?=$title?></a>

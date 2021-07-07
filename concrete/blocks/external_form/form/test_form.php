@@ -13,7 +13,7 @@ if (isset($response)) {
     <p><?=$message?></p>
 
     <div class="form-group">
-        <label class="control-label"><?=t('Test')?></label>
+        <label class="control-label form-label"><?=t('Test')?></label>
         <?=$form->text('test_text_field')?>
     </div>
 

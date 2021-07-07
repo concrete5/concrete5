@@ -26,7 +26,7 @@ $token = $app->make(Token::class);
 
     <div class="ccm-dashboard-form-actions-wrapper">
         <div class="ccm-dashboard-form-actions">
-            <?php echo $form->submit('save', t('Save'), ['class' => 'btn btn-primary float-right']); ?>
+            <?php echo $form->submit('save', t('Save'), ['class' => 'btn btn-primary float-end']); ?>
         </div>
     </div>
 </form>

@@ -4,19 +4,19 @@
     <?=$token->output('save')?>
 
     <div class="form-group">
-        <label class="control-label" for="topicAttribute"><?=t('Calendar Topics Attribute')?></label>
+        <label class="control-label form-label" for="topicAttribute"><?=t('Calendar Topics Attribute')?></label>
         <?=$form->select('topicAttribute', $topicAttributes, $topicAttribute)?>
     </div>
 
     <div class="form-group">
-        <label class="control-label" for="topicAttribute"><?=t('Calendar Summary Thumbnail Attribute')?></label>
+        <label class="control-label form-label" for="topicAttribute"><?=t('Calendar Summary Thumbnail Attribute')?></label>
         <?=$form->select('summaryThumbnailAttribute', $summaryThumbnailAttributes, $summaryThumbnailAttribute)?>
     </div>
 
 
     <div class="ccm-dashboard-form-actions-wrapper">
         <div class="ccm-dashboard-form-actions">
-            <button class="float-right btn btn-success" type="submit" ><?=t('Save')?></button>
+            <button class="float-end btn btn-success" type="submit" ><?=t('Save')?></button>
         </div>
     </div>
 

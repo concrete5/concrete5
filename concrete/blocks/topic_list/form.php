@@ -1,8 +1,8 @@
 <?php defined('C5_EXECUTE') or die("Access Denied."); ?>
 <fieldset>
     <div class="form-group">
-        <label class="control-label" for="modeSelect"><?=t('Mode')?></label>
-        <select class="form-control" name="mode" id="modeSelect">
+        <label class="control-label form-label" for="modeSelect"><?=t('Mode')?></label>
+        <select class="form-select" name="mode" id="modeSelect">
             <option value="S" <?php if ($mode == 'S') {
     ?>selected<?php 
 } ?>><?=t('Search – Display a list of all topics for use on a search sidebar.')?></option>
@@ -12,8 +12,8 @@
         </select>
     </div>
     <div class="form-group" data-row="mode-search">
-        <label class="control-label" for="topicTreeIDSelect"><?=t('Topic Tree')?></label>
-        <select class="form-control" name="topicTreeID" id="topicTreeIDSelect">
+        <label class="control-label form-label" for="topicTreeIDSelect"><?=t('Topic Tree')?></label>
+        <select class="form-select" name="topicTreeID" id="topicTreeIDSelect">
             <?php foreach ($trees as $stree) {
     ?>
                 <option value="<?=$stree->getTreeID()?>" <?php if ($tree->getTreeID() == $stree->getTreeID()) {
@@ -26,8 +26,8 @@
     </div>
 
     <div class="form-group" data-row="mode-page">
-        <label class="control-label" for="attributeKeySelect"><?=t('Topic Attribute To Display')?></label>
-        <select class="form-control" name="topicAttributeKeyHandle" id="attributeKeySelect">
+        <label class="control-label form-label" for="attributeKeySelect"><?=t('Topic Attribute To Display')?></label>
+        <select class="form-select" name="topicAttributeKeyHandle" id="attributeKeySelect">
             <?php foreach ($attributeKeys as $attributeKey) {
     ?>
                 <option value="<?=$attributeKey->getAttributeKeyHandle()?>" <?php if ($attributeKey->getAttributeKeyHandle() == $topicAttributeKeyHandle) {
@@ -40,7 +40,7 @@
     </div>
 
     <div class='form-group'>
-        <label for='title' class="control-label"><?=t('Results Page')?>:</label>
+        <label for='title' class="control-label form-label"><?=t('Results Page')?>:</label>
         <div class="form-check">
             <input class="form-check-input" id="ccm-search-block-external-target" <?php if (intval($cParentID) > 0) {
     ?>checked<?php 
@@ -60,7 +60,7 @@
         <?php echo $form->label("title", t('Title')); ?>
 	    <div class="input-group">
 		    <?php echo $form->text('title', $title); ?>
-			<?php echo $form->select('titleFormat', \Concrete\Core\Block\BlockController::$btTitleFormats, $titleFormat, array('style' => 'width:105px;flex-grow:0;', 'class' => 'custom-select input-group-append')); ?>
+			<?php echo $form->select('titleFormat', \Concrete\Core\Block\BlockController::$btTitleFormats, $titleFormat, array('style' => 'width:105px;flex-grow:0;', 'class' => 'form-select')); ?>
 		</div>
 	</div>
 

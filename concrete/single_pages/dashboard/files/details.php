@@ -27,7 +27,7 @@ defined('C5_EXECUTE') or die('Access Denied.');
 $file = $fileVersion->getFile();
 if ($view->controller->getAction() == 'preview_version') { ?>
     <div class="alert alert-info d-flex align-items-center"><div><?=t('You are currently previewing file version %s.', $fileVersion->getFileVersionID())?></div>
-    <a href="<?=URL::to('/dashboard/files', 'details', $file->getFileID())?>" class="btn-sm btn btn-secondary d-flex ml-auto"><?=t('Exit Preview')?></a>
+    <a href="<?=URL::to('/dashboard/files', 'details', $file->getFileID())?>" class="btn-sm btn btn-secondary d-flex ms-auto"><?=t('Exit Preview')?></a>
     </div>
 <?php } ?>
 
@@ -401,7 +401,7 @@ if ($view->controller->getAction() == 'preview_version') { ?>
         if ($filePermissions->canEditFilePermissions()) {
             ?>
             <a
-                    class="btn btn-secondary float-right dialog-launch"
+                    class="btn btn-secondary float-end dialog-launch"
                     dialog-title="<?= t('Storage Location') ?>"
                     dialog-width="500" dialog-height="400"
                     href="<?= h($resolverManager->resolve(['/ccm/system/dialogs/file/bulk/storage?fID[]=' . $file->getFileID()])) ?>"

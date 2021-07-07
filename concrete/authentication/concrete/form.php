@@ -25,7 +25,7 @@ $dh = Core::make('helper/date');  /* @var $dh \Concrete\Core\Localization\Servic
     <div class="form-group row">
         <label class="col-sm-3 col-form-label" for="uPassword">
         </label>
-        <div class="col-sm-9 text-right">
+        <div class="col-sm-9 text-end">
             <a href="<?= URL::to('/login', 'concrete', 'forgot_password'); ?>" class="btn-link"><?= t('Forgot Password'); ?></a>
         </div>
     </div>
@@ -47,13 +47,13 @@ $dh = Core::make('helper/date');  /* @var $dh \Concrete\Core\Localization\Servic
     <?php if (isset($locales) && is_array($locales) && count($locales) > 0) {
         ?>
         <div class="form-group">
-            <label for="USER_LOCALE" class="control-label"><?= t('Language'); ?></label>
+            <label for="USER_LOCALE" class="control-label form-label"><?= t('Language'); ?></label>
             <?= $form->select('USER_LOCALE', $locales); ?>
         </div>
     <?php
     } ?>
     <div class="form-group row">
-        <div class="col-sm-12 text-right">
+        <div class="col-sm-12 text-end">
             <a href="<?= \URL::to('/'); ?>" class="btn btn-secondary"> <?= t('Cancel'); ?> </a>
             <button class="btn btn-primary"><?= t('Sign In'); ?></button>
             <?php Core::make('helper/validation/token')->output('login_' . $this->getAuthenticationTypeHandle()); ?>

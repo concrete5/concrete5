@@ -41,13 +41,13 @@ defined('C5_EXECUTE') or die('Access Denied.');
                 </ul>
             </div>
             <div class="col ccm-dashboard-update-detail-main">
-                <a v-if="details &amp;&amp; details.releaseNotesUrl" v-bind:href="details.releaseNotesUrl" target="_blank" class="btn btn-secondary btn-sm float-right"><?= t('View Full Release Notes') ?></a>
+                <a v-if="details &amp;&amp; details.releaseNotesUrl" v-bind:href="details.releaseNotesUrl" target="_blank" class="btn btn-secondary btn-sm float-end"><?= t('View Full Release Notes') ?></a>
                 <h3 id="notes"><?= t('Release Notes') ?></h3>
                 <div class="ccm-dashboard-update-detail-release-notes" v-html="releaseNotes"></div>
 
                 <div class="my-5"></div>
 
-                <a href="<?= $updatePackagesUrl ?>" class="btn btn-secondary btn-sm float-right"><?= t('Update Add-Ons') ?></a>
+                <a href="<?= $updatePackagesUrl ?>" class="btn btn-secondary btn-sm float-end"><?= t('Update Add-Ons') ?></a>
                 <h3 id="addons"><?= t('Add-On Compatibility') ?></h3>
                 <?php
                 if ($installedPackages === []) {
@@ -59,12 +59,12 @@ defined('C5_EXECUTE') or die('Access Denied.');
                         $packageData = h('getAddonData(' . json_encode($installedPackage->getPackageHandle()) . ')');
                         ?>
                         <div class="media">
-                            <img src="<?= $ci->getPackageIconURL($installedPackage) ?>" class="mr-3" style="width: 49px" />
+                            <img src="<?= $ci->getPackageIconURL($installedPackage) ?>" class="me-3" style="width: 49px" />
                             <div class="media-body">
-                                <i class="float-right" v-bind:class="<?= $packageData?>.iconClass"></i>
+                                <i class="float-end" v-bind:class="<?= $packageData?>.iconClass"></i>
                                 <h5 class="my-0">
                                     <?= h($installedPackage->getPackageName()) ?>
-                                    <span class="badge badge-pill badge-secondary"><?= tc('AddonVersion', 'v.%s', $installedPackage->getPackageVersion()) ?></span>
+                                    <span class="badge rounded-pill bg-secondary"><?= tc('AddonVersion', 'v.%s', $installedPackage->getPackageVersion()) ?></span>
                                 </h5>
                                 <div v-bind:class="<?= $packageData . '.stateClass' ?>" v-html="<?= $packageData ?>.stateHtml"></div>
                             </div>
@@ -93,7 +93,7 @@ defined('C5_EXECUTE') or die('Access Denied.');
 
     <div class="ccm-dashboard-form-actions-wrapper">
         <div class="ccm-dashboard-form-actions">
-            <div class="float-right">
+            <div class="float-end">
                 <a href="<?= $controller->action('check_for_updates') ?>" class="btn btn-primary" v-bind:class="this.state === this.STATE.LOADING ? 'disabled' : ''">
                     <?= t('Check For Updates') ?>
                 </a>

@@ -13,10 +13,12 @@ if (isset($message)) {
 ?>
 
 <div class="form-group external-auth-option">
-    <a href="<?= $authUrl; ?>" class="btn btn-success btn-login btn-block">
-        <img src="<?= $assetBase; ?>/concrete/images/logo.svg" class="concrete5-icon"></i>
-        <?= t('Log in with %s', h($name)); ?>
-    </a>
+    <div class="d-grid">
+        <a href="<?= $authUrl; ?>" class="btn btn-success btn-login">
+            <img src="<?= $assetBase; ?>/concrete/images/logo.svg" class="concrete5-icon"></i>
+            <?= t('Log in with %s', h($name)); ?>
+        </a>
+    </div>
 </div>
 
 <style>

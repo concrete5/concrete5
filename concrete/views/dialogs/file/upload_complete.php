@@ -24,7 +24,7 @@ use Concrete\Core\View\View;
         <button
                 data-action="choose-file"
                 type="button"
-                class="float-right btn btn-success btn-xs d-none">
+                class="float-end btn btn-success btn-xs d-none">
 
             <?php echo t2('Choose file', 'Choose files', count($files)) ?>
         </button>
@@ -60,7 +60,7 @@ use Concrete\Core\View\View;
             <button
                 type="button"
                 data-action="manage-file-sets"
-                class="btn btn-xs float-right btn-secondary">
+                class="btn btn-xs float-end btn-secondary">
 
                 <?php echo t('Add/Remove Sets') ?>
             </button>

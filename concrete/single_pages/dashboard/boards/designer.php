@@ -26,7 +26,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
             <li><a href="<?=URL::to('/dashboard/boards/designer/', 'view_element', $element->getID())?>">
                     <i class="fa fa-th"></i>
                     <?=$name?>
-                    <span class="text-muted float-right"><?=$created->format('F d, Y g:i a')?></span>
+                    <span class="text-muted float-end"><?=$created->format('F d, Y g:i a')?></span>
                 </a>
             </li>
         <?php } ?>
@@ -50,10 +50,10 @@ defined('C5_EXECUTE') or die("Access Denied.");
             $created = $element->getDateCreatedDateTime();
 
             ?>
-            <li><a href="javascript:void(0)" data-toggle="modal" data-target="#element-draft-<?=$element->getId()?>">
+            <li><a href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#element-draft-<?=$element->getId()?>">
                     <i class="fa fa-th"></i>
                     <?=$name?>
-                    <span class="text-muted float-right"><?=$created->format('F d, Y g:i a')?></span>
+                    <span class="text-muted float-end"><?=$created->format('F d, Y g:i a')?></span>
                 </a>
 
 
@@ -64,16 +64,14 @@ defined('C5_EXECUTE') or die("Access Denied.");
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <h5 class="modal-title"><?=t('Continue')?></h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <svg><use xlink:href="#icon-dialog-close" /></svg>
-                                    </button>
+                                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="<?= t('Close') ?>"></button>
                                 </div>
                                 <div class="modal-body">
                                     <?=t('Continue with this custom element or click below to remove.')?>
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="submit" class="btn btn-danger float-left"><?=t('Delete Draft')?></button>
-                                    <a href="<?=$view->controller->getContinueURL($element)?>" class="btn btn-secondary ml-auto float-right"><?=t('Continue')?></a>
+                                    <button type="submit" class="btn btn-danger float-start"><?=t('Delete Draft')?></button>
+                                    <a href="<?=$view->controller->getContinueURL($element)?>" class="btn btn-secondary ms-auto float-end"><?=t('Continue')?></a>
                                 </div>
                             </div>
                         </form>

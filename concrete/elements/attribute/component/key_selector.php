@@ -14,18 +14,18 @@ defined('C5_EXECUTE') or die('Access Denied.');
 
     <div v-for="attribute in selectedAttributes" :key="attribute.akID">
         <div class="form-group">
-            <a class="float-right ccm-hover-icon" href="#" @click.prevent="removeAttribute(attribute.akID)">
+            <a class="float-end ccm-hover-icon" href="#" @click.prevent="removeAttribute(attribute.akID)">
                 <i class="fa fa-minus-circle"></i>
             </a>
-            <label class="control-label" :for="attribute.controlID">{{attribute.label}}</label>
+            <label class="control-label form-label" :for="attribute.controlID">{{attribute.label}}</label>
             <div v-if="isBulkMode && attribute.hasMultipleValues" class="ccm-attribute-key-multiple-values card card-body p-2">
-                <a :href="'#ccm-attribute-key-mv-body-' + attribute.akID" data-toggle="collapse"
-                   class="d-block text-decoration-none text-primary" role="button"
+                <a :href="'#ccm-attribute-key-mv-body-' + attribute.akID" data-bs-toggle="collapse"
+                   class="d-block text-decoration-none link-primary" role="button"
                    aria-expanded="false"
                    :aria-controls="'ccm-attribute-key-mv-body-' + attribute.akID"
                    @click="attribute.mvBoxExpanded = !attribute.mvBoxExpanded">
                     Multiple Values
-                    <span class="float-right mt-1">
+                    <span class="float-end mt-1">
                         <Icon :icon="attribute.mvBoxExpanded ? 'ban' : 'edit'" type="fas" :color="attribute.mvBoxExpanded ? '#c32a2a' : 'currentColor'"/>
                     </span>
                 </a>
@@ -43,7 +43,7 @@ defined('C5_EXECUTE') or die('Access Denied.');
 
     <h4><?=t('Add Attribute')?></h4>
     <div class="input-group">
-        <select class="custom-select" v-model="selectedAttributeToAdd">
+        <select class="form-select" v-model="selectedAttributeToAdd">
             <option value=""><?=t('** Choose Attribute')?></option>
             <optgroup v-for="attributeSet in attributes.sets" :label="attributeSet.name">
                 <option :disabled="isSelected(attribute.akID)" v-for="attribute in attributeSet.keys" :value="attribute.akID">{{attribute.akName}}</option>
@@ -59,9 +59,7 @@ defined('C5_EXECUTE') or die('Access Denied.');
             </template>
 
         </select>
-        <div class="input-group-append">
-            <button class="btn btn-primary" type="button" @click="addSelectedAttribute"><?=t('Go')?></button>
-        </div>
+        <button class="btn btn-primary" type="button" @click="addSelectedAttribute"><?=t('Go')?></button>
     </div>
 
 </div>
@@ -76,7 +74,7 @@ defined('C5_EXECUTE') or die('Access Denied.');
                 if (isBulkMode) {
                     for (let i = 0; i < selectedAttributes.length; i++) {
                         if (selectedAttributes[i].hasMultipleValues) {
-                            selectedAttributes[i].mvBoxExpanderIconClasses = ['fas', 'float-right', 'mt-1', 'fa-edit']
+                            selectedAttributes[i].mvBoxExpanderIconClasses = ['fas', 'float-end', 'mt-1', 'fa-edit']
                             selectedAttributes[i].mvBoxExpanded = false
                         }
                     }

@@ -15,13 +15,12 @@ $font-family-header-navigation: 'Titillium Web';
 
 // hr
 $hr-margin-y: $primary-margin-y;
-$hr-border-color: $gray-300;
 
 // buttons
 $btn-border-radius: 20px;
 $btn-padding-x: 30px;
 $btn-padding-y: 10px;
-$btn-success-background-color: theme-color('light-green');
+$btn-success-background-color: $light-green;
 $btn-success-border-color: #4cae4c;
 
 // colors
@@ -39,3 +38,7 @@ $blockquote-border-color: $gray-300;
 // blocks
 // image slider
 $image-slider-bg: '/concrete/themes/elemental/images/background-slider-default.png';
+
+// Add light-green too default bs5 $theme-colors
+$custom-theme-colors: ('light-green': $light-green);
+$theme-colors: map-merge($theme-colors, $custom-theme-colors);

@@ -19,13 +19,13 @@ defined('C5_EXECUTE') or die("Access Denied.");
     <div data-form="choose-items" v-cloak>
         <div v-for="(item, index) in items" :key="index">
 
-            <a @click="removeItem(index)" href="#" class="ccm-hover-icon float-right">
+            <a @click="removeItem(index)" href="#" class="ccm-hover-icon float-end">
                 <svg width="20" height="20"><use xlink:href="#icon-minus-circle" /></svg>
             </a>
 
             <div v-if="item.itemType === 'page'">
                 <div class="form-group">
-                    <label class="control-label"><?=t('Page')?></label>
+                    <label class="control-label form-label"><?=t('Page')?></label>
                     <concrete-page-input
                             choose-text="<?=t('Choose Page')?>"
                             input-name="field[page][]"
@@ -36,15 +36,15 @@ defined('C5_EXECUTE') or die("Access Denied.");
 
             <div v-if="item.itemType === 'calendar_event'">
                 <div class="form-group">
-                    <label class="control-label"><?=t('Choose Calendar')?></label>
-                    <select v-model.number="items[index].data.calendarId" class="form-control">
+                    <label class="control-label form-label"><?=t('Choose Calendar')?></label>
+                    <select v-model.number="items[index].data.calendarId" class="form-select">
                         <?php foreach($calendarSelect as $id => $calendar) { ?>
                             <option value="<?=$id?>"><?=$calendar?></option>
                         <?php } ?>
                     </select>
                 </div>
                 <div class="form-group" v-if="items[index].data.calendarId > 0">
-                    <label class="control-label"><?=t('Event')?></label>
+                    <label class="control-label form-label"><?=t('Event')?></label>
                     <concrete-event-occurrence-input
                             :calendar-id="items[index].data.calendarId"
                             choose-text="<?=t('Choose Event')?>"
@@ -57,9 +57,9 @@ defined('C5_EXECUTE') or die("Access Denied.");
 
         </div>
 
-        <h3 class="font-weight-light"><?=t('Add Item')?></h3>
+        <h3 class="fw-light"><?=t('Add Item')?></h3>
         <div class="dropdown">
-            <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown">
+            <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown">
                 <?=t('Choose Type')?>
             </button>
 
@@ -72,7 +72,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
 
     <div class="ccm-dashboard-form-actions-wrapper">
         <div class="ccm-dashboard-form-actions">
-            <button type="submit" class="btn float-right btn-secondary"><?=t('Next')?></button>
+            <button type="submit" class="btn float-end btn-secondary"><?=t('Next')?></button>
         </div>
     </div>
 </form>

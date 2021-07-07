@@ -28,7 +28,7 @@
     </div>
 
     <div class="form-group">
-        <?= $form->label('akTextCustomFormat', '<a href="http://php.net/manual/function.date.php" target="_blank">' . t('Custom format') . ' ' . '<i class="fa fa-question-circle"></i></a>', ['class' => 'launch-tooltip', 'data-html' => 'true', 'title' => h(t('Here you can specify an optional custom format for text inputs (click to see the PHP manual for the %s function)', '<code>date</code>'))]) ?>
+        <?= $form->label('akTextCustomFormat', '<a href="http://php.net/manual/function.date.php" target="_blank">' . t('Custom format') . ' ' . '<i class="fa fa-question-circle"></i></a>', ['class' => 'launch-tooltip form-label', 'data-html' => 'true', 'title' => h(t('Here you can specify an optional custom format for text inputs (click to see the PHP manual for the %s function)', '<code>date</code>'))]) ?>
         <?= $form->text('akTextCustomFormat', isset($akTextCustomFormat) ? $akTextCustomFormat : '') ?>
     </div>
 

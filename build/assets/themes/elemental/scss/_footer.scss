@@ -33,7 +33,7 @@ footer#footer-theme {
     transition: color 0.2s linear;
     font: $font-footer-site-title;
     text-transform: uppercase;
-    color: theme-color('primary');
+    color: $primary;
 
     &:hover {
       text-decoration: none !important;

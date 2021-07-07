@@ -77,7 +77,7 @@ $weekDays = \Punic\Calendar::getSortedWeekdays('wide');
                 <div class="col-sm-6 ccm-date-time-date-group">
                     <div class="row">
                         <div class="col-sm-12">
-                            <label class="control-label"><?= tc('Start date', 'From')  ?></label> <i
+                            <label class="control-label form-label"><?= tc('Start date', 'From')  ?></label> <i
                                 class="fa fa-info-circle launch-tooltip"
                                 title="<?php echo t('Choose Repeat Event and choose a frequency to make this event recurring.') ?>"></i>
                         </div>
@@ -88,7 +88,7 @@ $weekDays = \Punic\Calendar::getSortedWeekdays('wide');
                             <input type="hidden" class="form-control" name="<%=options.namespace%>_pdStartDate_<%=repetition.setID%>" value="<%=repetition.pdStartDate%>">
                         </div>
                         <div class="col-sm-6">
-                            <select name="<%=options.namespace%>_pdStartDateSelectTime_<%=repetition.setID%>"  class="form-control" data-select="start-time">
+                            <select name="<%=options.namespace%>_pdStartDateSelectTime_<%=repetition.setID%>"  class="form-select" data-select="start-time">
                                 <?php foreach ($values as $value) { ?>
                                     <option value="<?= $value ?>" <% if (repetition.pdStartDateSelectTime == '<?=$value?>') { %>selected<% } %>><?= $value ?></option>
                                 <?php } ?>
@@ -99,7 +99,7 @@ $weekDays = \Punic\Calendar::getSortedWeekdays('wide');
                 <div class="col-sm-6 ccm-date-time-date-group">
                     <div class="row">
                         <div class="col-sm-12">
-                            <label class="control-label"><?= tc('End date', 'To') ?></label>
+                            <label class="control-label form-label"><?= tc('End date', 'To') ?></label>
                         </div>
                     </div>
                     <div class="row">
@@ -108,7 +108,7 @@ $weekDays = \Punic\Calendar::getSortedWeekdays('wide');
                             <input type="hidden" class="form-control" name="<%=options.namespace%>_pdEndDate_<%=repetition.setID%>" value="<%=repetition.pdEndDate%>">
                         </div>
                         <div class="col-sm-6">
-                            <select name="<%=options.namespace%>_pdEndDateSelectTime_<%=repetition.setID%>" class="form-control" data-select="end-time">
+                            <select name="<%=options.namespace%>_pdEndDateSelectTime_<%=repetition.setID%>" class="form-select" data-select="end-time">
                                 <?php foreach ($values as $value) { ?>
                                     <option value="<?= $value ?>" <% if (repetition.pdEndDateSelectTime == '<?=$value?>') { %>selected<% } %>><?= $value ?></option>
                                 <?php } ?>
@@ -137,7 +137,7 @@ $weekDays = \Punic\Calendar::getSortedWeekdays('wide');
                     <% } %>
                 </div>
                 <div class="col-sm-6">
-                    <div class="float-right text-muted">
+                    <div class="float-end text-muted">
                         <%=repetition.timezone.timezone%>
                     </div>
                 </div>
@@ -150,9 +150,9 @@ $weekDays = \Punic\Calendar::getSortedWeekdays('wide');
             <br/>
 
             <div class="form-group">
-                <label for="pdRepeatPeriod" class="control-label"><?= t('Repeats') ?></label>
+                <label for="pdRepeatPeriod" class="control-label form-label"><?= t('Repeats') ?></label>
                 <div class="">
-                    <select class="form-control" name="<%=options.namespace%>_pdRepeatPeriod_<%=repetition.setID%>">
+                    <select class="form-select" name="<%=options.namespace%>_pdRepeatPeriod_<%=repetition.setID%>">
                         <?php foreach ($repeats as $key => $value) { ?>
                             <option value="<?= $key ?>" <% if (repetition.pdRepeatPeriod == '<?=$key?>') { %>selected<% } %>><?= $value ?></option>
                         <?php } ?>
@@ -163,20 +163,22 @@ $weekDays = \Punic\Calendar::getSortedWeekdays('wide');
             <div data-wrapper="duration-dates-repeat-daily" style="display: none">
 
                 <div class="form-group">
-                    <label for="<%=options.namespace%>_pdRepeatPeriodDaysEvery_<%=repetition.setID%>" class="control-label"><?= t('Repeat every') ?></label>
+                
+                    <label for="<%=options.namespace%>_pdRepeatPeriodDaysEvery_<%=repetition.setID%>" class="control-label form-label"><?= t('Repeat every') ?></label>
 
-                        <div class="input-group">
-                            <select class="form-control" style="width: 75px; flex-shrink: 1; flex-grow: 0" name="<%=options.namespace%>_pdRepeatPeriodDaysEvery_<%=repetition.setID%>">
-                                <?php foreach ($repeatDays as $key => $value) { ?>
-                                    <option value="<?= $key ?>" <% if (repetition.pdRepeatPeriodDaysEvery == '<?=$key?>') { %>selected<% } %>><?= $value ?></option>
-                                <?php } ?>
-                            </select>
-                            <div class="input-group-append">
-                                <label class="input-group-text">
-                                    <?= t('days') ?>
-                                </label>
-                            </div>
+                    <div class="input-group">
+                    
+                        <select class="form-select" style="width: 75px; flex-shrink: 1; flex-grow: 0" name="<%=options.namespace%>_pdRepeatPeriodDaysEvery_<%=repetition.setID%>">
+                            <?php foreach ($repeatDays as $key => $value) { ?>
+                                <option value="<?= $key ?>" <% if (repetition.pdRepeatPeriodDaysEvery == '<?=$key?>') { %>selected<% } %>><?= $value ?></option>
+                            <?php } ?>
+                        </select>
 
+                        
+                        <div class="input-group-text">
+                            <?= t('days') ?>
+                        </div>
+                        
                     </div>
                 </div>
 
@@ -186,7 +188,7 @@ $weekDays = \Punic\Calendar::getSortedWeekdays('wide');
 
 
                 <div class="form-group">
-                    <label for="<%=options.namespace%>_pdRepeatPeriodMonthsRepeatBy_<%=repetition.setID%>" class="control-label"><?= t('Repeat By') ?></label>
+                    <label for="<%=options.namespace%>_pdRepeatPeriodMonthsRepeatBy_<%=repetition.setID%>" class="control-label form-label"><?= t('Repeat By') ?></label>
                     <div class="form-group">
                         <div class="form-check">
                             <input type="radio" class="form-check-input" id="<%=options.namespace%>_pdRepeatPeriodMonthsRepeatBy_<%=repetition.setID%>_date" name="<%=options.namespace%>_pdRepeatPeriodMonthsRepeatBy_<%=repetition.setID%>" <% if (repetition.pdRepeatPeriodMonthsRepeatBy == 'month') { %>checked<% } %> value="month">
@@ -218,7 +220,7 @@ $weekDays = \Punic\Calendar::getSortedWeekdays('wide');
                                 <?= t('The last type of day in the month.') ?>
                             </label>
                             <div>
-                                <select name="<%=options.namespace%>_pdRepeatPeriodMonthsRepeatLastDay_<%=repetition.setID%>" class="form-control">
+                                <select name="<%=options.namespace%>_pdRepeatPeriodMonthsRepeatLastDay_<%=repetition.setID%>" class="form-select">
                                     <?php foreach($weekDays as $weekDay) { ?>
                                         <option value="<?=$weekDay['id']?>" <% if (repetition.pdRepeatPeriodMonthsRepeatLastDay == '<?=$weekDay['id']?>') { %>selected<% } %>><?=h($weekDay['name'])?></option>
                                     <?php } ?>
@@ -232,20 +234,23 @@ $weekDays = \Punic\Calendar::getSortedWeekdays('wide');
                 </div>
 
                 <div class="form-group">
-                    <label for="<%=options.namespace%>_pdRepeatPeriodMonthsEvery_<%=repetition.setID%>" class="control-label"><?= t('Repeat every') ?></label>
 
-                        <div class="input-group">
-                            <select class="form-control" style="width: 75px; flex-shrink:1; flex-grow: 0" name="<%=options.namespace%>_pdRepeatPeriodMonthsEvery_<%=repetition.setID%>" id="<%=options.namespace%>_pdRepeatPeriodMonthsEvery_<%=repetition.setID%>_months">
-                                <?php foreach ($repeatMonths as $key => $value) { ?>
-                                    <option value="<?= $key ?>" <% if (repetition.pdRepeatPeriodMonthsEvery == '<?=$key?>') { %>selected<% } %>><?= $value ?></option>
-                                <?php } ?>
-                            </select>
-                            <div class="input-group-append">
-                                <label class="input-group-text" for="<%=options.namespace%>_pdRepeatPeriodMonthsEvery_<%=repetition.setID%>_months">
-                                <?= t('months') ?>
-                                </label>
-                            </div>
+                    <label for="<%=options.namespace%>_pdRepeatPeriodMonthsEvery_<%=repetition.setID%>" class="control-label form-label"><?= t('Repeat every') ?></label>
+
+                    <div class="input-group">
+                    
+                        <select class="form-select" style="width: 75px; flex-shrink:1; flex-grow: 0" name="<%=options.namespace%>_pdRepeatPeriodMonthsEvery_<%=repetition.setID%>" id="<%=options.namespace%>_pdRepeatPeriodMonthsEvery_<%=repetition.setID%>_months">
+                            <?php foreach ($repeatMonths as $key => $value) { ?>
+                                <option value="<?= $key ?>" <% if (repetition.pdRepeatPeriodMonthsEvery == '<?=$key?>') { %>selected<% } %>><?= $value ?></option>
+                            <?php } ?>
+                        </select>
+
+                        <div class="input-group-text">
+                            <label for="<%=options.namespace%>_pdRepeatPeriodMonthsEvery_<%=repetition.setID%>_months">
+                            <?= t('months') ?>
+                            </label>
                         </div>
+                    </div>
 
                 </div>
 
@@ -258,7 +263,7 @@ $weekDays = \Punic\Calendar::getSortedWeekdays('wide');
                 <div data-wrapper="duration-repeat-weekly-dow" style="display: none">
 
                     <div class="form-group">
-                        <label class="control-label"><?= tc('Date', 'On') ?></label>
+                        <label class="control-label form-label"><?= tc('Date', 'On') ?></label>
                         <div class="">
                             <?php
                             $i = 0;
@@ -277,15 +282,18 @@ $weekDays = \Punic\Calendar::getSortedWeekdays('wide');
                 </div>
 
                 <div class="form-group">
-                    <label for="<%=options.namespace%>_pdRepeatPeriodWeeksEvery_<%=repetition.setID%>" class="control-label"><?= t('Repeat every') ?></label>
+                    <label for="<%=options.namespace%>_pdRepeatPeriodWeeksEvery_<%=repetition.setID%>" class="control-label form-label"><?= t('Repeat every') ?></label>
+
                     <div class="input-group">
-                        <select class="form-control" style="width: 75px; flex-shrink:1; flex-grow: 0" name="<%=options.namespace%>_pdRepeatPeriodWeeksEvery_<%=repetition.setID%>">
+
+                        <select class="form-select" style="width: 75px; flex-shrink:1; flex-grow: 0" name="<%=options.namespace%>_pdRepeatPeriodWeeksEvery_<%=repetition.setID%>">
                             <?php foreach ($repeatWeeks as $key => $value) { ?>
                                 <option value="<?= $key ?>" <% if (repetition.pdRepeatPeriodWeeksEvery == '<?=$key?>') { %>selected<% } %>><?= $value ?></option>
                             <?php } ?>
                         </select>
-                        <div class="input-group-append">
-                            <label class="input-group-text">
+                        
+                        <div class="input-group-text">
+                            <label>
                                 <?= t('weeks') ?>
                             </label>
                         </div>
@@ -298,28 +306,43 @@ $weekDays = \Punic\Calendar::getSortedWeekdays('wide');
 
 
                 <div class="form-group">
-                    <label class="control-label"><?= t('Starts On') ?></label>
+                    <label class="control-label form-label"><?= t('Starts On') ?></label>
                     <div class="">
                         <input type="text" class="form-control" disabled="disabled" value="" name="<%=options.namespace%>_pdStartRepeatDate_<%=repetition.setID%>"/>
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="pdEndRepeatDate" class="control-label"><?= t('Ends') ?></label>
+
+                    <label for="pdEndRepeatDate" class="control-label form-label"><?= t('Ends') ?></label>
+
                     <div class="">
+
                         <div class="form-check">
+
                             <input type="radio" class="form-check-input" id="<%=options.namespace%>_pdEndRepeatDate_<%=repetition.setID%>_never" name="<%=options.namespace%>_pdEndRepeatDate_<%=repetition.setID%>" value="" <% if (!repetition.pdEndRepeatDate) { %>checked <% } %>>
+                            
                             <label class="form-check-label" for="<%=options.namespace%>_pdEndRepeatDate_<%=repetition.setID%>_never">
                                 <?=t('Never') ?>
                             </label>
+                            
                         </div>
-                        <div class="form-inline mt-sm-2">
-                            <input type="radio" id="<%=options.namespace%>_pdEndRepeatDate_<%=repetition.setID%>_specific" name="<%=options.namespace%>_pdEndRepeatDate_<%=repetition.setID%>" value="date" <% if (repetition.pdEndRepeatDate == 'date') { %>checked <% } %>>
-                            <label for="<%=options.namespace%>_pdEndRepeatDate_<%=repetition.setID%>_specific" class="pl-sm-2">
-                                <input type="text" class="form-control" name="<%=options.namespace%>_pdEndRepeatDateSpecific_pub_<%=repetition.setID%>" value="<%=repetition.pdEndRepeatDateSpecific%>">
-                                <input type="hidden" class="form-control" name="<%=options.namespace%>_pdEndRepeatDateSpecific_<%=repetition.setID%>" value="<%=repetition.pdEndRepeatDateSpecific%>">
-                            </label>
+
+                        <div class="row row-cols-auto g-0 align-items-center mt-sm-2">
+
+                            <div class="col-auto">
+                                <input type="radio" id="<%=options.namespace%>_pdEndRepeatDate_<%=repetition.setID%>_specific" name="<%=options.namespace%>_pdEndRepeatDate_<%=repetition.setID%>" value="date" <% if (repetition.pdEndRepeatDate == 'date') { %>checked <% } %>>
+                            </div>
+
+                            <div class="col-auto">
+                                <label for="<%=options.namespace%>_pdEndRepeatDate_<%=repetition.setID%>_specific" class="pl-sm-2">
+                                    <input type="text" class="form-control" name="<%=options.namespace%>_pdEndRepeatDateSpecific_pub_<%=repetition.setID%>" value="<%=repetition.pdEndRepeatDateSpecific%>">
+                                    <input type="hidden" class="form-control" name="<%=options.namespace%>_pdEndRepeatDateSpecific_<%=repetition.setID%>" value="<%=repetition.pdEndRepeatDateSpecific%>">
+                                </label>
+                            </div>
+
                         </div>
+
                     </div>
                 </div>
 

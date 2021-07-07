@@ -3,11 +3,9 @@ $green: #75ca2a;
 $blue: #0099ff;
 $light-green: #0c6;
 
-// ---- Map those to theme conventions
-$theme-colors: (
-  'primary': $green,
-  'secondary': $blue,
-  'light-green': $light-green,
-);
+// scss-docs-start theme-color-variables
+$secondary: $blue;
+$primary: $green;
 
-$link-color: theme-color('secondary');
+$link-color: $secondary;
+$link-decoration: none;

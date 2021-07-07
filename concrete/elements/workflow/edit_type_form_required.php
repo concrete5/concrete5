@@ -15,9 +15,9 @@ $type = $workflow->getWorkflowTypeObject();
 
 <div class="form-group">
 	<div class="input-group">
-    <div class="input-group-prepend"><?=$form->label('wfName', t('Name'), ['class'=>'input-group-text'])?></div>
+        <?=$form->label('wfName', t('Name'), ['class'=>'input-group-text'])?>
 		<?=$form->text('wfName', $wfName)?>
-		<span class="input-group-append"><div class="input-group-text"><i class="fa fa-asterisk"></i></div></span>
+        <div class="input-group-text"><i class="fa fa-asterisk"></i></div>
 	</div>
 </div>
 </fieldset>

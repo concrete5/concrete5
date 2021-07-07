@@ -70,7 +70,7 @@ foreach ($locales as $locale) {
                     <p><?= t('Delete this multilingual section? This will remove the entire site tree and its content from your website.') ?></p>
                     <div class="dialog-buttons">
                         <button class="btn btn-secondary" data-dialog-action="cancel"><?= t('Cancel') ?></button>
-                        <button class="btn btn-danger float-right" onclick="$('form[data-form=delete-locale-<?= $locale->getLocaleID() ?>]').submit()" type="submit"><?= t('Delete') ?></button>
+                        <button class="btn btn-danger float-end" onclick="$('form[data-form=delete-locale-<?= $locale->getLocaleID() ?>]').submit()" type="submit"><?= t('Delete') ?></button>
                     </div>
                 </form>
                 <?php
@@ -90,12 +90,12 @@ foreach ($locales as $locale) {
                     <?= $form->select('msCountryChange' . $locale->getLocaleID(), array_merge(['' => t('** None Selected')], $countries), $locale->getCountry()) ?>
                 </div>
                 <div class="form-group">
-                    <label class="control-label"><?= t('Icon') ?></label>
+                    <label class="control-label form-label"><?= t('Icon') ?></label>
                     <div id="ccm-multilingual-language-icon-change<?= $locale->getLocaleID() ?>"><?= t('None') ?></div>
                 </div>
                 <div class="dialog-buttons">
                     <button class="btn btn-secondary" data-dialog-action="cancel"><?= t('Cancel') ?></button>
-                    <button class="btn btn-primary float-right" onclick="$('form[data-form=change-locale-<?= $locale->getLocaleID() ?>]').submit()" type="submit"><?= t('Update') ?></button>
+                    <button class="btn btn-primary float-end" onclick="$('form[data-form=change-locale-<?= $locale->getLocaleID() ?>]').submit()" type="submit"><?= t('Update') ?></button>
                 </div>
             </form>
         </div>
@@ -115,7 +115,7 @@ foreach ($locales as $locale) {
 <h3><?= t('Settings') ?></h3>
 <form method="post" action="<?= $this->action('set_default') ?>">
     <div class="form-group">
-        <label class="control-label"><?= t('Default Locale') ?></label>
+        <label class="control-label form-label"><?= t('Default Locale') ?></label>
         <?= $form->select('defaultLocale', $defaultLocales, $defaultLocaleID, ['required' => 'required']) ?>
     </div>
     <div class="form-group">
@@ -151,16 +151,20 @@ foreach ($locales as $locale) {
         });
     </script>
     <div class="form-group">
-        <label class="control-label"><?= t('Site interface source locale') ?></label>
-        <div class="form-inline">
-            <?= $form->select('defaultSourceLanguage', array_merge(['' => t('*** Unknown or mixed language')], $languages), $defaultSourceLanguage, ['class' => 'mr-2']) ?>
-            <?= $form->select('defaultSourceCountry', array_merge(['' => t('*** Undetermined country')], $countries), $defaultSourceCountry) ?>
+        <label class="control-label form-label"><?= t('Site interface source locale') ?></label>
+        <div class="row row-cols-auto g-0 align-items-center">
+            <div class="col-auto">
+                <?= $form->select('defaultSourceLanguage', array_merge(['' => t('*** Unknown or mixed language')], $languages), $defaultSourceLanguage, ['class' => 'me-2']) ?>
+            </div>
+            <div class="col-auto">
+                <?= $form->select('defaultSourceCountry', array_merge(['' => t('*** Undetermined country')], $countries), $defaultSourceCountry) ?>
+            </div>
         </div>
     </div>
     <div class="ccm-dashboard-form-actions-wrapper">
         <div class="ccm-dashboard-form-actions">
             <?php $token->output('set_default') ?>
-            <button class="float-right btn btn-primary" type="submit" name="save"><?= t('Save Settings') ?></button>
+            <button class="float-end btn btn-primary" type="submit" name="save"><?= t('Save Settings') ?></button>
         </div>
     </div>
 </form>
@@ -180,7 +184,7 @@ foreach ($locales as $locale) {
                     <?= $form->select('msCountry', array_merge(['' => t('** None Selected')], $countries)) ?>
                 </div>
                 <div class="form-group">
-                    <label class="control-label"><?= t('Icon') ?></label>
+                    <label class="control-label form-label"><?= t('Icon') ?></label>
                     <div id="ccm-multilingual-language-icon"><?= t('None') ?></div>
                 </div>
             </fieldset>
@@ -200,8 +204,8 @@ foreach ($locales as $locale) {
                 </div>
             </fieldset>
             <div class="dialog-buttons">
-                <button class="btn btn-secondary float-left" data-dialog-action="cancel"><?= t('Cancel') ?></button>
-                <button class="btn btn-primary float-right" data-dialog-action="submit"><?= t('Add Locale') ?></button>
+                <button class="btn btn-secondary float-start" data-dialog-action="cancel"><?= t('Cancel') ?></button>
+                <button class="btn btn-primary float-end" data-dialog-action="submit"><?= t('Add Locale') ?></button>
             </div>
             <?php $token->output('add_content_section') ?>
         </form>

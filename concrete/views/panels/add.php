@@ -22,10 +22,10 @@ defined('C5_EXECUTE') or die('Access Denied.');
         </div>
     <?php } ?>
 
-    <header class="pl-0 pr-0">
+    <header class="ps-0 pe-0">
         <div id="dropdown-menu" class="dropdown" data-panel-menu="dropdown">
             <div class="ccm-panel-header-list-grid-view-switcher"><i class="fa fa-list fa-xs fa-fw"></i></div>
-            <h4 data-toggle="dropdown" data-panel-header="dropdown-menu" class="dropdown-toggle">
+            <h4 data-bs-toggle="dropdown" data-panel-header="dropdown-menu" class="dropdown-toggle">
                 <?php
                 switch ($tab) {
                     case 'containers':
@@ -223,14 +223,14 @@ defined('C5_EXECUTE') or die('Access Denied.');
                         data-dragging-avatar="<%=result.draggingAvatar%>"
                         data-block-id="<%=result.blockId%>"
                 >
-                    <div class="delete float-right">
+                    <div class="delete float-end">
                         <button class="ccm-delete-clipboard-item btn btn-sm btn-link text-danger">
                             <?php echo t('Delete') ?>
                         </button>
                     </div>
 
                     <div class="block-content">
-                        <div class="block-name float-left">
+                        <div class="block-name float-start">
                                 <span class="handle">
                                     <%=result.name%>
                                 </span>
@@ -373,14 +373,14 @@ defined('C5_EXECUTE') or die('Access Denied.');
                         data-supports-inline-add="<%=result.supportsInlineAdd%>"
                         data-btID="<%=result.blockTypeId%>"
                 >
-                    <div class="delete float-right">
+                    <div class="delete float-end">
                         <button class="ccm-delete-orphaned-block-item btn btn-sm btn-link text-danger">
                             <?php echo t('Delete') ?>
                         </button>
                     </div>
 
                     <div class="block-content">
-                        <div class="block-name float-left">
+                        <div class="block-name float-start">
                             <span class="handle">
                                 <%=result.arHandle%>
                             </span>
@@ -428,11 +428,12 @@ defined('C5_EXECUTE') or die('Access Denied.');
                 </nav>
                 </div>
                 <% } %>
-
-                <a href="javascript:void(0);"
-                   class="btn-info btn-block btn btn-large btn-danger ccm-delete-orphaned-blocks">
-                    <?php echo t('Remove all orphaned blocks') ?>
-                </a>
+                <div class="d-grid">
+                    <a href="javascript:void(0);"
+                       class="btn-info btn btn-large btn-danger ccm-delete-orphaned-blocks">
+                        <?php echo t('Remove all orphaned blocks') ?>
+                    </a>
+                </div>
             </script>
 
             <script>
@@ -555,12 +556,12 @@ defined('C5_EXECUTE') or die('Access Denied.');
             ?>
             <div class="ccm-panel-add-block-set">
                 <header
-                        data-toggle="collapse"
-                        data-target="#ccm-block-set-<?= $i ?>"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#ccm-block-set-<?= $i ?>"
                         aria-expanded="true"
                         aria-controls="ccm-block-set-<?= $i ?>"
                 >
-                    <?= $setName ?><i class="fa fa-chevron-up float-right"></i>
+                    <?= $setName ?><i class="fa fa-chevron-up float-end"></i>
                 </header>
                 <div id="ccm-block-set-<?= $i ?>" class="ccm-block-set collapse show">
                     <?php
@@ -604,11 +605,11 @@ defined('C5_EXECUTE') or die('Access Denied.');
         $p = new Permissions();
         if (Config::get('concrete.marketplace.enabled') && $p->canInstallPackages()) {
             ?>
-            <div class="ccm-marketplace-btn-wrapper">
+            <div class="ccm-marketplace-btn-wrapper d-grid">
                 <button
                         type="button"
                         onclick="window.location.href='<?= URL::to('/dashboard/extend/addons') ?>'"
-                        class="btn-info btn-block btn btn-large"
+                        class="btn-info btn btn-large"
                 ><?= t('Get More Blocks') ?></button>
             </div>
             <?php
@@ -625,7 +626,7 @@ break;
     $(function () {
         // switching the up/down arrows for collapsing block sets
         $('#ccm-panel-add-block').find('div[id^="ccm-block-set-"]').on('hidden.bs.collapse shown.bs.collapse', function () {
-            $(this).prev('header[data-toggle="collapse"]').find('i.fa').toggleClass('fa-chevron-up fa-chevron-down');
+            $(this).prev('header[data-bs-toggle="collapse"]').find('i.fa').toggleClass('fa-chevron-up fa-chevron-down');
         });
 
         // This makes the elements under the dropdown not react to hover.

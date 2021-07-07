@@ -32,7 +32,7 @@ if (count($types) === 0) {
 
 <div class="ccm-dashboard-form-actions-wrapper">
     <div class="ccm-dashboard-form-actions">
-        <div class="float-right">
+        <div class="float-end">
             <a class="btn btn-primary" href="<?= $controller->action('add') ?>"><?= t('Add Site Type') ?></a>
         </div>
     </div>

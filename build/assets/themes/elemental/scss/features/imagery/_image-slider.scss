@@ -12,7 +12,11 @@
 
   .ccm-image-slider {
     @include make-container();
-    @include make-container-max-widths();
+    @each $breakpoint, $container-max-width in $container-max-widths {
+      @include media-breakpoint-up($breakpoint, $grid-breakpoints) {
+        max-width: $container-max-width;
+      }
+    }
 
 
     .rslides {
@@ -122,7 +126,7 @@
       margin-right: 5px;
       &.rslides_here {
         a {
-          background: theme-color('primary');
+          background: $primary;
         }
       }
       a {
@@ -147,7 +151,7 @@
     width: 45%;
 
     h2 {
-      color: theme-color('primary');
+      color: $primary;
       font-family: $font-family-headings;
       font-size: $font-size-base * 3;
       font-weight: 200;

@@ -56,20 +56,20 @@ $image = (date('Ymd') - 7) . '.jpg';
                     if (!$authorize) {
                         ?>
                         <div class="form-group">
-                            <label class="control-label"
+                            <label class="control-label form-label"
                                    for="uName"><?= $emailLogin ? t('Email Address') : t('Username') ?></label>
                             <input name="uName" id="uName" class="form-control" autofocus="autofocus"/>
                         </div>
 
                         <div class="form-group">
-                            <label class="control-label" for="uPassword"><?= t('Password') ?></label>
+                            <label class="control-label form-label" for="uPassword"><?= t('Password') ?></label>
                             <input name="uPassword" id="uPassword" class="form-control" type="password" autocomplete="off"/>
                         </div>
 
                         <?php if (isset($locales) && is_array($locales) && count($locales) > 0) {
                             ?>
                             <div class="form-group">
-                                <label for="USER_LOCALE" class="control-label"><?= t('Language') ?></label>
+                                <label for="USER_LOCALE" class="control-label form-label"><?= t('Language') ?></label>
                                 <?= $form->select('USER_LOCALE', $locales) ?>
                             </div>
                             <?php
@@ -85,9 +85,11 @@ $image = (date('Ymd') - 7) . '.jpg';
                             ?>
                             <br/>
                             <hr/>
-                            <a href="<?= URL::to('/register') ?>" class="btn btn-block btn-success" target="_blank">
-                                <?= t('Not a member? Register') ?>
-                            </a>
+                            <div class="d-grid">
+                                <a href="<?= URL::to('/register') ?>" class="btn btn-success" target="_blank">
+                                    <?= t('Not a member? Register') ?>
+                                </a>
+                            </div>
                             <?php
                         } ?>
 

@@ -56,7 +56,7 @@ div.ccm-block-feature-item-hover {
 
 div.ccm-block-feature-item-hover-wrapper:hover {
   div.ccm-block-feature-item-hover-icon {
-    background: lighten(theme-color('secondary'), 40%);
-    border: 1px solid lighten(theme-color('secondary'), 30%);
+    background: lighten($secondary, 40%);
+    border: 1px solid lighten($secondary, 30%);
   }
 }

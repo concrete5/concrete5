@@ -6,7 +6,7 @@ $request = $controller->getRequest();
 ?>
 
 <?php if (isset($selectedGroups) && is_array($selectedGroups)) { ?>
-<label class="control-label"><?=t('Confirm')?></label>
+<label class="control-label form-label"><?=t('Confirm')?></label>
 <?php if ($gParent instanceof Group) { ?>
 <p><?=t('Move the following group(s) beneath <strong>%s</strong>.', $gParent->getGroupDisplayName())?></p>
 <?php } else { ?>
@@ -38,7 +38,7 @@ $request = $controller->getRequest();
 <form action="<?=$view->action('move')?>" method="post" data-form="move-groups">
     <div class="row">
         <div class="col-md-6">
-            <label class="control-label"><?=t('Choose Groups to Move')?></label>
+            <label class="control-label form-label"><?=t('Choose Groups to Move')?></label>
             <div class="form-check ml-2">
                 <input class="form-check-input" data-toggle="checkbox" type="checkbox" id="select_all" />
                 <label class="form-check-label" for="select_all" style="user-select: none; -moz-user-select: none; -webkit-user-select: none">
@@ -59,7 +59,7 @@ $request = $controller->getRequest();
         </div>
 
         <div class="col-md-6">
-            <label class="control-label"><?=t('Choose New Parent Location')?></label>
+            <label class="control-label form-label"><?=t('Choose New Parent Location')?></label>
             <?=$form->hidden('gParentNodeID')?>
 
             <div class="nested-groups-tree" data-groups-tree="<?=$tree->getTreeID()?>"></div>
@@ -73,7 +73,7 @@ $request = $controller->getRequest();
 
     <div class="row">
         <div class="col-md-12">
-            <label class="control-label"><?=t('Move')?></label>
+            <label class="control-label form-label"><?=t('Move')?></label>
             <p><?=t('Move selected groups (left column) beneath selected group (right column)')?></p>
 
             <div class="ccm-dashboard-form-actions-wrapper">

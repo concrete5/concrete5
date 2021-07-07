@@ -44,7 +44,7 @@ if ($fp->canAddFile() || $fp->canSearchFiles()) { ?>
                                 disabled="disabled"
                                 data-search-checkbox-button="dropdown"
                                 class="btn btn-secondary dropdown-toggle dropdown-toggle-split"
-                                data-toggle="dropdown"
+                                data-bs-toggle="dropdown"
                                 data-reference="parent">
 
                                 <span class="sr-only">
@@ -159,7 +159,7 @@ if ($fp->canAddFile() || $fp->canSearchFiles()) { ?>
                                 <button class="btn btn-icon"
                                         data-boundary="viewport"
                                         type="button"
-                                        data-toggle="dropdown"
+                                        data-bs-toggle="dropdown"
                                         aria-haspopup="true"
                                         aria-expanded="false">
 

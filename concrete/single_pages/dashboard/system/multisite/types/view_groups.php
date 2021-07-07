@@ -41,7 +41,7 @@ if ($group !== null) {
         </div>
         <div class="ccm-dashboard-form-actions-wrapper">
             <div class="ccm-dashboard-form-actions">
-                <div class="float-right">
+                <div class="float-end">
                     <a class="btn btn-secondary" href="<?= $controller->action('view_groups', $type->getSiteTypeID()) ?>"><?= t('Cancel') ?></a>
                     <?php
                     if ($group->getSiteGroupID() !== null) {
@@ -81,7 +81,7 @@ if ($group !== null) {
     ?>
     <div class="ccm-dashboard-form-actions-wrapper">
         <div class="ccm-dashboard-form-actions">
-            <div class="float-right">
+            <div class="float-end">
                 <a class="btn btn-primary" href="<?= $controller->action('add_group', $type->getSiteTypeID()) ?>"><?= t('Add Group') ?></a>
             </div>
         </div>

@@ -56,8 +56,8 @@ if (isset($geolocator)) {
 
         <div class="ccm-dashboard-form-actions-wrapper">
             <div class="ccm-dashboard-form-actions">
-                <a href="<?= $view->action(''); ?>" class="btn btn-secondary float-left"><?= t('Cancel'); ?></a>
-                <button type="submit" class="btn btn-primary float-right"><?= t('Save'); ?></button>
+                <a href="<?= $view->action(''); ?>" class="btn btn-secondary float-start"><?= t('Cancel'); ?></a>
+                <button type="submit" class="btn btn-primary float-end"><?= t('Save'); ?></button>
             </div>
         </div>
     </form>
@@ -127,8 +127,8 @@ if (isset($geolocator)) {
             </table>
         </div>
         <div class="dialog-buttons">
-            <button class="btn btn-secondary float-left" onclick="jQuery.fn.dialog.closeTop()"><?= t('Close'); ?></button>
-            <button class="btn btn-primary float-right geolocation-test-go"><?= t('Test'); ?></button>
+            <button class="btn btn-secondary float-start" onclick="jQuery.fn.dialog.closeTop()"><?= t('Close'); ?></button>
+            <button class="btn btn-primary float-end geolocation-test-go"><?= t('Test'); ?></button>
         </div>
     </div>
     <script>

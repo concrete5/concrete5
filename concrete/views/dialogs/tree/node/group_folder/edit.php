@@ -61,7 +61,7 @@ foreach($node->getSelectedGroupTypes() as $selectedGroupType) {
                 <?php echo t('Cancel') ?>
             </button>
 
-            <button class="btn btn-primary float-right" data-dialog-action="submit" type="submit">
+            <button class="btn btn-primary float-end" data-dialog-action="submit" type="submit">
                 <?php echo t('Update') ?>
             </button>
         </div>

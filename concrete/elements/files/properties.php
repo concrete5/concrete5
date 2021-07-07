@@ -200,7 +200,7 @@ if (!isset($mode) || !$mode) {
                     <?php echo t('Invalid file dimensions, please rescan this file.') ?>
 
                     <?php if ($mode != 'preview' && $canEditFileContentsPermissionsKey->validate()): ?>
-                        <a href="#" class="btn float-right btn-secondary btn-xs" data-action="rescan">
+                        <a href="#" class="btn float-end btn-secondary btn-xs" data-action="rescan">
                             <?php echo t('Rescan') ?>
                         </a>
                     <?php endif; ?>
@@ -222,7 +222,7 @@ if (!isset($mode) || !$mode) {
                     <?php echo t('Unknown error retrieving thumbnails, please rescan this file.') ?>
 
                     <?php if ($mode != 'preview' && $canEditFileContentsPermissionsKey->validate()): ?>
-                        <a href="#" class="btn float-right btn-secondary btn-xs" data-action="rescan">
+                        <a href="#" class="btn float-end btn-secondary btn-xs" data-action="rescan">
                             <?php echo t('Rescan') ?>
                         </a>
                     <?php endif;?>

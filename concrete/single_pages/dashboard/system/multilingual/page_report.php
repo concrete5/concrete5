@@ -14,9 +14,7 @@ if (count($sections) > 0) {
                 <div class="ccm-search-field-content row">
                     <div class="input-group col-md-11">
                         <?= $form->search('keywords', array('placeholder' => t('Keywords'))) ?>
-                        <div class="ccm-search-main-lookup-field input-group-append">
-                            <span class="input-group-text"><i class="fa fa-search"></i></span>
-                        </div>
+                        <span class="input-group-text ccm-search-main-lookup-field"><i class="fa fa-search"></i></span>
                     </div>
                     <div class="col-md-1">
                         <button type="submit" class="btn btn-primary" tabindex="-1"><?= t('Search') ?></button>
@@ -26,7 +24,7 @@ if (count($sections) > 0) {
         </div>
         <div class="ccm-search-fields-row">
             <div class="form-group">
-                <label class="control-label" for="sectionIDSelect"><?= t('Choose Source') ?></label>
+                <label class="control-label form-label" for="sectionIDSelect"><?= t('Choose Source') ?></label>
                 <div class="ccm-search-field-content">
                     <?= $form->select('sectionIDSelect', $sections, $sectionID) ?>
                 </div>
@@ -34,7 +32,7 @@ if (count($sections) > 0) {
         </div>
         <div class="ccm-search-fields-row" data-list="multilingual-targets">
             <div class="form-group">
-                <label class="control-label"><?= t('Choose Targets') ?></label>
+                <label class="control-label form-label"><?= t('Choose Targets') ?></label>
                 <div class="ccm-search-field-content">
                     <?php
                     foreach ($sectionList as $sc) {
@@ -76,7 +74,7 @@ if (count($sections) > 0) {
             </div>
         </div>
         <div class="ccm-search-fields-submit">
-            <button type="submit" class="btn btn-primary float-right"><?= t('Search') ?></button>
+            <button type="submit" class="btn btn-primary float-end"><?= t('Search') ?></button>
         </div>
     </form>
 

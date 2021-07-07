@@ -47,7 +47,7 @@
     <legend><?=t('Topic Tree')?></legend>
     <div class="clearfix"></div>
         <div class="form-group">
-        <select class="form-control" name="topicTreeIDSelect">
+        <select class="form-select" name="topicTreeIDSelect">
             <?php foreach ($trees as $stree) {
     ?>
                 <option value="<?=$stree->getTreeID()?>" <?php if ($tree->getTreeID() == $stree->getTreeID()) {

@@ -11,7 +11,7 @@ $setcontrol = $control->getPageTypeComposerFormLayoutSetControlObject();
 ?>
 
 <div class="form-group">
-    <label class="control-label"><?=$label?></label>
+    <label class="control-label form-label"><?=$label?></label>
     <?php if ($description) { ?>
         <i class="fas fa-question-circle launch-tooltip" title="" data-original-title="<?=$description?>"></i>
     <?php } ?>

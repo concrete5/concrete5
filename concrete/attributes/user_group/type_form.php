@@ -43,7 +43,7 @@ use Concrete\Core\Entity\Attribute\Key\Settings\UserGroupSettings;
     </div>
 
     <div class="form-group" data-select="select-groups-custom">
-        <label class="control-label"><?=t('Populate group list with:')?></label>
+        <label class="control-label form-label"><?=t('Populate group list with:')?></label>
 
         <div class="form-check">
             <?php echo $form->checkbox('akGroupSelectionMethod[]', UserGroupSettings::GROUP_SELECTION_METHOD_IN_GROUP, $akGroupSelectionMethodInGroup)?>

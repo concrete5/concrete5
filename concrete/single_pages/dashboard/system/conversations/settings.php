@@ -16,30 +16,30 @@ $token = \Core::make('token');
         <legend><?php echo t('Attachment Settings'); ?></legend>
         <p class="help-block"><?php echo t('Note: These settings can be overridden in the block edit form for individual conversations.'); ?></p>
         <div class="form-group">
-            <label class="control-label"><?= t('Attachments') ?></label>
+            <label class="control-label form-label"><?= t('Attachments') ?></label>
             <div class="form-check">
                 <?= $form->checkbox('attachmentsEnabled', 1, $attachmentsEnabled) ?>
                 <?= $form->label('attachmentsEnabled', t('Enable File Attachments'), ['class'=>'form-check-label']) ?>
             </div>
         </div>
         <div class="form-group">
-            <label class="control-label"><?= t('Max Attachment Size for Guest Users. (MB)') ?></label>
+            <label class="control-label form-label"><?= t('Max Attachment Size for Guest Users. (MB)') ?></label>
             <?= $form->text('maxFileSizeGuest', $maxFileSizeGuest > 0 ? $maxFileSizeGuest : '') ?>
         </div>
         <div class="form-group">
-            <label class="control-label"><?= t('Max Attachment Size for Registered Users. (MB)') ?></label>
+            <label class="control-label form-label"><?= t('Max Attachment Size for Registered Users. (MB)') ?></label>
             <?= $form->text('maxFileSizeRegistered', $maxFileSizeRegistered > 0 ? $maxFileSizeRegistered : '') ?>
         </div>
         <div class="form-group">
-            <label class="control-label"><?= t('Max Attachments Per Message for Guest Users.') ?></label>
+            <label class="control-label form-label"><?= t('Max Attachments Per Message for Guest Users.') ?></label>
             <?= $form->text('maxFilesGuest', $maxFilesGuest > 0 ? $maxFilesGuest : '') ?>
         </div>
         <div class="form-group">
-            <label class="control-label"><?= t('Max Attachments Per Message for Registered Users') ?></label>
+            <label class="control-label form-label"><?= t('Max Attachments Per Message for Registered Users') ?></label>
             <?= $form->text('maxFilesRegistered', $maxFilesRegistered > 0 ? $maxFilesRegistered : '') ?>
         </div>
         <div class="form-group">
-            <label class="control-label"><?= t('Allowed File Extensions (Comma separated, no periods).') ?></label>
+            <label class="control-label form-label"><?= t('Allowed File Extensions (Comma separated, no periods).') ?></label>
             <?= $form->textarea('fileExtensions', $fileExtensions) ?>
             <?php
             if ($file_access_file_types_blacklist !== []) {
@@ -63,11 +63,11 @@ $token = \Core::make('token');
     <fieldset>
         <legend><?= t('Notification') ?></legend>
         <div class="form-group">
-            <label class="control-label"><?= t('Users To Receive Conversation Notifications') ?></label>
+            <label class="control-label form-label"><?= t('Users To Receive Conversation Notifications') ?></label>
             <?= Core::make("helper/form/user_selector")->selectMultipleUsers('defaultUsers', $notificationUsers) ?>
         </div>
         <div class="form-group">
-            <label class="control-label"><?= t('Subscribe Option') ?></label>
+            <label class="control-label form-label"><?= t('Subscribe Option') ?></label>
 
             <div class="form-check">
                 <?= $form->checkbox('subscriptionEnabled', 1, $subscriptionEnabled) ?>

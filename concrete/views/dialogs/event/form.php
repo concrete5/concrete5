@@ -27,7 +27,7 @@ if (!isset($occurrence) || !$occurrence) {
     </form>
 </div>
 <div class="dialog-buttons">
-    <button class="btn btn-secondary float-right" data-dialog-action="cancel"><?= t('Cancel') ?></button>
+    <button class="btn btn-secondary float-end" data-dialog-action="cancel"><?= t('Cancel') ?></button>
 
     <?php if ($occurrence !== null || $cp->canApproveCalendarEvent()) {
         $showButtonGroup = true;
@@ -37,13 +37,13 @@ if (!isset($occurrence) || !$occurrence) {
 
             <?php if ($cp->canApproveCalendarEvent()) { ?>
                 <button type="submit" data-event-dialog-action="save"
-                        class="btn btn-primary float-right"><?= t('Save &amp; Close') ?></button>
-            <button type="submit" class="btn btn-success float-right"
+                        class="btn btn-primary float-end"><?= t('Save &amp; Close') ?></button>
+            <button type="submit" class="btn btn-success float-end"
                     data-event-dialog-action="publish"><?= t('Publish Event') ?></button>
 
         <?php } else { ?>
             <button type="submit" style="margin-right: 0px" data-event-dialog-action="save"
-                    class="float-right btn btn-primary"><?= t('Save &amp; Close') ?></button>
+                    class="float-end btn btn-primary"><?= t('Save &amp; Close') ?></button>
         <?php } ?>
 
     <script type="text/javascript">

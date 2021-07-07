@@ -22,10 +22,14 @@
         </div>
         <div class="row">
             <div class="col-sm-6">
-                <button data-action="choose-new-form" type="button" class="btn btn-secondary btn-block"><i class="fa fa-plus-circle" style="opacity: 0.3"></i> &nbsp; <?=t('New Form'); ?></button>
+                <div class="d-grid">
+                    <button data-action="choose-new-form" type="button" class="btn btn-secondary"><i class="fa fa-plus-circle" style="opacity: 0.3"></i> &nbsp; <?=t('New Form'); ?></button>
+                </div>
             </div>
             <div class="col-sm-6">
-                <button data-action="choose-existing-form" type="button" class="btn btn-secondary btn-block"><i class="fa fa-database" style="opacity: 0.3"></i> &nbsp; <?=t('Existing Express Entity Form'); ?></button>
+                <div class="d-grid">
+                    <button data-action="choose-existing-form" type="button" class="btn btn-secondary"><i class="fa fa-database" style="opacity: 0.3"></i> &nbsp; <?=t('Existing Express Entity Form'); ?></button>
+                </div>
             </div>
         </div>
     </fieldset>
@@ -92,7 +96,7 @@
 
             <div class="form-group">
                 <?=$form->label('exEntityID', t('Choose Entity Form')); ?>
-                <select name="exFormID" class="form-control">
+                <select name="exFormID" class="form-select">
                     <option value=""><?=t('** Choose Entity Form'); ?></option>
                 <?php foreach ($entities as $entity) {
         ?>
@@ -139,7 +143,7 @@
             </div>
 
             <div class="form-group" data-section="form-results-folder">
-                <label class="control-label"><?=t('Express Folder to Receive Form Results')?></label>
+                <label class="control-label form-label"><?=t('Express Folder to Receive Form Results')?></label>
                 <?php if ($tree) { ?>
                     <div data-root-tree-node-id="<?=$formResultsRootFolderNodeID; ?>" data-tree="<?=$tree->getTreeID(); ?>">
 
@@ -163,7 +167,7 @@
                 <?=$form->text('submitLabel', $submitLabel); ?>
             </div>
             <div class="form-group">
-                <label class="control-label"><?=t('Solving a <a href="%s" target="_blank">CAPTCHA</a> Required to Post?', t('http://en.wikipedia.org/wiki/Captcha')); ?></label>
+                <label class="control-label form-label"><?=t('Solving a <a href="%s" target="_blank">CAPTCHA</a> Required to Post?', t('http://en.wikipedia.org/wiki/Captcha')); ?></label>
                 <div class="form-check">
                     <?=$form->radio('displayCaptcha', 1, (int) $displayCaptcha); ?>
                     <label class="form-check-label"><?=t('Yes'); ?></label>
@@ -181,7 +185,7 @@
                 <?=$form->textarea('thankyouMsg', $thankyouMsg, ['rows' => 3]); ?>
             </div>
             <div class="form-group">
-                <label class="control-label" for="ccm-form-redirect"><?=t('Redirect to another page after form submission?'); ?></label>
+                <label class="control-label form-label" for="ccm-form-redirect"><?=t('Redirect to another page after form submission?'); ?></label>
                 <div id="ccm-form-redirect-page">
                     <?php
                     $page_selector = Loader::helper('form/page_selector');
@@ -199,10 +203,8 @@
             <div class="form-group">
                 <?=$form->label('recipientEmail', t('Send form submissions to email addresses')); ?>
                 <div class="input-group">
-                    <div class="input-group-prepend">
-                        <div class="input-group-text">
-                            <input type="checkbox" name="notifyMeOnSubmission" value="1" <?php if ($notifyMeOnSubmission == 1) { ?>checked<?php } ?>>
-                        </div>
+                    <div class="input-group-text">
+                        <input type="checkbox" name="notifyMeOnSubmission" value="1" <?php if ($notifyMeOnSubmission == 1) { ?>checked<?php } ?>>
                     </div>
                     <?=$form->text('recipientEmail', $recipientEmail, ['autocomplete' => 'off', 'style' => 'z-index:2000;']); ?>
                 </div>
@@ -213,7 +215,7 @@
         <fieldset>
             <legend><?=t('Files'); ?></legend>
             <div class="form-group">
-                <label class="control-label" for="ccm-form-fileset"><?=t('Add uploaded files to a set?'); ?></label>
+                <label class="control-label form-label" for="ccm-form-fileset"><?=t('Add uploaded files to a set?'); ?></label>
                     <?php
 
                     $fileSets = Concrete\Core\File\Set\Set::getMySets();
@@ -225,7 +227,7 @@
                     ?>
             </div>
             <div class="form-group">
-                <label class="control-label"><?=t('Add uploaded files to folder'); ?></label>
+                <label class="control-label form-label"><?=t('Add uploaded files to folder'); ?></label>
                 <?php
                 $selector = new \Concrete\Core\Form\Service\Widget\FileFolderSelector();
                 echo $selector->selectFileFolder('addFilesToFolder', $addFilesToFolder);
@@ -243,13 +245,13 @@
     data-form-control-id="<%=control.id%>">
     <input type="hidden" name="controlID[]" value="<%=control.id%>">
     <%=control.displayLabel%>
-    <span class="float-right">
+    <span class="float-end">
         <a href="javascript:void(0)" class="icon-link"><i style="cursor: move" class="fas fa-arrows-alt"></i></a>
         <a href="javascript:void(0)" class="icon-link" data-action="edit-control"><i class="fas fa-pencil-alt"></i></a>
         <a href="javascript:void(0)" class="icon-link" data-action="delete-control"><i class="fa fa-trash"></i></a>
         </span>
     <% if (control.isRequired) { %>
-    <span style="margin-right: 20px" class="float-right badge badge-info"><?=t('Required'); ?></span>
+    <span style="margin-right: 20px" class="float-end badge bg-info"><?=t('Required'); ?></span>
     <% } %>
 </li>
 </script>
@@ -257,7 +259,7 @@
 <script type="text/template" data-template="express-form-reply-to-email">
     <div class="form-group">
         <?=$form->label('replyToEmailControlID', t('Set value of Reply-To to Email Field')); ?>
-        <select name="replyToEmailControlID" class="form-control">
+        <select name="replyToEmailControlID" class="form-select">
             <option value=""><?=t('** None'); ?></option>
             <% _.each(controls, function(control){ %>
             <option value="<%=control.key%>" <% if (selected == control.key) { %>selected<% } %>><%=_.escape(control.value)%></option>
@@ -277,7 +279,7 @@
 
         <% if (!id) { %>
             &nbsp; <i class="fa fa-refresh fa-spin" style="display: none"></i>
-            <select name="type" class="form-control">
+            <select name="type" class="form-select">
                 <option value=""><?=t('** Choose Field'); ?></option>
             <% _.each(types, function(group) { %>
                 <optgroup label="<%=group.label%>">
@@ -305,7 +307,7 @@
     <% } %>
 
     <div class="form-group" data-group="control-required" style="display: none">
-        <label class="control-label"><?=t('Required'); ?></label>
+        <label class="control-label form-label"><?=t('Required'); ?></label>
         <div class="form-check">
             <input class="form-check-input" type="radio" name="required<% if (id) { %>Edit<% } %>" value="1" <% if (isRequired) { %>checked<% } %>>
             <label class="form-check-label"><?=t('Yes'); ?></label>

@@ -64,7 +64,7 @@ $c = Page::getCurrentPage();
 
         <li class="nav-item">
             <a class="nav-link" href="<?php echo (string)Url::to('/dashboard/express/entries/results', $entity->getId()) ?>">
-                <i class="fas fa-share float-right"></i>
+                <i class="fas fa-share float-end"></i>
                 <?php echo tc(/*i18n: %s is an entity name*/ 'Express', 'View %s Entries', $entity->getEntityDisplayName()) ?>
             </a>
         </li>
@@ -72,7 +72,7 @@ $c = Page::getCurrentPage();
         <li class="nav-item">
             <a class="nav-link"
                href="<?php echo (string)Url::to('/dashboard/system/express/entities', 'clear_entries', $entity->getId()) ?>">
-                <i class="fas fa-trash-alt float-right text-danger"></i>
+                <i class="fas fa-trash-alt float-end text-danger"></i>
                 <span class="text-danger"><?php echo t('Clear Entries') ?></span>
             </a>
         </li>

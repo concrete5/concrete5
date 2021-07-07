@@ -16,7 +16,7 @@ if ($entry) {
 
 <div class="form-group">
     <?php if ($view->supportsLabel()) { ?>
-        <label class="control-label"><?=$label?></label>
+        <label class="control-label form-label"><?=$label?></label>
     <?php } ?>
     <?=$form->selectUser('author', $authorID);?>
 </div>

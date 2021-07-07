@@ -75,28 +75,29 @@ use Concrete\Core\Device\Device;
                             data-device-preview-url="<?= $device_preview_url ?>"
                             data-device-orientation="<?= h($device->getDefaultOrientation()) ?>">
                             <script type="text/html" class="viewport"><?= $device->getViewportHTML() ?></script>
-
-                            <a href="#" class="ccm-device-select btn btn-secondary btn-sm btn-block">
-                                <div class="ccm-panel-device-name">
-                                    <div class="ccm-panel-device-name-icon">
-                                        <i class="<?= $device->getIconClass() ?>"></i>
+                            <div class="d-grid">
+                                <a href="#" class="ccm-device-select btn btn-secondary btn-sm btn-block">
+                                    <div class="ccm-panel-device-name">
+                                        <div class="ccm-panel-device-name-icon">
+                                            <i class="<?= $device->getIconClass() ?>"></i>
+                                        </div>
+                                        <div class="ccm-panel-device-name-label">
+                                            <span><?= h($device->getName()) ?></span>
+                                        </div>
                                     </div>
-                                    <div class="ccm-panel-device-name-label">
-                                        <span><?= h($device->getName()) ?></span>
-                                    </div>
-                                </div>
-                                <div class="ccm-panel-device-resolution">
-                                    <?php
-                                    $deviceWidth = h($device->getWidth());
-                $deviceHeight = h($device->getHeight());
-                $pixelRatio = h($device->getPixelRatio());
-                $displayedWidth = floor($device->getWidth() / $device->getPixelRatio());
-                $displayedHeight = floor($device->getHeight() / $device->getPixelRatio());
+                                    <div class="ccm-panel-device-resolution">
+                                        <?php
+                                        $deviceWidth = h($device->getWidth());
+                                        $deviceHeight = h($device->getHeight());
+                                        $pixelRatio = h($device->getPixelRatio());
+                                        $displayedWidth = floor($device->getWidth() / $device->getPixelRatio());
+                                        $displayedHeight = floor($device->getHeight() / $device->getPixelRatio());
 
-                echo "$deviceWidth x  $deviceHeight @{$pixelRatio}x ($displayedWidth x $displayedHeight)";
-                ?>
-                                </div>
-                            </a>
+                                        echo "$deviceWidth x  $deviceHeight @{$pixelRatio}x ($displayedWidth x $displayedHeight)";
+                                        ?>
+                                    </div>
+                                </a>
+                            </div>
                         </li>
                     <?php
 

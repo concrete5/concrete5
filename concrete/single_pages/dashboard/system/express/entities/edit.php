@@ -51,7 +51,7 @@ $form = $app->make(Form::class);
                 <div class="form-group">
                     <?php echo $form->label("name", t('Name')); ?>
 
-                    <div class="float-right">
+                    <div class="float-end">
                         <span class="text-muted small">
                             <?php echo t('Required')?>
                         </span>
@@ -63,7 +63,7 @@ $form = $app->make(Form::class);
                 <div class="form-group">
                     <?php echo $form->label("handle", t('Handle')); ?>
 
-                    <div class="float-right">
+                    <div class="float-end">
                         <span class="text-muted small">
                             <?php echo t('Required')?>
                         </span>
@@ -75,7 +75,7 @@ $form = $app->make(Form::class);
                 <div class="form-group">
                     <?php echo $form->label("plural_handle", t('Plural Handle')); ?>
 
-                    <div class="float-right">
+                    <div class="float-end">
                         <span class="text-muted small">
                             <?php echo t('Required')?>
                         </span>
@@ -202,11 +202,11 @@ $form = $app->make(Form::class);
 
             <div class="ccm-dashboard-form-actions-wrapper">
                 <div class="ccm-dashboard-form-actions">
-                    <button type="button" data-dialog="delete-entity" class="float-left btn btn-danger">
+                    <button type="button" data-dialog="delete-entity" class="float-start btn btn-danger">
                         <?php echo t('Delete') ?>
                     </button>
 
-                    <button class="float-right btn btn-primary" type="submit">
+                    <button class="float-end btn btn-primary" type="submit">
                         <?php echo t('Save') ?>
                     </button>
                 </div>
@@ -226,11 +226,11 @@ $form = $app->make(Form::class);
             </p>
 
             <div class="dialog-buttons">
-                <button class="btn btn-secondary float-left" onclick="jQuery.fn.dialog.closeTop()">
+                <button class="btn btn-secondary float-start" onclick="jQuery.fn.dialog.closeTop()">
                     <?php echo t('Cancel') ?>
                 </button>
 
-                <button class="btn btn-danger float-right" onclick="$('#ccm-dialog-delete-entity form').submit()">
+                <button class="btn btn-danger float-end" onclick="$('#ccm-dialog-delete-entity form').submit()">
                     <?php echo t('Delete Entity') ?>
                 </button>
             </div>

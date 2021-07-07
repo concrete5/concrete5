@@ -47,7 +47,7 @@ $form = $app->make('helper/form');
 	<div class="ccm-conversation-message-permalink" data-dialog-title="<?=t('Link')?>" data-cancel-button-title="<?=t('Close')?>"></div>
 	<div class="ccm-conversation-messages-header">
 		<?php if ($enableOrdering) { ?>
-    		<select class="form-control float-right ccm-sort-conversations" data-sort="conversation-message-list">
+    		<select class="form-select float-end ccm-sort-conversations" data-sort="conversation-message-list">
     			<option value="date_asc" <?php if ($orderBy == 'date_asc') { ?>selected="selected"<?php } ?>><?=t('Earliest First')?></option>
     			<option value="date_desc" <?php if ($orderBy == 'date_desc') { ?>selected="selected"<?php } ?>><?=t('Most Recent First')?></option>
     			<option value="rating" <?php if ($orderBy == 'rating') { ?>selected="selected"<?php } ?>><?=t('Highest Rated')?></option>

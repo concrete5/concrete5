@@ -35,7 +35,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
 
                     <div class="form-row">
                         <div class="col-9">
-                            <label class="control-label"><?=$formatter->getListIconElement()?> <?=$configuredSource->getName()?></label>
+                            <label class="control-label form-label"><?=$formatter->getListIconElement()?> <?=$configuredSource->getName()?></label>
                         </div>
                         <div class="col-3">
                             <?=$form->text('weighting[' . $configuredSource->getConfiguredDataSourceID() . ']',
@@ -62,8 +62,8 @@ defined('C5_EXECUTE') or die("Access Denied.");
 
             <div class="ccm-dashboard-form-actions-wrapper">
                 <div class="ccm-dashboard-form-actions ">
-                    <button type="submit" class="btn btn-primary float-right"><?=t('Save')?></button>
-                    <button type="button" class="btn float-right btn-danger mr-1" data-toggle="modal" data-target="#reset-weighting"><?=t('Reset')?></button>
+                    <button type="submit" class="btn btn-primary float-end"><?=t('Save')?></button>
+                    <button type="button" class="btn float-end btn-danger me-1" data-bs-toggle="modal" data-bs-target="#reset-weighting"><?=t('Reset')?></button>
                 </div>
             </div>
 
@@ -80,16 +80,14 @@ defined('C5_EXECUTE') or die("Access Denied.");
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title"><?=t('Reset Weighting')?></h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <svg><use xlink:href="#icon-dialog-close" /></svg>
-                    </button>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="<?= t('Close') ?>"></button>
                 </div>
                 <div class="modal-body">
                     <?=t('Are you sure you want to reset custom weighting?')?>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal"><?=t('Cancel')?></button>
-                    <button type="submit" class="btn btn-danger float-right"><?=t('Reset')?></button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><?=t('Cancel')?></button>
+                    <button type="submit" class="btn btn-danger float-end"><?=t('Reset')?></button>
                 </div>
             </div>
         </div>

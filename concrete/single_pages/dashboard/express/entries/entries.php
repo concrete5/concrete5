@@ -49,7 +49,7 @@ defined('C5_EXECUTE') or die('Access Denied.');
                         ?>
                         <td class="ccm-search-results-menu-launcher">
                             <div class="dropdown" data-menu="search-result">
-                                <button class="btn btn-icon" data-boundary="viewport" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <button class="btn btn-icon" data-boundary="viewport" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <svg width="16" height="4"><use xlink:href="#icon-menu-launcher" /></svg>
                                 </button>
                                 <?php

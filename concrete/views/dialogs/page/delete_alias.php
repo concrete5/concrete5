@@ -17,12 +17,12 @@ defined('C5_EXECUTE') or die('Access Denied.');
         </p>
 
         <div class="dialog-buttons">
-            <button class="btn btn-secondary float-left" data-dialog-action="cancel">
+            <button class="btn btn-secondary float-start" data-dialog-action="cancel">
                 <?php echo t('Cancel') ?>
             </button>
 
             <button type="button" data-dialog-action="submit"
-                    class="btn btn-danger float-right">
+                    class="btn btn-danger float-end">
                 <?php echo t('Delete') ?>
             </button>
         </div>

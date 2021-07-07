@@ -36,7 +36,7 @@ class ThemeField extends AbstractField
 
     public function renderSearchField()
     {
-        $html = '<select name="pThemeID" class="form-control">';
+        $html = '<select name="pThemeID" class="form-select">';
         $themes = Theme::getList();
         foreach ($themes as $pt) {
             $html .= '<option value="' . $pt->getThemeID() . '" ' . ($pt->getThemeID() == $this->data['pThemeID'] ? ' selected' : '') . '>' . $pt->getThemeName() . '</option>';

@@ -2,7 +2,7 @@
 
 <div class="form-group">
     <?php if ($view->supportsLabel()) { ?>
-        <label class="control-label"><?=$label?></label>
+        <label class="control-label form-label"><?=$label?></label>
     <?php } ?>
     <?php if ($view->isRequired()) { ?>
         <span class="text-muted small"><?=t('Required')?></span>

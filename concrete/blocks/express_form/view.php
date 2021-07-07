@@ -43,7 +43,7 @@ defined('C5_EXECUTE') or die('Access Denied.');
                         $captchaLabel = $captcha->label();
                         if (!empty($captchaLabel)) {
                             ?>
-                            <label class="control-label"><?php echo $captchaLabel; ?></label>
+                            <label class="control-label form-label"><?php echo $captchaLabel; ?></label>
                             <?php } ?>
 
                         <div><?php $captcha->display(); ?></div>

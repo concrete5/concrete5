@@ -42,7 +42,7 @@ $info += [
             <fieldset>
                 <div class="form-group">
                     <label for="orderBy"><?= t('Page Order') ?></label>
-                    <select class="form-control" name="orderBy">
+                    <select class="form-select" name="orderBy">
                         <?php
                         $order = $info['orderBy'];
                         ?>
@@ -77,7 +77,7 @@ $info += [
 
                 <div class="form-group">
                     <label for="displayPages"><?= t('Begin Auto Nav') ?></label>
-                    <select name="displayPages" onchange="toggleCustomPage(this.value);" class="form-control">
+                    <select name="displayPages" onchange="toggleCustomPage(this.value);" class="form-select">
                         <option value="top"<?php if ($info['displayPages'] == 'top') {
                             ?> selected<?php } ?>>
                             <?= t('at the top level'); ?>
@@ -119,7 +119,7 @@ $info += [
                 <div class="form-group">
                     <label for="displaySubPages"><?= t('Child Pages') ?></label>
 
-                    <select class='form-control' name="displaySubPages" onchange="toggleSubPageLevels(this.value);">
+                    <select class='form-select' name="displaySubPages" onchange="toggleSubPageLevels(this.value);">
                         <option value="none"<?php if ($info['displaySubPages'] == 'none') {
                             ?> selected<?php } ?>>
                             <?= t('None') ?>
@@ -144,7 +144,7 @@ $info += [
                 <div class="form-group">
                     <label for="displaySubPageLevels"><?= t('Page Levels') ?></label>
 
-                    <select class="form-control" id="displaySubPageLevels"
+                    <select class="form-select" id="displaySubPageLevels"
                             name="displaySubPageLevels" <?php if ($info['displaySubPages'] == 'none') {
                         ?> disabled <?php } ?>
                             onchange="toggleSubPageLevelsNum(this.value);">
@@ -172,7 +172,7 @@ $info += [
                     <div class="input-group">
                         <input type="text" name="displaySubPageLevelsNum" value="<?= $info['displaySubPageLevelsNum'] ?>"
                             class="form-control">
-                        <div class="input-group-append"><span class="input-group-text"><?= t('levels') ?></span></div>
+                        <span class="input-group-text"><?= t('levels') ?></span>
                     </div>
                 </div>
             </fieldset>

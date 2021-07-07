@@ -28,12 +28,12 @@ $consentType = $client->getConsentType();
     <legend><?=t('Integration Details')?></legend>
 
     <div class="form-group">
-        <label><?=t('Name')?></label>
+        <label class="form-label"><?=t('Name')?></label>
         <div><?=$client->getName()?></div>
     </div>
 
     <div class="form-group">
-        <label><?=t('Redirect URI')?></label>
+        <label class="form-label"><?=t('Redirect URI')?></label>
         <?php
         $redirectUri = $client->getRedirectUri() ?: t('None provided');
         ?>
@@ -43,12 +43,12 @@ $consentType = $client->getConsentType();
     </div>
 
     <div class="form-group">
-        <label><?=t('Client ID')?></label>
+        <label class="form-label"><?=t('Client ID')?></label>
         <input type="text" class="form-control" onclick="this.select()" value="<?=$client->getClientKey()?>">
     </div>
 
     <div class="form-group <?= $clientSecret ? 'has-warning' : '' ?>">
-        <label><?=t('Client Secret')?></label>
+        <label class="form-label"><?=t('Client Secret')?></label>
         <input type="<?= $clientSecret ? 'text' : 'password' ?>" autocomplete="off" class="form-control" onclick="this.select()" value="<?= $clientSecret ?: str_repeat('*', 96) ?>" <?= $clientSecret ? '' : 'disabled' ?>>
         <div class="help-block">
             <?php
@@ -62,7 +62,7 @@ $consentType = $client->getConsentType();
     </div>
 
     <div class="form-group">
-        <label><?=t('User Consent Level')?></label>
+        <label class="form-label"><?=t('User Consent Level')?></label>
         <div class="form-check">
             <input disabled type="radio" class="form-check-input" name="consentLevel"  value="<?= Client::CONSENT_SIMPLE ?>" <?= $consentType === Client::CONSENT_SIMPLE ? 'checked' : '' ?> >
             <label class="form-check-label">
@@ -91,8 +91,8 @@ $consentType = $client->getConsentType();
             <input type="hidden" name="clientID" value="<?php echo $client->getIdentifier(); ?>">
             <p><?=t('Are you sure you want to delete this credentials set ? This cannot be undone.')?></p>
             <div class="dialog-buttons">
-                <button class="btn btn-secondary float-left" onclick="jQuery.fn.dialog.closeTop()"><?=t('Cancel')?></button>
-                <button class="btn btn-danger float-right" onclick="$('div[data-dialog-wrapper=delete-client] form').submit()"><?=t('Delete')?></button>
+                <button class="btn btn-secondary float-start" onclick="jQuery.fn.dialog.closeTop()"><?=t('Cancel')?></button>
+                <button class="btn btn-danger float-end" onclick="$('div[data-dialog-wrapper=delete-client] form').submit()"><?=t('Delete')?></button>
             </div>
         </form>
     </div>

@@ -30,7 +30,7 @@ $attributes = \Concrete\Core\Attribute\Key\EventKey::getList();
         if (is_object($av)) { ?>
 
         <div class="form-group">
-            <label class="control-label"><?=$ak->getAttributeKeyDisplayName()?></label>
+            <label class="control-label form-label"><?=$ak->getAttributeKeyDisplayName()?></label>
             <div><?=$av->getDisplayValue()?></div>
         </div>
 

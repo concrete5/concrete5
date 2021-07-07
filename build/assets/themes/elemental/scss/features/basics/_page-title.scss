@@ -2,7 +2,7 @@ h1.page-title {
   padding-top: $primary-margin-y / 2;
   padding-bottom: $primary-margin-y / 2;
   font-family: $font-family-headings;
-  color: theme-color('primary');
+  color: $primary;
   font-size: 1.8rem;
   font-weight: 700;
   text-transform: uppercase;

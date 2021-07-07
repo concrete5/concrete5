@@ -29,18 +29,18 @@ defined('C5_EXECUTE') or die("Access Denied.");
                     <div class="form-check">
                         <input type="radio" class="form-check-input" :value="index" name="selectedTemplateOption"
                                v-model="selectedTemplateOption">
-                        <span class="badge badge-dark mr-3">{{templateOption.template.name}}</span>
+                        <span class="badge bg-dark me-3">{{templateOption.template.name}}</span>
 
                         <span v-for="contentObject in templateOption.collection.objects">
-                            <span class="badge badge-light mr-3" v-if="contentObject.title">{{contentObject.title}}</span>
+                            <span class="badge bg-light me-3" v-if="contentObject.title">{{contentObject.title}}</span>
                         </span>
 
-                        <i class="ml-2 fa fa-spinner fa-spin" v-if="!loadedTemplateOptions.includes(index)"></i>
+                        <i class="ms-2 fa fa-spinner fa-spin" v-if="!loadedTemplateOptions.includes(index)"></i>
                     </div>
                 </div>
             </div>
             <div class="row">
-                <div class="col-12 pl-0">
+                <div class="col-12 ps-0">
 
                     <iframe :data-index="index" src="<?=$view->action('load_preview_window')?>"></iframe>
 
@@ -57,7 +57,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
 
         <div class="ccm-dashboard-form-actions-wrapper">
             <div class="ccm-dashboard-form-actions">
-                <button type="submit" class="btn float-right btn-secondary" :disabled="selectedTemplateOption < 0"><?=t('Next')?></button>
+                <button type="submit" class="btn float-end btn-secondary" :disabled="selectedTemplateOption < 0"><?=t('Next')?></button>
             </div>
         </div>
 

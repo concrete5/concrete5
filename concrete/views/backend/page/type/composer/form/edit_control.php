@@ -42,7 +42,7 @@ defined('C5_EXECUTE') or die('Access Denied.');
     </form>
     <div class="dialog-buttons">
         <button class="btn btn-secondary" onclick="jQuery.fn.dialog.closeTop()"><?= t('Cancel') ?></button>
-        <button class="btn btn-primary float-right" data-submit-set-form="<?= $setControl->getPageTypeComposerFormLayoutSetControlID() ?>"><?= t('Save') ?></button>
+        <button class="btn btn-primary float-end" data-submit-set-form="<?= $setControl->getPageTypeComposerFormLayoutSetControlID() ?>"><?= t('Save') ?></button>
     </div>
 </div>
 <script>

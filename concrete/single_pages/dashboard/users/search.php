@@ -38,7 +38,7 @@ use Concrete\Core\User\Search\ColumnSet\Column\UsernameColumn;
                             disabled="disabled"
                             data-search-checkbox-button="dropdown"
                             class="btn btn-secondary dropdown-toggle dropdown-toggle-split"
-                            data-toggle="dropdown"
+                            data-bs-toggle="dropdown"
                             data-reference="parent">
 
                             <span class="sr-only">
@@ -110,7 +110,7 @@ use Concrete\Core\User\Search\ColumnSet\Column\UsernameColumn;
                             <button class="btn btn-icon"
                                     data-boundary="viewport"
                                     type="button"
-                                    data-toggle="dropdown"
+                                    data-bs-toggle="dropdown"
                                     aria-haspopup="true"
                                     aria-expanded="false">
 

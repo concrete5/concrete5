@@ -8,13 +8,14 @@ defined('C5_EXECUTE') or die("Access Denied.");
 /** @var $urlHelper Url */
 ?>
 
-<div class="form-inline">
+<div class="row row-cols-auto g-0 align-items-center">
     <?php if (!empty($itemsPerPageOptions)): ?>
+    <div class="col-auto">
         <div class="btn-group">
             <button
                     type="button"
                     class="btn btn-secondary p-2 dropdown-toggle"
-                    data-toggle="dropdown"
+                    data-bs-toggle="dropdown"
                     aria-haspopup="true"
                     aria-expanded="false">
 
@@ -44,14 +45,16 @@ defined('C5_EXECUTE') or die("Access Denied.");
                 <?php endforeach; ?>
             </ul>
         </div>
+    </div>
     <?php endif; ?>
-
-    <ul class="ccm-dashboard-header-icons">
-        <li>
-            <a href="<?php echo (string)UrlFacade::to("/dashboard/reports/logs/export"); ?>" class="ccm-hover-icon" title="<?php echo h(t('Export CSV')) ?>">
-                <i class="fa fa-download" aria-hidden="true"></i>
-            </a>
-        </li>
-    </ul>
+    <div class="col-auto">
+        <ul class="ccm-dashboard-header-icons">
+            <li>
+                <a href="<?php echo (string)UrlFacade::to("/dashboard/reports/logs/export"); ?>" class="ccm-hover-icon" title="<?php echo h(t('Export CSV')) ?>">
+                    <i class="fa fa-download" aria-hidden="true"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
 </div>
 

@@ -28,17 +28,21 @@ defined('C5_EXECUTE') or die('Access Denied.');
 
 <div class="ccm-block-switch-language">
 
-    <form method="post" class="form-inline">
-        <?= $label ?>
-        <?= $form->select(
-            'language',
-            $languages,
-            $activeLanguage,
-            [
-                'data-select' => 'multilingual-switch-language',
-                'data-action' => $view->action('switch_language', $cID, '--language--'),
-            ]
-        ) ?>
+    <form method="post" class="row row-cols-auto g-0 align-items-center">
+        <div class="col-auto">
+            <?= $label ?>
+        </div>
+        <div class="col-auto">
+            <?= $form->select(
+                'language',
+                $languages,
+                $activeLanguage,
+                [
+                    'data-select' => 'multilingual-switch-language',
+                    'data-action' => $view->action('switch_language', $cID, '--language--'),
+                ]
+            ) ?>
+        </div>
     </form>
 
 </div>

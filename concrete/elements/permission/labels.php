@@ -25,20 +25,20 @@ if (count($assignments) > 0) {
 
         if ($as->getAccessType() == PermissionKey::ACCESS_TYPE_EXCLUDE) {
             if (is_object($pd)) {
-                $class = 'badge-warning';
+                $class = 'bg-warning';
                 $pdTitle = 'title="' . $pd->getTextRepresentation() . '"';
             } else {
-                $class = 'badge-danger';
+                $class = 'bg-danger';
             }
         } else {
             if (is_object($pd)) {
-                $class = 'badge-info';
+                $class = 'bg-info';
                 $pdTitle = 'title="' . $pd->getTextRepresentation() . '"';
             }
         }
 
         if (!$class) {
-            $class = 'badge-secondary';
+            $class = 'bg-secondary';
         }
         $str .= '<span class="badge ' . $class . '" ' . $pdTitle . '>' . $entity->getAccessEntityLabel() . '</span> ';
     }
@@ -60,7 +60,10 @@ if (count($assignments) > 0) {
 
 <script type="text/javascript">
 $(function() {
-	$('.ccm-permission-access-line span[title]').tooltip({'container': '#ccm-tooltip-holder'});
+    const tooltipTriggerList = [].slice.call(document.querySelectorAll('.ccm-permission-access-line span[title]'))
+    const tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl, { container: '#ccm-tooltip-holder' })
+    })
 	$('.ccm-permission-grid-cell .ccm-permission-access-line').draggable({
 		helper: 'clone'	
 	});

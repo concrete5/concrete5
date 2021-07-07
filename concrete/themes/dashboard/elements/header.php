@@ -48,8 +48,8 @@ $large_font = (bool) $config->get('concrete.accessibility.toolbar_large_font');
         <?=View::element('icons'); ?>
         <div id="ccm-toolbar" class="<?= $show_titles ? 'titles' : ''; ?> <?= $large_font ? 'large-font' : ''; ?>">
             <ul>
-                <li class="ccm-logo float-left"><span><?=Loader::helper('concrete/ui')->getToolbarLogoSRC(); ?></span></li>
-                <li class="float-left ccm-toolbar-button-with-text">
+                <li class="ccm-logo float-start"><span><?=Loader::helper('concrete/ui')->getToolbarLogoSRC(); ?></span></li>
+                <li class="float-start ccm-toolbar-button-with-text">
                     <a href="<?=$backLink; ?>">
                         <svg><use xlink:href="#icon-arrow-left" /></svg>
                         <span><?=t('To My Website'); ?></span>
@@ -67,12 +67,12 @@ $large_font = (bool) $config->get('concrete.accessibility.toolbar_large_font');
                     $cnt = $ih->getController();
                     if ($cnt->displayItem()) {
                         $cnt->registerViewAssets(); ?>
-                        <li class="float-left"><?= $cnt->getMenuItemLinkElement(); ?></li>
+                        <li class="float-start"><?= $cnt->getMenuItemLinkElement(); ?></li>
                         <?php
                     }
                 }
                 ?>
-                <li class="float-right d-none d-sm-none d-md-block">
+                <li class="float-end d-none d-sm-none d-md-block">
                     <?php
                     $dashboardPanelClasses = [];
                     if ($show_tooltips) {
@@ -83,7 +83,7 @@ $large_font = (bool) $config->get('concrete.accessibility.toolbar_large_font');
                     }
                     $dashboardPanelClass = implode(' ', $dashboardPanelClasses);
                     ?>
-                    <a class="<?=$dashboardPanelClass; ?>" data-placement="bottom" data-delay='{ "show": 500, "hide": 0 }' href="<?= URL::to('/dashboard'); ?>" title="<?= t('Dashboard – Change Site-wide Settings'); ?>"
+                    <a class="<?=$dashboardPanelClass; ?>" data-bs-placement="bottom" href="<?= URL::to('/dashboard'); ?>" title="<?= t('Dashboard – Change Site-wide Settings'); ?>"
                         data-launch-panel="dashboard"
                         data-panel-url="<?=URL::to('/system/panels/dashboard'); ?>"
                     >
@@ -91,26 +91,26 @@ $large_font = (bool) $config->get('concrete.accessibility.toolbar_large_font');
                         <span class="ccm-toolbar-accessibility-title ccm-toolbar-accessibility-title-site-settings"><?= tc('toolbar', 'Dashboard'); ?></span>
                     </a>
                 </li>
-                <li class="float-right d-none d-sm-none d-md-block">
+                <li class="float-end d-none d-sm-none d-md-block">
                     <a <?php if ($show_tooltips) {
                         ?>class="launch-tooltip"<?php
-                    } ?>  data-toggle="tooltip" data-placement="bottom" data-delay='{ "show": 500, "hide": 0 }' href="#" data-panel-url="<?= URL::to('/ccm/system/panels/sitemap'); ?>" title="<?= t('Add Pages and Navigate Your Site'); ?>" data-launch-panel="sitemap">
+                    } ?>  data-bs-toggle="tooltip" data-bs-placement="bottom" href="#" data-panel-url="<?= URL::to('/ccm/system/panels/sitemap'); ?>" title="<?= t('Add Pages and Navigate Your Site'); ?>" data-launch-panel="sitemap">
                         <svg><use xlink:href="#icon-sitemap" /></svg>
                         <span class="ccm-toolbar-accessibility-title ccm-toolbar-accessibility-title-add-page"><?= tc('toolbar', 'Pages'); ?></span>
                     </a>
                 </li>
-                <li data-guide-toolbar-action="help" class="float-right d-none d-sm-block">
+                <li data-guide-toolbar-action="help" class="float-end d-none d-sm-block">
                     <a <?php if ($show_tooltips) {
                         ?>class="launch-tooltip"<?php
-                    } ?> data-toggle="tooltip"
-                       data-placement="bottom" data-delay='{ "show": 500, "hide": 0 }' href="#"
+                    } ?> data-bs-toggle="tooltip"
+                       data-bs-placement="bottom" href="#"
                        data-panel-url="<?= URL::to('/ccm/system/panels/help'); ?>"
                        title="<?= t('View help about the CMS.'); ?>" data-launch-panel="help">
                         <svg><use xlink:href="#icon-help" /></svg><span
                                 class="ccm-toolbar-accessibility-title ccm-toolbar-accessibility-title-add-page"><?= tc('toolbar', 'Help'); ?></span>
                     </a>
                 </li>
-                <li class="ccm-toolbar-search float-right d-none d-sm-none d-lg-block">
+                <li class="ccm-toolbar-search float-end d-none d-sm-none d-lg-block">
                     <?php
                     $menu = Element::get('navigation/intelligent_search');
                     $menu->render();
@@ -122,7 +122,7 @@ $large_font = (bool) $config->get('concrete.accessibility.toolbar_large_font');
                     $cnt = $ih->getController();
                     if ($cnt->displayItem()) {
                         $cnt->registerViewAssets(); ?>
-                        <li class="float-right"><?= $cnt->getMenuItemLinkElement(); ?></li>
+                        <li class="float-end"><?= $cnt->getMenuItemLinkElement(); ?></li>
                         <?php
                     }
                 }

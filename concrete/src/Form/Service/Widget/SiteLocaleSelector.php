@@ -69,7 +69,7 @@ class SiteLocaleSelector
         return <<<EOL
         <input type="hidden" name="{$fieldName}" value="{$localeID}">
         <div class="btn-group" data-locale-selector="{$identifier}">
-            <button type="button" class="btn btn-default" data-toggle="dropdown">
+            <button type="button" class="btn btn-default" data-bs-toggle="dropdown">
                 {$flag} {$label}
             <span class="caret"></span>
             </button>
@@ -79,7 +79,7 @@ class SiteLocaleSelector
         </div>
         <script type="text/javascript">
             $(function() {
-                $('[data-toggle=dropdown]').dropdown();
+                $('[data-bs-toggle=dropdown]').dropdown();
                 $('div[data-locale-selector={$identifier}]').on('click', 'a[data-select-locale]', function(e) {
                     e.preventDefault();
                     var localeID = $(this).attr('data-select-locale'),

@@ -18,8 +18,8 @@ if ($excludedWords !== $defaultExcludedWords) {
                 <?php $token->output('reset') ?>
                 <p><?= t('Are you sure you want to reset the reserved word list to the default value?') ?></p>
                 <div class="dialog-buttons">
-                    <button class="btn btn-secondary float-left" onclick="jQuery.fn.dialog.closeTop()"><?=t('Cancel')?></button>
-                    <button class="btn btn-danger float-right" onclick="$('div[data-dialog-wrapper=ccm-seowords-reset] form').submit()"><?= t('Reset') ?></button>
+                    <button class="btn btn-secondary float-start" onclick="jQuery.fn.dialog.closeTop()"><?=t('Cancel')?></button>
+                    <button class="btn btn-danger float-end" onclick="$('div[data-dialog-wrapper=ccm-seowords-reset] form').submit()"><?= t('Reset') ?></button>
                 </div>
             </form>
         </div>
@@ -32,7 +32,7 @@ if ($excludedWords !== $defaultExcludedWords) {
 
 	<div class="form-group">
         <?= $form->label('SEO_EXCLUDE_WORDS', t('Reserved Words')) ?>
-        <?= $form->textarea('SEO_EXCLUDE_WORDS', implode(', ', $excludedWords), ['class' => 'text-monospace', 'rows' => '5', 'spellcheck' => 'false']) ?>
+        <?= $form->textarea('SEO_EXCLUDE_WORDS', implode(', ', $excludedWords), ['class' => 'font-monospace', 'rows' => '5', 'spellcheck' => 'false']) ?>
         <div class="text-muted">
             <?= t('Separate reserved words with a comma. These words will be automatically removed from URL slugs. To remove no words from URLs, delete all the words above.') ?>
         </div>
@@ -40,7 +40,7 @@ if ($excludedWords !== $defaultExcludedWords) {
 
     <div class="ccm-dashboard-form-actions-wrapper">
         <div class="ccm-dashboard-form-actions">
-            <div class="float-right">
+            <div class="float-end">
                 <?php
                 if ($excludedWords !== $defaultExcludedWords) {
                     ?>

@@ -22,6 +22,6 @@ $c = Page::getCurrentPage();
     $form = Loader::helper('form');
 ?>
 <div class="form-group">
-	<label for="ptComposerOutputControlID" class="control-label"><?=t('Control')?></label>
+	<label for="ptComposerOutputControlID" class="control-label form-label"><?=t('Control')?></label>
 	<?=$form->select('ptComposerOutputControlID', $values, $ptComposerOutputControlID)?>
 </div>

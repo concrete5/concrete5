@@ -12,6 +12,8 @@
         <div class="form-group">
             <input name="uEmail" type="email" placeholder="<?= t('Email Address') ?>" class="form-control"/>
         </div>
-        <button name="required-password-upgrade" class="btn btn-primary btn-block"><?= t('Reset and Email Password') ?></button>
+        <div class="d-grid">
+            <button name="required-password-upgrade" class="btn btn-primary"><?= t('Reset and Email Password') ?></button>
+        </div>
     </form>
 </div>

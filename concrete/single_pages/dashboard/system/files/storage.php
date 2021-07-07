@@ -55,9 +55,7 @@ switch ($controller->getTask()) {
                     <?= $form->label('fslName', t('Name')); ?>
                     <div class="input-group">
                         <?= $form->text('fslName', $fslName); ?>
-                        <div class="input-group-append">
-                            <span class="input-group-text"><i class="fa fa-asterisk"></i></span>
-                        </div>
+                        <span class="input-group-text"><i class="fa fa-asterisk"></i></span>
                     </div>
                 </div>
                 <?php
@@ -91,11 +89,11 @@ switch ($controller->getTask()) {
             <?php } ?>
             <div class="ccm-dashboard-form-actions-wrapper">
                 <div class="ccm-dashboard-form-actions">
-                    <a href="<?= URL::to($c); ?>" class="btn float-left btn-secondary"><?= t('Back'); ?></a>
+                    <a href="<?= URL::to($c); ?>" class="btn float-start btn-secondary"><?= t('Back'); ?></a>
                     <?php if ($location !== null) { ?>
-                        <button type="submit" class="btn btn-primary float-right"><?= t('Save'); ?></button>
+                        <button type="submit" class="btn btn-primary float-end"><?= t('Save'); ?></button>
                     <?php } else { ?>
-                        <button type="submit" class="btn btn-primary float-right"><?= t('Add'); ?></button>
+                        <button type="submit" class="btn btn-primary float-end"><?= t('Add'); ?></button>
                     <?php } ?>
                 </div>
             </div>
@@ -127,11 +125,13 @@ switch ($controller->getTask()) {
                 <legend><?= t('Add Location'); ?></legend>
                 <div class="form-group">
                     <label for="atID"><?= t('Choose Type'); ?></label>
-                    <div class="form-inline">
-                        <div class="mr-2">
+                    <div class="row row-cols-auto g-0 align-items-center">
+                        <div class="me-2 col-auto">
                             <?= $form->select('fslTypeID', $types); ?>
                         </div>
-                        <button type="submit" class="btn btn-secondary"><?= t('Go'); ?></button>
+                        <div class="col-auto">
+                            <button type="submit" class="btn btn-secondary"><?= t('Go'); ?></button>
+                        </div>
                     </div>
                 </div>
             </fieldset>

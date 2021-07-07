@@ -23,7 +23,7 @@
 // just copied into reboot_tags.scs
 @import "~@concretecms/bedrock/assets/cms/scss/bootstrap/reboot";
 .ccm-ui {
-  @import "~@concretecms/bedrock/assets/cms/scss/bootstrap/reboot-tags";
+  //@import "~@concretecms/bedrock/assets/cms/scss/bootstrap/reboot-tags";
 
   // Import the bootstrap components we want. Note: I'm including everything in the list, and commenting out
   // things that are either a) already included, b) not applicable, c) not used in our in-page CMS sub-set.
@@ -31,10 +31,9 @@
   //@import "variables";
   //@import "mixins";
   //@import "root";
-  //@import "reboot";
+  @import "~bootstrap/scss/reboot";
   @import "~bootstrap/scss/type";
   //@import "images";
-  @import "~bootstrap/scss/code";
   @import "~bootstrap/scss/grid";
   @import "~bootstrap/scss/tables";
   @import "~bootstrap/scss/forms";
@@ -42,8 +41,7 @@
   @import "~bootstrap/scss/transitions";
   @import "~bootstrap/scss/dropdown";
   @import "~bootstrap/scss/button-group";
-  @import "~bootstrap/scss/input-group";
-  @import "~bootstrap/scss/custom-forms";
+  @import "~bootstrap/scss/forms/input-group";
   @import "~bootstrap/scss/nav";
   //@import "navbar";
   @import "~bootstrap/scss/card";
@@ -53,7 +51,6 @@
   //@import "jumbotron";
   @import "~bootstrap/scss/alert";
   @import "~bootstrap/scss/progress";
-  @import "~bootstrap/scss/media";
   @import "~bootstrap/scss/list-group";
   @import "~bootstrap/scss/close";
   @import "~bootstrap/scss/toasts";

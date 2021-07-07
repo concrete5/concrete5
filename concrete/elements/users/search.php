@@ -45,7 +45,7 @@ $gk = PermissionKey::getByHandle('assign_group');
 	<tr>
 		<th>
 			<span class="ccm-search-results-checkbox">
-				<select data-bulk-action="users" disabled class="ccm-search-bulk-action form-control">
+				<select data-bulk-action="users" disabled class="ccm-search-bulk-action form-select">
 					<option value=""><?php echo t('Items Selected'); ?></option>
 					<?php
                     if ($ek->validate()) {

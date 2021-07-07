@@ -19,15 +19,15 @@ use Concrete\Core\Support\Facade\Package as PackageFacade;
             $base = Application::getApplicationURL() . '/' . DISPATCHER_FILENAME;
         }
     ?>
-    <form class="form-inline" method="post" id="add_static_page_form" action="<?= $view->action('') ?>">
-        <?php $token->output('add_single_page'); ?>
-        <div class="form-group">
-            <div class="input-group">
-                <div class="input-group-prepend">
-                   <span class="input-group-text"  ><?= $base; ?>/</span>
-                </div>
-                <input type="text" style="width: 200px" class="form-control" name="pageURL" value="<?= h($this->post('pageURL')); ?>" />
-                <div class="input-group-append">
+    <form class="row row-cols-auto g-0 align-items-center" method="post" id="add_static_page_form" action="<?= $view->action('') ?>">
+        <div class="col-auto">
+            <?php $token->output('add_single_page'); ?>
+        </div>
+        <div class="col-auto">
+            <div class="form-group">
+                <div class="input-group">
+                    <span class="input-group-text"  ><?= $base; ?>/</span>
+                    <input type="text" style="width: 200px" class="form-control" name="pageURL" value="<?= h($this->post('pageURL')); ?>" />
                     <button class="btn btn-secondary" type="submit"><?=t('Add'); ?></button>
                 </div>
             </div>

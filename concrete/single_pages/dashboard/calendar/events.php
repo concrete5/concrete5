@@ -28,7 +28,7 @@ Loader::element('calendar/header', array(
     <?php if (isset($topics) && is_array($topics)) {
         ?>
         <div class="btn-group" id="calendar-topics">
-            <button type="button" id="topics_button" class="btn btn-secondary btn-sm" data-toggle="dropdown">
+            <button type="button" id="topics_button" class="btn btn-secondary btn-sm" data-bs-toggle="dropdown">
                 <?= $topic ? h($topic->getTreeNodeDisplayName('html')) : t('All Categories') ?>
                 <span class="caret"></span>
             </button>

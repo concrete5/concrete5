@@ -48,7 +48,7 @@ $siteMenu->render();
 
 <div class="ccm-dashboard-form-actions-wrapper">
     <div class="ccm-dashboard-form-actions">
-        <div class="float-right">
+        <div class="float-end">
             <a href="javascript:void(0)" class="btn btn-danger" data-dialog="delete-site" data-dialog-title="<?= t('Delete Site') ?>" data-dialog-width="400"><?= t('Delete Site') ?></a>            
         </div>
     </div>

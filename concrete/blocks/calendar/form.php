@@ -126,7 +126,7 @@ $color = $app->make(Color::class);
         <?php echo $form->label("totalToRetrieve", t("Filter by Topic Attribute")); ?>
 
         <!--suppress HtmlFormInputWithoutLabel -->
-        <select class="form-control" name="filterByTopicAttributeKeyID">
+        <select class="form-select" name="filterByTopicAttributeKeyID">
             <option value="">
                 <?php echo t('** None') ?>
             </option>

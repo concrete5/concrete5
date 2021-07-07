@@ -37,12 +37,12 @@ $pageSelector = $app->make(PageSelector::class);
         <?php echo $form->label("title", t('Title')); ?>
 	    <div class="input-group">
 		    <?php echo $form->text('title', $title); ?>
-			<?php echo $form->select('titleFormat', \Concrete\Core\Block\BlockController::$btTitleFormats, $titleFormat, array('style' => 'width:105px;flex-grow:0;', 'class' => 'custom-select input-group-append')); ?>
+			<?php echo $form->select('titleFormat', \Concrete\Core\Block\BlockController::$btTitleFormats, $titleFormat, array('style' => 'width:105px;flex-grow:0;', 'class' => 'form-select')); ?>
 		</div>
 	</div>
 
     <div class="form-group">
-        <label class="control-label">
+        <label class="control-label form-label">
             <?php echo t('Display a List of Tags From') ?>
         </label>
 
@@ -65,7 +65,7 @@ $pageSelector = $app->make(PageSelector::class);
 
     <?php if (!$inStackDashboardPage) { ?>
         <div id="ccm-tags-display-page" class="form-group">
-            <label class="control-label">
+            <label class="control-label form-label">
                 <?php echo $ak->getAttributeKeyDisplayName(); ?>
             </label>
 

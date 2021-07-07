@@ -88,7 +88,7 @@ if (is_object($key)) {
 } ?>
 
 <div class="form-group">
-<label class="control-label"><?=t('Searchable')?></label>
+<label class="control-label form-label"><?=t('Searchable')?></label>
 
 <?php
 $keyword_label = t('Content included in search index.');
@@ -148,14 +148,14 @@ if (is_object($category)) {
 
 <div class="ccm-dashboard-form-actions-wrapper">
 <div class="ccm-dashboard-form-actions">
-	<a href="<?=$back?>" class="btn float-left btn-secondary"><?=t('Back')?></a>
+	<a href="<?=$back?>" class="btn float-start btn-secondary"><?=t('Back')?></a>
 <?php if (is_object($key)) {
     ?>
-	<button type="submit" class="btn btn-primary float-right"><?=t('Save')?></button>
+	<button type="submit" class="btn btn-primary float-end"><?=t('Save')?></button>
 <?php 
 } else {
     ?>
-	<button type="submit" class="btn btn-primary float-right"><?=t('Add')?></button>
+	<button type="submit" class="btn btn-primary float-end"><?=t('Add')?></button>
 <?php 
 } ?>
 </div>

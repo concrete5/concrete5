@@ -12,13 +12,13 @@ defined('C5_EXECUTE') or die('Access Denied.');
     <?= $token->output('file_access_extensions') ?>
 
     <div class="form-group">
-        <?= $form->label('file-access-file-types', t('File Extensions to Accept'), ['class' => 'launch-tooltip', 'title' => t('Only files with the following extensions will be allowed. Separate extensions with commas. Periods and spaces will be ignored.')]) ?>
+        <?= $form->label('file-access-file-types', t('File Extensions to Accept'), ['class' => 'launch-tooltip form-label', 'title' => t('Only files with the following extensions will be allowed. Separate extensions with commas. Periods and spaces will be ignored.')]) ?>
         <?= $form->textarea('file-access-file-types', h($file_access_file_types), ['rows' => 3]) ?>
     </div>
 
     <div class="ccm-dashboard-form-actions-wrapper">
         <div class="ccm-dashboard-form-actions">
-            <input type="submit" class="float-right btn btn-primary" value="<?= t('Save') ?>" />
+            <input type="submit" class="float-end btn btn-primary" value="<?= t('Save') ?>" />
         </div>
     </div>
 

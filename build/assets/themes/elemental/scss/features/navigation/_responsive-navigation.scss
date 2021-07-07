@@ -2,7 +2,7 @@
   background: white;
   display: none;
   position: absolute;
-  border-bottom: 5px solid darken(theme-color('primary'), 10%);
+  border-bottom: 5px solid darken($primary, 10%);
   width: 100%;
   z-index: 99;
   top: 120px;
@@ -32,9 +32,9 @@
       }
       a {
         &:hover {
-          color: lighten(theme-color('secondary'), 40%);
+          color: lighten($secondary, 40%);
         }
-        color: theme-color('secondary');
+        color: $secondary;
         font-size: 18px;
         display: inline-block;
         width: 80%;
@@ -74,7 +74,7 @@
     i {
       &:after {
         font-size: 20px;
-        color: theme-color('secondary');
+        color: $secondary;
         content: fa-content($fa-var-chevron-up);
         font-family: 'Font Awesome 5 Free';
         font-weight: 900;
@@ -91,7 +91,7 @@
       content: fa-content($fa-var-bars);
       font-family: 'Font Awesome 5 Free';
       font-weight: 900;
-      color: theme-color('secondary');
+      color: $secondary;
       font-style: normal;
       display: inline-block;
       cursor: pointer;
@@ -100,7 +100,7 @@
   }
 }
 
-@include media-breakpoint-down(xs) {
+@include media-breakpoint-down(sm) {
   
   .ccm-responsive-menu-launch {
     display: block;
@@ -120,7 +120,7 @@
 
 }
 
-@include media-breakpoint-up(xs) {
+@include media-breakpoint-up(sm) {
 
   .ccm-responsive-overlay {
     display: none;

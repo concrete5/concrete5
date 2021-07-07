@@ -19,8 +19,8 @@ defined('C5_EXECUTE') or die('Access Denied');
             <?php $token->output('clear_index') ?>
             <p><?= t('Once the index is clear, you must reindex your site from the Automated Jobs page.') ?></p>
             <div class="dialog-buttons">
-                <button class="btn btn-secondary float-left" onclick="jQuery.fn.dialog.closeTop()"><?=t('Cancel')?></button>
-                <button class="btn btn-danger float-right" onclick="$('div[data-dialog-wrapper=ccm-searchindex-clear] form').submit()"><?= t('Clear Index') ?></button>
+                <button class="btn btn-secondary float-start" onclick="jQuery.fn.dialog.closeTop()"><?=t('Cancel')?></button>
+                <button class="btn btn-danger float-end" onclick="$('div[data-dialog-wrapper=ccm-searchindex-clear] form').submit()"><?= t('Clear Index') ?></button>
             </div>
         </form>
     </div>
@@ -51,7 +51,7 @@ defined('C5_EXECUTE') or die('Access Denied');
 
     <div class="ccm-dashboard-form-actions-wrapper">
         <div class="ccm-dashboard-form-actions">
-            <div class="float-right">
+            <div class="float-end">
                 <a href="javascript:void(0)" class="btn btn-danger" data-dialog="ccm-searchindex-clear"><?= t('Clear Search Index') ?></a>
                 <button type="submit" class="btn btn-primary"><?= t('Save') ?></button>
             </div>

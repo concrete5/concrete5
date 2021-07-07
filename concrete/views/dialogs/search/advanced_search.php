@@ -18,7 +18,7 @@
             <div class="tab-pane active" id="tab-content-fields">
 
                 <p class="mb-0"><small class="text-muted"><?=t('Add custom search fields based on your needs.')?></small></p>
-`
+
                 <?php
                     print $searchFieldSelectorElement->render();
                 ?>
@@ -64,9 +64,9 @@
     </form>
     <div class="dialog-buttons">
         <?php if ($supportsSavedSearch) { ?>
-            <button type="button" data-button-action="save-search-preset" class="btn btn-secondary float-right"><?=t('Save Search')?></button>
+            <button type="button" data-button-action="save-search-preset" class="btn btn-secondary float-end"><?=t('Save Search')?></button>
         <?php } ?>
-        <button type="button" onclick="$('form[data-form=advanced-search]').trigger('submit')" class="btn btn-primary float-right"><?=t('Search')?></button>
+        <button type="button" onclick="$('form[data-form=advanced-search]').trigger('submit')" class="btn btn-primary float-end"><?=t('Search')?></button>
     </div>
 
 </div>
@@ -92,7 +92,7 @@
             </form>
             <div class="dialog-buttons">
                 <button class="btn btn-secondary" onclick="jQuery.fn.dialog.closeTop()"><?=t('Cancel')?></button>
-                <button class="btn btn-primary float-right ml-auto" data-button-action="save-search-preset-submit"><?=t('Save Preset')?></button>
+                <button class="btn btn-primary float-end ms-auto" data-button-action="save-search-preset-submit"><?=t('Save Preset')?></button>
             </div>
         </div>
     </div>

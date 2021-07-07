@@ -7,7 +7,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
 
     <div class="form-group">
         <div>
-            <label class="control-label"><?= t('Username') ?></label>
+            <label class="control-label form-label"><?= t('Username') ?></label>
         </div>
         <div>
             <?= $uName ?>
@@ -16,7 +16,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
 
     <div class="form-group">
         <div>
-            <label class="control-label"><?= t('Email') ?></label>
+            <label class="control-label form-label"><?= t('Email') ?></label>
         </div>
         <div>
             <?= $uEmail ?>
@@ -45,7 +45,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
                 ?>
                 <div class="form-group">
                     <div>
-                        <label class="control-label"><?= $ak->getAttributeKeyDisplayName() ?></label>
+                        <label class="control-label form-label"><?= $ak->getAttributeKeyDisplayName() ?></label>
                     </div>
                     <div>
                         <?= $value ?>
@@ -63,7 +63,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
             ?>
             <div class="form-group">
                 <div>
-                    <label class="control-label"><?= $ak->getAttributeKeyDisplayName() ?></label>
+                    <label class="control-label form-label"><?= $ak->getAttributeKeyDisplayName() ?></label>
                 </div>
                 <div>
                     <?= $value ?>

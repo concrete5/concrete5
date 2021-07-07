@@ -12,12 +12,14 @@ if (isset($message)) {
 ?>
 
 <div class="form-group external-auth-option">
-    <a href="<?= \URL::to('/ccm/system/authentication/oauth2/community/attempt_auth');
-?>" class="btn btn-primary btn-community btn-block"
-title="<?= t('Join the concrete5.org community to setup multiple websites, shop for extensions, and get support.'); ?>">
-        <img src="<?= Core::getApplicationURL(); ?>/concrete/images/logo.svg" class="concrete5-icon"></i>
-        <?= t('Log in with concrete5.org'); ?>
-    </a>
+    <div class="d-grid">
+        <a href="<?= \URL::to('/ccm/system/authentication/oauth2/community/attempt_auth');
+        ?>" class="btn btn-primary btn-community"
+           title="<?= t('Join the concrete5.org community to setup multiple websites, shop for extensions, and get support.'); ?>">
+            <img src="<?= Core::getApplicationURL(); ?>/concrete/images/logo.svg" class="concrete5-icon"></i>
+            <?= t('Log in with concrete5.org'); ?>
+        </a>
+    </div>
 </div>
 <style>
     .ccm-ui .btn-community {

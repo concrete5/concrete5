@@ -45,7 +45,7 @@ $form = $app->make(Form::class);
             <?php if ($allowEditPaths && !$c->isGeneratedCollection()) { ?>
                 <div class="form-group">
                     <?php echo $form->label("cHandle", t('URL Slug'), [
-                        "class" => "launch-tooltip",
+                        "class" => "launch-tooltip form-label",
                         "title" => t('This page must always be available from at least one URL. This is that URL.')
                     ]); ?>
                     <?php echo $form->text("cHandle", $c->getCollectionHandle()); ?>
@@ -72,7 +72,7 @@ $form = $app->make(Form::class);
         </form>
 
         <div class="ccm-panel-detail-form-actions dialog-buttons d-flex justify-content-end">
-            <button class="btn btn-secondary float-left" type="button" data-dialog-action="cancel"
+            <button class="btn btn-secondary float-start" type="button" data-dialog-action="cancel"
                     data-panel-detail-action="cancel">
                 <?php echo t('Cancel') ?>
             </button>

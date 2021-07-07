@@ -5,7 +5,7 @@
  */
 if (!isset($starsOnly) || !$starsOnly) {
     ?>
-    <label for="review" class="float-left">
+    <label for="review" class="float-start">
         <?= t('Rating') ?>&nbsp;
     </label>
     <?php

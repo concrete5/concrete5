@@ -11,6 +11,9 @@ import '@concretecms/bedrock/assets/desktop/js/frontend';
 import NProgress from 'nprogress';
 window.NProgress = NProgress;
 
-$('.launch-tooltip').tooltip({
-    placement: 'bottom'
-});
+const tooltipTriggerList = [].slice.call(document.querySelectorAll('.launch-tooltip'))
+const tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+    return new bootstrap.Tooltip(tooltipTriggerEl, {
+        placement: 'bottom'
+    })
+})

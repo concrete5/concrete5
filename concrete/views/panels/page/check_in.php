@@ -21,10 +21,10 @@ $require_version_comments = (bool) Config::get('concrete.misc.require_version_co
     <?php $publishAction = (is_object($publishErrors) && $publishErrors->has()) ? false : true ?>
     <div class="btn-group d-flex" role="group">
         <button id="ccm-check-in-publish" type="submit" name="action" value="publish"
-                class="pr-3 pl-3 btn btn-primary" <?=$publishAction ?: 'disabled' ?>>
+                class="pe-3 ps-3 btn btn-primary" <?=$publishAction ?: 'disabled' ?>>
             <?=$publishTitle?>
         </button>
-        <button id="ccm-check-in-schedule" type="button" class="pr-3 pl-3 btn btn-primary" <?= $publishAction ?: 'disabled' ?>>
+        <button id="ccm-check-in-schedule" type="button" class="pe-3 ps-3 btn btn-primary" <?= $publishAction ?: 'disabled' ?>>
             <i class="far fa-clock"></i>
         </button>
     </div>
@@ -62,16 +62,21 @@ $require_version_comments = (bool) Config::get('concrete.misc.require_version_co
 
 <?php
 } ?>
-
-	<button id="ccm-check-in-preview" type="submit" name="action" value="save" class="btn-block btn-success btn"><?=t('Save Changes')?></button>
+    <div class="d-grid">
+        <button id="ccm-check-in-preview" type="submit" name="action" value="save" class="btn-success btn"><?=t('Save Changes')?></button>
+    </div>
 
     <?php if ($c->isPageDraft() && $cp->canDeletePage()) {
     ?>
-		<button id="ccm-check-in-discard" type="submit" name="action" value="discard" class="btn-block btn-danger btn"><?=t('Discard Draft')?></button>
+        <div class="d-grid mt-2">
+            <button id="ccm-check-in-discard" type="submit" name="action" value="discard" class="btn-danger btn"><?=t('Discard Draft')?></button>
+        </div>
 	<?php
 } elseif ($v->canDiscard()) {
     ?>
-		<button id="ccm-check-in-discard" type="submit" name="action" value="discard" class="btn-block btn-danger btn"><?=t('Discard Changes')?></button>
+        <div class="d-grid mt-2">
+            <button id="ccm-check-in-discard" type="submit" name="action" value="discard" class="btn-danger btn"><?=t('Discard Changes')?></button>
+        </div>
 	<?php
 } ?>
 	<input type="hidden" name="approve" value="PREVIEW" id="ccm-approve-field" />

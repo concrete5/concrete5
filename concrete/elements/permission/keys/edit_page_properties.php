@@ -19,7 +19,7 @@
 
 
 <div class="clearfix">
-	<label><?=$entity->getAccessEntityLabel()?></label>
+	<label class="form-label"><?=$entity->getAccessEntityLabel()?></label>
 	<div class="input">
 	<?=$form->select('propertiesIncluded[' . $entity->getAccessEntityID() . ']', array('A' => t('All Attributes'), 'C' => t('Custom')), $assignment->getAttributesAllowedPermission())?><br/><br/>
 	<ul class="page-type-list inputs-list" <?php if ($assignment->getAttributesAllowedPermission() != 'C') {

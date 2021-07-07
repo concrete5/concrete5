@@ -5,7 +5,7 @@ if (is_object($configuration)) {
 }
 ?>
 <div class="control-group">
-	<label class="control-label"><?=t('RSS Feed')?></label>
+	<label class="control-label form-label"><?=t('RSS Feed')?></label>
 	<div class="controls">
 		<?=$form->text($source->optionFormKey('rssFeedURL'), $rssFeedURL)?>
 	</div>

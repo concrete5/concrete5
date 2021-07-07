@@ -118,7 +118,7 @@ if ($remoteUpdate !== null) {
 
 <div class="ccm-dashboard-form-actions-wrapper">
     <div class="ccm-dashboard-form-actions">
-        <div class="float-right">
+        <div class="float-end">
             <a href="<?= $controller->action('check_for_updates') ?>" class="btn btn-primary"><?= t('Check For Updates') ?></a>
             <?php
             if ($remoteUpdate !== null) {

@@ -7,20 +7,26 @@
     <fieldset>
         <legend><?=t('Default Colors')?></legend>
         <div class="row">
-        <div class="form-group col-sm-6 col-sm-offset-1">
-            <div class="form-inline">
-            <?=$form->label('defaultBackgroundColor', t('Background'))?>
-            &nbsp;
-            <?=$color->output('defaultBackgroundColor', $defaultBackgroundColor)?>
+            <div class="form-group col-sm-6 col-sm-offset-1">
+                <div class="row row-cols-auto g-0 align-items-center">
+                    <div class="col-auto">
+                        <?=$form->label('defaultBackgroundColor', t('Background'))?>
+                    </div>
+                    <div class="col-auto">
+                        <?=$color->output('defaultBackgroundColor', $defaultBackgroundColor)?>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="form-group col-sm-5">
-            <div class="form-inline">
-            <?=$form->label('defaultTextColor', t('Text'))?>
-                &nbsp;
-            <?=$color->output('defaultTextColor', $defaultTextColor)?>
+            <div class="form-group col-sm-5">
+                <div class="row row-cols-auto g-0 align-items-center">
+                    <div class="col-auto">
+                        <?=$form->label('defaultTextColor', t('Text'))?>
+                    </div>
+                    <div class="col-auto">
+                        <?=$color->output('defaultTextColor', $defaultTextColor)?>
+                    </div>
+                </div>
             </div>
-        </div>
         </div>
     </fieldset>
 
@@ -71,7 +77,7 @@
 
     <div class="ccm-dashboard-form-actions-wrapper">
         <div class="ccm-dashboard-form-actions">
-            <button class="float-right btn btn-success" type="submit" ><?=t('Save')?></button>
+            <button class="float-end btn btn-success" type="submit" ><?=t('Save')?></button>
         </div>
     </div>
 

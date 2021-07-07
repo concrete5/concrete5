@@ -8,13 +8,14 @@ defined('C5_EXECUTE') or die("Access Denied.");
 /** @var $urlHelper Url */
 ?>
 
-<div class="form-inline">
+<div class="row row-cols-auto g-0 align-items-center">
     <?php if (!empty($itemsPerPageOptions)): ?>
+    <div class="col-auto">
         <div class="btn-group">
             <button
                     type="button"
                     class="btn btn-secondary p-2 dropdown-toggle"
-                    data-toggle="dropdown"
+                    data-bs-toggle="dropdown"
                     aria-haspopup="true"
                     aria-expanded="false">
 
@@ -31,8 +32,8 @@ defined('C5_EXECUTE') or die("Access Denied.");
                 <?php foreach ($itemsPerPageOptions as $itemsPerPageOption): ?>
                     <?php
                     $url = $urlHelper->setVariable([
-                        'itemsPerPage' => $itemsPerPageOption
-                    ]);
+                                                       'itemsPerPage' => $itemsPerPageOption
+                                                   ]);
                     ?>
 
                     <li data-items-per-page="<?php echo $itemsPerPageOption; ?>">
@@ -44,28 +45,30 @@ defined('C5_EXECUTE') or die("Access Denied.");
                 <?php endforeach; ?>
             </ul>
         </div>
+    </div>
     <?php endif; ?>
+    <div class="col-auto">
+        <ul class="ccm-dashboard-header-icons">
+            <li>
+                <a class="ccm-hover-icon" title="<?php echo h(t('Jump to Folder')) ?>" data-launch-dialog="navigate-group-manager" href="javascript:void(0);">
+                    <i class="fa fa-folder" aria-hidden="true"></i>
+                </a>
+            </li>
 
-    <ul class="ccm-dashboard-header-icons">
-        <li>
-            <a class="ccm-hover-icon" title="<?php echo h(t('Jump to Folder')) ?>" data-launch-dialog="navigate-group-manager" href="javascript:void(0);">
-                <i class="fa fa-folder" aria-hidden="true"></i>
-            </a>
-        </li>
+            <li>
+                <a class="ccm-hover-icon" title="<?php echo h(t('New Folder')) ?>" href="javascript:void(0);" data-launch-dialog="add-group-manager-folder">
+                    <i class="fa fa-plus" aria-hidden="true"></i>
+                </a>
+            </li>
 
-        <li>
-            <a class="ccm-hover-icon" title="<?php echo h(t('New Folder')) ?>" href="javascript:void(0);" data-launch-dialog="add-group-manager-folder">
-                <i class="fa fa-plus" aria-hidden="true"></i>
-            </a>
-        </li>
-
-        <li>
-            <a class="ccm-hover-icon" title="<?php echo h(t('Add Group')) ?>"
-               href="<?php echo (string)UrlFacade::to("/dashboard/users/add_group"); ?>">
-                <i class="fa fa-users" aria-hidden="true"></i>
-            </a>
-        </li>
-    </ul>
+            <li>
+                <a class="ccm-hover-icon" title="<?php echo h(t('Add Group')) ?>"
+                   href="<?php echo (string)UrlFacade::to("/dashboard/users/add_group"); ?>">
+                    <i class="fa fa-users" aria-hidden="true"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
 </div>
 
 <?php

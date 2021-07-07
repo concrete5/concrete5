@@ -187,6 +187,6 @@ class Urls extends DashboardSitePageController
 
     protected function getServerCodeHtml(string $ruleCode): string
     {
-        return $this->app->make(Form::class)->textarea('', h($ruleCode), ['rows' => substr_count($ruleCode, "\n") + 1, 'onclick' => 'this.select()', 'readonly' => 'readonly', 'class' => 'text-monospace']);
+        return $this->app->make(Form::class)->textarea('', h($ruleCode), ['rows' => substr_count($ruleCode, "\n") + 1, 'onclick' => 'this.select()', 'readonly' => 'readonly', 'class' => 'font-monospace']);
     }
 }

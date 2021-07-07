@@ -93,11 +93,9 @@ echo $userInterface->tabs([
             <div class="input-group" style="width: 150px">
                 <?php echo $form->number($view->field('timeout'), $timeout ? $timeout : 4000, ['min' => '1', 'max' => '99999']); ?>
 
-                <div class="input-group-append">
-                    <span class="input-group-text">
-                        <?php echo t('ms'); ?>
-                    </span>
-                </div>
+                <span class="input-group-text">
+                    <?php echo t('ms'); ?>
+                </span>
             </div>
         </div>
 
@@ -107,11 +105,9 @@ echo $userInterface->tabs([
             <div class="input-group" style="width: 150px">
                 <?php echo $form->number($view->field('speed'), $speed ? $speed : 500, ['min' => '1', 'max' => '99999']); ?>
 
-                <div class="input-group-append">
-                    <span class="input-group-text">
-                        <?php echo t('ms'); ?>
-                    </span>
-                </div>
+                <span class="input-group-text">
+                    <?php echo t('ms'); ?>
+                </span>
             </div>
         </div>
 
@@ -135,11 +131,9 @@ echo $userInterface->tabs([
             <div class="input-group" style="width: 150px">
                 <?php echo $form->number($view->field('maxWidth'), $maxWidth ? $maxWidth : 0, ['min' => '0', 'max' => '9999']); ?>
 
-                <div class="input-group-append">
-                    <span class="input-group-text">
-                        <?php echo t('px'); ?>
-                    </span>
-                </div>
+                <span class="input-group-text">
+                    <?php echo t('px'); ?>
+                </span>
             </div>
         </div>
     </div>
@@ -439,7 +433,7 @@ echo $userInterface->tabs([
 <script type="text/template" id="imageTemplate-<?php echo $bID; ?>">
     <div class="ccm-image-slider-entry ccm-image-slider-entry-<?php echo $bID; ?> slide-well slide-closed">
         <div class="form-group">
-            <label class="control-label"><?php echo t('Image'); ?></label>
+            <label class="control-label form-label"><?php echo t('Image'); ?></label>
             <div class="ccm-pick-slide-image ccm-pick-slide-image-<?php echo $bID; ?>">
                 <% if (image_url.length > 0) { %>
                 <!--suppress HtmlUnknownTarget, HtmlRequiredAltAttribute -->
@@ -451,13 +445,13 @@ echo $userInterface->tabs([
             <input type="hidden" name="<?php echo $view->field('fID'); ?>[]" class="image-fID" value="<%=fID%>"/>
         </div>
         <div class="form-group">
-            <label class="control-label"><?php echo t('Title'); ?></label>
+            <label class="control-label form-label"><?php echo t('Title'); ?></label>
             <!--suppress HtmlFormInputWithoutLabel -->
             <input class="form-control ccm-input-text" type="text" name="<?php echo $view->field('title'); ?>[]"
                    value="<%=title%>"/>
         </div>
         <div class="form-group">
-            <label class="control-label"><?php echo t('Description'); ?></label>
+            <label class="control-label form-label"><?php echo t('Description'); ?></label>
             <div class="editor-edit-content"></div>
             <!--suppress HtmlFormInputWithoutLabel -->
             <textarea id="ccm-slide-editor-<%= _.uniqueId() %>" style="display: none"
@@ -465,9 +459,9 @@ echo $userInterface->tabs([
                       name="<?php echo $view->field('description'); ?>[]"><%=description%></textarea>
         </div>
         <div class="form-group">
-            <label class="control-label"><?php echo t('Link'); ?></label>
+            <label class="control-label form-label"><?php echo t('Link'); ?></label>
             <!--suppress HtmlFormInputWithoutLabel -->
-            <select data-field="entry-link-select" name="<?php echo $view->field('linkType'); ?>[]" class="form-control"
+            <select data-field="entry-link-select" name="<?php echo $view->field('linkType'); ?>[]" class="form-select"
                     style="width: 60%;">
                 <option value="0"
                 <% if (!link_type) { %>selected<% } %>><?php echo t('None'); ?></option>
@@ -478,11 +472,11 @@ echo $userInterface->tabs([
             </select>
         </div>
         <div data-field="entry-link-url" class="form-group hide-slide-link">
-            <label class="control-label"><?php echo t('URL:'); ?></label>
+            <label class="control-label form-label"><?php echo t('URL:'); ?></label>
             <textarea class="form-control" name="<?php echo $view->field('linkURL'); ?>[]"><%=link_url%></textarea>
         </div>
         <div data-field="entry-link-page-selector" class="form-group hide-slide-link">
-            <label class="control-label"><?php echo t('Choose Page:'); ?></label>
+            <label class="control-label form-label"><?php echo t('Choose Page:'); ?></label>
             <div data-field="entry-link-page-selector-select"></div>
         </div>
         <button type="button" class="btn btn-sm btn-secondary ccm-edit-slide ccm-edit-slide-<?php echo $bID; ?>"

@@ -11,11 +11,11 @@ defined('C5_EXECUTE') or die('Access Denied.');
 ?>
 <nav class="navbar navbar-light navbar-expand-lg bg-light mb-3">
     <span class="navbar-brand"><?= h($type->getSiteTypeName()) ?></span>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ccm-sitetype-menu" aria-controls="ccm-sitetype-menu" aria-expanded="false" aria-label="<?= t('Toggle navigation') ?>">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#ccm-sitetype-menu" aria-controls="ccm-sitetype-menu" aria-expanded="false" aria-label="<?= t('Toggle navigation') ?>">
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="ccm-sitetype-menu">
-        <ul class="navbar-nav mr-auto">
+        <ul class="navbar-nav me-auto">
             <li class="nav-item<?= $active === 'details' ? ' active' : ''?>">
                 <a class="nav-link"  href="<?= $urlResolver->resolve(['/dashboard/system/multisite/types', 'view_type', $type->getSiteTypeID()]) ?>"><?= t('Details') ?></a>
             </li>

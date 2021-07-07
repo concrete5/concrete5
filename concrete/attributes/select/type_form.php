@@ -128,13 +128,17 @@ function getAttributeOptionHTML($v)
 		<?=getAttributeOptionHTML('TEMPLATE') ?>
 	</div>
 	
-	<div id="addAttributeValueWrap" class="form-inline">
-		<input id="akSelectValueFieldNew" name="akSelectValueNew" type="text" value="<?=$defaultNewOptionNm ?>" size="40"  class="form-control"
-		onfocus="ccmAttributesHelper.clrInitTxt(this,'<?=$defaultNewOptionNm ?>','faint',0)" 
-		onblur="ccmAttributesHelper.clrInitTxt(this,'<?=$defaultNewOptionNm ?>','faint',1)"
-		onkeypress="ccmAttributesHelper.keydownHandler(event);"
-		 /> 
-		<input class="btn btn-primary" type="button" onClick="ccmAttributesHelper.saveNewOption(); $('#ccm-attribute-key-form').unbind()" value="<?=t('Add') ?>" />
+	<div id="addAttributeValueWrap" class="row row-cols-auto g-0 align-items-center">
+        <div class="col-auto">
+            <input id="akSelectValueFieldNew" name="akSelectValueNew" type="text" value="<?=$defaultNewOptionNm ?>" size="40"  class="form-control"
+                   onfocus="ccmAttributesHelper.clrInitTxt(this,'<?=$defaultNewOptionNm ?>','faint',0)"
+                   onblur="ccmAttributesHelper.clrInitTxt(this,'<?=$defaultNewOptionNm ?>','faint',1)"
+                   onkeypress="ccmAttributesHelper.keydownHandler(event);"
+            />
+        </div>
+        <div class="col-auto">
+            <input class="btn btn-primary" type="button" onClick="ccmAttributesHelper.saveNewOption(); $('#ccm-attribute-key-form').unbind()" value="<?=t('Add') ?>" />
+        </div>
 	</div>
 	</div>
 

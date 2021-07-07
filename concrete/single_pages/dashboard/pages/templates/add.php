@@ -53,8 +53,8 @@ defined('C5_EXECUTE') or die('Access Denied.');
 
     <div class="ccm-dashboard-form-actions-wrapper">
         <div class="ccm-dashboard-form-actions">
-            <a href="<?=URL::to('/dashboard/pages/templates'); ?>" class="btn btn-secondary float-left"><?=t('Cancel'); ?></a>
-            <button type="submit" class="btn float-right btn-primary"><?=t('Add'); ?></button>
+            <a href="<?=URL::to('/dashboard/pages/templates'); ?>" class="btn btn-secondary float-start"><?=t('Cancel'); ?></a>
+            <button type="submit" class="btn float-end btn-primary"><?=t('Add'); ?></button>
         </div>
     </div>
 </form>

@@ -29,7 +29,7 @@ defined('C5_EXECUTE') or die('Access Denied.');
 
 <div class="ccm-dashboard-form-actions-wrapper">
     <div class="ccm-dashboard-form-actions">
-        <div class="float-right">
+        <div class="float-end">
             <a class="btn btn-primary" href="<?= $controller->action('add') ?>"><?= t('Add Site') ?></a>
         </div>
     </div>

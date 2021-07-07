@@ -83,8 +83,8 @@
 
     <div class="ccm-dashboard-form-actions-wrapper">
         <div class="ccm-dashboard-form-actions">
-            <button class="float-left btn btn-secondary" id="ccm-editor-preview-toggle"><?= t('Preview') ?></button>
-            <button class="float-right btn btn-primary" type="submit"><?= t('Save') ?></button>
+            <button class="float-start btn btn-secondary" id="ccm-editor-preview-toggle"><?= t('Preview') ?></button>
+            <button class="float-end btn btn-primary" type="submit"><?= t('Save') ?></button>
         </div>
     </div>
 </form>

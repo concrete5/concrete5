@@ -60,11 +60,11 @@ $token = $app->make(Token::class);
             </p>
 
             <div class="dialog-buttons">
-                <button class="btn btn-secondary float-left" onclick="jQuery.fn.dialog.closeTop()">
+                <button class="btn btn-secondary float-start" onclick="jQuery.fn.dialog.closeTop()">
                     <?php echo t('Cancel') ?>
                 </button>
 
-                <button class="btn btn-danger float-right" onclick="$('#ccm-dialog-delete-form form').submit()">
+                <button class="btn btn-danger float-end" onclick="$('#ccm-dialog-delete-form form').submit()">
                     <?php echo t('Delete Form') ?>
                 </button>
             </div>
@@ -82,11 +82,11 @@ $token = $app->make(Token::class);
         </form>
 
         <div class="dialog-buttons">
-            <button class="btn btn-secondary float-left" onclick="jQuery.fn.dialog.closeTop()">
+            <button class="btn btn-secondary float-start" onclick="jQuery.fn.dialog.closeTop()">
                 <?php echo t('Cancel') ?>
             </button>
 
-            <button class="btn btn-primary float-right" onclick="$('#ccm-dialog-add-set form').submit()">
+            <button class="btn btn-primary float-end" onclick="$('#ccm-dialog-add-set form').submit()">
                 <?php echo t('Add Set') ?>
             </button>
         </div>
@@ -110,12 +110,12 @@ $token = $app->make(Token::class);
                     </p>
 
                     <div class="dialog-buttons">
-                        <button class="btn btn-secondary float-left"
+                        <button class="btn btn-secondary float-start"
                                 onclick="jQuery.fn.dialog.closeTop()">
                             <?php echo t('Cancel') ?>
                         </button>
 
-                        <button class="btn btn-danger float-right"
+                        <button class="btn btn-danger float-end"
                                 onclick="$('#ccm-dialog-delete-set-<?php echo $set->getId() ?> form').submit()">
                             <?php echo t('Delete Control') ?>
                         </button>
@@ -135,11 +135,11 @@ $token = $app->make(Token::class);
                 </form>
 
                 <div class="dialog-buttons">
-                    <button class="btn btn-secondary float-left" onclick="jQuery.fn.dialog.closeTop()">
+                    <button class="btn btn-secondary float-start" onclick="jQuery.fn.dialog.closeTop()">
                         <?php echo t('Cancel') ?>
                     </button>
 
-                    <button class="btn btn-primary float-right"
+                    <button class="btn btn-primary float-end"
                             onclick="$('#ccm-dialog-update-set-<?php echo $set->getID() ?> form').submit()">
                         <?php echo t('Update Set') ?>
                     </button>

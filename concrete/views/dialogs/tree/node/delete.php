@@ -9,8 +9,8 @@ defined('C5_EXECUTE') or die("Access Denied.");
         <p><?=t('Are you sure you want to remove "%s"?', $node->getTreeNodeDisplayName())?></p>
 
         <div class="dialog-buttons">
-            <button class="btn btn-secondary float-right" data-dialog-action="cancel"><?=t('Cancel')?></button>
-            <button class="btn btn-danger float-right" data-dialog-action="submit" type="submit"><?=t('Remove')?></button>
+            <button class="btn btn-secondary float-end" data-dialog-action="cancel"><?=t('Cancel')?></button>
+            <button class="btn btn-danger float-end" data-dialog-action="submit" type="submit"><?=t('Remove')?></button>
         </div>
     </form>
 

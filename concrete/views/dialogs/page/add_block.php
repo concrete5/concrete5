@@ -107,7 +107,7 @@ if ($blockType->supportsInlineAdd()) {
     ?>
 
 	<div class="ccm-buttons dialog-buttons">
-	<a href="javascript:void(0)" onclick="jQuery.fn.dialog.closeTop()" class="btn btn-secondary mr-auto"><?=t('Cancel')?></a>
+	<a href="javascript:void(0)" onclick="jQuery.fn.dialog.closeTop()" class="btn btn-secondary me-auto"><?=t('Cancel')?></a>
 	<a href="javascript:void(0)" onclick="$('#ccm-form-submit-button').get(0).click()" class="btn btn-primary"><?=t('Add')?></a>
 	</div>
 

@@ -59,7 +59,7 @@ class ParentPageField extends AbstractField
         $form = \Core::make("helper/form");
         $html = $ps->selectPage('cParentIDSearchField', $this->data['cParentIDSearchField'], ['askIncludeSystemPages' => true]);
         $html .= '<div class="form-group mt-3">';
-        $html .= '<label class="control-label">' . t('Search All Children?') . '</label>';
+        $html .= '<label class="control-label form-label">' . t('Search All Children?') . '</label>';
         $html .= '<div class="form-check">' . $form->radio('cParentAll', 0, $this->data['cParentAll']) . ' <label class="form-check-label" for="cParentAll1">' . t('No') . '</label></div>';
         $html .= '<div class="form-check">' . $form->radio('cParentAll', 1, $this->data['cParentAll']) . ' <label class="form-check-label" for="cParentAll2">' . t('Yes') . '</label></div>';
         $html .= '</div>';

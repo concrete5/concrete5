@@ -33,7 +33,7 @@ if (Config::get('concrete.white_label.background_image') !== 'none' && !Config::
 
 <nav class="ccm-dashboard-desktop-navbar navbar navbar-dark navbar-expand-md">
     <span class="navbar-text"><?=$app->make('date')->formatDate('now', 'full')?></span>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarWelcomeBack" aria-controls="navbarWelcomeBack" aria-expanded="false" aria-label="<?=h(t('Toggle navigation'))?>">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarWelcomeBack" aria-controls="navbarWelcomeBack" aria-expanded="false" aria-label="<?=h(t('Toggle navigation'))?>">
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse justify-content-end" id="navbarWelcomeBack">

@@ -5,7 +5,7 @@
     <div>
         <?php if($trees){ 
             ?>
-            <select  name="topicTreeIDSelect" id="topicTreeIDSelect" class="form-control input-sm">
+            <select  name="topicTreeIDSelect" id="topicTreeIDSelect" class="form-select input-sm">
                 <?php foreach ($trees as $stree) {
                     ?>
                     <option value="<?=$stree->getTreeID(); ?>" <?php if ($tree->getTreeID() == $stree->getTreeID()) {
@@ -85,8 +85,8 @@
             </form>
             <div class="ccm-dashboard-form-actions-wrapper">
                 <div class="ccm-dashboard-form-actions">
-                    <button class="btn btn-secondary float-left" onclick="jQuery.fn.dialog.closeTop()"><?=t('Cancel'); ?></button>
-                    <button class="btn btn-danger float-right" onclick="$('#ccm-dialog-delete-topic-tree form').submit()"><?=t('Delete Topic Tree'); ?></button>
+                    <button class="btn btn-secondary float-start" onclick="jQuery.fn.dialog.closeTop()"><?=t('Cancel'); ?></button>
+                    <button class="btn btn-danger float-end" onclick="$('#ccm-dialog-delete-topic-tree form').submit()"><?=t('Delete Topic Tree'); ?></button>
                 </div>
             </div>
         </div>
@@ -98,7 +98,7 @@
                 <?=Loader::helper("validation/token")->output('tree_edit'); ?>
                 <input type="hidden" name="treeID" value="<?=$tree->getTreeID(); ?>" />
                 <div class="form-group">
-                    <label for="treeName" class="control-label">Tree Name</label>
+                    <label for="treeName" class="control-label form-label">Tree Name</label>
                     <input type="text" name="treeName" class="form-control ccm-input-text" value="<?=$tree->getTreeDisplayName(); ?>" id="treeName"/>
                 </div>
 
@@ -106,8 +106,8 @@
             </form>
             <div class="ccm-dashboard-form-actions-wrapper">
                 <div class="ccm-dashboard-form-actions ">
-                    <button class="btn btn-secondary float-left" onclick="jQuery.fn.dialog.closeTop()"><?=t('Cancel'); ?></button>
-                    <button class="btn btn-danger float-right" onclick="$('#ccm-dialog-edit-topic-tree form').submit()"><?=t('Update Topic Tree'); ?></button>
+                    <button class="btn btn-secondary float-start" onclick="jQuery.fn.dialog.closeTop()"><?=t('Cancel'); ?></button>
+                    <button class="btn btn-danger float-end" onclick="$('#ccm-dialog-edit-topic-tree form').submit()"><?=t('Update Topic Tree'); ?></button>
                 </div>
             </div>
         </div>

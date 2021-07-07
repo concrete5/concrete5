@@ -67,10 +67,10 @@ foreach ($list as $pa) {
 
         <div class="dialog-buttons">
             <input type="button" onclick="jQuery.fn.dialog.closeTop()" value="<?php echo h(t('Cancel')) ?>"
-                   class="btn btn-secondary float-left"/>
+                   class="btn btn-secondary float-start"/>
 
             <input type="submit" onclick="$('#ccm-permissions-timed-guest-access-form').submit()"
-                   value="<?php echo h(t('Save')) ?>" class="btn btn-primary float-right"/>
+                   value="<?php echo h(t('Save')) ?>" class="btn btn-primary float-end"/>
         </div>
     </form>
 </div>

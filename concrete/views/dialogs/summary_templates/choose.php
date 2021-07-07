@@ -8,16 +8,16 @@ defined('C5_EXECUTE') or die("Access Denied.");
 
         <div class="container-fluid">
             <div class="row mb-2">
-                <div class="col-8 pl-0">
+                <div class="col-8 ps-0">
                     <p class="text-muted"><small><?=t('Review your summary templates to make sure they look good at different sizes of the browser window.')?></small></p>
                 </div>
-                <div class="col-4 text-right">
-                    <toggle-button class="pr-2 mb-0" v-model="hasCustomSummaryTemplates" name="hasCustomSummaryTemplates"></toggle-button>
+                <div class="col-4 text-end">
+                    <toggle-button class="pe-2 mb-0" v-model="hasCustomSummaryTemplates" name="hasCustomSummaryTemplates"></toggle-button>
                     <span class="text-muted"><small><?= t('Use only specific templates.') ?></small></span>
                 </div>
             </div>
             <div class="row">
-                <div class="col-12 pl-0">
+                <div class="col-12 ps-0">
                     <ul class="nav nav-tabs nav-fill border-bottom mb-3">
                         <li class="nav-item"><a @click="setWidth(1140)" :class="{'nav-link': true, 'active': previewWidth === 1140}" href="#"><?=t('Extra Large')?></a></li>
                         <li class="nav-item"><a @click="setWidth(992)"  :class="{'nav-link': true, 'active': previewWidth === 992}" href="#"><?=t('Large')?></a></li>
@@ -39,15 +39,15 @@ defined('C5_EXECUTE') or die("Access Denied.");
 
                     ?>
                     <div class="row">
-                        <div class="col-6 pl-0">
+                        <div class="col-6 ps-0">
                             <p class="text-muted"><?=$template->getName()?></p>
                         </div>
-                        <div class="col-6 text-right">
+                        <div class="col-6 text-end">
                             <toggle-button v-show="hasCustomSummaryTemplates" name="template_<?=$template->getID()?>" :value="<?=$checked?>"></toggle-button>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-12 pl-0 text-center">
+                        <div class="col-12 ps-0 text-center">
 
                             <iframe width="1140" class="ccm-summary-templates-preview" src="<?=
                             URL::to('/ccm/system/summary_template/render',
@@ -67,9 +67,9 @@ defined('C5_EXECUTE') or die("Access Denied.");
 
     </form>
     <div class="ccm-panel-detail-form-actions dialog-buttons">
-        <button class="float-left btn btn-secondary" type="button" data-dialog-action="cancel"
+        <button class="float-start btn btn-secondary" type="button" data-dialog-action="cancel"
                 data-panel-detail-action="cancel"><?= t('Cancel') ?></button>
-        <button class="float-right btn btn-success" type="button" data-dialog-action="submit"
+        <button class="float-end btn btn-success" type="button" data-dialog-action="submit"
                 data-panel-detail-action="submit"><?= t('Save Changes') ?></button>
     </div>
 

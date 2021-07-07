@@ -88,7 +88,7 @@ if (count($pageAttributeKeys)) {
         <div data-row="specific-topic">
             <div class="form-group">
                 <!--suppress HtmlFormInputWithoutLabel -->
-                <select class="form-control" name="filterByTopicAttributeKeyID">
+                <select class="form-select" name="filterByTopicAttributeKeyID">
                     <option value="">
                         <?php echo t('** Select Topic Attribute') ?>
                     </option>
@@ -146,7 +146,7 @@ if (count($pageAttributeKeys)) {
         <?php echo $form->label('eventListTitle', t('Title')); ?>
 	    <div class="input-group">
         	<?php echo $form->text('eventListTitle', $eventListTitle) ?>
-			<?php echo $form->select('titleFormat', \Concrete\Core\Block\BlockController::$btTitleFormats, $titleFormat, array('style' => 'width:105px;flex-grow:0;', 'class' => 'custom-select input-group-append')); ?>
+			<?php echo $form->select('titleFormat', \Concrete\Core\Block\BlockController::$btTitleFormats, $titleFormat, array('style' => 'width:105px;flex-grow:0;', 'class' => 'form-select')); ?>
 		</div>
 	</div>
 

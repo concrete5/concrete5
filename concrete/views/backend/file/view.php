@@ -19,6 +19,6 @@ defined('C5_EXECUTE') or die('Access Denied.');
 </div>
 <div class="dialog-buttons">
     <form method="post" action="<?= h($resolverManager->resolve(['ccm/system/file/download']) . '?fID=' . $fileVersion->getFileID() . '&fvID=' . $fileVersion->getFileVersionID()) ?>">
-        <?= $form->submit('submit', t('Download'), ['class' => 'btn btn-primary float-right']) ?>
+        <?= $form->submit('submit', t('Download'), ['class' => 'btn btn-primary float-end']) ?>
     </form>
 </div>

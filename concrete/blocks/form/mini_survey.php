@@ -205,7 +205,7 @@ class MiniSurvey
                  */
                 $requiredSymbol = ($questionRow['required']) ? '&nbsp;<span class="required">*</span>' : '';
                 echo '<div class="form-group">
-                    <label class="control-label" for="Question' . (int) ($questionRow['msqID']) . '">' . $questionRow['question'] . '' . $requiredSymbol . '</label></td>
+                    <label class="control-label form-label" for="Question' . (int) ($questionRow['msqID']) . '">' . $questionRow['question'] . '' . $requiredSymbol . '</label></td>
                     <div>' . $this->loadInputType($questionRow, $showEdit) . '</div>
                 </div>';
                 //}

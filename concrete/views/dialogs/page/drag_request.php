@@ -173,7 +173,7 @@ $singleOriginalPageName = (is_object($singleOriginalPage)) ? $singleOriginalPage
 
     <div class="dialog-buttons">
         <a href="javascript:void(0)" onclick="$.fn.dialog.closeTop()" class="pull-left btn btn-default"><?= t('Cancel') ?></a>
-        <a href="javascript:void(0)" data-form-selector="#<?= $formID ?>" onclick="ConcreteSitemap.submitDragRequest($($(this).data('form-selector')))" class="pull-right btn btn-primary"><?= t('Go') ?></a>
+        <a href="javascript:void(0)" data-form-selector="#<?= $formID ?>" onclick="ConcreteSitemap.submitDragRequest($($(this).data('form-selector')))" class="float-end btn btn-primary"><?= t('Go') ?></a>
     </div>
 </form>
 

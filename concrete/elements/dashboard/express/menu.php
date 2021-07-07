@@ -6,7 +6,7 @@ defined('C5_EXECUTE') or die('Access Denied.');
 <div class="btn-group">
 
     <button type="button" class="btn btn-secondary dropdown-toggle"
-            data-toggle="dropdown"
+            data-bs-toggle="dropdown"
             aria-haspopup="true"
             aria-expanded="false">
         <?= $currentType->getEntityDisplayName() ?>

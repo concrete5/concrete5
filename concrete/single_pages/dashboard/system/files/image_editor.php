@@ -27,7 +27,7 @@ $form = $app->make(Form::class);
 
     <div class="ccm-dashboard-form-actions-wrapper">
         <div class="ccm-dashboard-form-actions">
-            <div class="float-right">
+            <div class="float-end">
                 <button type="submit" class="btn btn-primary">
                     <?php echo t('Save') ?>
                 </button>

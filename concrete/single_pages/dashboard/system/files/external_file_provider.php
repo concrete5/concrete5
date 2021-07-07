@@ -73,11 +73,9 @@ switch ($controller->getAction()) {
                     <div class="input-group">
                         <?php echo $form->text('efpName', $efpName); ?>
 
-                        <div class="input-group-append">
-                            <span class="input-group-text">
-                                <i class="fa fa-asterisk"></i>
-                            </span>
-                        </div>
+                        <span class="input-group-text">
+                            <i class="fa fa-asterisk"></i>
+                        </span>
                     </div>
                 </div>
             </fieldset>
@@ -95,16 +93,16 @@ switch ($controller->getAction()) {
 
             <div class="ccm-dashboard-form-actions-wrapper">
                 <div class="ccm-dashboard-form-actions">
-                    <a href="<?php echo Url::to($c); ?>" class="btn float-left btn-secondary">
+                    <a href="<?php echo Url::to($c); ?>" class="btn float-start btn-secondary">
                         <?php echo t('Back'); ?>
                     </a>
 
                     <?php if ($externalFileProvider !== null) { ?>
-                        <button type="submit" class="btn btn-primary float-right">
+                        <button type="submit" class="btn btn-primary float-end">
                             <?php echo t('Save'); ?>
                         </button>
                     <?php } else { ?>
-                        <button type="submit" class="btn btn-primary float-right">
+                        <button type="submit" class="btn btn-primary float-end">
                             <?php echo t('Add'); ?>
                         </button>
                     <?php } ?>
@@ -152,14 +150,15 @@ switch ($controller->getAction()) {
                         <?php echo t('Choose Type'); ?>
                     </label>
 
-                    <div class="form-inline">
-                        <div class="mr-2">
+                    <div class="row row-cols-auto g-0 align-items-center">
+                        <div class="col-auto me-2">
                             <?php echo $form->select('efpTypeID', $types); ?>
                         </div>
-
-                        <button type="submit" class="btn btn-secondary">
-                            <?php echo t('Go'); ?>
-                        </button>
+                        <div class="col-auto">
+                            <button type="submit" class="btn btn-secondary">
+                                <?php echo t('Go'); ?>
+                            </button>
+                        </div>
                     </div>
                 </div>
         <?php } ?>

@@ -25,18 +25,18 @@ use Concrete\Core\Multilingual\Page\Section\Section as MultilingualSection;
                     ?>
                     <p><?php echo t('Copy all pages from a locale to another section. This will only copy pages that have not been associated. It will not replace or remove any pages from the destination section.') ?></p>
                     <div class="form-group">
-                        <label class="control-label"><?php echo t('Copy From') ?></label>
+                        <label class="control-label form-label"><?php echo t('Copy From') ?></label>
                         <?php echo $copyLocaleSelect1 ?>
                     </div>
 
                     <div class="form-group">
-                        <label class="control-label"><?php echo tc('Destination', 'To') ?></label>
+                        <label class="control-label form-label"><?php echo tc('Destination', 'To') ?></label>
                         <?php echo $copyLocaleSelect2 ?>
                     </div>
 
                     <?php echo Loader::helper('validation/token')->output('copy_tree') ?>
                     <div class="form-group">
-                        <button class="btn btn-secondary float-left" type="submit" name="copy"><?= t('Copy Tree') ?></button>
+                        <button class="btn btn-secondary float-start" type="submit" name="copy"><?= t('Copy Tree') ?></button>
                     </div>
 
                     <?php
@@ -98,14 +98,14 @@ use Concrete\Core\Multilingual\Page\Section\Section as MultilingualSection;
                     ?>
                     <p><?php echo t('Scans all blocks within the selected section. Any links to pages within another multilingual section will be updated to link to the pages within the selected tree. Any blocks within the scanned section that reference pages in another multilingual section will be updated to point to the page within the selected tree.') ?></p>
                     <div class="form-group">
-                        <label class="control-label"><?php echo t('Rescan Locale') ?></label>
+                        <label class="control-label form-label"><?php echo t('Rescan Locale') ?></label>
                         <?php echo $form->select('rescanLocale', $copyLocales);
                         ?>
                     </div>
 
                     <?php echo Loader::helper('validation/token')->output('rescan_locale') ?>
                     <div class="form-group">
-                        <button class="btn btn-secondary float-left" type="submit"
+                        <button class="btn btn-secondary float-start" type="submit"
                                 name="rescan_locale"><?= t('Rescan Locale') ?></button>
                     </div>
 

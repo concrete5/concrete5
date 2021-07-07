@@ -8,7 +8,7 @@ use \Concrete\Core\Sharing\SocialNetwork\Service as Service;
     ?>
 	<div class="ccm-social-link-attribute ">
         <div class="form-group">
-            <select name="<?=$this->field('service')?>[]" class="ccm-social-link-service-selector form-control">
+            <select name="<?=$this->field('service')?>[]" class="ccm-social-link-service-selector form-select">
                 <?php foreach ($services as $s) {
     ?>
                     <option value="<?=$s->getHandle()?>" data-icon="<?php echo $s->getIcon() ?>" <?php if ($s->getHandle() == $data['service'][$i]) {

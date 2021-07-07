@@ -41,7 +41,7 @@ if ($typeMenu !== null) {
 
     <div class="ccm-dashboard-form-actions-wrapper">
         <div class="ccm-dashboard-form-actions">
-            <div class="float-right">
+            <div class="float-end">
                 <a class="btn btn-secondary" href="<?= $type->getSiteTypeID() === null ? $controller->action() : $controller->action('view_type', $type->getSiteTypeID()) ?>"><?= t('Cancel') ?></a>
                 <button class="btn btn-primary" type="submit"><?= $type->getSiteTypeID() === null ? t('Create Site Type') : t('Save') ?></button>
             </div>

@@ -6,7 +6,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
 
 <div class="form-inline">
 <div class="control-group">
-	<label class="control-label"><?=t('Add Source')?></label>
+	<label class="control-label form-label"><?=t('Add Source')?></label>
 	<div class="controls">
 		<select name="addSource" class="span2">
 			<?php foreach ($availableSources as $ags) {

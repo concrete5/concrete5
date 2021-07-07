@@ -37,11 +37,11 @@ $view->inc('elements/header.php'); ?>
      data-background-url="<?=Config::get('concrete.white_label.background_url')?>"
      data-background-feed="<?=Config::get('concrete.urls.background_feed')?>"
      class="ccm-page-background-credit" style="display:none">
-    <div class="ccm-page-background-privacy-notice float-left">
+    <div class="ccm-page-background-privacy-notice float-start">
         <?=t('Image served from concrete5.org. <a href="%s" target="_blank">View Privacy Policy</a>.',
             Config::get('concrete.urls.privacy_policy'))?>
     </div>
-    <div class="ccm-page-background-photo-credit float-right">
+    <div class="ccm-page-background-photo-credit float-end">
         <?= t('Photo Credit:') ?>
         <a href="#"></a>
     </div>

@@ -42,7 +42,7 @@ if (empty($interfacelocales)) {
 
 if (isset($mlLink)) {
     ?>
-    <div class="ml-3 alert alert-info small">
+    <div class="ms-3 alert alert-info small">
         <?= t(
             'You can configure the site languages in the %s dashboard page.',
             sprintf('<a href="%s">%s</a>', h($mlLink[1]), h($mlLink[0]))

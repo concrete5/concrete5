@@ -27,10 +27,10 @@ div.blog-entry-list {
   div.ccm-block-page-list-title {
     margin: 0px;
     a {
-      color: theme-color("gray-dark");
+      color: $gray-800;
       &:hover {
         text-decoration: none;
-        color: theme-color("gray");
+        color: $gray-600;
       }
     }
     

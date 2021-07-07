@@ -52,7 +52,7 @@ if ($version) {
             <nav class="nav flex-column">
                 <?php foreach($tabs as $tab) { ?>
                     <a class="nav-link <?php if ($tab[2]) { ?>active<?php } ?>" href="#<?=$tab[0]?>"
-                       data-toggle="tab" id="#<?=$tab[0]?>-tab"><?=$tab[1]?></a>
+                       data-bs-toggle="tab" id="#<?=$tab[0]?>-tab"><?=$tab[1]?></a>
                 <?php } ?>
             </nav>
 
@@ -92,7 +92,7 @@ if ($version) {
 
 
                 <div class="form-group">
-                    <label for="name" class="control-label">
+                    <label for="name" class="control-label form-label">
                         <?= t('Name') ?>
                     </label>
 
@@ -100,7 +100,7 @@ if ($version) {
                     <hr/>
                 </div>
                 <div class="form-group">
-                    <label for="name" class="control-label">
+                    <label for="name" class="control-label form-label">
                         <?= t('Description') ?>
                     </label>
 
@@ -110,7 +110,7 @@ if ($version) {
                 <?php if ($permissions->canEditCalendarEventMoreDetailsLocation()) { ?>
 
                     <div class="form-group">
-                        <label for="page" class="control-label"><?=t('More Details Link Destination')?></label>
+                        <label for="page" class="control-label form-label"><?=t('More Details Link Destination')?></label>
                         <?php
                         $cID = false;
                         if (is_object($version)) {

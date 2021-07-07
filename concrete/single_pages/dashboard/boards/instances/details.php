@@ -17,7 +17,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
 
         <hr>
 
-        <form method="post" class="float-right" action="<?=$view->action('refresh_pool', $instance->getBoardInstanceID())?>">
+        <form method="post" class="float-end" action="<?=$view->action('refresh_pool', $instance->getBoardInstanceID())?>">
             <?=$token->output('refresh_pool')?>
             <button type="submit" class="btn btn-sm btn-secondary"><?=t("Refresh Data Pool")?></button>
         </form>
@@ -43,7 +43,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
                 <tr>
                     <td><?=$formatter->getListIconElement()?></td>
                     <td><?=$configuredSource->getName()?></td>
-                    <td class="text-center"><span class="badge badge-info"><?=$itemCount?></span></td>
+                    <td class="text-center"><span class="badge bg-info"><?=$itemCount?></span></td>
                 </tr>
             <?php } ?>
             </tbody>
@@ -57,8 +57,10 @@ defined('C5_EXECUTE') or die("Access Denied.");
 
         <div class="help-block"><?=t('View the generated board for this instance.')?></div>
 
-            <a href="<?=$view->action('view_instance', $instance->getBoardInstanceID())?>"
-               class="btn btn-block btn-secondary"><?=t("View Instance")?></a>
+            <div class="d-grid">
+                <a href="<?=$view->action('view_instance', $instance->getBoardInstanceID())?>"
+                   class="btn btn-block btn-secondary"><?=t("View Instance")?></a>
+            </div>
 
         </div>
 
@@ -70,36 +72,36 @@ defined('C5_EXECUTE') or die("Access Denied.");
             <form method="post" action="<?=$view->action('refresh_instance', $instance->getBoardInstanceID())?>">
                 <?=$token->output('refresh_instance')?>
                 <div class="row mb-3">
-                    <div class="pl-0 col-8 col-offset-1">
-                        <h5 class="font-weight-light"><?=t('Refresh')?></h5>
+                    <div class="ps-0 col-8 col-offset-1">
+                        <h5 class="fw-light"><?=t('Refresh')?></h5>
                         <p><?=t('Refresh the dynamic elements within board slots without getting new items or changing any positioning.')?></p>
                     </div>
                     <div class="col-4">
-                        <button type="submit" class="btn float-right btn-secondary"><?=t("Refresh")?></button>
+                        <button type="submit" class="btn float-end btn-secondary"><?=t("Refresh")?></button>
                     </div>
                 </div>
             </form>
             <form method="post" action="<?=$view->action('add_content', $instance->getBoardInstanceID())?>">
                 <?=$token->output('add_content')?>
                 <div class="row mb-3">
-                    <div class="pl-0 col-8 col-offset-1">
-                        <h5 class="font-weight-light"><?=t('Add Content')?></h5>
+                    <div class="ps-0 col-8 col-offset-1">
+                        <h5 class="fw-light"><?=t('Add Content')?></h5>
                         <p><?=t('Refreshes dynamic elements within board slots, and adds new items to the board in applicable spots.')?></p>
                     </div>
                     <div class="col-4">
-                        <button type="submit" class="btn float-right btn-secondary"><?=t("Add Content")?></button>
+                        <button type="submit" class="btn float-end btn-secondary"><?=t("Add Content")?></button>
                     </div>
                 </div>
             </form>
             <form method="post" action="<?=$view->action('regenerate_instance', $instance->getBoardInstanceID())?>">
                 <?=$token->output('regenerate_instance')?>
                 <div class="row mb-3">
-                    <div class="pl-0 col-8 col-offset-1">
-                        <h5 class="font-weight-light"><?=t('Regenerate')?></h5>
+                    <div class="ps-0 col-8 col-offset-1">
+                        <h5 class="fw-light"><?=t('Regenerate')?></h5>
                         <p><?=t('Regenerate board instance based on current items. Completely removes and rebuilds any board contents.')?></p>
                     </div>
                     <div class="col-4">
-                        <button type="submit" class="btn float-right btn-secondary"><?=t("Regenerate")?></button>
+                        <button type="submit" class="btn float-end btn-secondary"><?=t("Regenerate")?></button>
                     </div>
                 </div>
             </form>
@@ -112,9 +114,11 @@ defined('C5_EXECUTE') or die("Access Denied.");
 
         <form method="post" action="<?=$view->action('delete_instance', $instance->getBoardInstanceID())?>">
             <?=$token->output('delete_instance')?>
-            <button type="button"
-                    data-toggle="modal" data-target="#delete-instance-<?=$instance->getBoardInstanceID()?>"
-                    class="btn btn-block btn-outline-danger"><?=t("Delete Instance")?></button>
+            <div class="d-grid">
+                <button type="button"
+                        data-bs-toggle="modal" data-bs-target="#delete-instance-<?=$instance->getBoardInstanceID()?>"
+                        class="btn btn-block btn-outline-danger"><?=t("Delete Instance")?></button>
+            </div>
         </form>
 
         <div class="modal fade" id="delete-instance-<?=$instance->getBoardInstanceID()?>" tabindex="-1">
@@ -124,16 +128,14 @@ defined('C5_EXECUTE') or die("Access Denied.");
                     <div class="modal-content">
                         <div class="modal-header">
                             <h5 class="modal-title"><?=t('Delete Instance')?></h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <svg><use xlink:href="#icon-dialog-close" /></svg>
-                            </button>
+                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="<?= t('Close') ?>"></button>
                         </div>
                         <div class="modal-body">
                             <?=t('Are you sure you want to remove this board instance? If it is referenced on the front-end anywhere that block will be removed.')?>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary mr-auto" data-dismiss="modal"><?=t('Cancel')?></button>
-                            <button type="submit" class="btn btn-danger float-right"><?=t('Delete Instance')?></button>
+                            <button type="button" class="btn btn-secondary me-auto" data-bs-dismiss="modal"><?=t('Cancel')?></button>
+                            <button type="submit" class="btn btn-danger float-end"><?=t('Delete Instance')?></button>
                         </div>
                     </div>
                 </div>

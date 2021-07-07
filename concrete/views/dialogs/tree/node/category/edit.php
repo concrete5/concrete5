@@ -13,7 +13,7 @@ $form = Loader::helper('form');
 			</div>
 			<div class="dialog-buttons">
 				<button class="btn btn-secondary" data-dialog-action="cancel"><?=t('Cancel')?></button>
-				<button class="btn btn-primary float-right" data-dialog-action="submit" type="submit"><?=t('Update')?></button>
+				<button class="btn btn-primary float-end" data-dialog-action="submit" type="submit"><?=t('Update')?></button>
 			</div>
 		</form>
 

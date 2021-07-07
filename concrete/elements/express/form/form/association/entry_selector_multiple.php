@@ -15,7 +15,7 @@ if (isset($selectedEntities)) {
 <div class="form-group">
     <?php if ($view->supportsLabel()) {
     ?>
-        <label class="control-label" for="<?=$view->getControlID(); ?>"><?=$label; ?></label>
+        <label class="control-label form-label" for="<?=$view->getControlID(); ?>"><?=$label; ?></label>
     <?php
 } ?>
     <?php if ($view->isRequired()) { ?>

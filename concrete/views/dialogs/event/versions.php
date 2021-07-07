@@ -4,7 +4,7 @@
 <div class="ccm-ui">
 
     <div id="ccm-calendar-event-version-reload" class="alert alert-info" style="display: none">
-        <button class="float-right btn btn-xs btn-secondary" onclick="window.location.reload()" type="button"><?=t('Reload')?></button>
+        <button class="float-end btn btn-xs btn-secondary" onclick="window.location.reload()" type="button"><?=t('Reload')?></button>
         <?=t('Reload the page to refresh the events.')?>
     </div>
 

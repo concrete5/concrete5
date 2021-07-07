@@ -116,7 +116,7 @@ if (!empty($imagePath)) {
         <?php
             } else {
                 ?>
-        <div class="row login-page-content">
+        <div class="row gx-5 login-page-content">
             <div class="col-12">
                 <?php if ($loggedIn) {
                     ?>

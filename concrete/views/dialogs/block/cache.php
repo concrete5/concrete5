@@ -42,7 +42,7 @@ $responseObject = $permissionChecker->getResponseObject();
                 </legend>
 
                 <div class="form-group">
-                    <label class="control-label" for="bName">
+                    <label class="control-label form-label" for="bName">
                         <?php echo t('Block Name') ?>
 
                         <i class="fa fa-question-circle launch-tooltip"
@@ -103,12 +103,12 @@ $responseObject = $permissionChecker->getResponseObject();
         <?php } ?>
 
         <div class="dialog-buttons">
-            <button class="btn btn-secondary float-left" data-dialog-action="cancel">
+            <button class="btn btn-secondary float-start" data-dialog-action="cancel">
                 <?php echo t('Cancel') ?>
             </button>
 
             <button type="button" data-dialog-action="submit"
-                    class="btn btn-primary float-right">
+                    class="btn btn-primary float-end">
                 <?php echo t('Save') ?>
             </button>
         </div>

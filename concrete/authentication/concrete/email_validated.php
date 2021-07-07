@@ -8,8 +8,10 @@ $form = Loader::helper('form');
         <div class='help-block'>
             <?= $workflowPending ? t('The email address <b>%s</b> has been verified. Your account is currently pending for activation. After your account has been activated, you become a member of this website and are able to login.', $uEmail) : t('This email address has been validated! You may now access the features of this site.')?>
         </div>
-        <a href="<?= \URL::to('/') ?>" class="btn btn-block btn-primary">
-            <?= t('Continue') ?>
-        </a>
+        <div class="d-grid">
+            <a href="<?= \URL::to('/') ?>" class="btn btn-primary">
+                <?= t('Continue') ?>
+            </a>
+        </div>
     <?php endif; ?>
 </div>

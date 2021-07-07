@@ -94,7 +94,7 @@ $id = "ccm-role-list-" . $idHelper->getString();
         </td>
 
         <td>
-            <div class="float-right">
+            <div class="float-end">
                 <a href="javascript:void(0);" class="btn btn-danger ccm-remove-role">
                     <?php echo t("Remove Role"); ?>
                 </a>

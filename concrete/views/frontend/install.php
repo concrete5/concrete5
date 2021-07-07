@@ -33,7 +33,7 @@ if ($install_config) {
 
 <div id="ccm-page-install">
     <div class="ccm-install-version">
-        <span class="badge badge-info"><?= t('Version %s', $concreteVersion) ?></span>
+        <span class="badge bg-info"><?= t('Version %s', $concreteVersion) ?></span>
     </div>
     <div class="ccm-install-title">
         <ul class="breadcrumb">
@@ -75,13 +75,11 @@ if ($install_config) {
                     }
                     ?>
                     <?= $form->select('wantedLocale', $selectOptions, Localization::BASE_LOCALE, [
-                        'class' => 'custom-select'
+                        'class' => 'form-select'
                     ]); ?>
-                    <div class="input-group-append">
-                        <button type="submit" class="btn btn-primary">
-                            <i class="fas fa-arrow-right"></i>
-                        </button>
-                    </div>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
                 </div>
             </div>
         </form>
@@ -227,11 +225,9 @@ if ($install_config) {
                         .addClass(success ? 'fa-check' : 'fa-exclamation-circle');
                     $message.empty();
                     if (message) {
-                        $message.append(
-                            $('<i class="fa fa-question-circle launch-tooltip" />')
-                                .attr('title', message)
-                                .tooltip()
-                        );
+                        const $icon = $('<i class="fa fa-question-circle launch-tooltip" />').attr('title', message)
+                        const tooltip = new bootstrap.Tooltip($icon)
+                        $message.append($icon);
                     }
                     checkDone();
                 };
@@ -277,11 +273,11 @@ if ($install_config) {
             <form method="post" action="<?= $urlResolver->resolve(['install', 'setup']) ?>"
                   id="continue-to-installation" style="visibility: hidden" class="pull-right">
                 <input type="hidden" name="locale" value="<?= h($locale) ?>"/>
-                <a class="float-left btn btn-secondary btn-sm" href="<?=URL::to('/')?>">
+                <a class="float-start btn btn-secondary btn-sm" href="<?=URL::to('/')?>">
                     <?= t('Back') ?>
                 </a>
 
-                <button class="float-right btn btn-primary btn-sm" onclick="$(this).parent().submit()">
+                <button class="float-end btn btn-primary btn-sm" onclick="$(this).parent().submit()">
                     <?= t('Continue to Installation') ?>
                 </button>
             </form>
@@ -366,7 +362,7 @@ if ($install_config) {
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="SITE" class="control-label"><?= t('Name') ?></label>
+                                    <label for="SITE" class="control-label form-label"><?= t('Name') ?></label>
                                     <?= $form->text('SITE',
                                         ['autofocus' => 'autofocus', 'required' => 'required']) ?>
                                 </div>
@@ -375,21 +371,21 @@ if ($install_config) {
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="uEmail"
-                                           class="control-label"><?= t('Administrator Email Address') ?></label>
+                                           class="control-label form-label"><?= t('Administrator Email Address') ?></label>
                                     <?= $form->email('uEmail', ['required' => 'required']) ?>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="uPassword"
-                                           class="control-label"><?= t('Administrator Password') ?></label>
+                                           class="control-label form-label"><?= t('Administrator Password') ?></label>
                                     <?= $form->password('uPassword', $passwordAttributes) ?>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="uPassword"
-                                           class="control-label"><?= t('Confirm Password') ?></label>
+                                           class="control-label form-label"><?= t('Confirm Password') ?></label>
                                     <?= $form->password('uPasswordConfirm', $passwordAttributes) ?>
                                 </div>
                             </div>
@@ -432,27 +428,27 @@ if ($install_config) {
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label class="control-label" for="DB_SERVER"><?= t('Server') ?></label>
+                                    <label class="control-label form-label" for="DB_SERVER"><?= t('Server') ?></label>
                                     <?= $form->text('DB_SERVER', ['required' => 'required']) ?>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label class="control-label"
+                                    <label class="control-label form-label"
                                            for="DB_USERNAME"><?= t('MySQL Username') ?></label>
                                     <?= $form->text('DB_USERNAME') ?>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label class="control-label"
+                                    <label class="control-label form-label"
                                            for="DB_PASSWORD"><?= t('MySQL Password') ?></label>
                                     <?= $form->password('DB_PASSWORD', ['autocomplete' => 'off']) ?>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label class="control-label"
+                                    <label class="control-label form-label"
                                            for="DB_DATABASE"><?= t('Database Name') ?></label>
                                     <?= $form->text('DB_DATABASE', ['required' => 'required']) ?>
                                 </div>
@@ -478,7 +474,7 @@ if ($install_config) {
             </div>
             <div class="card card-default">
                 <div class="card-header" role="tab" id="headingThree">
-                    <a class="collapsed" role="button" data-toggle="collapse"
+                    <a class="collapsed" role="button" data-bs-toggle="collapse"
                        href="#advanced"><?= t('Advanced Options') ?>
                     </a>
                 </div>
@@ -492,7 +488,7 @@ if ($install_config) {
                                 <h4><?= t('URLs & Session') ?></h4>
 
                                 <div class="form-group">
-                                    <label class="control-label">
+                                    <label class="control-label form-label">
                                         <div class="form-check">
                                             <?= $form->checkbox('canonicalUrlChecked', '1') ?>
                                             <label class="form-check-label" for="canonicalUrlChecked">
@@ -507,7 +503,7 @@ if ($install_config) {
                                 </div>
 
                                 <div class="form-group">
-                                    <label class="control-label">
+                                    <label class="control-label form-label">
                                         <div class="form-check">
                                             <?= $form->checkbox('canonicalUrlAlternativeChecked', '1') ?>
                                             <label class="form-check-label" for="canonicalUrlAlternativeChecked">
@@ -521,7 +517,7 @@ if ($install_config) {
                                     ]) ?>
                                 </div>
                                 <div class="form-group">
-                                    <label class="control-label"
+                                    <label class="control-label form-label"
                                            for="sessionHandler"><?= t('Session Handler') ?></label>
                                     <?= $form->select('sessionHandler', [
                                         '' => t('Default Handler (Recommended)'),
@@ -534,21 +530,21 @@ if ($install_config) {
                                 <h4><?= t('Locale') ?></h4>
 
                                 <div class="form-group">
-                                    <label class="control-label"
+                                    <label class="control-label form-label"
                                            for="sessionHandler"><?= t('Language') ?></label>
                                     <?= $form->select('siteLocaleLanguage', $languages,
                                         $computedSiteLocaleLanguage) ?>
                                 </div>
 
                                 <div class="form-group">
-                                    <label class="control-label"
+                                    <label class="control-label form-label"
                                            for="sessionHandler"><?= t('Country') ?></label>
                                     <?= $form->select('siteLocaleCountry', $countries,
                                         $computedSiteLocaleCountry) ?>
                                 </div>
 
                                 <div class="form-group">
-                                    <label class="control-label"
+                                    <label class="control-label form-label"
                                            for="SERVER_TIMEZONE"><?= t('System Time Zone') ?></label>
                                     <?= $form->select('SERVER_TIMEZONE', $availableTimezones,
                                         $SERVER_TIMEZONE,
@@ -579,7 +575,7 @@ if ($install_config) {
             <input type="hidden" name="locale" value="<?= h($locale) ?>"/>
             <div class="ccm-install-actions">
                 <div class="w-100">
-                    <button type="submit" class="btn btn-primary btn-sm float-right">
+                    <button type="submit" class="btn btn-primary btn-sm float-end">
                         <?= t('Install concrete5') ?>
                     </button>
                 </div>
@@ -730,7 +726,7 @@ if ($install_config) {
         <div class="w-100">
             <div id="install-progress-summary"><?= t('Beginning Installation') ?></div>
             <button type="submit" disabled="disabled" onclick="window.location.href='<?= URL::to('/') ?>'"
-                    data-button="installation-complete" class="float-right btn btn-sm btn-primary">
+                    data-button="installation-complete" class="float-end btn btn-sm btn-primary">
                 <?= t('Installing...') ?>
                 <i class="fa fa-spinner fa-spin"></i>
             </button>

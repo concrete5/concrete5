@@ -47,7 +47,7 @@ if (!isset($numEmails)) {
     ?>
     <div class="ccm-dashboard-form-actions-wrapper">
         <div class="ccm-dashboard-form-actions">
-            <a href="<?= URL::to('/dashboard/system/mail/method') ?>" class="btn btn-secondary float-left"><?= t('Change Settings') ?></a>
+            <a href="<?= URL::to('/dashboard/system/mail/method') ?>" class="btn btn-secondary float-start"><?= t('Change Settings') ?></a>
             <?php
             if ($emailEnabled) {
                 echo $interface->submit(t('Send'), 'mail-settings-test-form', 'right', 'btn-primary');

@@ -11,10 +11,14 @@ if (!empty($showPrivacyPolicyNotice)) { ?>
             </div>
             <div class="row">
                 <div class="col-sm-6">
-                    <a target="_blank" href="<?=Config::get('concrete.urls.privacy_policy')?>" class="btn-block btn btn-default"><?=t('View Privacy Policy')?></a>
+                    <div class="d-grid">
+                        <a target="_blank" href="<?=Config::get('concrete.urls.privacy_policy')?>" class="btn btn-default"><?=t('View Privacy Policy')?></a>
+                    </div>
                 </div>
                 <div class="col-sm-6">
-                    <button data-action="agree-privacy-policy" data-token="<?=Core::make('token')->generate('accept_privacy_policy')?>" class="btn-block btn btn-primary"><?=t('Accept and Close')?></button>
+                    <div class="d-grid">
+                        <button data-action="agree-privacy-policy" data-token="<?=Core::make('token')->generate('accept_privacy_policy')?>" class="btn btn-primary"><?=t('Accept and Close')?></button>
+                    </div>
                 </div>
             </div>
         </div>

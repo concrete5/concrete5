@@ -7,7 +7,7 @@
 use Concrete\Core\Support\Facade\Url;
 use Concrete\Core\Url\Resolver\Manager\ResolverManagerInterface;
 ?>
-<li class="float-right ccm-toolbar-mobile-menu-button d-block d-md-none">
+<li class="float-end ccm-toolbar-mobile-menu-button d-block d-md-none">
   <i class="fa fa-bars"></i>
 </li>
 

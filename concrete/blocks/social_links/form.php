@@ -17,7 +17,7 @@ $form = $app->make(Form::class);
 ?>
 
 <div class="form-group">
-    <label class="control-label">
+    <label class="control-label form-label">
         <?php echo t('Choose Social Links to Show'); ?>
     </label>
 

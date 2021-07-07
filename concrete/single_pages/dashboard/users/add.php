@@ -24,7 +24,7 @@ $fileFolderSelector = $app->make(FileFolderSelector::class);
 		
 		<div class="form-group">
             <?= $form->label('uName', t('Username')) ?>
-            <div class="float-right">
+            <div class="float-end">
             <span class="text-muted small">
                 <?php echo t('Required') ?>
             </span>
@@ -34,7 +34,7 @@ $fileFolderSelector = $app->make(FileFolderSelector::class);
 
         <div class="form-group">
             <?= $form->label('uPassword', t('Password')) ?>
-            <div class="float-right">
+            <div class="float-end">
             <span class="text-muted small">
                 <?php echo t('Required') ?>
             </span>
@@ -44,7 +44,7 @@ $fileFolderSelector = $app->make(FileFolderSelector::class);
 
 		<div class="form-group">
             <?= $form->label('uEmail', t('Email Address')) ?>
-            <div class="float-right">
+            <div class="float-end">
             <span class="text-muted small">
                 <?php echo t('Required') ?>
             </span>
@@ -112,8 +112,8 @@ $fileFolderSelector = $app->make(FileFolderSelector::class);
 
 	<div class="ccm-dashboard-form-actions-wrapper">
 		<div class="ccm-dashboard-form-actions">
-			<a href="<?= URL::to('/dashboard/users/search'); ?>" class="btn btn-secondary float-left"><?=  t('Cancel'); ?></a>
-			<?= $form->submit('add', t('Add'), ['class' => 'btn btn-primary float-right']); ?>
+			<a href="<?= URL::to('/dashboard/users/search'); ?>" class="btn btn-secondary float-start"><?=  t('Cancel'); ?></a>
+			<?= $form->submit('add', t('Add'), ['class' => 'btn btn-primary float-end']); ?>
 		</div>
 	</div>
 </form>

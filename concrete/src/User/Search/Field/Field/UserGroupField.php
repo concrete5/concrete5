@@ -65,7 +65,7 @@ class UserGroupField extends AbstractField
         }
         $html .= '</select></div><br/>';
 
-        $html .= '<div class="form-group"><select name="uGroupIn" class="form-control">';
+        $html .= '<div class="form-group"><select name="uGroupIn" class="form-select">';
         $html .= '<option value="in"' . ($this->data['uGroupIn'] == 'in' ? ' selected' : '') . '>' . t('Search for users in group(s)') . '</option>';
         $html .= '<option value="not"' . ($this->data['uGroupIn'] == 'not' ? ' selected' : '') . '>' . t('Search for users not included in group(s)') . '</option>';
         $html .= '</select></div>';

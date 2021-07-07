@@ -45,8 +45,8 @@ if ($controller->getAction() == 'inspect') {
     <div class="ccm-dashboard-form-actions-wrapper">
         <div class="ccm-dashboard-form-actions">
             <a href="<?= $urlResolver->resolve(['/dashboard/blocks/types']) ?>"
-               class="btn btn-secondary float-left"><?= t('Back to Block Types') ?></a>
-            <div class="float-right">
+               class="btn btn-secondary float-start"><?= t('Back to Block Types') ?></a>
+            <div class="float-end">
                 <a href="<?= $urlResolver->resolve(['/dashboard/blocks/types', 'refresh', $bt->getBlockTypeID(), $token->generate('ccm-refresh-blocktype')]) ?>"
                    class="btn btn-secondary"><?= t('Refresh') ?></a>
                 <?php
@@ -98,7 +98,7 @@ if ($controller->getAction() == 'inspect') {
                 ?>
                 <li><span class="clearfix"><img src="<?= $btIcon ?>"/> <?= t($bt->getBlockTypeName()) ?>
                     <a href="<?= $urlResolver->resolve(['/dashboard/blocks/types', 'install', $bt->getBlockTypeHandle()]) ?>"
-                       class="btn float-right btn-sm btn-secondary"><?= t('Install') ?></a>
+                       class="btn float-end btn-sm btn-secondary"><?= t('Install') ?></a>
                 </span></li>
                 <?php
             }
@@ -113,7 +113,7 @@ if ($controller->getAction() == 'inspect') {
     if ($marketplaceEnabled) {
         ?>
         <div class="alert alert-info">
-            <a class="btn btn-success btn-sm float-right"
+            <a class="btn btn-success btn-sm float-end"
                href="<?= $urlResolver->resolve(['/dashboard/extend/addons']) ?>"><?= t('More Add-ons') ?></a>
             <p class="mb-2"><?= t('Browse our marketplace of add-ons to extend your site!') ?></p>
         </div>

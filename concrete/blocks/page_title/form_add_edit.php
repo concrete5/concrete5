@@ -24,7 +24,7 @@ if (!strlen($titleText)) {
 ?>
 
 <div class="form-group">
-    <label class="control-label">
+    <label class="control-label form-label">
         <?php echo t("Custom Title"); ?>
     </label>
 
@@ -55,7 +55,7 @@ if (!strlen($titleText)) {
 </div>
 
 <div class="form-group">
-    <label class="control-label">
+    <label class="control-label form-label">
         <?php echo t("Page Title Filtering"); ?>
     </label>
 

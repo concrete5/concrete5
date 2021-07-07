@@ -6,7 +6,7 @@ div.recent-blog-entry {
     @include font-size($h2-font-size);
     font-family: $headings-font-family;
     font-weight: 400;
-    color: theme-color("primary");
+    color: $primary;
   }
 
   div.ccm-block-page-list-page-entry {

@@ -49,7 +49,7 @@ if ($type->getPackageID() > 0) {
 
 <div class="ccm-dashboard-form-actions-wrapper">
     <div class="ccm-dashboard-form-actions">
-        <a href="<?=URL::to('/dashboard/system/permissions/workflows')?>" class="btn btn-secondary float-left"><?=t('Back to List')?></a>
+        <a href="<?=URL::to('/dashboard/system/permissions/workflows')?>" class="btn btn-secondary float-start"><?=t('Back to List')?></a>
 
     </div>
 </div>

@@ -37,7 +37,7 @@ use Concrete\Core\User\Group\Menu;
                             disabled="disabled"
                             data-search-checkbox-button="dropdown"
                             class="btn btn-secondary dropdown-toggle dropdown-toggle-split"
-                            data-toggle="dropdown"
+                            data-bs-toggle="dropdown"
                             data-reference="parent">
 
                             <span class="sr-only">
@@ -124,7 +124,7 @@ use Concrete\Core\User\Group\Menu;
                             <button class="btn btn-icon"
                                     data-boundary="viewport"
                                     type="button"
-                                    data-toggle="dropdown"
+                                    data-bs-toggle="dropdown"
                                     aria-haspopup="true"
                                     aria-expanded="false">
 

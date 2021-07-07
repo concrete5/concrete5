@@ -32,10 +32,10 @@ defined('C5_EXECUTE') or die('Access Denied.');
         <div class="form-check">
             <?= $form->checkbox('invalidateInactiveUsers', '1', $invalidateInactiveUsers) ?>
             <label class="form-check-label" for="invalidateInactiveUsers">
-                <span class="form-inline">
+                <span class="row row-cols-auto g-0 align-items-center">
                     <?= t(
     'Automatically log out users who are inactive for %s seconds or more.',
-    $form->number('inactiveTime', $inactiveTime, ['style' => 'width: 5rem', 'min' => '15', 'class' => 'form-control-sm ml-1 mr-1'] + ($invalidateInactiveUsers ? [] : ['disabled' => 'disabled']))
+    $form->number('inactiveTime', $inactiveTime, ['style' => 'width: 5rem', 'min' => '15', 'class' => 'form-control-sm ms-1 me-1'] + ($invalidateInactiveUsers ? [] : ['disabled' => 'disabled']))
 ) ?>
                 </span>
             </label>
@@ -44,7 +44,7 @@ defined('C5_EXECUTE') or die('Access Denied.');
 
     <div class="ccm-dashboard-form-actions-wrapper">
         <div class="ccm-dashboard-form-actions">
-            <div class="float-right">
+            <div class="float-end">
                 <a href="javascript:void(0)" class="btn btn-danger" id="invalidate-sessions-button"><?= t('Log out all active users') ?></a>
                 <button class="btn btn-primary" type="submit"><?= t('Save') ?></button>
             </div>

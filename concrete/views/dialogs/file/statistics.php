@@ -37,7 +37,7 @@
         </table>
         <div class="my-2">
             <?= t('Showing %1$s records out of %2$s', '{{ records.length }}', $totalRecords) ?>
-            <a v-if="canLoadMore" href="#" class="float-right" v-on:click.prevent="loadMoreRecords"><?= t('Load more') ?></a>
+            <a v-if="canLoadMore" href="#" class="float-end" v-on:click.prevent="loadMoreRecords"><?= t('Load more') ?></a>
         </div>
     </template>
 </div>

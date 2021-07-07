@@ -12,7 +12,7 @@ if (is_object($configuration)) {
 
 ?>
 <div class="control-group">
-	<label class="control-label"><?=t('Limit By Page Type')?></label>
+	<label class="control-label form-label"><?=t('Limit By Page Type')?></label>
 	<div class="controls" data-select="page">
 		<?=$form->select($source->optionFormKey('ptID'), $types, $ptID)?>
 	</div>

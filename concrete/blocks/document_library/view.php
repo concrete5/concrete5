@@ -18,20 +18,26 @@ $c = Page::getCurrentPage();
 
 <?php if ($enableSearch) { ?>
     <form method="get" action="<?=$c->getCollectionLink()?>">
-        <div class="form-inline">
-            <div class="form-group">
+        <div class="row row-cols-auto align-items-center">
+            <div class="form-group col-auto">
                 <?=$form->label('keywords', t('Keyword Search'))?>
                 <?=$form->text('keywords')?>
             </div>
-            <button type="submit" class="btn btn-primary" name="search"><?=t('Search')?></button>
-            <?php if (count($tableSearchProperties)) { ?>
-                <a href="#" data-document-library-advanced-search="<?=$bID?>"
-                   class="ccm-block-document-library-advanced-search"><?=t('Advanced Search')?></a>
-            <?php } ?>
-            <?php if ($canAddFiles) { ?>
-            <a href="#" data-document-library-add-files="<?=$bID?>"
-               class="ccm-block-document-library-add-files"><?=t('Add Files')?></a>
-            <?php } ?>
+            <div class="col-auto">
+                <button type="submit" class="btn btn-primary" name="search"><?=t('Search')?></button>
+            </div>
+            <div class="col-auto">
+                <?php if (count($tableSearchProperties)) { ?>
+                    <a href="#" data-document-library-advanced-search="<?=$bID?>"
+                       class="ccm-block-document-library-advanced-search"><?=t('Advanced Search')?></a>
+                <?php } ?>
+            </div>
+            <div class="col-auto">
+                <?php if ($canAddFiles) { ?>
+                    <a href="#" data-document-library-add-files="<?=$bID?>"
+                       class="ccm-block-document-library-add-files"><?=t('Add Files')?></a>
+                <?php } ?>
+            </div>
         </div>
 
         <?php if (count($tableSearchProperties)) { ?>

@@ -112,7 +112,7 @@ defined('C5_EXECUTE') or die('Access Denied.');
         ?>
         <div class="dialog-buttons">
             <a href="javascript:void(0)" onclick="jQuery.fn.dialog.closeTop()" class="btn btn-default pull-left"><?= t('Cancel') ?></a>
-            <button onclick="$('#ccm-permission-list-form').submit()" class="btn btn-primary pull-right"><?= t('Save') ?> <i class="fa fa-ok-sign icon-white"></i></button>
+            <button onclick="$('#ccm-permission-list-form').submit()" class="btn btn-primary float-end"><?= t('Save') ?> <i class="fa fa-ok-sign icon-white"></i></button>
         </div>
         <?php
     }

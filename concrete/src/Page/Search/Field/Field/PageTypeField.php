@@ -46,7 +46,7 @@ class PageTypeField extends AbstractField
             }
             ), $this->data['ptID']);
         } else {
-            $html = '<select name="ptID" class="form-control">';
+            $html = '<select name="ptID" class="form-select">';
             foreach($types as $type) {
                 $html .= '<optgroup label="' . $type->getSiteTypeName() . '">';
                 $types = \PageType::getList(false, $type);

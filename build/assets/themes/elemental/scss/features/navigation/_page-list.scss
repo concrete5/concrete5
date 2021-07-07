@@ -3,7 +3,7 @@ a.ccm-block-page-list-rss-feed{
   color: $bullet-color;
 
   &:hover {
-    color: theme-color('primary');
+    color: $primary;
   }
 }
 
@@ -15,7 +15,7 @@ div.ccm-block-page-list-page-entry-horizontal,
 div.ccm-block-page-list-page-entry {
   padding-bottom: 30px;
   margin-bottom: 30px;
-  border-bottom: 1px solid $hr-border-color;
+  border-bottom: 1px solid $gray-200;
 }
 
 div.ccm-block-page-list-page-entry-read-more {
@@ -26,7 +26,7 @@ div.ccm-block-page-list-no-pages {
   text-align: center;
   font-size: $h3-font-size;
   font-family: $font-family-headings;
-  color: theme-color('primary');
+  color: $primary;
 }
 
 div.col-sidebar {

@@ -32,7 +32,7 @@ foreach($types as $type) {
     <div class="ccm-details-panel card" data-details-url="<?= $controller->action('add', $type->getSiteTypeID()) ?>">
         <div class="card-body">
             <div class="media">
-                <?= $formatter->getSiteTypeIconElement()->addClass('mr-3') ?>
+                <?= $formatter->getSiteTypeIconElement()->addClass('me-3') ?>
                 <div class="media-body">
                     <h4 class="mt-0<?= $description === '' ? ' mb-0' : ''?>"><?= $type->getSiteTypeName() ?></h4>
                     <?= $description ?>
@@ -46,7 +46,7 @@ foreach($types as $type) {
 
 <div class="ccm-dashboard-form-actions-wrapper">
     <div class="ccm-dashboard-form-actions">
-        <div class="float-right">
+        <div class="float-end">
             <a class="btn btn-secondary" href="<?= $controller->action('') ?>"><?= t('Back to Sites') ?></a>
         </div>
     </div>

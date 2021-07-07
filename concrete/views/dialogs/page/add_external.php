@@ -35,9 +35,9 @@ defined('C5_EXECUTE') or die('Access Denied.');
         </div>
 
         <div class="dialog-buttons">
-            <button class="btn btn-secondary float-left" data-dialog-action="cancel"><?php echo t('Cancel') ?></button>
+            <button class="btn btn-secondary float-start" data-dialog-action="cancel"><?php echo t('Cancel') ?></button>
             <button type="button" data-dialog-action="submit"
-                    class="btn btn-primary float-right"><?php echo $isEditingExisting ? t('Save') : t('Add') ?></button>
+                    class="btn btn-primary float-end"><?php echo $isEditingExisting ? t('Save') : t('Add') ?></button>
         </div>
     </form>
 

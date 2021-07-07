@@ -41,12 +41,12 @@ class NumberOfChildrenField extends AbstractField
 
     public function renderSearchField()
     {
-        $html = '<div class="form-inline"><select name="cChildrenSelect" class="form-control">';
+        $html = '<div class="row row-cols-auto g-0 align-items-center"><div class="col-auto"><select name="cChildrenSelect" class="form-select">';
         $html .= '<option value="gt"' . ($this->data['cChildrenSelect'] == 'gt' ? ' selected' : '') . '>' . t('More Than') . '</option>';
         $html .= '<option value="eq"' . ($this->data['cChildrenSelect'] == 'eq' ? ' selected' : '') . '>' . t('Equal To') . '</option>';
         $html .= '<option value="lt"' . ($this->data['cChildrenSelect'] == 'lt' ? ' selected' : '') . '>' . t('Fewer Than') . '</option>';
-        $html .= '</select>';
-        $html .= ' <input type="number" name="cChildren" class="form-control" min="0" value="' . $this->data['cChildren'] . '" /></div>';
+        $html .= '</select></div>';
+        $html .= ' <div class="col-auto"><input type="number" name="cChildren" class="form-control" min="0" value="' . $this->data['cChildren'] . '" /></div></div>';
         return $html;
     }
 

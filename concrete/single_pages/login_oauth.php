@@ -62,7 +62,7 @@ $form = Loader::helper('form');
 			</div>
 			<form method="post" action="<?=$view->url('/login', 'forgot_password')?>" class="form-horizontal">
 				<div class='control-group'>
-					<label class='control-label' for='uEmail'><?=t('Email Address')?></label>
+					<label class='control-label form-label' for='uEmail'><?=t('Email Address')?></label>
 					<div class='controls'>
 						<?=$form->text('uEmail')?>
 					</div>
