@@ -23,7 +23,13 @@
             </attributes>
         </page>
 
-        <page name="Login" path="/login" filename="/login.php" pagetype="" description="" package="" global="true" />
+        <page name="Login" path="/login" filename="/login.php" pagetype="" description="" package="" global="true">
+            <attributes>
+                <attributekey handle="exclude_search_index">
+                    <value><![CDATA[1]]></value>
+                </attributekey>
+            </attributes>
+        </page>
         <page name="Register" path="/register" filename="/register.php" pagetype="" description="" package="" global="true" />
         <page name="My Account" path="/account" filename="/account/view.php" pagetype="" description="" package="" global="true">
             <attributes>
