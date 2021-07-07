@@ -28,7 +28,7 @@ class Menu extends ElementController
     public function view()
     {
         $r = \ORM::entityManager()->getRepository('\Concrete\Core\Entity\Express\Entity');
-        $entities = $r->findAll(array(), array('name' => 'asc'));
+        $entities = $r->findBy(array(), array('name' => 'asc'));
         $this->set('types', $entities);
         $this->set('currentType', $this->currentEntity);
         $this->set('entityAction', $this->entityAction);

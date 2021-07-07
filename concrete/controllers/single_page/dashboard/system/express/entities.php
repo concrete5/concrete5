@@ -98,7 +98,7 @@ class Entities extends DashboardPageController
     public function view()
     {
         $r = $this->entityManager->getRepository('\Concrete\Core\Entity\Express\Entity');
-        $entities = $r->findAll(array(), array('name' => 'asc'));
+        $entities = $r->findBy(array(), array('name' => 'asc'));
         $this->set('entities', $entities);
     }
 
