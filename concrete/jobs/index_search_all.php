@@ -14,6 +14,7 @@ use Concrete\Core\Page\Page;
 use Concrete\Core\Search\Index\IndexManagerInterface;
 use Concrete\Core\Support\Facade\Facade;
 use Concrete\Core\User\User;
+use Doctrine\ORM\EntityManagerInterface;
 use Punic\Misc as PunicMisc;
 use ZendQueue\Message as ZendQueueMessage;
 use ZendQueue\Queue as ZendQueue;
@@ -168,6 +169,19 @@ class IndexSearchAll extends QueueableJob
         } else {
             return t('Indexed pages, users, files, sites and express data.');
         }
+    }
+
+    /**
+     * @inheritDoc
+     *
+     * @see \Concrete\Core\Job\QueueableJob::executeBatch()
+     */
+    public function executeBatch($batch, ZendQueue $queue)
+    {
+        parent::executeBatch($batch, $queue);
+
+        $em = Facade::getFacadeApplication()->make(EntityManagerInterface::class);
+        $em->clear();
     }
 
     protected function clearExpressEntityIndex($id)
