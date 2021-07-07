@@ -63,4 +63,16 @@ class TopicsValue extends AbstractValue
         }
         return implode(', ', $topics);
     }
+
+    public function __clone()
+    {
+        $clonedSelectedTopics = new ArrayCollection();
+        foreach ($this->getSelectedTopics() as $selectedTopic) {
+            /** @var SelectedTopic $clonedSelectedTopic */
+            $clonedSelectedTopic = clone $selectedTopic;
+            $clonedSelectedTopic->setAttributeValue($this);
+            $clonedSelectedTopics->add($clonedSelectedTopic);
+        }
+        $this->setSelectedTopics($clonedSelectedTopics);
+    }
 }
