@@ -5,6 +5,7 @@ namespace Concrete\Core\Page;
 use Concrete\Core\Area\Area;
 use Block;
 use CacheLocal;
+use Concrete\Core\Cache\Level\RequestCache;
 use Concrete\Core\Entity\Page\Summary\CustomPageTemplateCollection;
 use Concrete\Core\Page\Collection\Collection;
 use Concrete\Core\Attribute\Key\CollectionKey;
@@ -236,11 +237,17 @@ class Page extends Collection implements CategoryMemberInterface,
      */
     public static function getByID($cID, $version = 'RECENT')
     {
+        /** @var RequestCache $cache */
+        $cache = Facade::getFacadeApplication()->make('cache/request');
         $class = get_called_class();
-        if ($cID && $version) {
-            $c = CacheLocal::getEntry('page', $cID . '/' . $version . '/' . $class);
-            if ($c instanceof $class) {
-                return $c;
+        $key = '/' . substr($class, strrpos($class, '\\') + 1) . '/' . $cID . '/' . $version;
+        if ($cID && $version && $cache->isEnabled()) {
+            $item = $cache->getItem($key);
+            if ($item->isHit()) {
+                $c = $item->get();
+                if ($c instanceof $class) {
+                    return $c;
+                }
             }
         }
 
@@ -249,8 +256,9 @@ class Page extends Collection implements CategoryMemberInterface,
         $c->populatePage($cID, $where, $version);
 
         // must use cID instead of c->getCollectionID() because cID may be the pointer to another page
-        if ($cID && $version) {
-            CacheLocal::set('page', $cID . '/' . $version . '/' . $class, $c);
+        if ($cID && $version && isset($item) && $item->isMiss()) {
+            $item->set($c);
+            $cache->save($item);
         }
 
         return $c;
@@ -3874,17 +3882,30 @@ EOT
      */
     protected function populatePage($cInfo, $where, $cvID)
     {
-        $db = Database::connection();
+        $app = Facade::getFacadeApplication();
+        /** @var RequestCache $cache */
+        $cache = $app->make('cache/request');
+        $key = '/page/row/' . $cInfo;
+        $item = $cache->getItem($key);
+        $row = false;
+        $originalRow = null;
 
-        $fields = 'Pages.cID, Pages.pkgID, Pages.siteTreeID, Pages.cPointerID, Pages.cPointerExternalLink, Pages.cIsDraft, Pages.cIsActive, Pages.cIsSystemPage, Pages.cPointerExternalLinkNewWindow, Pages.cFilename, Pages.ptID, Collections.cDateAdded, Pages.cDisplayOrder, Collections.cDateModified, cInheritPermissionsFromCID, cInheritPermissionsFrom, cOverrideTemplatePermissions, cCheckedOutUID, cIsTemplate, uID, cPath, cParentID, cChildren, cCacheFullPageContent, cCacheFullPageContentOverrideLifetime, cCacheFullPageContentLifetimeCustom, Collections.cHandle';
-        $from = 'Pages INNER JOIN Collections ON Pages.cID = Collections.cID LEFT JOIN PagePaths ON (Pages.cID = PagePaths.cID AND PagePaths.ppIsCanonical = 1)';
+        if ($item->isHit()) {
+            $row = $item->get();
+        } elseif ($item->isMiss()) {
+            $db = $app->make(Connection::class);
 
-        $row = $db->fetchAssoc("SELECT {$fields} FROM {$from} {$where}", [$cInfo]);
-        if ($row !== false && $row['cPointerID'] > 0) {
-            $originalRow = $row;
-            $row = $db->fetchAssoc("SELECT {$fields}, CollectionVersions.cvName FROM {$from} LEFT JOIN CollectionVersions ON CollectionVersions.cID = ? WHERE Pages.cID = ? LIMIT 1", [$row['cID'], $row['cPointerID']]);
-        } else {
-            $originalRow = null;
+            $fields = 'Pages.cID, Pages.pkgID, Pages.siteTreeID, Pages.cPointerID, Pages.cPointerExternalLink, Pages.cIsDraft, Pages.cIsActive, Pages.cIsSystemPage, Pages.cPointerExternalLinkNewWindow, Pages.cFilename, Pages.ptID, Collections.cDateAdded, Pages.cDisplayOrder, Collections.cDateModified, cInheritPermissionsFromCID, cInheritPermissionsFrom, cOverrideTemplatePermissions, cCheckedOutUID, cIsTemplate, uID, cPath, cParentID, cChildren, cCacheFullPageContent, cCacheFullPageContentOverrideLifetime, cCacheFullPageContentLifetimeCustom, Collections.cHandle';
+            $from = 'Pages INNER JOIN Collections ON Pages.cID = Collections.cID LEFT JOIN PagePaths ON (Pages.cID = PagePaths.cID AND PagePaths.ppIsCanonical = 1)';
+
+            $row = $db->fetchAssoc("SELECT {$fields} FROM {$from} {$where}", [$cInfo]);
+            if ($row !== false && $row['cPointerID'] > 0) {
+                $originalRow = $row;
+                $row = $db->fetchAssoc("SELECT {$fields}, CollectionVersions.cvName FROM {$from} LEFT JOIN CollectionVersions ON CollectionVersions.cID = ? WHERE Pages.cID = ? LIMIT 1", [$row['cID'], $row['cPointerID']]);
+            }
+
+            $item->set($row);
+            $cache->save($item);
         }
 
         if ($row !== false) {
