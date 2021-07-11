@@ -269,6 +269,10 @@ class Collection extends ConcreteObject implements TrackableInterface
             $pTemplateID = $data['pTemplateID'];
         }
 
+        if (!is_int($data['uID']) || $data['uID'] < 1) {
+            $data['uID'] = USER_SUPER_ID;
+        }
+
         if ($res) {
             // now we add a pending version to the collectionversions table
             $db->insert('CollectionVersions', [

@@ -3542,6 +3542,9 @@ EOT
         $cParentID = $this->getCollectionID();
 
         $u = $app->make(User::class);
+        if (!$u->isRegistered()) {
+            $u = User::getByUserID(USER_SUPER_ID);
+        }
         if (isset($data['uID'])) {
             $uID = $data['uID'];
         } else {
