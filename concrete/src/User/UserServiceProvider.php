@@ -34,7 +34,7 @@ class UserServiceProvider extends ServiceProvider
             });
         }
 
-
+        $this->app->singleton(User::class);
     }
 
     /**
