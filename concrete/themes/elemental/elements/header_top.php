@@ -14,5 +14,5 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-
+<?php View::element('body_tracking_code'); ?>
 <div class="<?php echo $c->getPageWrapperClass()?>">

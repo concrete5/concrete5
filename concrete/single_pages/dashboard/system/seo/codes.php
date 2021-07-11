@@ -6,6 +6,7 @@ defined('C5_EXECUTE') or die('Access Denied.');
  * @var Concrete\Core\Form\Service\Form $form
  * @var Concrete\Core\Validation\CSRF\Token $token
  * @var string $tracking_code_footer
+ * @var string $tracking_code_body
  * @var string $tracking_code_header
  */
 ?>
@@ -20,11 +21,19 @@ defined('C5_EXECUTE') or die('Access Denied.');
     <div class="form-group">
         <?= $form->label('tracking_code_header', t('Header Tracking Codes')) ?>
         <?= $form->textarea('tracking_code_header', $tracking_code_header, ['style' => 'height: 250px;', 'class' => 'text-monospace', 'spellcheck' => 'false']) ?>
+        <small class="form-text text-muted"><?= t('This code will be inserted in the head element.') ?></small>
+    </div>
+
+    <div class="form-group">
+        <?= $form->label('tracking_code_body', t('Body Tracking Codes')) ?>
+        <?= $form->textarea('tracking_code_body', $tracking_code_body, ['style' => 'height: 250px;', 'class' => 'text-monospace', 'spellcheck' => 'false']) ?>
+        <small class="form-text text-muted"><?= h(t(/*i18n: %s is an HTML tag */'This code will be inserted after the %s tag. Some themes does not support this code.', '<body>')) ?></small>
     </div>
 
     <div class="form-group">
         <?= $form->label('tracking_code_footer', t('Footer Tracking Codes')) ?>
         <?= $form->textarea('tracking_code_footer', $tracking_code_footer, ['style' => 'height: 250px;', 'class' => 'text-monospace', 'spellcheck' => 'false']) ?>
+        <small class="form-text text-muted"><?= h(t(/*i18n: %s is an HTML tag */'This code will be inserted before the %s tag.', '</body>')) ?></small>
     </div>
 
     <div class="ccm-dashboard-form-actions-wrapper">
