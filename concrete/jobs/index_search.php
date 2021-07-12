@@ -3,6 +3,10 @@ namespace Concrete\Job;
 
 use Concrete\Core\Application\ApplicationAwareInterface;
 use Concrete\Core\Application\ApplicationAwareTrait;
+use Concrete\Core\Entity\Site\Site;
+use Concrete\Core\File\File;
+use Concrete\Core\Page\Page;
+use Concrete\Core\User\User;
 use ZendQueue\Message;
 
 class IndexSearch extends IndexSearchAll implements ApplicationAwareInterface
@@ -26,24 +30,31 @@ class IndexSearch extends IndexSearchAll implements ApplicationAwareInterface
 
     protected function queueMessages()
     {
-        $generator = parent::queueMessages();
+        $pages = $users = $files = $sites = $objects = $entries = 0;
 
-        foreach ($generator as $item) {
-            yield $item;
+        foreach ($this->pagesToQueue() as $id) {
+            yield "P{$id}";
+            $pages++;
         }
-
         foreach ($this->pagesToRemove() as $id) {
             yield "RP{$id}";
+            $pages++;
         }
         foreach ($this->usersToRemove() as $id) {
             yield "RU{$id}";
+            $users++;
         }
         foreach ($this->filesToRemove() as $id) {
             yield "RF{$id}";
+            $files++;
         }
         foreach ($this->sitesToRemove() as $id) {
             yield "RS{$id}";
+            $sites++;
         }
+
+        // Yield the result very last
+        yield 'R' . json_encode([$pages, $users, $files, $sites, $objects, $entries]);
     }
 
 
