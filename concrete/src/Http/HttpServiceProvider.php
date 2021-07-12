@@ -41,7 +41,7 @@ class HttpServiceProvider extends ServiceProvider
             foreach ($config->get('app.middleware') as $middleware) {
                 if (is_array($middleware)) {
                     $server->addMiddleware($app->make($middleware['class']), $middleware['priority']);
-                } else {
+                } elseif ($middleware) {
                     $server->addMiddleware($app->make($middleware));
                 }
             }
