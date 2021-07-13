@@ -16,7 +16,7 @@ if ($container) {
         if ($c->isEditMode()) { ?>
             <div class="ccm-edit-mode-disabled-item">
                <?php echo t('Container: %s – no container template file found.', 
-                   $container->getInstance()->getContainer()->getContainerName()); ?>
+                   $container->getInstance()->getContainer()->getContainerDisplayName()); ?>
             </div>
         <?php }
     }

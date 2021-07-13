@@ -90,12 +90,12 @@ defined('C5_EXECUTE') or die('Access Denied.');
                                 data-has-add-template="0"
                                 data-supports-inline-add="0"
                                 data-btID="0"
-                                data-dragging-avatar="<?= h('<div class="ccm-block-icon-wrapper d-flex align-items-center justify-content-center">' . $container->getContainerIconImage() . '</div><p><span>' . $container->getContainerName() . '</span></p>') ?>"
+                                data-dragging-avatar="<?= h('<div class="ccm-block-icon-wrapper d-flex align-items-center justify-content-center">' . $container->getContainerIconImage() . '</div><p><span>' . $container->getContainerDisplayName() . '</span></p>') ?>"
                         >
                             <!-- <span class="handle"> -->
                             <div class="ccm-block-icon-wrapper d-flex align-items-center justify-content-center"><img
                                         src="<?= $container->getContainerIconImage(false) ?>"/></div>
-                            <p><span><?= h($container->getContainerName()) ?></span></p>
+                            <p><span><?= h($container->getContainerDisplayName()) ?></span></p>
                             <!-- </span> -->
                         </a>
                     </li>
