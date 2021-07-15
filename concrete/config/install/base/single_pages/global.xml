@@ -5,7 +5,7 @@
         <page name="Stacks" path="/!stacks" filename="/!stacks/view.php" pagetype="" description="" package="" global="true">
             <attributes>
                 <attributekey handle="icon_dashboard">
-                    <value>fa fa-th</value>
+                    <value>fas fa-th</value>
                 </attributekey>
             </attributes>
         </page>
@@ -18,7 +18,7 @@
         <page name="Trash" path="/!trash" filename="/!trash/view.php" pagetype="" description="" package="" global="true">
             <attributes>
                 <attributekey handle="icon_dashboard">
-                    <value>fa fa-trash-o</value>
+                    <value>fas fa-trash</value>
                 </attributekey>
             </attributes>
         </page>
@@ -28,7 +28,7 @@
         <page name="My Account" path="/account" filename="/account/view.php" pagetype="" description="" package="" global="true">
             <attributes>
                 <attributekey handle="icon_dashboard">
-                    <value>fa fa-briefcase</value>
+                    <value>fas fa-briefcase</value>
                 </attributekey>
             </attributes>
         </page>

@@ -6,7 +6,7 @@
         <page name="Drafts" path="/!drafts" filename="/!drafts/view.php" pagetype="" description="" package="" root="true">
             <attributes>
                 <attributekey handle="icon_dashboard">
-                    <value>fa fa-edit</value>
+                    <value>fas fa-edit</value>
                 </attributekey>
             </attributes>
         </page>
