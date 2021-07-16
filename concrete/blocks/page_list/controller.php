@@ -249,18 +249,17 @@ class Controller extends BlockController implements UsesFeatureInterface
         $this->set('featuredAttribute', CollectionAttributeKey::getByHandle('is_featured'));
         $this->set('thumbnailAttribute', CollectionAttributeKey::getByHandle('thumbnail'));
         $this->set('titleFormat', 'h5');
+        $this->set('topicFilter', '');
+        $this->set('filterDateOption', 'all');
         $this->loadKeys();
     }
 
     public function edit()
     {
         $b = $this->getBlockObject();
-        $bCID = $b->getBlockCollectionID();
         $bID = $b->getBlockID();
         $this->set('bID', $bID);
-        $c = Page::getCurrentPage();
         if ((!$this->cThis) && (!$this->cThisParent) && ($this->cParentID != 0)) {
-            $isOtherPage = true;
             $this->set('isOtherPage', true);
         }
         if ($this->pfID) {
@@ -274,6 +273,13 @@ class Controller extends BlockController implements UsesFeatureInterface
         $this->set('bt', BlockType::getByHandle('page_list'));
         $this->set('featuredAttribute', CollectionAttributeKey::getByHandle('is_featured'));
         $this->set('thumbnailAttribute', CollectionAttributeKey::getByHandle('thumbnail'));
+        $topicFilter = '';
+        if ($this->filterByRelated) {
+            $topicFilter = 'related';
+        }elseif ($this->filterByCustomTopic) {
+            $topicFilter = 'custom';
+        }
+        $this->set('topicFilter', $topicFilter);
         $this->loadKeys();
     }
 
@@ -438,7 +444,7 @@ class Controller extends BlockController implements UsesFeatureInterface
             'paginate' => 0,
             'rss' => 0,
             'pfID' => 0,
-            'filterDateOption' => '',
+            'filterDateOption' => 'all',
             'cParentID' => null,
         ];
 
