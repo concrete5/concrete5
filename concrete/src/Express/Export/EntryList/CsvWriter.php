@@ -27,7 +27,7 @@ class CsvWriter
      */
     private $datetime_format;
 
-    public function __construct(Writer $writer, Date $dateFormatter, $datetime_format = 'ATOM' )
+    public function __construct(Writer $writer, Date $dateFormatter, $datetime_format = DATE_ATOM )
     {
         $this->writer = $writer;
         $this->dateFormatter = $dateFormatter;

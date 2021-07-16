@@ -114,7 +114,7 @@ abstract class DashboardExpressEntriesPageController extends DashboardPageContro
             ]);
             echo $bom;
             $writer->insertHeaders($entity);
-            $writer->insertEntryList($entryList,$datetime_format);
+            $writer->insertEntryList($entryList);
         }, 200, $headers);
     }
 
