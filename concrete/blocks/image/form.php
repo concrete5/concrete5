@@ -10,6 +10,10 @@ use Concrete\Core\Support\Facade\Application;
 
 /**
  * @var DestinationPicker $destinationPicker
+ * @var string $sizingOption
+ * @var array $themeResponsiveImageMap
+ * @var array $thumbnailTypes
+ * @var array $selectedThumbnailTypes
  * @var array $imageLinkPickers
  * @var string $imageLinkHandle
  * @var mixed $imageLinkValue
@@ -94,19 +98,62 @@ $fileManager = $app->make(FileManager::class);
 
 <fieldset>
     <legend>
-        <?php echo t('Resize Image'); ?>
+        <?php echo t('Sizing'); ?>
     </legend>
 
     <div class="form-group">
-        <div class="form-check" data-checkbox-wrapper="constrain-image">
-            <?php
-            echo $form->checkbox('constrainImage', 1, $constrainImage);
-            echo $form->label('constrainImage', t("Constrain Image Size"), ["class" => "form-check-label"]);
-            ?>
+        <?php
+        echo $form->label('sizingOption', t("Sizing Option"));
+        echo $form->select('sizingOption', [
+            "thumbnails_default" => t("Thumbnails - Default"),
+            "thumbnails_configurable" => t("Thumbnails - Configurable"),
+            "full_size" => t("Full Size"),
+            "constrain_size" => t("Constrain Size")
+        ], $sizingOption);
+        ?>
+    </div>
+
+    <div data-fields="thumbnails-configurable" class="d-none">
+        <?php if (count($thumbnailTypes) === 0) { ?>
+            <div class="alert alert-warning">
+                <?php echo t("Responsive breakpoints are not defined in your theme. To use Thumbnails please define Breakpoints in your theme settings."); ?>
+            </div>
+        <?php } ?>
+
+        <?php foreach($themeResponsiveImageMap as $breakpointHandle => $minScreenWidth) { ?>
+            <div class="form-group">
+                <?php echo $form->label('selectedThumbnailTypes['  . $breakpointHandle . ']', t("%s Screen Width", ucfirst(camelcase(str_replace("_", " ", $breakpointHandle))))); ?>
+
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">
+                            <?php echo sprintf('> %s', $minScreenWidth); ?>
+                        </span>
+                    </div>
+
+                    <?php echo $form->select('selectedThumbnailTypes['  . $breakpointHandle . ']', $thumbnailTypes, $selectedThumbnailTypes[$breakpointHandle]); ?>
+                </div>
+            </div>
+        <?php } ?>
+
+        <div class="form-group">
+            <?php if (is_array($selectedThumbnailTypes)) { ?>
+                <?php foreach(array_keys($selectedThumbnailTypes) as $breakpointHandle ) { ?>
+                    <?php if (!in_array($breakpointHandle, array_keys($themeResponsiveImageMap))) { ?>
+                        <div class="alert alert-info">
+                            <?php echo t("This block contains %s breakpoint that is not included in your theme.", ucfirst(camelcase(str_replace("_", " ", $breakpointHandle)))); ?>
+                        </div>
+                    <?php } ?>
+                <?php }?>
+            <?php }?>
+
+            <div class="alert alert-info">
+                <?php echo t("Thumbnail types can be managed in Dashboard > System > Files > Thumbnails."); ?>
+            </div>
         </div>
     </div>
 
-    <div data-fields="constrain-image" style="display: none">
+    <div data-fields="constrain-image" class="d-none">
         <div class="well">
             <div class="form-group">
                 <div class="form-check">
@@ -152,14 +199,26 @@ $fileManager = $app->make(FileManager::class);
             $('#imageLinkOpenInNewWindow').toggle($('#imageLink__which').val() !== 'none');
         }).trigger('change');
 
-        $('#constrainImage').on('change', function () {
-            $('div[data-fields=constrain-image]').toggle($(this).is(':checked'));
+        $('#sizingOption').on('change', function () {
+            $('div[data-fields=thumbnails-configurable]').addClass("d-none");
+            $('div[data-fields=constrain-image]').addClass("d-none");
 
-            if (!$(this).is(':checked')) {
-                $('#cropImage').prop('checked', false);
-                $('#maxWidth').val('');
-                $('#maxHeight').val('');
+            switch($('#sizingOption option:selected').val()) {
+                case "thumbnails_default":
+                    break;
+
+                case "thumbnails_configurable":
+                    $('div[data-fields=thumbnails-configurable]').removeClass("d-none");
+                    break;
+
+                case "full_size":
+                    break;
+
+                case "constrain_size":
+                    $('div[data-fields=constrain-image]').removeClass("d-none");
+                    break;
             }
+
         }).trigger('change');
     });
 </script>

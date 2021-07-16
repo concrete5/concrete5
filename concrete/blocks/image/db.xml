@@ -40,8 +40,27 @@
         </field>
         <field name="altText" type="string" size="255" />
         <field name="title" type="string" size="255" />
+        <field name="sizingOption" type="string" size="255" >
+            <default value="thumbnails_default"/>
+        </field>
         <index name="fID">
             <col>fID</col>
         </index>
+    </table>
+
+    <table name="btContentImageBreakpoints">
+        <field name="id" type="integer">
+            <unsigned/>
+            <autoincrement/>
+            <key/>
+        </field>
+        <field name="bID" type="integer">
+            <unsigned/>
+        </field>
+        <field name="breakpointHandle" type="string" size="255" />
+        <field name="ftTypeID" type="integer">
+            <unsigned/>
+            <default value="0" />
+        </field>
     </table>
 </schema>

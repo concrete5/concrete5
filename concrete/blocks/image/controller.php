@@ -3,14 +3,18 @@
 namespace Concrete\Block\Image;
 
 use Concrete\Core\Block\BlockController;
+use Concrete\Core\Database\Connection\Connection;
 use Concrete\Core\Error\Error;
 use Concrete\Core\Feature\Features;
 use Concrete\Core\Feature\UsesFeatureInterface;
 use Concrete\Core\File\File;
+use Concrete\Core\File\Image\Thumbnail\Type\Type;
 use Concrete\Core\File\Tracker\FileTrackableInterface;
 use Concrete\Core\Form\Service\DestinationPicker\DestinationPicker;
 use Concrete\Core\Page\Page;
+use Concrete\Core\Page\Theme\Theme;
 use Concrete\Core\Statistics\UsageTracker\AggregateTracker;
+use Concrete\Core\View\View;
 
 class Controller extends BlockController implements FileTrackableInterface, UsesFeatureInterface
 {
@@ -90,18 +94,89 @@ class Controller extends BlockController implements FileTrackableInterface, Uses
         $this->set('title', $this->getTitle());
         $this->set('linkURL', $this->getLinkURL());
         $this->set('openLinkInNewWindow', $this->shouldLinkOpenInNewWindow());
+        $this->set('selectedThumbnailTypes', $this->getSelectedThumbnailTypes());
+        $this->set('themeResponsiveImageMap', $this->getActiveThemeResponsiveImageMap());
         $this->set('c', Page::getCurrentPage());
+    }
+
+    /**
+     * @return array
+     */
+    private function getActiveThemeResponsiveImageMap()
+    {
+        $activeThemeResponsiveImageMap = [];
+
+        $activeTheme = Theme::getSiteTheme();
+
+        if ($activeTheme instanceof Theme) {
+            $activeThemeResponsiveImageMap = $activeTheme->getThemeResponsiveImageMap();
+            asort($activeThemeResponsiveImageMap);
+        }
+
+        return $activeThemeResponsiveImageMap;
+    }
+
+    /**
+     * @return array
+     */
+    private function getSelectedThumbnailTypes()
+    {
+        $selectedThumbnailTypes = [];
+
+        /** @var Connection $db */
+        $db = $this->app->make(Connection::class);
+        $rows = $db->fetchAll('SELECT breakpointHandle, ftTypeID from btContentImageBreakpoints WHERE bID = ?', [$this->bID]);
+
+        foreach($rows as $row) {
+            $selectedThumbnailTypes[$row["breakpointHandle"]] = $row["ftTypeID"];
+        }
+
+        return $selectedThumbnailTypes;
+    }
+
+    /**
+     * @return array
+     */
+    private function getThumbnailTypes()
+    {
+        $thumbnailTypes = [];
+
+        foreach(Type::getList() as $thumbnailTypeEntity) {
+            $thumbnailTypes[$thumbnailTypeEntity->getID()] = $thumbnailTypeEntity->getName();
+        }
+
+        return $thumbnailTypes;
     }
 
     public function add()
     {
         $this->set('bf', null);
         $this->set('bfo', null);
-        $this->set('constrainImage', false);
         $this->set('destinationPicker', $this->app->make(DestinationPicker::class));
         $this->set('imageLinkPickers', $this->getImageLinkPickers());
+        $this->set('thumbnailTypes', $this->getThumbnailTypes());
+        $this->set('themeResponsiveImageMap', $this->getActiveThemeResponsiveImageMap());
+        $this->set('selectedThumbnailTypes', []);
+        $this->set('sizingOption', 'thumbnails_default');
         $this->set('imageLinkHandle', 'none');
         $this->set('imageLinkValue', null);
+    }
+
+    public function duplicate($newBID)
+    {
+        parent::duplicate($newBID);
+        /** @var Connection $db */
+        $db = $this->app->make(Connection::class);
+        $copyFields = 'breakpointHandle, ftTypeID';
+        /** @noinspection PhpUnhandledExceptionInspection */
+        /** @noinspection SqlNoDataSourceInspection */
+        $db->executeUpdate(
+            "INSERT INTO btContentImageBreakpoints (bID, {$copyFields}) SELECT ?, {$copyFields} FROM btContentImageBreakpoints WHERE bID = ?",
+            [
+                $newBID,
+                $this->bID
+            ]
+        );
     }
 
     public function edit()
@@ -120,10 +195,6 @@ class Controller extends BlockController implements FileTrackableInterface, Uses
         }
         $this->set('bfo', $bfo);
 
-        // Constrain dimensions
-        $constrainImage = $this->maxWidth > 0 || $this->maxHeight > 0;
-        $this->set('constrainImage', $constrainImage);
-
         // Max width is saved as an integer
         if ($this->maxWidth == 0) {
             $this->set('maxWidth', '');
@@ -137,6 +208,9 @@ class Controller extends BlockController implements FileTrackableInterface, Uses
         // None, Internal, or External
         $this->set('destinationPicker', $this->app->make(DestinationPicker::class));
         $this->set('imageLinkPickers', $this->getImageLinkPickers());
+        $this->set('thumbnailTypes', $this->getThumbnailTypes());
+        $this->set('themeResponsiveImageMap', $this->getActiveThemeResponsiveImageMap());
+        $this->set('selectedThumbnailTypes', $this->getSelectedThumbnailTypes());
         if ($this->getInternalLinkCID()) {
             $this->set('imageLinkHandle', 'page');
             $this->set('imageLinkValue', $this->getInternalLinkCID());
@@ -363,6 +437,11 @@ class Controller extends BlockController implements FileTrackableInterface, Uses
      */
     public function delete()
     {
+        /** @var Connection $db */
+        $db = $this->app->make(Connection::class);
+        /** @noinspection PhpUnhandledExceptionInspection */
+        $db->delete('btContentImageBreakpoints', ['bID' => $this->bID]);
+
         $this->getTracker()->forget($this);
         parent::delete();
     }
@@ -372,12 +451,15 @@ class Controller extends BlockController implements FileTrackableInterface, Uses
      */
     public function save($args)
     {
+        /** @var Connection $db */
+        $db = $this->app->make(Connection::class);
+
         $args = $args + [
             'fID' => 0,
             'fOnstateID' => 0,
             'maxWidth' => 0,
             'maxHeight' => 0,
-            'constrainImage' => 0,
+            'sizingOption' => 'thumbnails_default',
             'openLinkInNewWindow' => 0,
         ];
 
@@ -387,7 +469,7 @@ class Controller extends BlockController implements FileTrackableInterface, Uses
         $args['maxWidth'] = (int) $args['maxWidth'] > 0 ? (int) $args['maxWidth'] : 0;
         $args['maxHeight'] = (int) $args['maxHeight'] > 0 ? (int) $args['maxHeight'] : 0;
 
-        if (!$args['constrainImage']) {
+        if ($args['sizingOption'] != "constrain_size") {
             $args['cropImage'] = 0;
             $args['maxWidth'] = 0;
             $args['maxHeight'] = 0;
@@ -400,7 +482,27 @@ class Controller extends BlockController implements FileTrackableInterface, Uses
 
         $args['openLinkInNewWindow'] = $args['openLinkInNewWindow'] ? 1 : 0;
 
+
+        /** @noinspection PhpUnhandledExceptionInspection */
+        $db->delete('btContentImageBreakpoints', ['bID' => $this->bID]);
+
         parent::save($args);
+
+        if (is_array($args["selectedThumbnailTypes"])) {
+            foreach ($args["selectedThumbnailTypes"] as $breakpointHandle => $ftTypeID) {
+                /** @noinspection PhpUnhandledExceptionInspection */
+                /** @noinspection SqlDialectInspection */
+                /** @noinspection SqlNoDataSourceInspection */
+                $db->executeQuery('INSERT INTO btContentImageBreakpoints (bID, breakpointHandle, ftTypeID) values(?, ?, ?)',
+                    [
+                        $this->bID,
+                        $breakpointHandle,
+                        $ftTypeID
+                    ]
+                );
+            }
+        }
+
         $this->getTracker()->track($this);
     }
 
