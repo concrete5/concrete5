@@ -25,7 +25,7 @@ class EditExternal extends BackendInterfacePageController
             $request = \Request::getInstance();
             $this->page->updateCollectionAliasExternal(
                 $request->request->get('name'),
-                $request->request->get('link'),
+                trim($request->request->get('link')),
                 $request->request->get('openInNewWindow')
             );
             $pr = new EditResponse();
