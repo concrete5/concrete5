@@ -591,7 +591,7 @@ class File extends Controller
             if ($replacingFile === null) {
                 $fp = new Checker($folder);
                 if (!$fp->canAddFiles()) {
-                    throw new UserMessageException(t('Unable to add files.'), 400);
+                    throw new UserMessageException(t("You don't have the permission to upload to %s", $folder->getTreeNodeDisplayName()), 400);
                 }
             }
             $this->destinationFolder = $folder;

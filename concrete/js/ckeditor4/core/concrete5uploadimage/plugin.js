@@ -23,7 +23,10 @@
 
                 if (xhr.status == 200) {
                     var respObj = jQuery.parseJSON(xhr.responseText);
-                    if (respObj.files.length > 0) {
+                    if (respObj.error) {
+                        data.message = respObj.errors.join();
+                        evt.cancel();
+                    } else if (respObj.files.length > 0) {
                         data.url = respObj.files[0].urlInline;
                     }
                 } else {
